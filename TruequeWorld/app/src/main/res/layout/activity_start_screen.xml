@@ -11,12 +11,12 @@
         android:id="@+id/backgroundStart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:transitionName="bgTrans"
+        android:src="@drawable/fondo"
         android:scaleType="centerCrop"
         android:alpha="0.3" />
 
     <ImageView
-        android:id="@+id/logoUpSplash"
+        android:id="@+id/logoUpStart"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/elegido_arriba"
@@ -24,11 +24,11 @@
         app:layout_constraintEnd_toStartOf="@id/v4"
         app:layout_constraintTop_toBottomOf="@id/h7"
         app:layout_constraintBottom_toTopOf="@id/h8"
-        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintWidth_percent="0.55"
         app:layout_constraintHeight_percent="0.5"/>
 
     <ImageView
-        android:id="@+id/logoDownSplash"
+        android:id="@+id/logoDownStart"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/elegido_abajo"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toStartOf="@id/v4"
         app:layout_constraintTop_toBottomOf="@id/h9"
         app:layout_constraintBottom_toTopOf="@id/h10"
-        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintWidth_percent="0.55"
         app:layout_constraintHeight_percent="0.5"/>
 
     <TextView
@@ -62,17 +62,85 @@
         style="@style/NormalType" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/backToLogin"
+        android:id="@+id/loginGoogle"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/ic_return"
+        android:layout_height="0dp"
+        app:icon="@drawable/google"
         app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:iconTint="#00000000"
         android:text="@string/google"
         app:layout_constraintStart_toEndOf="@id/v3"
         app:layout_constraintEnd_toStartOf="@id/v4"
         app:layout_constraintTop_toBottomOf="@+id/h15"
         app:layout_constraintBottom_toTopOf="@id/h16"
+        android:visibility="invisible"
         style="@style/StartButtons"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginTW"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:icon="@drawable/elegido"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:iconTint="#00000000"
+        android:text="@string/twlogin"
+        app:layout_constraintStart_toEndOf="@id/v3"
+        app:layout_constraintEnd_toStartOf="@id/v4"
+        app:layout_constraintTop_toBottomOf="@+id/h17"
+        app:layout_constraintBottom_toTopOf="@id/h18"
+        android:visibility="invisible"
+        style="@style/StartButtons"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerTW"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:icon="@drawable/elegido"
+        app:iconGravity="textStart"
+        app:iconSize="30dp"
+        app:iconTint="#00000000"
+        android:text="@string/twregister"
+        app:layout_constraintStart_toEndOf="@id/v3"
+        app:layout_constraintEnd_toStartOf="@id/v4"
+        app:layout_constraintTop_toBottomOf="@+id/h19"
+        app:layout_constraintBottom_toTopOf="@id/h20"
+        android:visibility="invisible"
+        style="@style/StartButtons"/>
+
+    <ImageView
+        android:id="@+id/logoGoogle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/google"
+        app:layout_constraintStart_toEndOf="@id/v5"
+        app:layout_constraintEnd_toStartOf="@id/v6"
+        app:layout_constraintTop_toBottomOf="@id/h15"
+        app:layout_constraintBottom_toTopOf="@id/h16"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/logoLoginTW"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/elegido"
+        app:layout_constraintStart_toEndOf="@id/v7"
+        app:layout_constraintEnd_toStartOf="@id/v8"
+        app:layout_constraintTop_toBottomOf="@id/h17"
+        app:layout_constraintBottom_toTopOf="@id/h18"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/logoRegisterTW"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/elegido"
+        app:layout_constraintStart_toEndOf="@id/v9"
+        app:layout_constraintEnd_toStartOf="@id/v10"
+        app:layout_constraintTop_toBottomOf="@id/h19"
+        app:layout_constraintBottom_toTopOf="@id/h20"
+        android:visibility="invisible"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v3"
@@ -89,6 +157,48 @@
         app:layout_constraintGuide_percent="0.85" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.225" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.315" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.273" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.348" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +210,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.155" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h9"
@@ -114,76 +224,76 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.265" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.395" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.585" />
+        app:layout_constraintGuide_percent="0.58" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.59" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
+        app:layout_constraintGuide_percent="0.64" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.73" />
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.77" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.78" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.89" />
+        app:layout_constraintGuide_percent="0.85" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.91" />
+        app:layout_constraintGuide_percent="0.86" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98" />
+        app:layout_constraintGuide_percent="0.93" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

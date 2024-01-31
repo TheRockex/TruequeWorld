@@ -30,11 +30,11 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView backgroundSplash = findViewById(R.id.backgroundSplash);
 
-        Glide.with(this)
+        /*Glide.with(this)
                 .load("https://forbes.es/wp-content/uploads/2022/02/El-mercado-de-segunda-mano-se-dispara.-Foto_-Wallapop.jpg")
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 //.centerCrop()
-                .into(backgroundSplash);
+                .into(backgroundSplash);*/
 
         Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.go_right);
         Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.go_left);
@@ -46,7 +46,10 @@ public class SplashScreen extends AppCompatActivity {
         final ImageView logoUp = findViewById(R.id.logoUpSplash);
         final ImageView logoDown = findViewById(R.id.logoDownSplash);
         final TextView appName = findViewById(R.id.appNameSplash);
-        final ImageView bgSplash = findViewById(R.id.backgroundSplash);
+
+        logoUp.setVisibility(View.INVISIBLE);
+        logoDown.setVisibility(View.INVISIBLE);
+        appName.setVisibility(View.INVISIBLE);
 
         appName.setAnimation(appearName);
         logoUp.setAnimation(animation2);
@@ -86,56 +89,17 @@ public class SplashScreen extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 appName.setAnimation(disappearName);
 
-                /*new Handler().postDelayed(new Runnable() {
+                new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         Intent intent = new Intent(SplashScreen.this, StartScreen.class);
-                        startActivity(intent);
-                        finish();
+                        startActivity(intent, ActivityOptions.makeCustomAnimation(SplashScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
                     }
-                }, disappearName.getDuration());*/
+                }, 2800);
             }
 
             @Override
             public void onAnimationRepeat(Animation animation) {}
         });
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreen.this, StartScreen.class);
-
-                Pair[] pairs = new Pair[1];
-                pairs[0] = new Pair<View, String>(bgSplash, "bgTrans");
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this, pairs);
-                    startActivity(intent, options.toBundle());
-                } else {
-                    startActivity(intent);
-                    finish();
-                }
-
-            }
-        }, 5000);
-
-        /*new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreen.this, StartScreen.class);
-
-                Pair[] pairs = new Pair[2];
-                pairs[0] = new Pair<View, String>(logoUp, "ryodanTrans");
-                pairs[1] = new Pair<View, String>(logoDown, "crTrans");
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this, pairs);
-                    startActivity(intent, options.toBundle());
-                } else {
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        },4000);*/
     }
 }
