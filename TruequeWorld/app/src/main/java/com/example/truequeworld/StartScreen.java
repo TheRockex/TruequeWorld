@@ -1,12 +1,27 @@
 package com.example.truequeworld;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
+import android.app.Dialog;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -16,11 +31,16 @@ import com.google.android.material.button.MaterialButton;
 import org.w3c.dom.Text;
 
 public class StartScreen extends AppCompatActivity {
+    Button LoginDesplegable;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+        /**Luca**/
+        LoginDesplegable = findViewById(R.id.loginGoogle);
+        /****/
 
         ImageView logoUpStart = findViewById(R.id.logoUpStart);
         ImageView logoDownStart = findViewById(R.id.logoDownStart);
@@ -83,7 +103,19 @@ public class StartScreen extends AppCompatActivity {
             @Override
             public void onAnimationRepeat(Animation animation) {}
         });
+        /**Luca**/
+        LoginDesplegable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showContent();
 
+            }
+        });
+
+
+
+
+        /****/
 
         /*google.postDelayed(new Runnable() {
             @Override
@@ -130,7 +162,7 @@ public class StartScreen extends AppCompatActivity {
         twImg1.setVisibility(View.VISIBLE);
         Animation upButtonWithDelay = AnimationUtils.loadAnimation(this, R.anim.go_up);
         upButtonWithDelay.setStartOffset(1000); // 1 second delay
-        login.setAnimation(upButtonWithDelay);
+        login.setAnimation(upButtonWithDelay);S
         twImg1.setAnimation(upButtonWithDelay);
 
         register.setVisibility(View.VISIBLE);
@@ -140,4 +172,35 @@ public class StartScreen extends AppCompatActivity {
         register.setAnimation(upButtonWithDelay);
         twImg2.setAnimation(upButtonWithDelay);*/
     }
+    /**Luca**/
+    private void showContent() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        // Configurar el fondo con esquinas redondeadas
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        dialog.setContentView(R.layout.activity_login_screen);
+        LinearLayout mainLayout = dialog.findViewById(R.id.login_screen);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            ///YUUY
+            mainLayout.setBackground(ContextCompat.getDrawable(StartScreen.this, R.drawable.desplegable));
+        } else {
+            mainLayout.setBackgroundResource(R.drawable.desplegable);
+        }
+
+//
+
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+        dialog.show();
+    }
+
+
+
+
+    /**Luca**/
 }
