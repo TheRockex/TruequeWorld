@@ -3,6 +3,7 @@ package com.example.truequeworld;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
@@ -20,6 +21,7 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.w3c.dom.Text;
 
@@ -40,7 +43,15 @@ public class StartScreen extends AppCompatActivity {
         setContentView(R.layout.activity_start_screen);
         /**Luca**/
         LoginDesplegable = findViewById(R.id.loginGoogle);
-        /****/
+        /** ESTO 2 TEXT INPUT SE UTILIZARÍAN PARA EL LOGIN SCREEN NO PARA
+
+
+        LA START SCREEN AHORA MISMO NO LO EMPLEAMOS
+          FALTAN COSAS
+
+        TextInputEditText emailEditText = findViewById(R.id.login_email);
+        TextInputEditText passwordEditText = findViewById(R.id.login_password);
+         **/
 
         ImageView logoUpStart = findViewById(R.id.logoUpStart);
         ImageView logoDownStart = findViewById(R.id.logoDownStart);
@@ -184,11 +195,22 @@ public class StartScreen extends AppCompatActivity {
         LinearLayout mainLayout = dialog.findViewById(R.id.login_screen);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            ///YUUY
+
             mainLayout.setBackground(ContextCompat.getDrawable(StartScreen.this, R.drawable.desplegable));
         } else {
             mainLayout.setBackgroundResource(R.drawable.desplegable);
         }
+        //Cerrar el desplegable desde la loginscreen ya que el boton close no se encuentra en la start screen
+        ImageButton closeButton = dialog.findViewById(R.id.close_login_button);
+
+
+        // Configurar OnClickListener para cerrar el diálogo al hacer clic en el botón de cierre
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
 
 //
 

@@ -13,30 +13,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:gravity="end">
-
-        <ImageView
+        <ImageButton
             android:id="@+id/close_login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/close_button"
-            />
+            android:background="@android:color/transparent"/>
+
     </LinearLayout>
+
     <TextView
         android:id="@+id/t_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="45dp"
-        android:textColor="@color/black"
-        android:text="@string/twlogin"
-        android:textAlignment="inherit"
-        android:textSize="45dp"
-        android:textStyle="bold"
-        android:scaleType="fitXY"
+        android:layout_marginTop="15dp"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
-        android:paddingBottom="2dp"/>
+        android:paddingBottom="2dp"
+        android:scaleType="fitXY"
+        android:text="@string/twlogin"
+        android:textAlignment="inherit"
+        android:textColor="@color/black"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +58,7 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:text="@string/missu"
-            android:layout_marginLeft="10dp" />
+         />
         <ImageView
             android:id="@+id/login_image_icon"
             android:layout_width="wrap_content"
@@ -66,46 +70,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="90dp"
-        android:paddingBottom="40dp">
+        android:paddingTop="50dp"
+        android:paddingBottom="30dp">
         <ImageView
             android:id="@+id/login_image_profile"
             android:layout_width="match_parent"
             android:layout_height="139dp"
             android:src="@drawable/user_profile" />
     </LinearLayout>
-    <EditText
-        android:id="@+id/login_email"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:paddingBottom="20dp"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/black"
-        android:hint="@string/email"
-        />
-    <EditText
-        android:id="@+id/login_password"
+        android:paddingBottom="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/black"
+            android:hint="@string/email" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:paddingBottom="20dp"
-        android:inputType="textPassword"
-        android:textColorHint="@color/black"
-        android:hint="@string/pass"
-        />
+        android:paddingBottom="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black"
+            android:hint="@string/pass" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:paddingTop="70dp"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
         android:paddingBottom="40dp"
         android:gravity="center"
         >
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
