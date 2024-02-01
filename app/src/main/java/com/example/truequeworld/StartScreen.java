@@ -1,10 +1,17 @@
 package com.example.truequeworld;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -25,6 +32,7 @@ import org.w3c.dom.Text;
 
 public class StartScreen extends AppCompatActivity {
     Button LoginDesplegable;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +108,12 @@ public class StartScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showContent();
+
             }
         });
+
+
+
 
         /****/
 
@@ -164,15 +176,30 @@ public class StartScreen extends AppCompatActivity {
     private void showContent() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        // Configurar el fondo con esquinas redondeadas
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
         dialog.setContentView(R.layout.activity_login_screen);
+        LinearLayout mainLayout = dialog.findViewById(R.id.login_screen);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            mainLayout.setBackground(ContextCompat.getDrawable(StartScreen.this, R.drawable.desplegable));
+        } else {
+            mainLayout.setBackgroundResource(R.drawable.desplegable);
+        }
 
 
-        dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFF9EB")));
+
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
 
+        dialog.show();
     }
+
+
+
+
     /**Luca**/
 }

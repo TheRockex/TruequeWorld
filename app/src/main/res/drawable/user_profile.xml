@@ -8,6 +8,6 @@
     </item>
 
     <!-- Vector drawable (persona) encima del óvalo -->
-    <item android:drawable="@drawable/persona" />
+    <item android:drawable="@drawable/ic_profile" />
 
 </layer-list>
