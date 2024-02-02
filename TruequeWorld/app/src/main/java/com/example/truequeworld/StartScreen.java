@@ -34,7 +34,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.w3c.dom.Text;
 
 public class StartScreen extends AppCompatActivity {
-    Button LoginDesplegable;
+    MaterialButton LoginDesplegable;
+    MaterialButton RegisterDesplegable;
 
 
     @Override
@@ -42,7 +43,8 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
         /**Luca**/
-        LoginDesplegable = findViewById(R.id.loginGoogle);
+        LoginDesplegable = findViewById(R.id.loginTW);
+        RegisterDesplegable = findViewById(R.id.registerTW);
         /** ESTO 2 TEXT INPUT SE UTILIZARÍAN PARA EL LOGIN SCREEN NO PARA
 
 
@@ -118,13 +120,17 @@ public class StartScreen extends AppCompatActivity {
         LoginDesplegable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showContent();
+                showLoginContent();
 
             }
         });
+        RegisterDesplegable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showRegisterContent();
 
-
-
+            }
+        });
 
         /****/
 
@@ -184,7 +190,7 @@ public class StartScreen extends AppCompatActivity {
         twImg2.setAnimation(upButtonWithDelay);*/
     }
     /**Luca**/
-    private void showContent() {
+    private void showLoginContent() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
@@ -220,6 +226,102 @@ public class StartScreen extends AppCompatActivity {
 
         dialog.show();
     }
+    private void showRegisterContent() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        // Configurar el fondo con esquinas redondeadas
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        dialog.setContentView(R.layout.activity_register_screen);
+        LinearLayout mainLayout = dialog.findViewById(R.id.register_screen);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+
+            mainLayout.setBackground(ContextCompat.getDrawable(StartScreen.this, R.drawable.desplegable));
+        } else {
+            mainLayout.setBackgroundResource(R.drawable.desplegable);
+        }
+        //Cerrar el desplegable desde la loginscreen ya que el boton close no se encuentra en la start screen
+        ImageButton closeButton = dialog.findViewById(R.id.close_register_button);
+
+
+        // Configurar OnClickListener para cerrar el diálogo al hacer clic en el botón de cierre
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+//
+
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+        dialog.show();
+    }
+    /** EJEMPLO UTIL TANTO PARA LOGIN O REGISTER O COMO PARA SU DISEÑO
+     *  private void showDialog() {
+     *
+     *         final Dialog dialog = new Dialog(this);
+     *         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+     *         dialog.setContentView(R.layout.bottomsheetlayout);
+     *
+     *         LinearLayout editLayout = dialog.findViewById(R.id.layoutEdit);
+     *         LinearLayout shareLayout = dialog.findViewById(R.id.layoutShare);
+     *         LinearLayout uploadLayout = dialog.findViewById(R.id.layoutUpload);
+     *         LinearLayout printLayout = dialog.findViewById(R.id.layoutPrint);
+     *
+     *         editLayout.setOnClickListener(new View.OnClickListener() {
+     *             @Override
+     *             public void onClick(View v) {
+     *
+     *                 dialog.dismiss();
+     *                 Toast.makeText(MainActivity.this,"Edit is Clicked",Toast.LENGTH_SHORT).show();
+     *
+     *             }
+     *         });
+     *
+     *         shareLayout.setOnClickListener(new View.OnClickListener() {
+     *             @Override
+     *             public void onClick(View v) {
+     *
+     *                 dialog.dismiss();
+     *                 Toast.makeText(MainActivity.this,"Share is Clicked",Toast.LENGTH_SHORT).show();
+     *
+     *             }
+     *         });
+     *
+     *         uploadLayout.setOnClickListener(new View.OnClickListener() {
+     *             @Override
+     *             public void onClick(View v) {
+     *
+     *                 dialog.dismiss();
+     *                 Toast.makeText(MainActivity.this,"Upload is Clicked",Toast.LENGTH_SHORT).show();
+     *
+     *             }
+     *         });
+     *
+     *         printLayout.setOnClickListener(new View.OnClickListener() {
+     *             @Override
+     *             public void onClick(View v) {
+     *
+     *                 dialog.dismiss();
+     *                 Toast.makeText(MainActivity.this,"Print is Clicked",Toast.LENGTH_SHORT).show();
+     *
+     *             }
+     *         });
+     *
+     *         dialog.show();
+     *         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+     *         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+     *         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+     *         dialog.getWindow().setGravity(Gravity.BOTTOM);
+     *
+     *     }
+     * **/
 
 
 
