@@ -1,43 +1,69 @@
 package com.example.truequeworld;
 
+
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.IntentSenderRequest;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+
+
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.content.IntentSender;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
+import com.google.android.gms.auth.api.identity.BeginSignInResult;
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.auth.api.identity.SignInClient;
+import com.google.android.gms.auth.api.identity.SignInCredential;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
+
 
 import org.w3c.dom.Text;
 
 public class StartScreen extends AppCompatActivity {
     MaterialButton LoginDesplegable;
     MaterialButton RegisterDesplegable;
+    /**LOGIN GOOGLE**/
+    private SignInClient oneTapClient;
+    private BeginSignInRequest signUpRequest;
+
+    private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
+    private boolean showOneTapUI = true;
 
 
+    /**FIN**/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -188,6 +214,84 @@ public class StartScreen extends AppCompatActivity {
         upButtonWithDelay.setStartOffset(2000); // 2 seconds delay
         register.setAnimation(upButtonWithDelay);
         twImg2.setAnimation(upButtonWithDelay);*/
+
+        /**LOGIN GOOGLE**/
+
+        oneTapClient = Identity.getSignInClient(StartScreen.this);
+        signUpRequest = BeginSignInRequest.builder()
+                .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                        .setSupported(true)
+                        // Your server's client ID, not your Android client ID.
+                        .setServerClientId(getString(R.string.weblogingoogleid))
+                        // Show all accounts on the device.
+                        .setFilterByAuthorizedAccounts(false)
+                        .build())
+                .build();
+
+        google.setOnClickListener(new View.OnClickListener() {
+            ActivityResultLauncher<IntentSenderRequest> activityResultLauncher =
+                    registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), new ActivityResultCallback<ActivityResult>() {
+                        @Override
+                        public void onActivityResult(ActivityResult result) {
+                            try {
+                                SignInCredential credential = oneTapClient.getSignInCredentialFromIntent(result.getData());
+                                String idToken = credential.getGoogleIdToken();
+                                if (idToken !=  null) {
+                                    // Got an ID token from Google. Use it to authenticate
+                                    // with your backend.
+                                    String email = credential.getId();
+                                    String username = credential.getDisplayName();
+                                    Toast.makeText(getApplicationContext(),"Email : "+email+" Name : "+username, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "INICIO SESIÓN EXITOSO", Toast.LENGTH_SHORT).show();
+                                    //
+                                    //Log.d("TAG", "Got ID token.");
+                                    Intent intent = new Intent(getApplicationContext(), MainActivityScreen.class);
+                                    // now by putExtra method put the value in key, value pair key is
+                                    // user_name by this key we will receive the value, and put the string
+                                    intent.putExtra("user_name", username);
+                                    // start the Intent
+                                    startActivity(intent);
+                                }
+                            } catch (ApiException e) {
+                                // Manejar la excepción de manera más precisa
+
+                                Log.e("TAG", "ApiException: " + e.getStatusCode(), e);
+
+                                if (e.getStatusCode() == 16) {
+                                    // Muestra un Toast indicando que el usuario canceló la autenticación
+                                    Toast.makeText(getApplicationContext(), "FALLO DURANTE EL PROCESO INTENTELO DE NUEVO", Toast.LENGTH_SHORT).show();
+                                    // El usuario canceló la autenticación
+                                    Log.d("TAG", "El usuario canceló la autenticación");
+                                } else {
+                                    // Otra excepción, manejar según sea necesario
+                                    Log.e("TAG", "Otra excepción al procesar el resultado", e);
+                                }
+                            }
+                        }
+                    });
+
+            @Override
+            public void onClick(View view) {
+                oneTapClient.beginSignIn(signUpRequest)
+                        .addOnSuccessListener(StartScreen.this, new OnSuccessListener<BeginSignInResult>() {
+                            @Override
+                            public void onSuccess(BeginSignInResult result) {
+                                IntentSenderRequest intentSenderRequest =
+                                        new IntentSenderRequest.Builder(result.getPendingIntent().getIntentSender()).build();
+                                activityResultLauncher.launch(intentSenderRequest);
+                            }
+                        })
+                        .addOnFailureListener(StartScreen.this, new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // No Google Accounts found. Just continue presenting the signed-out UI.
+                                Log.d("TAG", e.getLocalizedMessage());
+                            }
+                        });
+            }
+        });
+
+        /**fin**/
     }
     /**Luca**/
     private void showLoginContent() {
@@ -322,9 +426,6 @@ public class StartScreen extends AppCompatActivity {
      *
      *     }
      * **/
-
-
-
 
     /**Luca**/
 }

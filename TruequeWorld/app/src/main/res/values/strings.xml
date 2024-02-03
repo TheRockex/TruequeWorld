@@ -16,4 +16,7 @@
     <string name="pass">Contraseña</string>
     <string name="confpass">Confirmar contraseña</string>
 
+    //login google
+    <string name="weblogingoogleid">1021340446527-m7pkb3n1l9efk4o9fienete5gfeji3c4.apps.googleusercontent.com</string>
+
 </resources>
