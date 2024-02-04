@@ -25,11 +25,14 @@
         <activity
             android:name=".StartScreen"
             android:exported="false"
-            android:noHistory="true"/>
-       " /**EVITAR QUE EL USUARIO PUEDA RETROCEDER AL LAYOUT ANTERIOR**/"
+            android:noHistory="true"
+            />
+
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true" >
+            " /**EVITAR QUE EL USUARIO PUEDA RETROCEDER AL LAYOUT ANTERIOR**/"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
