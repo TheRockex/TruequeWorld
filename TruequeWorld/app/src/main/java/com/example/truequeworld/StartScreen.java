@@ -45,6 +45,7 @@ import com.google.android.gms.auth.api.identity.Identity;
 import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
@@ -59,7 +60,7 @@ public class StartScreen extends AppCompatActivity {
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
 
-    private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
+    private static final int REQ_ONE_TAP = 16;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
 
 
@@ -216,20 +217,24 @@ public class StartScreen extends AppCompatActivity {
         twImg2.setAnimation(upButtonWithDelay);*/
 
         /**LOGIN GOOGLE**/
-
+        //IDENTIFICAR ONE TAP PARA INICIAR SESIÓN
         oneTapClient = Identity.getSignInClient(StartScreen.this);
+        // ENVIAR REQUEST PARA INICIAR SESION
         signUpRequest = BeginSignInRequest.builder()
                 .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
                         .setSupported(true)
                         // Your server's client ID, not your Android client ID.
+                        //SE EMPLEA EL SERVIDOR DEL ID CLIENTE NO DEL ANDROID
                         .setServerClientId(getString(R.string.weblogingoogleid))
                         // Show all accounts on the device.
+                        //MOSTRAR TODAS LAS CUENTAS
                         .setFilterByAuthorizedAccounts(false)
                         .build())
                 .build();
 
         google.setOnClickListener(new View.OnClickListener() {
             ActivityResultLauncher<IntentSenderRequest> activityResultLauncher =
+                    //INICIO DE PARA ENVIAR LA SOLICITUD DE INICIAR SESIÓN UNA VEZ VERIFICADOS DE QUE LOS ID SON CORRECTOS
                     registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), new ActivityResultCallback<ActivityResult>() {
                         @Override
                         public void onActivityResult(ActivityResult result) {
@@ -254,7 +259,7 @@ public class StartScreen extends AppCompatActivity {
                                 }
                             } catch (ApiException e) {
                                 // Manejar la excepción de manera más precisa
-
+                                // EN EL CASO DE QUE HAYA FALLADO ALGO
                                 Log.e("TAG", "ApiException: " + e.getStatusCode(), e);
 
                                 if (e.getStatusCode() == 16) {
@@ -266,12 +271,15 @@ public class StartScreen extends AppCompatActivity {
                                     // Otra excepción, manejar según sea necesario
                                     Log.e("TAG", "Otra excepción al procesar el resultado", e);
                                 }
+
+
                             }
                         }
                     });
 
             @Override
             public void onClick(View view) {
+                //INICIA LA SOLICITUD CUANDO SE PULSA
                 oneTapClient.beginSignIn(signUpRequest)
                         .addOnSuccessListener(StartScreen.this, new OnSuccessListener<BeginSignInResult>() {
                             @Override
