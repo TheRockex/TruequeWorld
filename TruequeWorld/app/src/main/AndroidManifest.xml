@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/elegido"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/elegido"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TruequeWorld"
+        tools:targetApi="31"
+        tools:ignore="ExtraText">
+        <activity
+            android:name=".RegisterScreen"
+            android:exported="false" />
+        <activity
+            android:name=".LoginScreen"
+            android:exported="false" />
+        <activity
+            android:name=".StartScreen"
+            android:exported="false"
+            android:noHistory="true"
+            />
+
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:noHistory="true" >
+            " /**EVITAR QUE EL USUARIO PUEDA RETROCEDER AL LAYOUT ANTERIOR**/"
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainScreen"
+            android:exported="false">
+        </activity>
+    </application>
+
+</manifest>
