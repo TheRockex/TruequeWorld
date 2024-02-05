@@ -111,6 +111,24 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_dni"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:textColorHint="@color/black"
+            android:hint="DNI" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:paddingBottom="15dp"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
