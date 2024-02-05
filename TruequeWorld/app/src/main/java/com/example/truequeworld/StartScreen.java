@@ -5,10 +5,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.IntentSenderRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -17,10 +14,7 @@ import androidx.activity.result.ActivityResultCallback;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.IntentSender;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,21 +31,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.BeginSignInResult;
 import com.google.android.gms.auth.api.identity.Identity;
 import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
-
-
-import org.w3c.dom.Text;
 
 public class StartScreen extends AppCompatActivity {
     MaterialButton LoginDesplegable;
@@ -250,7 +238,7 @@ public class StartScreen extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "INICIO SESIÓN EXITOSO", Toast.LENGTH_SHORT).show();
                                     //
                                     //Log.d("TAG", "Got ID token.");
-                                    Intent intent = new Intent(getApplicationContext(), MainActivityScreen.class);
+                                    Intent intent = new Intent(getApplicationContext(), MainScreen.class);
                                     // now by putExtra method put the value in key, value pair key is
                                     // user_name by this key we will receive the value, and put the string
                                     intent.putExtra("user_name", username);

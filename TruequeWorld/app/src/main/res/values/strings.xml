@@ -15,6 +15,11 @@
     <string name="email">Email</string>
     <string name="pass">Contraseña</string>
     <string name="confpass">Confirmar contraseña</string>
+    <string name="tp">Trueque\nPuntos</string>
+    <string name="search">Estoy buscando...</string>
+    <string name="recom">Recomendado para ti</string>
+    <string name="more">Ver todo</string>
+    <string name="saved">Guardado</string>
 
     //login google
     <string name="weblogingoogleid">94914021089-bibo61fkr1qdhtjvdvhtag0fcbhhklpr.apps.googleusercontent.com</string>

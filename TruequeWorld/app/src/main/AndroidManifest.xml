@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivityScreen"
+            android:name=".MainScreen"
             android:exported="false">
         </activity>
     </application>
