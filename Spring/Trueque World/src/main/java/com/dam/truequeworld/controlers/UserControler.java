@@ -13,13 +13,13 @@ public class UserControler {
     private UserService userService;
 
     @GetMapping("/login/{email}/{contrasenia}")
-    public Integer getUserId(@PathVariable String email, @PathVariable String contrasenia){
+    public User getUserId(@PathVariable String email, @PathVariable String contrasenia){
         for (User u : userService.getAllUsers()) {
             if (u.getEmail().equals(email)) {
                 if (!u.getContrasenia().equals(contrasenia)) {
                     return null;
                 }
-                return u.getId();
+                return u;
             }
         }
         return null;

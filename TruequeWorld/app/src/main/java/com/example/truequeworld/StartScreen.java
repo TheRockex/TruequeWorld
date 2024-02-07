@@ -57,6 +57,8 @@ public class StartScreen extends AppCompatActivity {
     private BeginSignInRequest signUpRequest;
     private UserServiceApi userServiceApi;
 
+    User user;
+
     private static final int REQ_ONE_TAP = 16;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
 
@@ -359,16 +361,18 @@ public class StartScreen extends AppCompatActivity {
         String contraString = contraTextView.getText().toString();
 
         // Ejemplo de llamada a getUserId
-        Call<Integer> call = userServiceApi.getUserId(emailString, contraString);
-        call.enqueue(new Callback<Integer>() {
+        Call<User> call = userServiceApi.getUser(emailString, contraString);
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<Integer> call, Response<Integer> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
-                    Integer userId = response.body();
+                    user = response.body();
                     // Manejar el resultado
-                    if (userId != null) {
+                    if (user  != null) {
                         Intent intent = new Intent(StartScreen.this, MainScreen.class);
+                        intent.putExtra("usuario", user);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+
                     } else {
                         // El userId es nulo, maneja el caso según tus necesidades
                         Toast.makeText(StartScreen.this, "ID de Usuario nulo", Toast.LENGTH_SHORT).show();
@@ -378,11 +382,10 @@ public class StartScreen extends AppCompatActivity {
                     Toast.makeText(StartScreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
-            public void onFailure(Call<Integer> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 // Manejar el fallo de la llamada
-                Toast.makeText(StartScreen.this, "porth", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StartScreen.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -506,13 +509,7 @@ public class StartScreen extends AppCompatActivity {
         String contraString = contraTextView.getText().toString();
 
         // Crear un nuevo usuario para la inserción
-        User newUser = new User();
-        newUser.setDni(nombreString);
-        newUser.setName(nombreString);
-        newUser.setApellidos(apellidosString);
-        newUser.setEmail(emailString);
-        newUser.setContrasenia(contraString);
-        newUser.setTp(0);
+        User newUser = new User(null,nombreString,nombreString,apellidosString,emailString,contraString,0,null);
 
         // Ejemplo de llamada a insertUser
         Call<User> call = userServiceApi.insertUser(newUser);
@@ -555,12 +552,12 @@ public class StartScreen extends AppCompatActivity {
         if(contraString.equals(contraconfirmString)){
 
             // Ejemplo de llamada a getUserId
-            Call<Integer> call = userServiceApi.getUserId(emailString, contraString);
-            call.enqueue(new Callback<Integer>() {
+            Call<User> call = userServiceApi.getUser(emailString, contraString);
+            call.enqueue(new Callback<User>() {
                 @Override
-                public void onResponse(Call<Integer> call, Response<Integer> response) {
+                public void onResponse(Call<User> call, Response<User> response) {
                     if (response.isSuccessful()) {
-                        Integer userId = response.body();
+                        User userId = response.body();
                         // Manejar el resultado
                         if (userId != null) {
                             Toast.makeText(StartScreen.this, "El usuario existe", Toast.LENGTH_SHORT).show();
@@ -574,7 +571,7 @@ public class StartScreen extends AppCompatActivity {
                     }
                 }
                 @Override
-                public void onFailure(Call<Integer> call, Throwable t) {
+                public void onFailure(Call<User> call, Throwable t) {
                     Registrer(dialog);
                 }
             });

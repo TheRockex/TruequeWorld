@@ -1,8 +1,9 @@
 package com.example.truequeworld.Class;
 
-public class User {
-    private Integer id;
+import java.io.Serializable;
 
+public class User implements Serializable {
+    private Integer id;
     private String dni;
 
     private String name;
@@ -15,7 +16,26 @@ public class User {
 
     private Integer tp;
 
+    private String preferencias;
 
+    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer tp, String preferencias) {
+        this.id = id;
+        this.dni = dni;
+        this.name = name;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.contrasenia = contrasenia;
+        this.tp = tp;
+        this.preferencias = preferencias;
+    }
+
+    public String getPreferencias() {
+        return preferencias;
+    }
+
+    public void setPreferencias(String preferencias) {
+        this.preferencias = preferencias;
+    }
 
     public Integer getId() {
         return id;

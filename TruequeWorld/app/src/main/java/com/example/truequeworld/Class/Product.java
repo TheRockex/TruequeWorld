@@ -11,7 +11,17 @@ public class Product {
 
     private String estado;
 
-    private Integer idUsuario;
+    private Integer usuarioId;
+
+    private String categoria;
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     public Integer getId() {
         return id;
@@ -54,11 +64,11 @@ public class Product {
     }
 
     public Integer getIdUsuario() {
-        return idUsuario;
+        return usuarioId;
     }
 
     public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+        this.usuarioId = usuarioId;
     }
 
 }

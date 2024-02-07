@@ -13,7 +13,7 @@ import retrofit2.http.DELETE;
 public interface UserServiceApi {
 
     @GET("/user/login/{usuario}/{contrasenia}")
-    Call<Integer> getUserId(@Path("usuario") String usuario, @Path("contrasenia") String contrasenia);
+    Call<User> getUser(@Path("usuario") String usuario, @Path("contrasenia") String contrasenia);
 
     @GET("/user/id/{id}")
     Call<User> getUserById(@Path("id") Integer id);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-02-2024 a las 10:57:35
+-- Tiempo de generación: 07-02-2024 a las 13:45:45
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -67,14 +67,34 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `valorenTP`, `estado`, `usuarioid`, `categoria`) VALUES
-(1, 'Figura de anime', 'Esta en perfectas condiciones', NULL, 'disponible', 1, ''),
-(2, 'Sandwich del VIPS', 'Caduca en 1 semana', 20, 'reservado', 2, ''),
-(3, 'Lote ropa invierno', 'Lote de 100 prendas aleatorias', 200, 'truequeado', 3, ''),
-(4, 'Cuenta del lol', 'He dejado el lol y quiero truequear mi cuenta', 100, 'disponible', 4, ''),
-(5, 'Sudadera DragonBall', 'Me queda pequeña', 40, 'truequeado', 1, ''),
-(6, 'Boli Bic azul', 'Está casi gastado, pero aún funciona', NULL, 'reservado', 2, ''),
-(7, 'Tablet Lenovo', 'No la uso apenas', NULL, 'disponible', 3, ''),
-(8, 'Lata Monster', 'La tengo repetida', NULL, 'reservado', 4, '');
+(1, 'Figura de anime', 'Esta en perfectas condiciones', NULL, 'disponible', 1, 'anime'),
+(2, 'Sandwich del VIPS', 'Caduca en 1 semana', 20, 'reservado', 2, 'comida'),
+(3, 'Lote ropa invierno', 'Lote de 100 prendas aleatorias', 200, 'truequeado', 3, 'moda'),
+(4, 'Cuenta del lol', 'He dejado el lol y quiero truequear mi cuenta', 100, 'disponible', 4, 'juegos'),
+(5, 'Sudadera DragonBall', 'Me queda pequeña', 40, 'truequeado', 1, 'moda'),
+(6, 'Boli Bic azul', 'Está casi gastado, pero aún funciona', NULL, 'reservado', 2, 'escolar'),
+(7, 'Tablet Lenovo', 'No la uso apenas', NULL, 'disponible', 3, 'tecnologia'),
+(8, 'Lata Monster', 'La tengo repetida', NULL, 'reservado', 4, 'coleccionable'),
+(9, 'Sudadera Adidas', 'Sudadera negra con el logo de Adidas', 200, 'disponible', 1, 'moda'),
+(10, 'Nintendo Switch', 'Consola de videojuegos portátil Nintendo Switch', 300, 'disponible', 2, 'tecnologia'),
+(11, 'Libro de Cocina', 'Libro de recetas de cocina internacional', 50, 'disponible', 3, 'alimentacion'),
+(12, 'Bicicleta de montaña', 'Bicicleta de montaña de color rojo', 400, 'disponible', 4, 'deporte'),
+(13, 'iPhone 13', 'Teléfono inteligente iPhone 13 de 128 GB', 900, 'disponible', 5, 'tecnologia'),
+(14, 'Muñeca Barbie', 'Muñeca Barbie edición especial', 30, 'disponible', 6, 'infantil'),
+(15, 'PlayStation 5', 'Consola de videojuegos PlayStation 5', 600, 'disponible', 7, 'tecnologia'),
+(16, 'Pelota de fútbol', 'Pelota de fútbol tamaño 5', 20, 'disponible', 8, 'deporte'),
+(17, 'Cámara Canon EOS', 'Cámara réflex digital Canon EOS 90D', 800, 'disponible', 9, 'tecnologia'),
+(18, 'Camiseta de Marvel', 'Camiseta con estampado de superhéroes de Marvel', 25, 'disponible', 10, 'entretenimiento'),
+(19, 'Lápices de colores', 'Set de 24 lápices de colores de alta calidad', 10, 'disponible', 11, 'escolar'),
+(20, 'Gafas de sol Ray-Ban', 'Gafas de sol Ray-Ban Aviator', 150, 'disponible', 12, 'moda'),
+(21, 'Robot aspirador', 'Robot aspirador con función de limpieza automática', 350, 'disponible', 13, 'tecnologia'),
+(22, 'Kit de maquillaje', 'Set completo de maquillaje profesional', 100, 'disponible', 14, 'moda'),
+(23, 'Tarjeta regalo Amazo', 'Tarjeta regalo de 50 euros para Amazon', 50, 'disponible', 15, 'otros'),
+(24, 'Auriculares inalámbr', 'Auriculares inalámbricos con cancelación de ruido', 120, 'disponible', 16, 'tecnologia'),
+(25, 'Libro de Sudoku', 'Libro de juegos de lógica con 1000 sudokus', 15, 'disponible', 17, 'entretenimiento'),
+(26, 'Plancha de pelo', 'Plancha de pelo profesional con revestimiento de cerámica', 80, 'disponible', 18, 'moda'),
+(27, 'Set de herramientas', 'Set de herramientas completo para bricolaje', 200, 'disponible', 19, 'otros'),
+(28, 'Juego de mesa Monopo', 'Juego de mesa clásico Monopoly', 30, 'disponible', 20, 'juegos');
 
 -- --------------------------------------------------------
 
@@ -167,7 +187,25 @@ INSERT INTO `usuarios` (`id`, `DNI`, `nombre`, `apellidos`, `email`, `contrasena
 (1, '66666666W', 'Alex', 'Martinez', 'alexmartinez@ifp', '1234abcd', 0, NULL),
 (2, '66666666X', 'Johan', 'Benitez', 'johanbenitez@ifp', '5678efgh', 5, NULL),
 (3, '66666666Y', 'Luca', 'Jin', 'lucajin@ifp', '9090ijkl', 10, NULL),
-(4, '66666666Z', 'Sergio', 'Navarro', 'sergionavarro@ifp', '0909mnop', 15, NULL);
+(4, '66666666Z', 'Sergio', 'Navarro', 'sergionavarro@ifp', '0909mnop', 15, NULL),
+(5, '1111111A', 'Goku', 'Son', 'goku@gmail.com', 'Kamehameha23', 600, 'entretenimiento,anime,deporte'),
+(6, '2222222B', 'Naruto', 'Uzumaki', 'naruto@gmail.com', 'Hokage123', 650, 'coleccion,anime,juegos'),
+(7, '3333333C', 'Luffy', 'Monkey D.', 'luffy@gmail.com', 'Rubber123', 700, 'anime,coleccion,alimentacion'),
+(8, '4444444D', 'Eren', 'Jaeger', 'eren@gmail.com', 'TitanShifter', 750, 'anime,entretenimiento,deporte'),
+(9, '5555555E', 'Saitama', '', 'saitama@gmail.com', 'OnePunchMan!', 800, 'anime,tecnologia,coleccion'),
+(10, '6666666F', 'Levi', 'Ackerman', 'levi@gmail.com', 'CleaningDuty', 850, 'anime,coleccion,deporte'),
+(11, '7777777G', 'Gon', 'Freecss', 'gon@gmail.com', 'HunterExam20', 900, 'anime,infantil,deporte'),
+(12, '8888888H', 'Light', 'Yagami', 'light@gmail.com', 'DeathNote_1', 950, 'anime,juegos,tecnologia'),
+(13, '9999999I', 'Ichigo', 'Kurosaki', 'ichigo@gmail.com', 'Bankai_123', 1000, 'anime,coleccion,moda'),
+(14, '1010101J', 'Edward', 'Elric', 'edward@gmail.com', 'Alchemy_788', 1050, 'anime,coleccion,tecnologia'),
+(15, '2020202K', 'Lelouch', 'Lamperouge', 'lelouch@gmail.com', 'ZeroRequiem!', 1100, 'anime,tecnologia,moda'),
+(16, '3030303L', 'Natsu', 'Dragneel', 'natsu@gmail.com', 'FireDragon12', 1150, 'coleccion,deporte,tecnologia'),
+(17, '5050505N', 'Kirito', '', 'kirito@gmail.com', 'SAO_Swordsma', 1250, 'juegos,tecnologia,entretenimiento'),
+(18, '6060606O', 'Ryuko', 'Matoi', 'ryuko@gmail.com', 'SenketsuRisi', 1300, 'moda,deporte,entretenimiento'),
+(19, '7070707P', 'Vegeta', '', 'vegeta@gmail.com', 'PrinceofSaiy', 1350, 'deporte,tecnologia,entretenimiento'),
+(20, '8080808Q', 'Gintoki', 'Sakata', 'gintoki@gmail.com', 'OddJobsGin', 1400, 'coleccion,entretenimiento,deporte'),
+(21, '9090909R', 'Spike', 'Spiegel', 'spike@gmail.com', 'Bebop_1', 1450, 'tecnologia,entretenimiento,deporte'),
+(22, '1010101S', 'Echidna', '', 'echidna@gmail.com', 'WitchofGreed', 1500, 'coleccion,deporte,otros');
 
 --
 -- Índices para tablas volcadas
@@ -234,7 +272,7 @@ ALTER TABLE `negociacion_trueque`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `tarjeta`
@@ -258,7 +296,7 @@ ALTER TABLE `truque_tp`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas

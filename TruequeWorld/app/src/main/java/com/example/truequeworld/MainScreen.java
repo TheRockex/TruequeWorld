@@ -1,13 +1,19 @@
 package com.example.truequeworld;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.truequeworld.Class.Product;
-        import com.example.truequeworld.Interface.ProductServiceApi;
-        import java.util.List;
+import com.example.truequeworld.Class.User;
+import com.example.truequeworld.Interface.ProductServiceApi;
+
+import java.util.ArrayList;
+import java.util.List;
         import retrofit2.Call;
         import retrofit2.Callback;
         import retrofit2.Response;
@@ -16,13 +22,19 @@ import com.example.truequeworld.Class.Product;
 
 public class MainScreen extends AppCompatActivity {
     private ProductServiceApi productServiceApi;
+    ArrayList<Product> productPreference = new ArrayList<>();
+
+    List<Product> productList = new ArrayList<>();
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        user =(User) getIntent().getSerializableExtra("usuario");
         Productos();
     }
+
 
     public void Conectar(){
         Retrofit retrofit = new Retrofit.Builder()
@@ -41,19 +53,34 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
-                    List<Product> productList = response.body();
-                    Toast.makeText(MainScreen.this, "Hola", Toast.LENGTH_SHORT).show();
+                    productList = response.body();
                     for(int i = 0; i < productList.size();i++) {
-                        Toast.makeText(MainScreen.this, productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                        if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
+                            productPreference.add(productList.get(i));
+                            Toast.makeText(MainScreen.this, productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                 } else {
-                    Toast.makeText(MainScreen.this, "Adios", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<List<Product>> call, Throwable t) {
             }
         });
+    }
+
+    public void buscar(){
+
+        TextView buscarTextView = findViewById(R.id.login_email);
+
+        String buscarString = buscarTextView.getText().toString();
+
+        for(int  i = 0; i < productList.size();i++){
+            if(productList.get(i).getNombre().contains(buscarString)){
+
+            }
+        }
     }
 }
