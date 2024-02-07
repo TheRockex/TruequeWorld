@@ -5,9 +5,6 @@ import com.dam.truequeworld.servicies.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -15,10 +12,10 @@ public class UserControler {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/login/{usuario}/{contrasenia}")
-    public Integer getUserId(@PathVariable String usuario, @PathVariable String contrasenia){
+    @GetMapping("/login/{email}/{contrasenia}")
+    public Integer getUserId(@PathVariable String email, @PathVariable String contrasenia){
         for (User u : userService.getAllUsers()) {
-            if (u.getName().equals(usuario)) {
+            if (u.getEmail().equals(email)) {
                 if (!u.getContrasenia().equals(contrasenia)) {
                     return null;
                 }

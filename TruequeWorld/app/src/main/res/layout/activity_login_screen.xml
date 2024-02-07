@@ -123,16 +123,16 @@
         >
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="#FFFEC941"
             android:text="@string/inicia"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:backgroundTint="#FFFEC941"
-            android:textSize="25dp"
-            android:textAllCaps="true"/>
-
+            android:textSize="25dp" />
     </LinearLayout>
 
 

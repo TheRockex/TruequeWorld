@@ -111,24 +111,6 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/register_dni"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:inputType="text"
-            android:textColorHint="@color/black"
-            android:hint="DNI" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:paddingBottom="15dp"
-
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -182,15 +164,16 @@
         >
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRegistrer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="#FFFEC941"
             android:text="@string/registra"
             android:textAlignment="center"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:backgroundTint="#FFFEC941"
-            android:textSize="25dp"
-            android:textAllCaps="true"/>
+            android:textSize="25dp" />
 
     </LinearLayout>
 

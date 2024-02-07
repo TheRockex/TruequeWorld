@@ -19,6 +19,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(name = "DNI")
     private String dni;
     @Column(name = "nombre")
@@ -31,4 +32,7 @@ public class User {
     private String contrasenia;
     @Column(name = "TP")
     private String tp;
+
+    @Column(name = "preferencias")
+    private String preferencias;
 }

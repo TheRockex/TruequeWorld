@@ -11,7 +11,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 
 
-
+import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -31,6 +31,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.truequeworld.Class.User;
+import com.example.truequeworld.Interface.UserServiceApi;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.BeginSignInResult;
 import com.google.android.gms.auth.api.identity.Identity;
@@ -41,12 +43,19 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class StartScreen extends AppCompatActivity {
     MaterialButton LoginDesplegable;
     MaterialButton RegisterDesplegable;
     /**LOGIN GOOGLE**/
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
+    private UserServiceApi userServiceApi;
 
     private static final int REQ_ONE_TAP = 16;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
@@ -286,7 +295,14 @@ public class StartScreen extends AppCompatActivity {
                         });
             }
         });
+        // Configurar Retrofit
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.129.8:8086")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
+        // Crear instancia de la interfaz
+        userServiceApi = retrofit.create(UserServiceApi.class);
         /**fin**/
     }
     /**Luca**/
@@ -299,6 +315,13 @@ public class StartScreen extends AppCompatActivity {
 
         dialog.setContentView(R.layout.activity_login_screen);
         LinearLayout mainLayout = dialog.findViewById(R.id.login_screen);
+        MaterialButton button = dialog.findViewById(R.id.buttonLogin);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Login(dialog);
+            }
+        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
 
@@ -326,6 +349,44 @@ public class StartScreen extends AppCompatActivity {
 
         dialog.show();
     }
+    /*JOHAAWDAWDN*/
+    public void Login(Dialog dialog){
+
+        TextView emailTextView = dialog.findViewById(R.id.login_email);
+        TextView contraTextView = dialog.findViewById(R.id.login_password);
+
+        String emailString = emailTextView.getText().toString();
+        String contraString = contraTextView.getText().toString();
+
+        // Ejemplo de llamada a getUserId
+        Call<Integer> call = userServiceApi.getUserId(emailString, contraString);
+        call.enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (response.isSuccessful()) {
+                    Integer userId = response.body();
+                    // Manejar el resultado
+                    if (userId != null) {
+                        Intent intent = new Intent(StartScreen.this, MainScreen.class);
+                        startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                    } else {
+                        // El userId es nulo, maneja el caso según tus necesidades
+                        Toast.makeText(StartScreen.this, "ID de Usuario nulo", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Manejar el error de respuesta
+                    Toast.makeText(StartScreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                // Manejar el fallo de la llamada
+                Toast.makeText(StartScreen.this, "porth", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    /*JOHANANANAN*/
     private void showRegisterContent() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -334,6 +395,13 @@ public class StartScreen extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         dialog.setContentView(R.layout.activity_register_screen);
+        MaterialButton button = dialog.findViewById(R.id.buttonRegistrer);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserExists(dialog);
+            }
+        });
         LinearLayout mainLayout = dialog.findViewById(R.id.register_screen);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -424,4 +492,97 @@ public class StartScreen extends AppCompatActivity {
      * **/
 
     /**Luca**/
+    /*JOHAHAHANANAHHA*/
+    public void Registrer(Dialog dialog){
+
+        TextView nombreTextView = dialog.findViewById(R.id.register_name);
+        TextView apellidosTextView = dialog.findViewById(R.id.register_surname);
+        TextView emailTextView = dialog.findViewById(R.id.register_email);
+        TextView contraTextView = dialog.findViewById(R.id.register_pass);
+
+        String nombreString = nombreTextView.getText().toString();
+        String apellidosString = apellidosTextView.getText().toString();
+        String emailString = emailTextView.getText().toString();
+        String contraString = contraTextView.getText().toString();
+
+        // Crear un nuevo usuario para la inserción
+        User newUser = new User();
+        newUser.setDni(nombreString);
+        newUser.setName(nombreString);
+        newUser.setApellidos(apellidosString);
+        newUser.setEmail(emailString);
+        newUser.setContrasenia(contraString);
+        newUser.setTp(0);
+
+        // Ejemplo de llamada a insertUser
+        Call<User> call = userServiceApi.insertUser(newUser);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User insertedUser = response.body();
+                    // Manejar el resultado
+                    if (insertedUser != null) {
+                        Intent intent = new Intent(StartScreen.this, MainScreen.class);
+                        startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                    } else {
+                        // El usuario insertado es nulo, maneja el caso según tus necesidades
+                        Toast.makeText(StartScreen.this, "Usuario insertado nulo", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Manejar el error de respuesta
+                    Toast.makeText(StartScreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                // Manejar el fallo de la llamada
+                Toast.makeText(StartScreen.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void UserExists(Dialog dialog){
+        TextView emailTextView = dialog.findViewById(R.id.register_email);
+        TextView contraTextView = dialog.findViewById(R.id.register_pass);
+        TextView contraconfirmTextView = dialog.findViewById(R.id.register_confpass);
+
+        String emailString = emailTextView.getText().toString();
+        String contraString = contraTextView.getText().toString();
+        String contraconfirmString = contraconfirmTextView.getText().toString();
+
+        if(contraString.equals(contraconfirmString)){
+
+            // Ejemplo de llamada a getUserId
+            Call<Integer> call = userServiceApi.getUserId(emailString, contraString);
+            call.enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+                    if (response.isSuccessful()) {
+                        Integer userId = response.body();
+                        // Manejar el resultado
+                        if (userId != null) {
+                            Toast.makeText(StartScreen.this, "El usuario existe", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // El userId es nulo, maneja el caso según tus necesidades
+                            Toast.makeText(StartScreen.this, "ID de Usuario nulo", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        // Manejar el error de respuesta
+                        Toast.makeText(StartScreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
+                    Registrer(dialog);
+                }
+            });
+
+        }else{
+            Toast.makeText(this, "La contraseña no es igual", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    /*JOHAHAHANANAHHA*/
 }
