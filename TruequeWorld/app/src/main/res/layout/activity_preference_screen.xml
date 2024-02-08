@@ -224,8 +224,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3d"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="81dp"
+        android:layout_height="48dp"
         android:layout_gravity="center"
         android:backgroundTint="@color/white"
         android:text="@string/_3d"
@@ -246,6 +246,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#0085FF"
+        android:onClick="UpdatePreferences"
         android:text="@string/siguiente"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -409,7 +410,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.73" />
+        app:layout_constraintGuide_percent="0.78" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v10"

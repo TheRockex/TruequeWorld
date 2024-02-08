@@ -36,6 +36,9 @@
         <activity
             android:name=".MainScreen"
             android:exported="false"></activity>
+        <activity
+            android:name=".Preference_screen"
+            android:exported="false"></activity>
     </application>
 
 </manifest>

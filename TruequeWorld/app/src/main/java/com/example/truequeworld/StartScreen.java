@@ -433,7 +433,7 @@ public class StartScreen extends AppCompatActivity {
 
         dialog.show();
     }
-    /** EJEMPLO UTIL TANTO PARA LOGIN O REGISTER O COMO PARA SU DISEÑO
+     /** EJEMPLO UTIL TANTO PARA LOGIN O REGISTER O COMO PARA SU DISEÑO
      *  private void showDialog() {
      *
      *         final Dialog dialog = new Dialog(this);
@@ -520,7 +520,8 @@ public class StartScreen extends AppCompatActivity {
                     User insertedUser = response.body();
                     // Manejar el resultado
                     if (insertedUser != null) {
-                        Intent intent = new Intent(StartScreen.this, MainScreen.class);
+                        Intent intent = new Intent(StartScreen.this, Preference_screen.class);
+                        intent.putExtra("usuario", insertedUser);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
                     } else {
                         // El usuario insertado es nulo, maneja el caso según tus necesidades

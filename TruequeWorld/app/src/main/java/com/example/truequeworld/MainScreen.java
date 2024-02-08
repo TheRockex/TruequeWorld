@@ -1,8 +1,8 @@
 package com.example.truequeworld;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,6 @@ import java.util.List;
 public class MainScreen extends AppCompatActivity {
     private ProductServiceApi productServiceApi;
     ArrayList<Product> productPreference = new ArrayList<>();
-
     List<Product> productList = new ArrayList<>();
     User user;
 
@@ -32,7 +32,25 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         user =(User) getIntent().getSerializableExtra("usuario");
+
         Productos();
+
+
+        TextInputEditText buscarEditText = findViewById(R.id.searchEditText);
+
+        // Configurar el listener para detectar cuando se presiona "Enter" en el teclado
+        buscarEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                        event.getAction() == KeyEvent.ACTION_DOWN &&
+                                event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    buscar(buscarEditText);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
 
@@ -55,9 +73,14 @@ public class MainScreen extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     productList = response.body();
                     for(int i = 0; i < productList.size();i++) {
+                        if(user.getPreferencias() != null){
                         if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
+                            //Introducir cardView productPreference
                             productPreference.add(productList.get(i));
-                            Toast.makeText(MainScreen.this, productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                            //Introducir cardView productList
+
                         }
 
                     }
@@ -71,15 +94,13 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
-    public void buscar(){
+    public void buscar(TextInputEditText buscarEditText){
 
-        TextView buscarTextView = findViewById(R.id.login_email);
-
-        String buscarString = buscarTextView.getText().toString();
+        String buscarString = buscarEditText.getText().toString();
 
         for(int  i = 0; i < productList.size();i++){
-            if(productList.get(i).getNombre().contains(buscarString)){
-
+            if(productList.get(i).getNombre().contains(buscarString) || productList.get(i).getCategoria().contains(buscarString)){
+                Toast.makeText(this, productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -23,20 +23,21 @@
     <string name="tellmemoreaboutyoulove">Queremos saber más de ti</string>
     <string name="next">Siguiente</string>
 
-    //login google
+
     <string name="weblogingoogleid">94914021089-bibo61fkr1qdhtjvdvhtag0fcbhhklpr.apps.googleusercontent.com</string>
-    <string name="programacion">programación</string>
     <string name="siguiente">SIGUIENTE</string>
-    <string name="_3d">3D</string>
-    <string name="sesiografia">sesiografia</string>
-    <string name="virtual">virtual</string>
-    <string name="fotografia">fotografía</string>
-    <string name="libros">libros</string>
-    <string name="anuncios">Anuncios</string>
-    <string name="munecas">Muñecas</string>
-    <string name="videojuegos">Videojuegos</string>
-    <string name="camara">Cámara</string>
-    <string name="juguetes">Juguetes</string>
+
+    <string name="programacion">Entretenimiento</string>
+    <string name="_3d">Otros</string>
+    <string name="sesiografia">Coleccion</string>
+    <string name="virtual">Anime</string>
+    <string name="fotografia">Alimentación</string>
+    <string name="libros">Moda</string>
+    <string name="anuncios">Escolar</string>
+    <string name="munecas">Deporte</string>
+    <string name="videojuegos">Vehiculos</string>
+    <string name="camara">Infantil</string>
+    <string name="juguetes">Juegos</string>
     <string name="tecnologia">Tecnología</string>
 
 </resources>
