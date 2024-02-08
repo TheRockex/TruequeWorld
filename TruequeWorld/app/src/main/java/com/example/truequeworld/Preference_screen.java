@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -50,6 +51,7 @@ public class Preference_screen extends AppCompatActivity {
         MaterialButton entretenimiento = findViewById(R.id.button_programming);
         MaterialButton alimentacion = findViewById(R.id.button_photography);
         MaterialButton coleccion = findViewById(R.id.button_sesion);
+        MaterialButton anime = findViewById(R.id.button_anime);
         MaterialButton otros = findViewById(R.id.button_3d);
 
 
@@ -63,6 +65,7 @@ public class Preference_screen extends AppCompatActivity {
         entretenimiento.setOnClickListener(onClickListener);
         alimentacion.setOnClickListener(onClickListener);
         coleccion.setOnClickListener(onClickListener);
+        anime.setOnClickListener(onClickListener);
         otros.setOnClickListener(onClickListener);
     }
 
@@ -72,6 +75,7 @@ public class Preference_screen extends AppCompatActivity {
             if (view instanceof MaterialButton) {
                 textoBoton += ((MaterialButton) view).getText().toString() + ",";
                 Toast.makeText(Preference_screen.this, textoBoton, Toast.LENGTH_SHORT).show();
+                view.setBackgroundColor(Color.parseColor("#727272"));
             }
         }
     };
