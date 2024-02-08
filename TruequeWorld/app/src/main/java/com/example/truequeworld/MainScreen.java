@@ -55,10 +55,13 @@ public class MainScreen extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     productList = response.body();
                     for(int i = 0; i < productList.size();i++) {
-                        if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
-                            productPreference.add(productList.get(i));
-                            Toast.makeText(MainScreen.this, productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                        if(user.getPreferencias() != null){
+                            if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
+                                productPreference.add(productList.get(i));
+                                Toast.makeText(MainScreen.this, productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+                            }
                         }
+
 
                     }
                 } else {

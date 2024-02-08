@@ -1,6 +1,8 @@
 package com.dam.truequeworld.controlers;
 
+import com.dam.truequeworld.models.Chat;
 import com.dam.truequeworld.models.Product;
+import com.dam.truequeworld.servicies.ChatService;
 import com.dam.truequeworld.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,25 +13,29 @@ import java.util.List;
 @RequestMapping("/chat")
 public class ChatController {
     @Autowired
-    private ProductService productService;
+    private ChatService chatService;
 
     @GetMapping("/chats")
-    public List<Product> getProducts(){
-        return productService.getAllProducts();
+    public List<Chat> getChats(){
+        return chatService.getAllChats();
     }
 
     @GetMapping("/id/{id}")
-    public Product getProductById(@PathVariable Integer id){
-        return productService.getProductById(id);
+    public Chat getChatById(@PathVariable Integer id){
+        return chatService.getChatById(id);
     }
 
     @PostMapping("/save")
-    public Product insertProduct(@RequestBody Product product){
-        return productService.saveProduct(product);
+    public Chat insertChat(@RequestBody Chat chat){
+        return chatService.saveChat(chat);
+    }
+    @PutMapping("/update")
+    public Chat updateChat(@RequestBody Chat chat){
+        return chatService.saveChat(chat);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Boolean deleteProductById(@PathVariable Integer id){
-        return productService.deleteProductById(id);
+    public Boolean deleteChatById(@PathVariable Integer id){
+        return chatService.deleteChatById(id);
     }
 }

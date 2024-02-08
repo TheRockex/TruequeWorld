@@ -299,7 +299,7 @@ public class StartScreen extends AppCompatActivity {
         });
         // Configurar Retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.129.8:8086")
+                .baseUrl("http://192.168.128.235:8086")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -521,6 +521,7 @@ public class StartScreen extends AppCompatActivity {
                     // Manejar el resultado
                     if (insertedUser != null) {
                         Intent intent = new Intent(StartScreen.this, MainScreen.class);
+                        intent.putExtra("usuario", insertedUser);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
                     } else {
                         // El usuario insertado es nulo, maneja el caso según tus necesidades

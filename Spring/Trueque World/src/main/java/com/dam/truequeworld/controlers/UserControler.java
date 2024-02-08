@@ -5,6 +5,8 @@ import com.dam.truequeworld.servicies.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/user")
@@ -24,6 +26,10 @@ public class UserControler {
         }
         return null;
     }
+    @GetMapping("/users")
+    public List<User> getUsers(){
+        return userService.getAllUsers();
+    }
     @GetMapping("/id/{id}")
     public User getUserById(@PathVariable Integer id){
         return userService.getUserById(id);
@@ -34,7 +40,7 @@ public class UserControler {
        return userService.saveUser(user);
     }
 
-    @PutMapping("/save")
+    @PutMapping("/update")
     public User updateUser(@RequestBody User user){
         return userService.saveUser(user);
     }
