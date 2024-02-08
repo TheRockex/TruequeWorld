@@ -54,6 +54,38 @@
         app:layout_constraintHeight_percent="0.05"
         android:src="@drawable/conf" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_search"
+        app:boxCornerRadiusTopStart="98dp"
+        app:boxCornerRadiusTopEnd="98dp"
+        app:boxCornerRadiusBottomStart="98dp"
+        app:boxCornerRadiusBottomEnd="98dp"
+        app:hintTextColor="@color/amarillo"
+        app:layout_constraintTop_toBottomOf="@id/h24"
+        app:layout_constraintStart_toEndOf="@id/v17"
+        app:layout_constraintEnd_toStartOf="@id/v18"
+        app:layout_constraintBottom_toTopOf="@id/h25"
+        android:background="@drawable/barra_busqueda"
+        app:startIconDrawable="@drawable/baseline_fullscreen_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--
+
+
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -94,6 +126,7 @@
         app:layout_constraintEnd_toStartOf="@id/v24"
         app:layout_constraintHeight_percent="0.03"
         android:src="@drawable/lupa" />
+    -->
 
     <TextView
         android:layout_width="0dp"
