@@ -73,15 +73,18 @@ public class Preference_screen extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             if (view instanceof MaterialButton) {
-                textoBoton += ((MaterialButton) view).getText().toString() + ",";
-                Toast.makeText(Preference_screen.this, textoBoton, Toast.LENGTH_SHORT).show();
-                view.setBackgroundColor(Color.parseColor("#727272"));
+                if(!textoBoton.contains(((MaterialButton) view).getText().toString())){
+                    textoBoton += ((MaterialButton) view).getText().toString() + ",";
+                    view.setBackgroundColor(Color.parseColor("#727272"));
+                }else{
+                    textoBoton = textoBoton.replace(((MaterialButton) view).getText().toString() + ",", "");
+                    view.setBackgroundColor(Color.parseColor("#ffffff"));
+                }
             }
         }
     };
     public void UpdatePreferences(View view) {
         user.setPreferencias(textoBoton);
-        Toast.makeText(this, user.getPreferencias(), Toast.LENGTH_SHORT).show();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.129.8:8086")
