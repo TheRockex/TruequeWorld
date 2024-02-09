@@ -16,6 +16,30 @@ public class User {
     private Integer tp;
 
 
+<<<<<<< Updated upstream:TruequeWorld/app/src/main/java/com/example/truequeworld/User.java
+=======
+    private String favoritos;
+
+    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer tp, String preferencias,String favoritos) {
+        this.id = id;
+        this.dni = dni;
+        this.name = name;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.contrasenia = contrasenia;
+        this.tp = tp;
+        this.preferencias = preferencias;
+        this.favoritos = favoritos;
+    }
+
+    public String getPreferencias() {
+        return preferencias;
+    }
+
+    public void setPreferencias(String preferencias) {
+        this.preferencias = preferencias;
+    }
+>>>>>>> Stashed changes:TruequeWorld/app/src/main/java/com/example/truequeworld/Class/User.java
 
     public Integer getId() {
         return id;
@@ -72,4 +96,8 @@ public class User {
     public void setTp(Integer tp) {
         this.tp = tp;
     }
+
+    public String getFavoritos() {return favoritos;}
+
+    public void setFavoritos(String favoritos) {this.favoritos = favoritos;}
 }

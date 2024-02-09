@@ -1,0 +1,455 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/amarillo"
+    tools:context=".Preference_screen">
+
+    <ImageView
+        android:id="@+id/backgroundSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:layout_width="211dp"
+        android:layout_height="97dp"
+        android:paddingBottom="10dp"
+        android:text="@string/tellmemoreaboutyoulove"
+        android:textAlignment="inherit"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toTopOf="@id/h13"
+        app:layout_constraintRight_toRightOf="@id/v13"
+        app:layout_constraintBottom_toBottomOf="@id/h12"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_tecnologic"
+        android:layout_width="0dp"
+        app:rippleColor="@color/gris"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/tecnologia"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h3"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v10"
+        app:layout_constraintTop_toTopOf="@id/h2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_toys"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/juguetes"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:rippleColor="@color/gris"
+        app:layout_constraintBottom_toBottomOf="@id/h4"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/h3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_camera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        app:rippleColor="@color/gris"
+        android:backgroundTint="@color/white"
+        android:text="@string/camara"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h5"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v4"
+        app:layout_constraintTop_toTopOf="@id/h4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_games"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/videojuegos"
+        app:rippleColor="@color/gris"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h5"
+        app:layout_constraintLeft_toLeftOf="@id/v4"
+        app:layout_constraintRight_toRightOf="@id/v3"
+        app:layout_constraintTop_toTopOf="@id/h4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_dolls"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:rippleColor="@color/gris"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/munecas"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h6"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v5"
+        app:layout_constraintTop_toTopOf="@id/h5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_advertisement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/anuncios"
+        app:rippleColor="@color/gris"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h6"
+        app:layout_constraintLeft_toLeftOf="@id/v5"
+        app:layout_constraintRight_toRightOf="@id/v3"
+        app:layout_constraintTop_toTopOf="@id/h5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_books"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/libros"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h7"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v7"
+        app:layout_constraintTop_toTopOf="@id/h6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_programming"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/programacion"
+        android:textAlignment="center"
+        app:rippleColor="@color/gris"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h7"
+        app:layout_constraintLeft_toLeftOf="@id/v7"
+        app:layout_constraintRight_toRightOf="@id/v3"
+        app:layout_constraintTop_toTopOf="@id/h6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_photography"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/white"
+        app:rippleColor="@color/gris"
+        android:text="@string/fotografia"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h8"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v6"
+        app:layout_constraintTop_toTopOf="@id/h7" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_anime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/virtual"
+        app:rippleColor="@color/gris"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h8"
+        app:layout_constraintLeft_toLeftOf="@id/v6"
+        app:layout_constraintRight_toRightOf="@id/v3"
+        app:layout_constraintTop_toTopOf="@id/h7" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_sesion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/white"
+        app:rippleColor="@color/gris"
+        android:text="@string/sesiografia"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h9"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v8"
+        app:layout_constraintTop_toTopOf="@id/h8" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_3d"
+        android:layout_width="81dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/_3d"
+        android:textAlignment="center"
+        app:rippleColor="@color/gris"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h9"
+        app:layout_constraintLeft_toLeftOf="@id/v8"
+        app:layout_constraintRight_toRightOf="@id/v9"
+        app:layout_constraintTop_toTopOf="@id/h8" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#0085FF"
+        android:onClick="UpdatePreferences"
+        android:text="@string/siguiente"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/h10"
+        app:layout_constraintEnd_toStartOf="@+id/v3"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toTopOf="@+id/h9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.44768855" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.61" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
