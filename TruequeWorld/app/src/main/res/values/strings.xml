@@ -39,5 +39,6 @@
     <string name="camara">Infantil</string>
     <string name="juguetes">Juegos</string>
     <string name="tecnologia">Tecnología</string>
+    <string name="añadir">AÑADIR</string>
 
 </resources>

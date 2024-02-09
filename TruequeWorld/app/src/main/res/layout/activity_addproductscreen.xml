@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/amarillo"
+    tools:context=".Addproductscreen">
+
+    <ImageButton
+        android:id="@+id/close_register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/close_button"
+        app:layout_constraintTop_toTopOf="@id/h2"
+        app:layout_constraintBottom_toBottomOf="@id/h1"
+        app:layout_constraintStart_toStartOf="@id/v3"
+        app:layout_constraintEnd_toEndOf="@+id/v1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAlignment="inherit"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/h2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_añadir"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:text="@string/añadir"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h1"
+        app:layout_constraintEnd_toEndOf="@id/v4"
+        app:layout_constraintStart_toStartOf="@id/v5"
+        app:layout_constraintTop_toTopOf="@id/h2"
+        app:rippleColor="@color/gris" />
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:background="@drawable/fondotrueque_encabezado"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="106dp"
+        app:layout_constraintTop_toTopOf="@id/h1"
+        app:layout_constraintBottom_toBottomOf="@id/h3"
+        app:layout_constraintStart_toStartOf="@id/v3"
+        app:layout_constraintEnd_toEndOf="@id/v4"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Pricespinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/v3"
+        app:layout_constraintTop_toTopOf="@id/h3"
+        app:layout_constraintEnd_toEndOf="@id/v4"
+        app:layout_constraintBottom_toBottomOf="@id/h4"
+        android:hint="PRECIO"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        >
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.14841849" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10396717" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.032831736" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+</androidx.constraintlayout.widget.ConstraintLayout>
