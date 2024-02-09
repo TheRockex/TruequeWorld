@@ -8,11 +8,12 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class HiloCliente extends Thread {
-    public Socket socket;
-    public String name;
+    private Socket socket;
+    private String name;
 
-    public HiloCliente(Socket socket) {
+    public HiloCliente(Socket socket, String name) {
         this.socket = socket;
+        this.name = name;
     }
 
     public void run() {
@@ -23,21 +24,30 @@ public class HiloCliente extends Thread {
 
             do {
                 mensaje = dis.readUTF();
-                System.out.println("Mensaje de " + socket.getInetAddress().getHostName() + " recibido: " + mensaje);
-                if(mensaje.startsWith("P")) {
+                System.out.println("Mensaje de " + name + " recibido: " + mensaje);
+                if(!mensaje.startsWith("EXIT")) {
                     String[] s = mensaje.split(" ",2);
                     DataOutputStream dos = new DataOutputStream(TruequeWorldApplication.getSoketDestino(s[0]).getOutputStream());
-                    dos.writeUTF(socket.getInetAddress().getHostName() + ": " + s[1]);
+                    if(dos != null){
+                        dos.writeUTF(s[1]);
+                    }
                 }else {
                     DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
                     dos.writeUTF(mensaje);
                 }
 
-            } while (!mensaje.equals("exit"));
+            } while (!mensaje.equals("EXIT"));
             dis.close();
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public Socket getSocketConnection(){
+        return socket;
+    }
+
+    public String getConnectionName(){
+        return name;
     }
 }

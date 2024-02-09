@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.UserServiceApi;
+import com.example.truequeworld.chattesting.Products;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.BeginSignInResult;
 import com.google.android.gms.auth.api.identity.Identity;
@@ -369,7 +370,7 @@ public class StartScreen extends AppCompatActivity {
                     user = response.body();
                     // Manejar el resultado
                     if (user  != null) {
-                        Intent intent = new Intent(StartScreen.this, MainScreen.class);
+                        Intent intent = new Intent(StartScreen.this, Products.class);
                         intent.putExtra("usuario", user);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
 

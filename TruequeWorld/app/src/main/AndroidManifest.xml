@@ -18,6 +18,9 @@
         tools:ignore="ExtraText"
         tools:targetApi="31">
         <activity
+            android:name=".chattesting.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".chattesting.Products"
             android:exported="false" />
         <activity
