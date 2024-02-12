@@ -40,5 +40,7 @@
     <string name="juguetes">Juegos</string>
     <string name="tecnologia">Tecnología</string>
     <string name="añadir">AÑADIR</string>
+    <string name="precio">PRECIO</string>
+    <string name="marca">MARCA</string>
 
 </resources>

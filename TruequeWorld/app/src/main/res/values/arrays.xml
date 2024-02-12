@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="spinner_items">
-        <item>PRECIO</item>
-        <item>Opción 1</item>
-        <item>Opción 2</item>
-        <item>Opción 3</item>
-    </string-array>
-</resources>
