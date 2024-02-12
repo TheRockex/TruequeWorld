@@ -11,17 +11,18 @@ public class HiloCliente extends Thread {
     private Socket socket;
     private String name;
 
-    public HiloCliente(Socket socket, String name) {
+    public HiloCliente(Socket socket) {
         this.socket = socket;
-        this.name = name;
     }
 
     public void run() {
+        System.out.println(name);
         String mensaje;
 
         try {
             DataInputStream dis = new DataInputStream(socket.getInputStream());
-
+            name = dis.readUTF();
+            System.out.println(name);
             do {
                 mensaje = dis.readUTF();
                 System.out.println("Mensaje de " + name + " recibido: " + mensaje);

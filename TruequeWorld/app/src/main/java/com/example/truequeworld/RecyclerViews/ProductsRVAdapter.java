@@ -17,11 +17,13 @@ import com.example.truequeworld.chattesting.ChatActivity;
 
 import java.util.List;
 
-public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.ProductView> {
+public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.ProductView> implements View.OnClickListener {
     User user;
     Context context;
     List<Product> listaProductos;
     View view;
+    Product productSelected;
+    private View.OnClickListener listener;
 
     public ProductsRVAdapter(Context context, List<Product> listaProductos, User user){
         this.context = context;
@@ -33,16 +35,21 @@ public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.Pr
     public ProductsRVAdapter.ProductView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         view =inflater.inflate(R.layout.cv_row,parent,false);
+        view.setOnClickListener(this);
         return new ProductsRVAdapter.ProductView(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProductsRVAdapter.ProductView holder, int position) {
         holder.textView.setText(listaProductos.get(position).getNombre());
+        final int pos = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, ChatActivity.class);
+                intent.putExtra("producto",listaProductos.get(pos));
+                intent.putExtra("user",user);
+                context.startActivity(intent);
             }
         });
     }
@@ -50,6 +57,21 @@ public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.Pr
     @Override
     public int getItemCount() {
         return listaProductos.size();
+    }
+
+    public Product getProductSelected() {
+        return productSelected;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(listener!=null){
+            listener.onClick(v);
+        }
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
     }
 
     public class ProductView extends RecyclerView.ViewHolder {

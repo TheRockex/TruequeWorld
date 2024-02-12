@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.truequeworld.Class.Product;
@@ -50,9 +51,6 @@ public class Products extends AppCompatActivity {
 
         user = (User) getIntent().getSerializableExtra("usuario");
 
-        HiloCliente hiloCliente = new HiloCliente(user);
-
-        hiloCliente.start();
         Call<List<Product>> call = productServiceApi.getProducts();
         call.enqueue(new Callback<List<Product>>() {
 

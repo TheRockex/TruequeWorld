@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -16,11 +17,10 @@ public class TruequeWorldApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TruequeWorldApplication.class, args);
-		try (ServerSocket serverSocket = new ServerSocket(6565);) {
+		try (ServerSocket serverSocket = new ServerSocket(6565)) {
 			while (true) {
 				Socket socketCliente = serverSocket.accept();
-				DataInputStream dis = new DataInputStream(socketCliente.getInputStream());
-				listaHilos.add(new HiloCliente(socketCliente, dis.readUTF()));
+				listaHilos.add(new HiloCliente(socketCliente));
 				listaHilos.get(listaHilos.size()-1).start();
 			}
 		} catch (IOException e) {
