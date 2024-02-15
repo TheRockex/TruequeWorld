@@ -56,7 +56,6 @@ public class StartScreen extends AppCompatActivity {
     /**LOGIN GOOGLE**/
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
-    private UserServiceApi userServiceApi;
 
     User user;
 
@@ -298,15 +297,6 @@ public class StartScreen extends AppCompatActivity {
                         });
             }
         });
-        // Configurar Retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.128.235:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        // Crear instancia de la interfaz
-        userServiceApi = retrofit.create(UserServiceApi.class);
-        /**fin**/
     }
     /**Luca**/
     private void showLoginContent() {
@@ -362,7 +352,7 @@ public class StartScreen extends AppCompatActivity {
         String contraString = contraTextView.getText().toString();
 
         // Ejemplo de llamada a getUserId
-        Call<User> call = userServiceApi.getUser(emailString, contraString);
+        Call<User> call = ConexionRetroFit.getUserServiceApi().getUser(emailString, contraString);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -513,7 +503,7 @@ public class StartScreen extends AppCompatActivity {
         User newUser = new User(null,nombreString,nombreString,apellidosString,emailString,contraString,0,null);
 
         // Ejemplo de llamada a insertUser
-        Call<User> call = userServiceApi.insertUser(newUser);
+        Call<User> call = ConexionRetroFit.getUserServiceApi().insertUser(newUser);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -554,7 +544,7 @@ public class StartScreen extends AppCompatActivity {
         if(contraString.equals(contraconfirmString)){
 
             // Ejemplo de llamada a getUserId
-            Call<User> call = userServiceApi.getUser(emailString, contraString);
+            Call<User> call = ConexionRetroFit.getUserServiceApi().getUser(emailString, contraString);
             call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {

@@ -17,7 +17,7 @@ import com.example.truequeworld.chattesting.ChatActivity;
 
 import java.util.List;
 
-public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.ProductView> implements View.OnClickListener {
+public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.ProductViewHolder> implements View.OnClickListener {
     User user;
     Context context;
     List<Product> listaProductos;
@@ -32,15 +32,15 @@ public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.Pr
     }
     @NonNull
     @Override
-    public ProductsRVAdapter.ProductView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProductsRVAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         view =inflater.inflate(R.layout.cv_row,parent,false);
         view.setOnClickListener(this);
-        return new ProductsRVAdapter.ProductView(view);
+        return new ProductsRVAdapter.ProductViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductsRVAdapter.ProductView holder, int position) {
+    public void onBindViewHolder(@NonNull ProductsRVAdapter.ProductViewHolder holder, int position) {
         holder.textView.setText(listaProductos.get(position).getNombre());
         final int pos = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -74,9 +74,9 @@ public class ProductsRVAdapter extends RecyclerView.Adapter<ProductsRVAdapter.Pr
         this.listener = listener;
     }
 
-    public class ProductView extends RecyclerView.ViewHolder {
+    public class ProductViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        public ProductView(@NonNull View itemView) {
+        public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             textView =itemView.findViewById(R.id.textView2);
         }
