@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
@@ -384,8 +385,13 @@ public class StartScreen extends AppCompatActivity {
                             imageView.setImageBitmap(bitmap);
                         }
                         Toast.makeText(StartScreen.this, "Bienvenido de vuelta " + user.getName(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(StartScreen.this, MainScreen.class);
-                        startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                final Intent mainIntent = new Intent(StartScreen.this, MainScreen.class);
+                                startActivity(mainIntent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                            }
+                        }, 2000);
 
                     } else {
                         // El userId es nulo, maneja el caso según tus necesidades

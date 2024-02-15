@@ -3,7 +3,9 @@ package com.example.truequeworld;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +15,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -92,8 +95,16 @@ public class SplashScreen extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(SplashScreen.this, StartScreen.class);
-                        startActivity(intent, ActivityOptions.makeCustomAnimation(SplashScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+                        int userId = sharedPreferences.getInt("userId", 0);
+                        if(userId != 0){
+                            Intent intent = new Intent(SplashScreen.this, MainScreen.class);
+                            startActivity(intent, ActivityOptions.makeCustomAnimation(SplashScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                        }else{
+                            Intent intent = new Intent(SplashScreen.this, StartScreen.class);
+                            startActivity(intent, ActivityOptions.makeCustomAnimation(SplashScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                        }
+
                     }
                 }, 2800);
             }
