@@ -35,6 +35,8 @@ public class Product {
     @Column(name = "usuarioid")
     private Integer usuarioId;
 
+    @Column(name = "img")
+    private String imgProducto;
     @Column(name = "categoria")
     private String categoria;
 }

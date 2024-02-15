@@ -1,8 +1,12 @@
 package com.example.truequeworld;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +17,7 @@ import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
         import retrofit2.Call;
@@ -27,17 +32,16 @@ public class MainScreen extends AppCompatActivity {
     List<Product> productList = new ArrayList<>();
     User user;
 
+    private ImageView imageview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         user =(User) getIntent().getSerializableExtra("usuario");
-
+        imageview = findViewById(R.id.imageView);
         Productos();
-
-
         TextInputEditText buscarEditText = findViewById(R.id.searchEditText);
-
         // Configurar el listener para detectar cuando se presiona "Enter" en el teclado
         buscarEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -80,7 +84,8 @@ public class MainScreen extends AppCompatActivity {
                         }
                     }else{
                             //Introducir cardView productList
-
+                            Bitmap bitmap = base64ToBitmap(productList.get(i).getImgProducto());
+                            imageview.setImageBitmap(bitmap);
                         }
 
                     }
@@ -93,6 +98,12 @@ public class MainScreen extends AppCompatActivity {
             }
         });
     }
+
+    public Bitmap base64ToBitmap(String base64Image) {
+        byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+    }
+
 
     public void buscar(TextInputEditText buscarEditText){
 

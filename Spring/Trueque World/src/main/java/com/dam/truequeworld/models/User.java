@@ -30,8 +30,10 @@ public class User {
     private String email;
     @Column(name = "contrasena")
     private String contrasenia;
-    @Column(name = "TP")
-    private String tp;
+    @Column(name = "img")
+    private String imgPerfil;
+    @Column(name = "truquepoints")
+    private Integer truquepoints;
 
     @Column(name = "preferencias")
     private String preferencias;

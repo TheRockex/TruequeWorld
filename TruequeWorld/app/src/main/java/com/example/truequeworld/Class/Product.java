@@ -1,6 +1,7 @@
 package com.example.truequeworld.Class;
 
 public class Product {
+
     private Integer id;
 
     private String nombre;
@@ -13,7 +14,28 @@ public class Product {
 
     private Integer usuarioId;
 
+    private String imgProducto;
     private String categoria;
+
+    public Product(Integer id, String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String categoria, String imgProducto) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.valorenTP = valorenTP;
+        this.estado = estado;
+        this.usuarioId = usuarioId;
+        this.categoria = categoria;
+        this.imgProducto = imgProducto;
+    }
+
+
+    public Integer getUsuarioId() {return usuarioId;}
+
+    public void setUsuarioId(Integer usuarioId) {this.usuarioId = usuarioId;}
+
+    public String getImgProducto() {return imgProducto;}
+
+    public void setImgProducto(String imgProducto) {this.imgProducto = imgProducto;}
 
     public String getCategoria() {
         return categoria;

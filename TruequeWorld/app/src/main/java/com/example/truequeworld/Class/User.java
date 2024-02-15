@@ -14,27 +14,30 @@ public class User implements Serializable {
 
     private String contrasenia;
 
-    private Integer tp;
+    private String imgPerfil;
+
+    private Integer truquepoints;
 
     private String preferencias;
 
-    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer tp, String preferencias) {
+    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer truquepoints, String imgPerfil, String preferencias) {
         this.id = id;
         this.dni = dni;
         this.name = name;
         this.apellidos = apellidos;
         this.email = email;
         this.contrasenia = contrasenia;
-        this.tp = tp;
+        this.truquepoints = truquepoints;
+        this.imgPerfil = imgPerfil;
         this.preferencias = preferencias;
     }
 
-    public String getPreferencias() {
-        return preferencias;
+    public String getImgPerfil() {
+        return imgPerfil;
     }
 
-    public void setPreferencias(String preferencias) {
-        this.preferencias = preferencias;
+    public void setImgPerfil(String imgPerfil) {
+        this.imgPerfil = imgPerfil;
     }
 
     public Integer getId() {
@@ -85,11 +88,19 @@ public class User implements Serializable {
         this.contrasenia = contrasenia;
     }
 
-    public Integer getTp() {
-        return tp;
+    public Integer getTruquepoints() {
+        return truquepoints;
     }
 
-    public void setTp(Integer tp) {
-        this.tp = tp;
+    public void setTruquepoints(Integer tp) {
+        this.truquepoints = tp;
+    }
+
+    public String getPreferencias() {
+        return preferencias;
+    }
+
+    public void setPreferencias(String preferencias) {
+        this.preferencias = preferencias;
     }
 }

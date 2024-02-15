@@ -84,7 +84,7 @@ public class Preference_screen extends AppCompatActivity {
         }
     };
     public void UpdatePreferences(View view) {
-        user.setPreferencias(textoBoton);
+       user.setPreferencias(textoBoton);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.129.8:8086")
