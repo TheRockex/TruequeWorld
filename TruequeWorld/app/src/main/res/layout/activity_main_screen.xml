@@ -35,14 +35,15 @@
         style="@style/TinyNormalType" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/h21"
+        android:src="@drawable/map"
         app:layout_constraintBottom_toTopOf="@id/h22"
-        app:layout_constraintStart_toEndOf="@id/v13"
         app:layout_constraintEnd_toStartOf="@id/v14"
         app:layout_constraintHeight_percent="0.045"
-        android:src="@drawable/map" />
+        app:layout_constraintStart_toEndOf="@id/v13"
+        app:layout_constraintTop_toBottomOf="@id/h21" />
 
     <ImageView
         android:layout_width="0dp"
@@ -317,6 +318,17 @@
         app:layout_constraintTop_toTopOf="@+id/h27"
         app:layout_constraintVertical_bias="0.443"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ToUpdate"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/h22"
+        app:layout_constraintEnd_toStartOf="@+id/v24"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,10 +14,13 @@ import androidx.activity.result.ActivityResultCallback;
 import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -43,6 +46,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 
+import java.io.ByteArrayOutputStream;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -56,10 +61,9 @@ public class StartScreen extends AppCompatActivity {
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
     private UserServiceApi userServiceApi;
-
+    private ImageView imageView;
     User user;
-
-    private static final int REQ_ONE_TAP = 16;  // Can be any integer unique to the Activity.
+    private static final int REQ_ONE_TAP = 16;
     private boolean showOneTapUI = true;
 
 
@@ -69,6 +73,7 @@ public class StartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
         /**Luca**/
+
         LoginDesplegable = findViewById(R.id.loginTW);
         RegisterDesplegable = findViewById(R.id.registerTW);
         /** ESTO 2 TEXT INPUT SE UTILIZARÍAN PARA EL LOGIN SCREEN NO PARA
@@ -353,7 +358,7 @@ public class StartScreen extends AppCompatActivity {
     }
     /*JOHAAWDAWDN*/
     public void Login(Dialog dialog){
-
+        imageView = dialog.findViewById(R.id.login_image_profile);
         TextView emailTextView = dialog.findViewById(R.id.login_email);
         TextView contraTextView = dialog.findViewById(R.id.login_password);
 
@@ -367,8 +372,12 @@ public class StartScreen extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     user = response.body();
-                    // Manejar el resultado
                     if (user  != null) {
+                        if(user.getImgPerfil() != null){
+                            Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
+                            imageView.setImageBitmap(bitmap);
+                        }
+                        Toast.makeText(StartScreen.this, "Bienvenido de vuelta " + user.getName(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(StartScreen.this, MainScreen.class);
                         intent.putExtra("usuario", user);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
@@ -389,7 +398,11 @@ public class StartScreen extends AppCompatActivity {
             }
         });
     }
-    /*JOHANANANAN*/
+
+    public Bitmap base64ToBitmap(String base64Image) {
+        byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+    }
     private void showRegisterContent() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -582,5 +595,4 @@ public class StartScreen extends AppCompatActivity {
         }
 
     }
-    /*JOHAHAHANANAHHA*/
 }

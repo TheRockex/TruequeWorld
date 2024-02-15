@@ -1,10 +1,13 @@
 package com.example.truequeworld;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,9 +38,12 @@ public class MainScreen extends AppCompatActivity {
     ArrayList<Product> productPreference = new ArrayList<>();
     List<Product> productList = new ArrayList<>();
 
+    List<Product> productIDList = new ArrayList<>();
+
     List<Favorito> favoritoList = new ArrayList<>();
     User user;
 
+    Product product;
     private ImageView imageview;
 
     @Override
@@ -46,6 +52,7 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
         user =(User) getIntent().getSerializableExtra("usuario");
         imageview = findViewById(R.id.imageView);
+        Conectar();
         Productos();
         Favoritos();
         TextInputEditText buscarEditText = findViewById(R.id.searchEditText);
@@ -76,8 +83,6 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void Productos() {
-        Conectar();
-        // Realiza la solicitud GET
         Call<List<Product>> call = productServiceApi.getProducts();
         call.enqueue(new Callback<List<Product>>() {
             @Override
@@ -107,10 +112,35 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
+    public void ToUpdate(View view){
+        Intent intent = new Intent(MainScreen.this, UpdateUser.class);
+        intent.putExtra("usuario", user);
+        startActivity(intent, ActivityOptions.makeCustomAnimation(MainScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+    }
+
+    public void getProductosId(Integer id) {
+        Call<Product> call = productServiceApi.getproductById(id);
+        call.enqueue(new Callback<Product>() {
+            @Override
+            public void onResponse(Call<Product> call, Response<Product> response) {
+                if (response.isSuccessful()) {
+                    product = response.body();
+                    productIDList.add(product);
+                    Toast.makeText(MainScreen.this, "Es: " + product.getNombre(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<Product> call, Throwable t) {
+            }
+        });
+    }
+
+
+
 
     public void Favoritos() {
-        Conectar();
-        // Realiza la solicitud GET
         Call<List<Favorito>> call = favoriteServiceApi.getFavoritos();
         call.enqueue(new Callback<List<Favorito>>() {
             @Override
@@ -119,7 +149,7 @@ public class MainScreen extends AppCompatActivity {
                     favoritoList = response.body();
                     for(int i = 0; i < favoritoList.size();i++) {
                        if(user.getId().equals(favoritoList.get(i).getUsuarioId())){
-                           Toast.makeText(MainScreen.this, "Encontrado", Toast.LENGTH_SHORT).show();
+                           getProductosId(favoritoList.get(i).getProductoId());
                        }
                     }
                 } else {

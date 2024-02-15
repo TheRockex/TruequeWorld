@@ -83,53 +83,61 @@ public class Addproductscreen extends AppCompatActivity {
     }
 
     public void Addproduct(){
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://192.168.129.8:8086")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.129.8:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            // Crear instancia de la interfaz
+            productServiceApi = retrofit.create(ProductServiceApi.class);
 
-        // Crear instancia de la interfaz
-        productServiceApi = retrofit.create(ProductServiceApi.class);
+            TextView nombreTextView = findViewById(R.id.newtitle);
 
-        TextView nombreTextView = findViewById(R.id.newtitle);
+            TextView descripcionTextView = findViewById(R.id.newtitle);
+            TextView precioenTPTextView = findViewById(R.id.price_field);
+            TextView categoriaTextView = findViewById(R.id.category_field);
+            TextView estadoTextView = findViewById(R.id.estado_field);
 
-        TextView descripcionTextView = findViewById(R.id.newtitle);
-        TextView precioenTPTextView = findViewById(R.id.price_field);
-        TextView categoriaTextView = findViewById(R.id.category_field);
-        TextView estadoTextView = findViewById(R.id.estado_field);
+            String nombreString = nombreTextView.getText().toString();
+            String descripcionString = descripcionTextView.getText().toString();
+            Integer precioenTPString = Integer.valueOf(precioenTPTextView.getText().toString());
+            String categoriaString = categoriaTextView.getText().toString();
+            String estadoString = estadoTextView.getText().toString();
 
-        String nombreString = nombreTextView.getText().toString();
-        String descripcionString = descripcionTextView.getText().toString();
-        Integer precioenTPString = Integer.valueOf(precioenTPTextView.getText().toString());
-        String categoriaString = categoriaTextView.getText().toString();
-        String estadoString = estadoTextView.getText().toString();
-        String IMGString = bitmapToBase64(bitmap);
-        Product newProduct = new Product(0,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),categoriaString,IMGString);
+            if(bitmap != null || nombreString == null || descripcionString == null || precioenTPString == null
+                || categoriaString == null || estadoString == null || nombreString.isEmpty() || descripcionString.isEmpty() || categoriaString.isEmpty() || estadoString.isEmpty()){
 
-        Call<Product> call = productServiceApi.insertProduct(newProduct);
-        call.enqueue(new Callback<Product>() {
-            @Override
-            public void onResponse(Call<Product> call, Response<Product> response) {
-                if (response.isSuccessful()) {
-                    Product insertedProduct = response.body();
-                    if (insertedProduct != null) {
-                        Intent intent = new Intent(Addproductscreen.this, Preference_screen.class);
-                        startActivity(intent, ActivityOptions.makeCustomAnimation(Addproductscreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+            String IMGString = bitmapToBase64(bitmap);
+            Product newProduct = new Product(0,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),categoriaString,IMGString);
+
+            Call<Product> call = productServiceApi.insertProduct(newProduct);
+            call.enqueue(new Callback<Product>() {
+                @Override
+                public void onResponse(Call<Product> call, Response<Product> response) {
+                    if (response.isSuccessful()) {
+                        Product insertedProduct = response.body();
+                        if (insertedProduct != null) {
+                            Intent intent = new Intent(Addproductscreen.this, Preference_screen.class);
+                            startActivity(intent, ActivityOptions.makeCustomAnimation(Addproductscreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+                        } else {
+                            Toast.makeText(Addproductscreen.this, "Producto insertado nulo", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toast.makeText(Addproductscreen.this, "Producto insertado nulo", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Addproductscreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(Addproductscreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
                 }
-            }
 
-            @Override
-            public void onFailure(Call<Product> call, Throwable t) {
-                // Manejar el fallo de la llamada
-                Toast.makeText(Addproductscreen.this, "Error", Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onFailure(Call<Product> call, Throwable t) {
+                    // Manejar el fallo de la llamada
+                    Toast.makeText(Addproductscreen.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }else {
+            Toast.makeText(this, "Por favor rellene toda la información", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
     public String bitmapToBase64(Bitmap bitmap) {
