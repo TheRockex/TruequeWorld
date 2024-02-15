@@ -13,7 +13,9 @@ import androidx.activity.result.ActivityResultCallback;
 
 import android.app.ActivityOptions;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -373,13 +375,16 @@ public class StartScreen extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     user = response.body();
                     if (user  != null) {
+                        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("userId", user.getId());
+                        editor.apply();
                         if(user.getImgPerfil() != null){
                             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
                             imageView.setImageBitmap(bitmap);
                         }
                         Toast.makeText(StartScreen.this, "Bienvenido de vuelta " + user.getName(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(StartScreen.this, MainScreen.class);
-                        intent.putExtra("usuario", user);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
 
                     } else {
@@ -507,8 +512,6 @@ public class StartScreen extends AppCompatActivity {
      *     }
      * **/
 
-    /**Luca**/
-    /*JOHAHAHANANAHHA*/
     public void Registrer(Dialog dialog){
 
         TextView nombreTextView = dialog.findViewById(R.id.register_name);
@@ -531,10 +534,10 @@ public class StartScreen extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User insertedUser = response.body();
-                    // Manejar el resultado
                     if (insertedUser != null) {
                         Intent intent = new Intent(StartScreen.this, Preference_screen.class);
-                        intent.putExtra("usuario", insertedUser);
+                        intent.putExtra("email", emailString);
+                        intent.putExtra("contra", contraString);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
                     } else {
                         // El usuario insertado es nulo, maneja el caso según tus necesidades
@@ -564,8 +567,6 @@ public class StartScreen extends AppCompatActivity {
         String contraconfirmString = contraconfirmTextView.getText().toString();
 
         if(contraString.equals(contraconfirmString)){
-
-            // Ejemplo de llamada a getUserId
             Call<User> call = userServiceApi.getUser(emailString, contraString);
             call.enqueue(new Callback<User>() {
                 @Override
@@ -593,6 +594,5 @@ public class StartScreen extends AppCompatActivity {
         }else{
             Toast.makeText(this, "La contraseña no es igual", Toast.LENGTH_SHORT).show();
         }
-
     }
 }

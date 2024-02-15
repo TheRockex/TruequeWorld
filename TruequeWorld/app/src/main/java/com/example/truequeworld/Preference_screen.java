@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -34,12 +38,17 @@ public class Preference_screen extends AppCompatActivity {
 
     String textoBoton = "";
 
+    String emailString;
+
+    String contraString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference_screen);
-        user =(User) getIntent().getSerializableExtra("usuario");
 
+        emailString = getIntent().getStringExtra("email");
+        contraString = getIntent().getStringExtra("contra");
 
         MaterialButton tecnologic = findViewById(R.id.button_tecnologic);
         MaterialButton juegos = findViewById(R.id.button_toys);
@@ -54,7 +63,6 @@ public class Preference_screen extends AppCompatActivity {
         MaterialButton anime = findViewById(R.id.button_anime);
         MaterialButton otros = findViewById(R.id.button_3d);
 
-
         tecnologic.setOnClickListener(onClickListener);
         juegos.setOnClickListener(onClickListener);
         infantil.setOnClickListener(onClickListener);
@@ -67,6 +75,48 @@ public class Preference_screen extends AppCompatActivity {
         coleccion.setOnClickListener(onClickListener);
         anime.setOnClickListener(onClickListener);
         otros.setOnClickListener(onClickListener);
+        Conectar();
+    }
+
+    public void Conectar(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.129.8:8086")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        // Crear instancia de la interfaz
+        userServiceApi = retrofit.create(UserServiceApi.class);
+        Login();
+    }
+
+    public void Login(){
+        Call<User> call = userServiceApi.getUser(emailString, contraString);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    user = response.body();
+                    if (user  != null) {
+                        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("userId", user.getId());
+                        editor.apply();
+
+                    } else {
+                        // El userId es nulo, maneja el caso según tus necesidades
+                        Toast.makeText(Preference_screen.this, "ID de Usuario nulo", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Manejar el error de respuesta
+                    Toast.makeText(Preference_screen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                // Manejar el fallo de la llamada
+                Toast.makeText(Preference_screen.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -85,13 +135,6 @@ public class Preference_screen extends AppCompatActivity {
     };
     public void UpdatePreferences(View view) {
        user.setPreferencias(textoBoton);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.129.8:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        userServiceApi = retrofit.create(UserServiceApi.class);
         Call<User> call = userServiceApi.updateUser(user);
         call.enqueue(new Callback<User>() {
             @Override
@@ -100,7 +143,6 @@ public class Preference_screen extends AppCompatActivity {
                     user = response.body();
                     if (user  != null) {
                         Intent intent = new Intent(Preference_screen.this, MainScreen.class);
-                        intent.putExtra("usuario", user);
                         startActivity(intent, ActivityOptions.makeCustomAnimation(Preference_screen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
 
                     } else {

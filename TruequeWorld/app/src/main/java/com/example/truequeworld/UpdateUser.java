@@ -2,11 +2,10 @@ package com.example.truequeworld;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
-import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -36,11 +35,9 @@ public class UpdateUser extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     User user;
     private ImageView imageView;
-
     TextView nombreTextView;
     TextView apellidosTextView;
     TextView contraTextView;
-
     TextView oldcontraTextView;
     private Bitmap bitmap;
 
@@ -65,7 +62,30 @@ public class UpdateUser extends AppCompatActivity {
 
         // Crear instancia de la interfaz
         userServiceApi = retrofit.create(UserServiceApi.class);
-        GetUser();
+        getUserID();
+    }
+
+    public void getUserID(){
+        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<User> call = userServiceApi.getUserById(userId);;
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User userId = response.body();
+                    if (userId != null) {
+                        user = userId;
+                        GetUser();
+                    }
+                } else {
+                    Toast.makeText(UpdateUser.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+            }
+        });
     }
 
     public void GetUser(){
@@ -117,8 +137,6 @@ public class UpdateUser extends AppCompatActivity {
         }else{
             Toast.makeText(this, "La contraseña anterior no coincide", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public Bitmap base64ToBitmap(String base64Image) {
@@ -153,5 +171,4 @@ public class UpdateUser extends AppCompatActivity {
             }
         }
     }
-
 }

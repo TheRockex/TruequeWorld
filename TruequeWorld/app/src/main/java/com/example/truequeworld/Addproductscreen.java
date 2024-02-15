@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -40,10 +42,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Addproductscreen extends AppCompatActivity {
 
     private ProductServiceApi productServiceApi;
+    private UserServiceApi userServiceApi;
     User user;
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView imageView;
-
     private Bitmap bitmap;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,39 @@ public class Addproductscreen extends AppCompatActivity {
                 Addproduct();
             }
         });
+    }
 
+    public void Conectar(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.129.8:8086")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        getUserID();
+        // Crear instancia de la interfaz
+        productServiceApi = retrofit.create(ProductServiceApi.class);
+        productServiceApi = retrofit.create(ProductServiceApi.class);
+
+    }
+    public void getUserID(){
+        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<User> call = userServiceApi.getUserById(userId);;
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User userId = response.body();
+                    if (userId != null) {
+                        user = userId;
+                    }
+                } else {
+                    Toast.makeText(Addproductscreen.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+            }
+        });
     }
 
     public void selectImageFromGallery(View view) {
@@ -83,14 +117,6 @@ public class Addproductscreen extends AppCompatActivity {
     }
 
     public void Addproduct(){
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.129.8:8086")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-
-            // Crear instancia de la interfaz
-            productServiceApi = retrofit.create(ProductServiceApi.class);
-
             TextView nombreTextView = findViewById(R.id.newtitle);
 
             TextView descripcionTextView = findViewById(R.id.newtitle);
