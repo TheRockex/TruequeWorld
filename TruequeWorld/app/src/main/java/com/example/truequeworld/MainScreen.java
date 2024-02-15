@@ -12,8 +12,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
+import com.example.truequeworld.Interface.FavoriteServiceApi;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -28,8 +30,12 @@ import java.util.List;
 
 public class MainScreen extends AppCompatActivity {
     private ProductServiceApi productServiceApi;
+
+    private FavoriteServiceApi favoriteServiceApi;
     ArrayList<Product> productPreference = new ArrayList<>();
     List<Product> productList = new ArrayList<>();
+
+    List<Favorito> favoritoList = new ArrayList<>();
     User user;
 
     private ImageView imageview;
@@ -41,6 +47,7 @@ public class MainScreen extends AppCompatActivity {
         user =(User) getIntent().getSerializableExtra("usuario");
         imageview = findViewById(R.id.imageView);
         Productos();
+        Favoritos();
         TextInputEditText buscarEditText = findViewById(R.id.searchEditText);
         // Configurar el listener para detectar cuando se presiona "Enter" en el teclado
         buscarEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -65,6 +72,7 @@ public class MainScreen extends AppCompatActivity {
                 .build();
 
         productServiceApi = retrofit.create(ProductServiceApi.class);
+        favoriteServiceApi = retrofit.create(FavoriteServiceApi.class);
     }
 
     public void Productos() {
@@ -99,6 +107,31 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
+
+    public void Favoritos() {
+        Conectar();
+        // Realiza la solicitud GET
+        Call<List<Favorito>> call = favoriteServiceApi.getFavoritos();
+        call.enqueue(new Callback<List<Favorito>>() {
+            @Override
+            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
+                if (response.isSuccessful()) {
+                    favoritoList = response.body();
+                    for(int i = 0; i < favoritoList.size();i++) {
+                       if(user.getId().equals(favoritoList.get(i).getUsuarioId())){
+                           Toast.makeText(MainScreen.this, "Encontrado", Toast.LENGTH_SHORT).show();
+                       }
+                    }
+                } else {
+                    Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Favorito>> call, Throwable t) {
+            }
+        });
+    }
+
     public Bitmap base64ToBitmap(String base64Image) {
         byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
@@ -115,4 +148,6 @@ public class MainScreen extends AppCompatActivity {
             }
         }
     }
+
+
 }
