@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "782559139793",
+    "project_id": "trueque-world",
+    "storage_bucket": "trueque-world.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782559139793:android:974eb2f5b2d58301d772f0",
+        "android_client_info": {
+          "package_name": "com.example.truequeworld"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOQdZZBDav31kquyREzrOMR__JG8cjAPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
