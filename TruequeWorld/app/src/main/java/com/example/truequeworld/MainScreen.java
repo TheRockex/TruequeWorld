@@ -227,30 +227,34 @@ public class MainScreen extends AppCompatActivity {
 
     public void Trueque(){
         //Vendedor
-        productList.get(0).setEstado("Truequeado");
+        Truequeado(productList.get(0));
         //Comprador
-        //user.getId();
-        Call<Product> call = productServiceApi.updateProduct(productList.get(0));
+        Truequeado(productList.get(0));
+    }
+
+    public void Truequeado(Product product){
+        product.setEstado("Truequeado");
+        Call<Product> call = productServiceApi.updateProduct(product);
         call.enqueue(new Callback<Product>() {
-         @Override
-         public void onResponse(Call<Product> call, Response<Product> response) {
-              if (response.isSuccessful()) {
-                  Product insertedProduct = response.body();
-                 if (insertedProduct != null) {
+            @Override
+            public void onResponse(Call<Product> call, Response<Product> response) {
+                if (response.isSuccessful()) {
+                    Product insertedProduct = response.body();
+                    if (insertedProduct != null) {
 
 
                     } else {
-                      Toast.makeText(MainScreen.this, "Usuario insertado nulo", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainScreen.this, "Usuario insertado nulo", Toast.LENGTH_SHORT).show();
                     }
-              } else {
+                } else {
                     Toast.makeText(MainScreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
-              }
-         }
-         @Override
-         public void onFailure(Call<Product> call, Throwable t) {
-            Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
-         }
-         });
+                }
+            }
+            @Override
+            public void onFailure(Call<Product> call, Throwable t) {
+                Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 
