@@ -42,5 +42,7 @@
     <string name="añadir">AÑADIR</string>
     <string name="precio">PRECIO</string>
     <string name="marca">MARCA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

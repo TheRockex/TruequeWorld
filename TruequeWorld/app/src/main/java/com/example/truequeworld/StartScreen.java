@@ -49,8 +49,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 
-import java.io.ByteArrayOutputStream;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -74,7 +72,7 @@ public class StartScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_screen);
+        setContentView(R.layout.a3_activity_start_screen);
         /**Luca**/
 
         LoginDesplegable = findViewById(R.id.loginTW);
@@ -323,7 +321,7 @@ public class StartScreen extends AppCompatActivity {
         // Configurar el fondo con esquinas redondeadas
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        dialog.setContentView(R.layout.activity_login_screen);
+        dialog.setContentView(R.layout.a2_activity_login_screen);
         LinearLayout mainLayout = dialog.findViewById(R.id.login_screen);
         MaterialButton button = dialog.findViewById(R.id.buttonLogin);
         button.setOnClickListener(new View.OnClickListener() {
@@ -421,7 +419,7 @@ public class StartScreen extends AppCompatActivity {
         // Configurar el fondo con esquinas redondeadas
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        dialog.setContentView(R.layout.activity_register_screen);
+        dialog.setContentView(R.layout.a4_activity_register_screen);
         MaterialButton button = dialog.findViewById(R.id.buttonRegistrer);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

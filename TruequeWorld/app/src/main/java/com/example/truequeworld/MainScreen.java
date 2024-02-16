@@ -1,7 +1,6 @@
 package com.example.truequeworld;
 
 import android.app.ActivityOptions;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,7 +25,6 @@ import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
         import retrofit2.Call;
@@ -53,7 +51,7 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Conectar();
-        setContentView(R.layout.activity_main_screen);
+        setContentView(R.layout.a6_activity_main_screen);
         imageview = findViewById(R.id.imageView);
         TextInputEditText buscarEditText = findViewById(R.id.searchEditText);
 
