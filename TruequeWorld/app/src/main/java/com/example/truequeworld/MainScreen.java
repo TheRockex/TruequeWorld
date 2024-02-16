@@ -94,7 +94,6 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
-
     public void Conectar(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.129.8:8086")
@@ -115,9 +114,12 @@ public class MainScreen extends AppCompatActivity {
                     productList = response.body();
                     for(int i = 0; i < productList.size();i++) {
                         if(user.getPreferencias() != null){
-                        if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
+                        if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())
+                        && !productList.get(i).getEstado().equals("Truequeado")){
                             //Introducir cardView productPreference
                             productPreference.add(productList.get(i));
+                            Bitmap bitmap = base64ToBitmap(productList.get(i).getImgProducto());
+                            imageview.setImageBitmap(bitmap);
                         }
                     }else{
                             //Introducir cardView productList
@@ -154,9 +156,6 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
-
-
-
     public void Favoritos() {
         Call<List<Favorito>> call = favoriteServiceApi.getFavoritos();
         call.enqueue(new Callback<List<Favorito>>() {
@@ -175,6 +174,26 @@ public class MainScreen extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<List<Favorito>> call, Throwable t) {
+            }
+        });
+    }
+
+    public void deleteFavoriteById() {
+        Call<Boolean> call = favoriteServiceApi.deleteFavoriteById(0);
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (response.isSuccessful() && response.body() != null && response.body()) {
+                    // El favorito se eliminó exitosamente
+                    Favoritos();
+                } else {
+                    Toast.makeText(MainScreen.this, "Error al eliminar el favorito", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(MainScreen.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -198,4 +217,40 @@ public class MainScreen extends AppCompatActivity {
         Intent intent = new Intent(MainScreen.this, UpdateUser.class);
         startActivity(intent, ActivityOptions.makeCustomAnimation(MainScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
     }
+
+    public void CerrarSesion(){
+        SharedPreferences.Editor editor = getSharedPreferences("UsuarioID", MODE_PRIVATE).edit();
+        editor.clear().apply();
+        Intent intent = new Intent(MainScreen.this, SplashScreen.class);
+        startActivity(intent, ActivityOptions.makeCustomAnimation(MainScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
+    }
+
+    public void Trueque(){
+        //Vendedor
+        productList.get(0).setEstado("Truequeado");
+        //Comprador
+        //user.getId();
+        Call<Product> call = productServiceApi.updateProduct(productList.get(0));
+        call.enqueue(new Callback<Product>() {
+         @Override
+         public void onResponse(Call<Product> call, Response<Product> response) {
+              if (response.isSuccessful()) {
+                  Product insertedProduct = response.body();
+                 if (insertedProduct != null) {
+
+
+                    } else {
+                      Toast.makeText(MainScreen.this, "Usuario insertado nulo", Toast.LENGTH_SHORT).show();
+                    }
+              } else {
+                    Toast.makeText(MainScreen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
+              }
+         }
+         @Override
+         public void onFailure(Call<Product> call, Throwable t) {
+            Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
+         }
+         });
+    }
 }
+

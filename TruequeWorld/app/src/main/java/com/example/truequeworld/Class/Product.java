@@ -27,12 +27,6 @@ public class Product {
         this.categoria = categoria;
         this.imgProducto = imgProducto;
     }
-
-
-    public Integer getUsuarioId() {return usuarioId;}
-
-    public void setUsuarioId(Integer usuarioId) {this.usuarioId = usuarioId;}
-
     public String getImgProducto() {return imgProducto;}
 
     public void setImgProducto(String imgProducto) {this.imgProducto = imgProducto;}

@@ -1,6 +1,7 @@
 package com.dam.truequeworld.controlers;
 
 import com.dam.truequeworld.models.Product;
+import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,5 +32,10 @@ public class ProductController {
     @DeleteMapping("/delete/{id}")
     public Boolean deleteProductById(@PathVariable Integer id){
         return productService.deleteProductById(id);
+    }
+
+    @PutMapping("/save")
+    public Product updateProduct(@RequestBody Product product){
+        return productService.saveProduct(product);
     }
 }

@@ -51,6 +51,7 @@ public class Addproductscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addproductscreen);
+        Conectar();
         user =(User) getIntent().getSerializableExtra("usuario");
         imageView = findViewById(R.id.addphoto);
         MaterialButton button = findViewById(R.id.button_publicar);
@@ -162,8 +163,6 @@ public class Addproductscreen extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Por favor rellene toda la información", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public String bitmapToBase64(Bitmap bitmap) {
