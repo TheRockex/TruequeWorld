@@ -42,6 +42,8 @@
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold"
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp"
         app:layout_constraintBottom_toBottomOf="@id/h1"
         app:layout_constraintEnd_toEndOf="@id/v4"
         app:layout_constraintStart_toStartOf="@id/v5"
@@ -107,7 +109,7 @@
         app:layout_constraintTop_toTopOf="@+id/h3">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@color/beige"
+            android:background="@drawable/fondotrueque_encabezado"
             android:id="@+id/price_field"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -129,7 +131,7 @@
         app:layout_constraintTop_toTopOf="@+id/h6">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@color/beige"
+            android:background="@drawable/fondotrueque_encabezado"
             android:id="@+id/category_field"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -151,7 +153,7 @@
         app:layout_constraintTop_toTopOf="@id/h7">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:background="@color/beige"
+            android:background="@drawable/fondotrueque_encabezado"
             android:id="@+id/estado_field"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -174,6 +176,8 @@
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

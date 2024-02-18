@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Shape circular (óvalo) -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/amarillo" />
+        </shape>
+    </item>
+
+    <!-- VeEctor drawable (persona) encima del óvalo -->
+    <item android:drawable="@drawable/ic_notifications" android:tint="@android:color/black" />
+
+</layer-list>

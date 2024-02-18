@@ -53,4 +53,7 @@ dependencies {
     //Firebase
     implementation 'com.google.firebase:firebase-messaging:23.4.1'
     implementation 'com.google.firebase:firebase-firestore:24.10.2'
+
+    //imagenes circulares
+    implementation'com.makeramen:roundedimageview:2.3.0'
 }

@@ -7,4 +7,6 @@
     <color name="gris">#D9D9D9</color>
     <color name="azul">#0085FF</color>
     <color name="beige">#FFF9EB</color>
+    <color name="light_grey">#F5F5F5</color>
+    <color name="semi_light_grey">#D9D9D9</color>
 </resources>

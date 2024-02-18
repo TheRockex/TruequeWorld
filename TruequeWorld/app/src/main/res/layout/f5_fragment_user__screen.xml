@@ -1,14 +1,412 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/amarillo"
     tools:context=".Fragments.User_Screen_Fragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="USUARIOS"
-        android:textSize="100sp"/>
+    <View
+        android:id="@+id/viewProfile"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:background="@drawable/fondotrueque_encabezado"
+        app:layout_constraintBottom_toBottomOf="@id/h2"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/h1" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="215dp"
+        android:layout_height="16dp"
+        android:text="USERNAME"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h3"
+
+        app:layout_constraintEnd_toEndOf="@+id/viewProfile"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v3"
+        app:layout_constraintTop_toTopOf="@id/h5" />
+
+    <TextView
+        android:id="@+id/userWallet"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Monedero:"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@id/h6"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintLeft_toLeftOf="@id/v3"
+        app:layout_constraintRight_toRightOf="@id/v5"
+        app:layout_constraintTop_toTopOf="@id/h4" />
+
+    <TextView
+        android:id="@+id/userWalletpoints"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="xxxxxx"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@id/h6"
+        app:layout_constraintEnd_toEndOf="@+id/viewProfile"
+
+        app:layout_constraintRight_toRightOf="@id/v6"
+        app:layout_constraintStart_toEndOf="@+id/userWallet"
+        app:layout_constraintTop_toTopOf="@id/h4" />
+
+    <TextView
+        android:id="@+id/userID"
+        android:layout_width="217dp"
+        android:layout_height="18dp"
+        android:text="ID: XXXXXXX"
+        android:textColor="#FFEB3B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h4"
+
+        app:layout_constraintEnd_toEndOf="@+id/viewProfile"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v3"
+        app:layout_constraintTop_toTopOf="@id/h3" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="65dp"
+        android:layout_height="77dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/user_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/viewProfile"
+        app:layout_constraintEnd_toStartOf="@+id/userID"
+
+        app:layout_constraintLeft_toLeftOf="@id/v8"
+        app:layout_constraintStart_toStartOf="@+id/viewProfile"
+        app:layout_constraintTop_toTopOf="@+id/viewProfile" />
+
+    <View
+        android:id="@+id/viewOptions"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:background="@drawable/fondotrueque_encabezado"
+        app:layout_constraintBottom_toBottomOf="@id/h7"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@id/h2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_ajustes"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00FFFFFF"
+        android:text="AJUSTES"
+        android:textColor="@color/black"
+        app:icon="@drawable/conf"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/h9"
+        app:layout_constraintEnd_toEndOf="@+id/v7"
+        app:layout_constraintStart_toStartOf="@+id/v4"
+        app:layout_constraintTop_toTopOf="@id/h8"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_user_products"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00FFFFFF"
+        android:text="MIS PRODUCTOS"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_user_products"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/h10"
+        app:layout_constraintEnd_toEndOf="@+id/v7"
+        app:layout_constraintStart_toStartOf="@+id/v4"
+        app:layout_constraintTop_toTopOf="@id/h9"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_trades"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00FFFFFF"
+        android:text="MIS INTERCAMBIOS"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_change"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/h11"
+        app:layout_constraintEnd_toEndOf="@+id/v7"
+        app:layout_constraintStart_toStartOf="@+id/v4"
+        app:layout_constraintTop_toTopOf="@id/h10"
+
+        />
+
+    <TextView
+        android:id="@+id/other"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="OTROS"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/h12"
+        app:layout_constraintEnd_toEndOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@id/v1"
+        app:layout_constraintTop_toTopOf="@id/h7" />
+
+    <View
+        android:id="@+id/otherOptions"
+        android:layout_width="350dp"
+        android:layout_height="220dp"
+        android:background="@drawable/fondotrueque_encabezado"
+        app:layout_constraintBottom_toBottomOf="@id/h13"
+        app:layout_constraintLeft_toLeftOf="@id/v1"
+        app:layout_constraintRight_toRightOf="@id/v2"
+        app:layout_constraintTop_toTopOf="@+id/h12" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_premiun"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00FFFFFF"
+        android:text="TRUEQUE PREMIUM"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_premiun"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/v7"
+        app:layout_constraintStart_toStartOf="@+id/v4"
+        app:layout_constraintTop_toTopOf="@+id/h16" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_privacity"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00FFFFFF"
+        android:text="PRIVACIDAD"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_privacy"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/v7"
+        app:layout_constraintStart_toStartOf="@+id/v4"
+        app:layout_constraintTop_toTopOf="@id/h17"
+        app:layout_constraintBottom_toBottomOf="@id/h18"
+
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_logout"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#00FFFFFF"
+        android:text="CERRAR SESIÓN"
+        android:textColor="@color/black"
+        app:icon="@drawable/ic_logout"
+        app:iconTint="@color/black"
+
+        app:layout_constraintBottom_toTopOf="@+id/h15"
+        app:layout_constraintEnd_toEndOf="@+id/v7"
+        app:layout_constraintStart_toStartOf="@+id/v4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.81" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.09" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

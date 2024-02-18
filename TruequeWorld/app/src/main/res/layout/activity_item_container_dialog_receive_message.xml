@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_profile"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/user_profile"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/textMessage_recibe"
+        app:riv_oval="true"
+        />
+    <TextView
+        android:id="@+id/textMessage_recibe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/background_receive_dialogo_message"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintStart_toEndOf="@id/image_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.75"/>
+    <TextView
+        android:id="@+id/textDateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/textMessage_recibe"
+        app:layout_constraintTop_toBottomOf="@id/textMessage_recibe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

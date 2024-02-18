@@ -79,4 +79,8 @@
         <!-- Add other style attributes as needed -->
     </style>
 
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#FFCA41</item>
+    </style>
+
 </resources>
