@@ -306,7 +306,11 @@ public class StartScreen extends AppCompatActivity {
         });
         // Configurar Retrofit
         Retrofit retrofit = new Retrofit.Builder()
+<<<<<<< Updated upstream
                 .baseUrl("http://192.168.0.30:8086")
+=======
+                .baseUrl("http://192.168.0.41:8086")
+>>>>>>> Stashed changes
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

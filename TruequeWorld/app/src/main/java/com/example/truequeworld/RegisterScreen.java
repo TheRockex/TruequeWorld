@@ -56,7 +56,11 @@ public class RegisterScreen extends AppCompatActivity {
 
     public void Conectar(){
         Retrofit retrofit = new Retrofit.Builder()
+<<<<<<< Updated upstream:TruequeWorld/app/src/main/java/com/example/truequeworld/RegisterScreen.java
                 .baseUrl("http://192.168.0.30:8086")
+=======
+                .baseUrl("http://192.168.0.41:8086")
+>>>>>>> Stashed changes:TruequeWorld/app/src/main/java/com/example/truequeworld/UpdateUser.java
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

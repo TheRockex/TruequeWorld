@@ -34,6 +34,10 @@ import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import com.google.android.material.textfield.TextInputEditText;
+>>>>>>> Stashed changes
 =======
 import com.google.android.material.textfield.TextInputEditText;
 >>>>>>> Stashed changes
@@ -66,6 +70,7 @@ public class Main_Screen_Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+<<<<<<< Updated upstream
         //Conectar();
         View view = inflater.inflate(R.layout.f1_fragment_main__screen, container, false);
         requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -202,6 +207,139 @@ public class Main_Screen_Fragment extends Fragment {
     public void Conectar(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.129.8:8086")
+=======
+        Conectar();
+        View view = inflater.inflate(R.layout.f1_fragment_main__screen, container, false);
+        requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        /*try {
+
+            Fragment mainScreenFragment = getChildFragmentManager().findFragmentById(R.id.main_screen);
+
+            Button updateButton = view.findViewById(R.id.button_search);
+            updateButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ToUpdate(v);
+                }
+            });
+
+            if (mainScreenFragment == null) {
+                mainScreenFragment = new Main_Screen_Fragment();
+                getChildFragmentManager().beginTransaction().replace(R.id.main_screen, mainScreenFragment).commit();
+            }*/
+
+        imageview = view.findViewById(R.id.imageView);
+        TextInputEditText buscarEditText = view.findViewById(R.id.searchEditText);
+
+        // Configurar el listener para detectar cuando se presiona "Enter" en el teclado
+        buscarEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                        event.getAction() == KeyEvent.ACTION_DOWN &&
+                                event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    buscar(buscarEditText);
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        //navigationView = view.findViewById(R.id.bottomNavigationViewMain);
+
+            /*navigationView.setOnNavigationItemSelectedListener(item -> {
+                Fragment fragment = null;
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.navbar_saved_button) {
+                    fragment = new Saved_Screen_Fragment();
+                } else if (itemId == R.id.navbar_addproduct_button) {
+                    fragment = new Add_Product_Fragment();
+                } else if (itemId == R.id.navbar_messages_button) {
+                    fragment = new Messages_Screen_Fragment();
+                } else if (itemId == R.id.navbar_user_button) {
+                    fragment = new User_Screen_Fragment();
+                }
+
+                if (fragment != null) {
+                    requireActivity().getSupportFragmentManager().beginTransaction()
+                            .setCustomAnimations(0, 0)
+                            .replace(R.id.main_screen, fragment)
+                            .addToBackStack(null)
+                            .commit();
+                    return true;
+                }
+
+                return false;
+            });*/
+
+            /*navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment fragment = null;
+                    if (item.getItemId() == R.id.navbar_saved_button) {
+                        fragment = new Saved_Screen_Fragment();
+                    } else if (item.getItemId() == R.id.navbar_addproduct_button) {
+                        fragment = new Add_Product_Fragment();
+                    } else if (item.getItemId() == R.id.navbar_messages_button) {
+                        fragment = new Messages_Screen_Fragment();
+                    } else if (item.getItemId() == R.id.navbar_user_button) {
+                        fragment = new User_Screen_Fragment();
+                    }
+                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_screen, fragment).addToBackStack(null).commit();
+                    return true;
+                }
+            });*/
+
+        return view;
+        /*} catch (Exception e) {
+            e.printStackTrace();
+            Log.e("FragmentError", "Error in onCreateView: " + e.getMessage());
+            return null;
+        }*/
+    }
+
+    public void getUserID(){
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<User> call = userServiceApi.getUserById(userId);;
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User userId = response.body();
+                    if (userId != null) {
+                        user = userId;
+                        Productos();
+                        Favoritos();
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+            }
+        });
+    }
+
+    /*public void onResume() {
+        super.onResume();
+        if (permissionDenied) {
+            showMissingPermissionError();
+            permissionDenied = false;
+        }
+    }
+
+    private void showMissingPermissionError() {
+        // Muestra un mensaje de error al usuario
+    }*/
+
+    public void Conectar(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.0.41:8086")
+>>>>>>> Stashed changes
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         productServiceApi = retrofit.create(ProductServiceApi.class);

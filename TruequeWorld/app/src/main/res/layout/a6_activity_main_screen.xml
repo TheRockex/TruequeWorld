@@ -7,6 +7,7 @@
     tools:context=".MainScreen">
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <fragment
         android:id="@+id/main_container"
         android:layout_width="0dp"
@@ -14,6 +15,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
 =======
+=======
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationViewMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+>>>>>>> Stashed changes
     <!--<fragment
         android:id="@+id/main_screen"
         android:name="com.example.truequeworld.Fragments.Main_Screen_Fragment"
@@ -21,6 +33,20 @@
         android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< Updated upstream
+=======
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    Barra superior-->
+
+    <!--<ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/h33"
+>>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -30,6 +56,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
+<<<<<<< Updated upstream
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/h33"
 >>>>>>> Stashed changes
@@ -46,6 +73,8 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
+=======
+>>>>>>> Stashed changes
         app:layout_constraintTop_toBottomOf="@id/h31"
         app:layout_constraintBottom_toTopOf="@id/h32"
         app:layout_constraintStart_toEndOf="@id/v28"
@@ -72,6 +101,7 @@
         app:layout_constraintHeight_percent="0.045"
         app:layout_constraintStart_toEndOf="@id/v30"
         app:layout_constraintTop_toBottomOf="@id/h31" />
+<<<<<<< Updated upstream
 
     <ImageView
         android:id="@+id/settings"
@@ -86,10 +116,29 @@
 
 
     <!--Barra de búsqueda-->
+=======
+>>>>>>> Stashed changes
 
     <ImageView
+        android:id="@+id/settings"
         android:layout_width="0dp"
         android:layout_height="0dp"
+<<<<<<< Updated upstream
+=======
+        app:layout_constraintTop_toBottomOf="@id/h31"
+        app:layout_constraintBottom_toTopOf="@id/h32"
+        app:layout_constraintStart_toEndOf="@id/v32"
+        app:layout_constraintEnd_toStartOf="@id/v33"
+        app:layout_constraintHeight_percent="0.05"
+        android:src="@drawable/conf" />-->
+
+
+    <!--Barra de búsqueda-->
+
+    <!--<ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+>>>>>>> Stashed changes
         app:layout_constraintTop_toBottomOf="@id/h34"
         app:layout_constraintBottom_toTopOf="@id/h35"
         app:layout_constraintStart_toEndOf="@id/v34"
@@ -141,6 +190,7 @@
         app:layout_constraintEnd_toStartOf="@id/v41"
         app:layout_constraintHeight_percent="0.03"
         app:layout_constraintStart_toEndOf="@id/v40"
+<<<<<<< Updated upstream
         app:layout_constraintTop_toBottomOf="@id/h34" />
 
     <!--Button
@@ -156,8 +206,25 @@
 
 
     <!--Contenido y cardviews-->
+=======
+        app:layout_constraintTop_toBottomOf="@id/h34" /> -->
+>>>>>>> Stashed changes
 
-    <TextView
+    <!--Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ToUpdate"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/h32"
+        app:layout_constraintEnd_toStartOf="@+id/v41"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" /-->
+
+
+    <!--Contenido y cardviews-->
+
+    <!--<TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/recom"
@@ -180,6 +247,7 @@
         app:layout_constraintBottom_toTopOf="@id/h37"
         app:layout_constraintStart_toEndOf="@id/v40"
         app:layout_constraintEnd_toStartOf="@id/v42"
+<<<<<<< Updated upstream
         style="@style/ThinType" />
 
 
@@ -225,6 +293,235 @@
         app:layout_constraintTop_toTopOf="@+id/h37"
         app:layout_constraintVertical_bias="0.443"
         tools:srcCompat="@tools:sample/avatars" />
+
+
+    <!--Constraints verticales-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v30"
+        android:layout_width="wrap_content"
+=======
+        style="@style/ThinType" />-->
+
+
+    <!--Barra de navegación-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewMain"
+        android:layout_width="match_parent"
+>>>>>>> Stashed changes
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/navigation_bar_menu"
+        style="@style/navBar" />
+
+<<<<<<< Updated upstream
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.215" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.625" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.73" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.81" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72" />
+
+
+    <!--Constraints horizontales-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.015" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.165" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+=======
+
+    <!--Contenido de productos-->
+
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProductsMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h39"
+        app:layout_constraintBottom_toTopOf="@id/h40"
+        app:layout_constraintStart_toEndOf="@id/v34"
+        app:layout_constraintEnd_toStartOf="@id/v42"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2" />
+>>>>>>> Stashed changes
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+<<<<<<< Updated upstream
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+=======
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/h37"
+        app:layout_constraintVertical_bias="0.443"
+        tools:srcCompat="@tools:sample/avatars" />-->
 
 
     <!--Constraints verticales-->
@@ -415,11 +712,15 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+>>>>>>> Stashed changes
         android:id="@+id/h40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.88" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 </androidx.constraintlayout.widget.ConstraintLayout>

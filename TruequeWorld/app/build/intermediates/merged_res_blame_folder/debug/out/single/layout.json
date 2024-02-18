@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/f4_fragment_messages__screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/f4_fragment_messages__screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/a3_activity_start_screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/a3_activity_start_screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/a5_activity_preference_screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/a5_activity_preference_screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/a1_activity_splash_screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/a1_activity_splash_screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/activity_chat.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/activity_chat.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/activity_addproductscreen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/activity_addproductscreen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/a4_activity_register_screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/a4_activity_register_screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/f3_fragment_add__product.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/f3_fragment_add__product.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/a6_activity_main_screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/a6_activity_main_screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/f5_fragment_user__screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/f5_fragment_user__screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/a2_activity_login_screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/a2_activity_login_screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/activity_update_user.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/activity_update_user.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/f1_fragment_main__screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/f1_fragment_main__screen.xml"
+    },
+    {
+        "merged": "com.example.truequeworld.app-mergeDebugResources-37:/layout/f2_fragment_saved__screen.xml",
+        "source": "com.example.truequeworld.app-main-40:/layout/f2_fragment_saved__screen.xml"
+    }
+]

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     tools:context=".MainScreen">
     
     <fragment
@@ -19,6 +20,11 @@
     >
 
     <fragment
+=======
+    >
+
+    <!--<fragment
+>>>>>>> Stashed changes
        android:id="@+id/main_screen"
        android:layout_width="0dp"
        android:layout_height="0dp"
@@ -26,7 +32,13 @@
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< Updated upstream
        android:name="com.example.truequeworld.Fragments.Main_Screen_Fragment"/>
+
+    <!--Barra superior-->
+>>>>>>> Stashed changes
+=======
+       android:name="com.example.truequeworld.Fragments.Main_Screen_Fragment"/>-->
 
     <!--Barra superior-->
 >>>>>>> Stashed changes
@@ -180,12 +192,19 @@
         style="@style/ThinType" />
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
     <!--Barra de navegación-->
 
 >>>>>>> Stashed changes
     <com.google.android.material.bottomnavigation.BottomNavigationView
+=======
+
+    <!--Barra de navegación-->
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+>>>>>>> Stashed changes
         android:id="@+id/bottomNavigationViewMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -194,10 +213,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/navigation_bar_menu"
+<<<<<<< Updated upstream
         style="@style/navBar" />
 
 <<<<<<< Updated upstream
 =======
+=======
+        style="@style/navBar" />-->
+
+>>>>>>> Stashed changes
 
     <!--Contenido de productos-->
 
@@ -226,6 +250,9 @@
 
     <!--Constraints verticales-->
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v11"
@@ -413,7 +440,10 @@
         app:layout_constraintGuide_percent="0.25" />
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h30"
         android:layout_width="wrap_content"
