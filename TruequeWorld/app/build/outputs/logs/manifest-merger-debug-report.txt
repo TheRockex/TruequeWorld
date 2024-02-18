@@ -1,0 +1,812 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\Serijio\.gradle\caches\transforms-3\0fb48812c28801fd01bcb091d78f4bd2\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Serijio\.gradle\caches\transforms-3\db474794ab22f37c749994d9d951dd92\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Serijio\.gradle\caches\transforms-3\497944a383e5618e2273ddb5b9b2b1d5\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Serijio\.gradle\caches\transforms-3\4b0621c8e60b98266599dc618e162906\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Serijio\.gradle\caches\transforms-3\786e783fafe3f40b1a11e5aee38729be\transformed\glide-4.16.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-analytics:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\cadde85c556a52f9a12ac93cfd256c8e\transformed\firebase-analytics-21.5.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:17:1-66:12
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:15:1-33:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:15:1-37:12
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\cb75d46b4e7ac10aa9168162403895d3\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:17:1-43:12
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:15:1-41:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\57f62027a22724316062b4700d43a893\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\2cad779f23cea690bbba43e4a20c505f\transformed\play-services-auth-api-phone-18.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\Serijio\.gradle\caches\transforms-3\b003727040162337165ece3d18d1aa72\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\f8c9d27a1daa515124df34b0b4bfda78\transformed\play-services-fido-20.0.1\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\ca25d0f848a998639e22c757d72c2ea4\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\9ede209c1d3e5c59d9612c9f57fa16b4\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\6447ed8867a124ef6b3d6cfa77a17455\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a117158771b494f4fad0b57bf26aca79\transformed\play-services-measurement-sdk-21.5.1\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\1d6db8248d3ebb87a8505c2d5dc18a71\transformed\play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\7e973886f3d860f1f7b61c686cc9408b\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\5a0f49853609ec474d80a64cb0710248\transformed\firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\e25e47f419aed71b3169bb24daaa10ee\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\1e7372de16cc5a10259f42e1fcdd0695\transformed\ads-adservices-java-1.0.0-beta05\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\0d228e5cd01a24cf45f5a38d0fb47c73\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\c23e58f05076ea6175deeae86c055024\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\e2739c8c5fccd0478a4709143a3bcd63\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\805766c117ead99817f282771e164a76\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\281c6e83eeff8bcf193b33f042362213\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\e4a6fb5ca72fd661857aaf3f9e241ec1\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a19e4c712ea2c40a656bf7c693e17c85\transformed\play-services-measurement-base-21.5.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Serijio\.gradle\caches\transforms-3\567ea8422be788456a251fb4e6252b30\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\Serijio\.gradle\caches\transforms-3\43439d79af2e20d6f02f740f9a6a4b93\transformed\activity-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\3ec796894daf709eb6334052828dda35\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\493ff67eea74cc90ba3ee3a2eecda7ef\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\b67a13a99df5f355cce50379465ea1b9\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\eae4ddbb9c297ed12b5ee1df82c65578\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\a646244795954c44394632a7b68a1eac\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\a78bd32994373484ee86415e02c772c7\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\db753356bade49c44b532d5b95b40789\transformed\core-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\88343d1b03039480ca464e26c341ff4c\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\9ad7c750e264e01d157d49177cac26c4\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\0ba240fb2813f491d71081d0804f40fb\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\8775f160ef0c688c51e0213cdd07bee6\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\bca87adbd035c4f32ee4553cf1fe0761\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\9ef2bd01b3f4c85a91725ecb442178b9\transformed\savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\3ab6f097cfd78529e15b7bbb552842c4\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Serijio\.gradle\caches\transforms-3\44604453d18c8c83a9559e52c809aaee\transformed\gifdecoder-4.16.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Serijio\.gradle\caches\transforms-3\28364941eea278815dd7043af9755f81\transformed\exifinterface-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\6af5d860ab3a3b3c53527b2b0f00f21e\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\20801bd84b36b42e1c85ef638000384a\transformed\transport-api-3.1.0\AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Serijio\.gradle\caches\transforms-3\7b27f35f8f9e6e7556c1a95fbceafb94\transformed\firebase-components-17.1.5\AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\f16735e85ff3bbc02ba4cf5d43bf82d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\6010fa1e6545c0e0250e9568aa9f520b\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\aa0ffb003062cbdad32b4d8608c6bb76\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\730507653df653e2a80b7b0562fa6d76\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\2a7d95eb5b73eb785d12bc5d3f8cf5a3\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\011b6576c5f9c905fa389286dc22877a\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\4665baf3b1df46d79eaef992614400f8\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\01a02a7a3c2c18622219cdbd805b7d47\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Serijio\.gradle\caches\transforms-3\2623e5e9cf226e67e64caaa43b808788\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Serijio\.gradle\caches\transforms-3\399c46f7d1cc0d29fcc9b6708dd5415d\transformed\grpc-android-1.57.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\d9b142b56b30b76e1370d41904d9bf25\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+	package
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:1-59:12
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:8:22-78
+application
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:10:5-57:19
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\Serijio\.gradle\caches\transforms-3\0fb48812c28801fd01bcb091d78f4bd2\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\Serijio\.gradle\caches\transforms-3\0fb48812c28801fd01bcb091d78f4bd2\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Serijio\.gradle\caches\transforms-3\db474794ab22f37c749994d9d951dd92\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Serijio\.gradle\caches\transforms-3\db474794ab22f37c749994d9d951dd92\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-analytics:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\cadde85c556a52f9a12ac93cfd256c8e\transformed\firebase-analytics-21.5.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\cadde85c556a52f9a12ac93cfd256c8e\transformed\firebase-analytics-21.5.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\f8c9d27a1daa515124df34b0b4bfda78\transformed\play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\f8c9d27a1daa515124df34b0b4bfda78\transformed\play-services-fido-20.0.1\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\ca25d0f848a998639e22c757d72c2ea4\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\ca25d0f848a998639e22c757d72c2ea4\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\6447ed8867a124ef6b3d6cfa77a17455\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\6447ed8867a124ef6b3d6cfa77a17455\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a117158771b494f4fad0b57bf26aca79\transformed\play-services-measurement-sdk-21.5.1\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a117158771b494f4fad0b57bf26aca79\transformed\play-services-measurement-sdk-21.5.1\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\1d6db8248d3ebb87a8505c2d5dc18a71\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\1d6db8248d3ebb87a8505c2d5dc18a71\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\7e973886f3d860f1f7b61c686cc9408b\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\7e973886f3d860f1f7b61c686cc9408b\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\5a0f49853609ec474d80a64cb0710248\transformed\firebase-auth-interop-19.0.2\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\5a0f49853609ec474d80a64cb0710248\transformed\firebase-auth-interop-19.0.2\AndroidManifest.xml:7:5-8:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\e4a6fb5ca72fd661857aaf3f9e241ec1\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\e4a6fb5ca72fd661857aaf3f9e241ec1\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a19e4c712ea2c40a656bf7c693e17c85\transformed\play-services-measurement-base-21.5.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a19e4c712ea2c40a656bf7c693e17c85\transformed\play-services-measurement-base-21.5.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\f16735e85ff3bbc02ba4cf5d43bf82d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\f16735e85ff3bbc02ba4cf5d43bf82d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:15:9-41
+	android:fullBackupContent
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:13:9-54
+	tools:ignore
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:20:9-33
+	android:roundIcon
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:16:9-46
+	tools:targetApi
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:21:9-29
+	android:icon
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:14:9-41
+	android:allowBackup
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:18:9-50
+	android:dataExtractionRules
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:12:9-65
+	android:usesCleartextTraffic
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:19:9-44
+activity#com.example.truequeworld.RegisterScreen
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:23:13-43
+activity#com.example.truequeworld.Addproductscreen
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:26:13-45
+activity#com.example.truequeworld.StartScreen
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:28:9-31:40
+	android:noHistory
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:31:13-37
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:29:13-40
+activity#com.example.truequeworld.SplashScreen
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:32:9-42:20
+	android:noHistory
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:35:13-37
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:34:13-36
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:33:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:37:13-41:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:38:17-69
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:38:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:40:17-77
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:40:27-74
+activity#com.example.truequeworld.MainScreen
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:43:9-45:40
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:45:13-37
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:44:13-39
+activity#com.example.truequeworld.Preference_screen
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:46:9-48:40
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:47:13-46
+service#com.example.truequeworld.firebase.MessagingService
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:49:9-55:19
+	android:exported
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:51:13-37
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:50:13-54
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:52:13-54:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:53:17-77
+	android:name
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml:53:25-75
+uses-sdk
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\Serijio\.gradle\caches\transforms-3\0fb48812c28801fd01bcb091d78f4bd2\transformed\material-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.5.0] C:\Users\Serijio\.gradle\caches\transforms-3\0fb48812c28801fd01bcb091d78f4bd2\transformed\material-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Serijio\.gradle\caches\transforms-3\db474794ab22f37c749994d9d951dd92\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Serijio\.gradle\caches\transforms-3\db474794ab22f37c749994d9d951dd92\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Serijio\.gradle\caches\transforms-3\497944a383e5618e2273ddb5b9b2b1d5\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Serijio\.gradle\caches\transforms-3\497944a383e5618e2273ddb5b9b2b1d5\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Serijio\.gradle\caches\transforms-3\4b0621c8e60b98266599dc618e162906\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Serijio\.gradle\caches\transforms-3\4b0621c8e60b98266599dc618e162906\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Serijio\.gradle\caches\transforms-3\786e783fafe3f40b1a11e5aee38729be\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.16.0] C:\Users\Serijio\.gradle\caches\transforms-3\786e783fafe3f40b1a11e5aee38729be\transformed\glide-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-analytics:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\cadde85c556a52f9a12ac93cfd256c8e\transformed\firebase-analytics-21.5.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\cadde85c556a52f9a12ac93cfd256c8e\transformed\firebase-analytics-21.5.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\cb75d46b4e7ac10aa9168162403895d3\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\cb75d46b4e7ac10aa9168162403895d3\transformed\firebase-encoders-json-18.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:19:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\57f62027a22724316062b4700d43a893\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\57f62027a22724316062b4700d43a893\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\2cad779f23cea690bbba43e4a20c505f\transformed\play-services-auth-api-phone-18.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\2cad779f23cea690bbba43e4a20c505f\transformed\play-services-auth-api-phone-18.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\Serijio\.gradle\caches\transforms-3\b003727040162337165ece3d18d1aa72\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\Serijio\.gradle\caches\transforms-3\b003727040162337165ece3d18d1aa72\transformed\play-services-auth-base-18.0.4\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\f8c9d27a1daa515124df34b0b4bfda78\transformed\play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-fido:20.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\f8c9d27a1daa515124df34b0b4bfda78\transformed\play-services-fido-20.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\ca25d0f848a998639e22c757d72c2ea4\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\ca25d0f848a998639e22c757d72c2ea4\transformed\firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\9ede209c1d3e5c59d9612c9f57fa16b4\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\9ede209c1d3e5c59d9612c9f57fa16b4\transformed\firebase-database-collection-18.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\6447ed8867a124ef6b3d6cfa77a17455\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\6447ed8867a124ef6b3d6cfa77a17455\transformed\firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a117158771b494f4fad0b57bf26aca79\transformed\play-services-measurement-sdk-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a117158771b494f4fad0b57bf26aca79\transformed\play-services-measurement-sdk-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\1d6db8248d3ebb87a8505c2d5dc18a71\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\1d6db8248d3ebb87a8505c2d5dc18a71\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\7e973886f3d860f1f7b61c686cc9408b\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\7e973886f3d860f1f7b61c686cc9408b\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\5a0f49853609ec474d80a64cb0710248\transformed\firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\5a0f49853609ec474d80a64cb0710248\transformed\firebase-auth-interop-19.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\e25e47f419aed71b3169bb24daaa10ee\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\e25e47f419aed71b3169bb24daaa10ee\transformed\firebase-installations-interop-17.1.1\AndroidManifest.xml:17:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\1e7372de16cc5a10259f42e1fcdd0695\transformed\ads-adservices-java-1.0.0-beta05\AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\1e7372de16cc5a10259f42e1fcdd0695\transformed\ads-adservices-java-1.0.0-beta05\AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\0d228e5cd01a24cf45f5a38d0fb47c73\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\0d228e5cd01a24cf45f5a38d0fb47c73\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\c23e58f05076ea6175deeae86c055024\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\c23e58f05076ea6175deeae86c055024\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\e2739c8c5fccd0478a4709143a3bcd63\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\e2739c8c5fccd0478a4709143a3bcd63\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\805766c117ead99817f282771e164a76\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\805766c117ead99817f282771e164a76\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\281c6e83eeff8bcf193b33f042362213\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\281c6e83eeff8bcf193b33f042362213\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\e4a6fb5ca72fd661857aaf3f9e241ec1\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Serijio\.gradle\caches\transforms-3\e4a6fb5ca72fd661857aaf3f9e241ec1\transformed\play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a19e4c712ea2c40a656bf7c693e17c85\transformed\play-services-measurement-base-21.5.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\a19e4c712ea2c40a656bf7c693e17c85\transformed\play-services-measurement-base-21.5.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Serijio\.gradle\caches\transforms-3\567ea8422be788456a251fb4e6252b30\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Serijio\.gradle\caches\transforms-3\567ea8422be788456a251fb4e6252b30\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\Serijio\.gradle\caches\transforms-3\43439d79af2e20d6f02f740f9a6a4b93\transformed\activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\Serijio\.gradle\caches\transforms-3\43439d79af2e20d6f02f740f9a6a4b93\transformed\activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\3ec796894daf709eb6334052828dda35\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\3ec796894daf709eb6334052828dda35\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\493ff67eea74cc90ba3ee3a2eecda7ef\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\493ff67eea74cc90ba3ee3a2eecda7ef\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\b67a13a99df5f355cce50379465ea1b9\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\b67a13a99df5f355cce50379465ea1b9\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\eae4ddbb9c297ed12b5ee1df82c65578\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\eae4ddbb9c297ed12b5ee1df82c65578\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\a646244795954c44394632a7b68a1eac\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\a646244795954c44394632a7b68a1eac\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\a78bd32994373484ee86415e02c772c7\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\a78bd32994373484ee86415e02c772c7\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\db753356bade49c44b532d5b95b40789\transformed\core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\db753356bade49c44b532d5b95b40789\transformed\core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\88343d1b03039480ca464e26c341ff4c\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\88343d1b03039480ca464e26c341ff4c\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\9ad7c750e264e01d157d49177cac26c4\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\9ad7c750e264e01d157d49177cac26c4\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\0ba240fb2813f491d71081d0804f40fb\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\0ba240fb2813f491d71081d0804f40fb\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\8775f160ef0c688c51e0213cdd07bee6\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\8775f160ef0c688c51e0213cdd07bee6\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\bca87adbd035c4f32ee4553cf1fe0761\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\bca87adbd035c4f32ee4553cf1fe0761\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\9ef2bd01b3f4c85a91725ecb442178b9\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\9ef2bd01b3f4c85a91725ecb442178b9\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\3ab6f097cfd78529e15b7bbb552842c4\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\3ab6f097cfd78529e15b7bbb552842c4\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Serijio\.gradle\caches\transforms-3\44604453d18c8c83a9559e52c809aaee\transformed\gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] C:\Users\Serijio\.gradle\caches\transforms-3\44604453d18c8c83a9559e52c809aaee\transformed\gifdecoder-4.16.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Serijio\.gradle\caches\transforms-3\28364941eea278815dd7043af9755f81\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] C:\Users\Serijio\.gradle\caches\transforms-3\28364941eea278815dd7043af9755f81\transformed\exifinterface-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\6af5d860ab3a3b3c53527b2b0f00f21e\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\6af5d860ab3a3b3c53527b2b0f00f21e\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\20801bd84b36b42e1c85ef638000384a\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\20801bd84b36b42e1c85ef638000384a\transformed\transport-api-3.1.0\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Serijio\.gradle\caches\transforms-3\7b27f35f8f9e6e7556c1a95fbceafb94\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] C:\Users\Serijio\.gradle\caches\transforms-3\7b27f35f8f9e6e7556c1a95fbceafb94\transformed\firebase-components-17.1.5\AndroidManifest.xml:18:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\f16735e85ff3bbc02ba4cf5d43bf82d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\f16735e85ff3bbc02ba4cf5d43bf82d9\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\6010fa1e6545c0e0250e9568aa9f520b\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\6010fa1e6545c0e0250e9568aa9f520b\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\aa0ffb003062cbdad32b4d8608c6bb76\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\aa0ffb003062cbdad32b4d8608c6bb76\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\730507653df653e2a80b7b0562fa6d76\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\730507653df653e2a80b7b0562fa6d76\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\2a7d95eb5b73eb785d12bc5d3f8cf5a3\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\2a7d95eb5b73eb785d12bc5d3f8cf5a3\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\011b6576c5f9c905fa389286dc22877a\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\011b6576c5f9c905fa389286dc22877a\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\4665baf3b1df46d79eaef992614400f8\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\4665baf3b1df46d79eaef992614400f8\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\01a02a7a3c2c18622219cdbd805b7d47\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\01a02a7a3c2c18622219cdbd805b7d47\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Serijio\.gradle\caches\transforms-3\2623e5e9cf226e67e64caaa43b808788\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Serijio\.gradle\caches\transforms-3\2623e5e9cf226e67e64caaa43b808788\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Serijio\.gradle\caches\transforms-3\399c46f7d1cc0d29fcc9b6708dd5415d\transformed\grpc-android-1.57.2\AndroidManifest.xml:5:5-44
+MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Serijio\.gradle\caches\transforms-3\399c46f7d1cc0d29fcc9b6708dd5415d\transformed\grpc-android-1.57.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\d9b142b56b30b76e1370d41904d9bf25\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\d9b142b56b30b76e1370d41904d9bf25\transformed\protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Serijio\Documents\2DAM\gitjab como lo odio\TruequeWorld\TruequeWorld\app\src\main\AndroidManifest.xml
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.7.0] C:\Users\Serijio\.gradle\caches\transforms-3\da88fb41f05b808c6088ffd3d66984d9\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Serijio\.gradle\caches\transforms-3\399c46f7d1cc0d29fcc9b6708dd5415d\transformed\grpc-android-1.57.2\AndroidManifest.xml:7:5-79
+MERGED from [io.grpc:grpc-android:1.57.2] C:\Users\Serijio\.gradle\caches\transforms-3\399c46f7d1cc0d29fcc9b6708dd5415d\transformed\grpc-android-1.57.2\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:22:22-76
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:23:5-77
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:23:22-74
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:26:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:11:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] C:\Users\Serijio\.gradle\caches\transforms-3\74bd679ea08f4b117c68186509fd3479\transformed\play-services-cloud-messaging-17.1.0\AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:26:22-79
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:29:9-40:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:31:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:32:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:30:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:33:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:34:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:34:25-78
+meta-data#com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:37:13-39:40
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:39:17-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:38:17-92
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:46:9-53:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:49:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:48:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:47:13-82
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:54:9-63:19
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:30:9-38:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:56:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:55:13-84
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:57:13-59:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:59:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:58:17-122
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:60:13-62:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:62:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\32d51547750de8bbfd7fc05da7a1a4d1\transformed\firebase-messaging-23.4.1\AndroidManifest.xml:61:17-119
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.10.2] C:\Users\Serijio\.gradle\caches\transforms-3\650d5013c64519258b22abb325f08288\transformed\firebase-firestore-24.10.2\AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:27:13-29:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:29:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Serijio\.gradle\caches\transforms-3\32bc7c5305f14bec68d21dde03ed294e\transformed\firebase-datatransport-18.1.7\AndroidManifest.xml:28:17-115
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\0abfc020e06d25a5f75160657d0c9fdb\transformed\transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Serijio\.gradle\caches\transforms-3\ea402b45a175dca7fc1cacd14a4fa793\transformed\transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Serijio\.gradle\caches\transforms-3\da03a51ef8e7c9259ea0ecadaefc18b7\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:25:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:27:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:26:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\027583bab45c3d1ea646f95c34bbaf1e\transformed\play-services-measurement-sdk-api-21.5.1\AndroidManifest.xml:28:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:27:22-79
+property
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:30:9-32:61
+	android:resource
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:32:13-58
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:31:13-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:37:13-39:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:39:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\26737ad5e18ff7b2c1d2f944597d20bd\transformed\play-services-measurement-api-21.5.1\AndroidManifest.xml:38:17-139
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:16:17-130
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\e4015106d1a0b14ae2ecdd608b27eaf4\transformed\firebase-installations-17.2.0\AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\ec1d2590f83566d4942d1dc96fdd5dd6\transformed\firebase-common-ktx-20.4.2\AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.4.2] C:\Users\Serijio\.gradle\caches\transforms-3\f0d4fae39715a598fe413ba5980b9977\transformed\firebase-common-20.4.2\AndroidManifest.xml:36:17-109
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Serijio\.gradle\caches\transforms-3\c8ae013276f0d208f7d526109292fbf1\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\3ae804a47cf7adb318a8ee9b0f1bb09f\transformed\play-services-measurement-impl-21.5.1\AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.1] C:\Users\Serijio\.gradle\caches\transforms-3\c3c0412a1a6b204d45472602855f2aac\transformed\play-services-measurement-21.5.1\AndroidManifest.xml:40:13-87
+uses-library#android.ext.adservices
+ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Serijio\.gradle\caches\transforms-3\7903de7329b43e4f8383a07e95aef33a\transformed\ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\cf019f40626b32573cdbda5b196ce917\transformed\play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Serijio\.gradle\caches\transforms-3\330b457e5430a6b7eb20063ab85f4a59\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Serijio\.gradle\caches\transforms-3\b4b17900d39a84781912812880398ab3\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+permission#com.example.truequeworld.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+uses-permission#com.example.truequeworld.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\Serijio\.gradle\caches\transforms-3\079b38c51d8889fff5c06bcb4ac6931c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Serijio\.gradle\caches\transforms-3\ff40806880928d1f5ba3e1db7ec1036f\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78

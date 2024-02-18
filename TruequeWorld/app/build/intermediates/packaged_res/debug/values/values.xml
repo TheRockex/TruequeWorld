@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amarillo">#FFCA41</color>
+    <color name="azul">#0085FF</color>
+    <color name="beige">#FFF9EB</color>
+    <color name="black">#FF000000</color>
+    <color name="clarito">#FFF9EB</color>
+    <color name="gris">#D9D9D9</color>
+    <color name="light_grey">#F5F5F5</color>
+    <color name="semi_light_grey">#D9D9D9</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="_3d">Otros</string>
+    <string name="anuncios">Escolar</string>
+    <string name="app_name">TruequeWorld</string>
+    <string name="app_name2">Trueque\nWorld</string>
+    <string name="añadir">AÑADIR</string>
+    <string name="camara">Infantil</string>
+    <string name="confpass">Confirmar contraseña</string>
+    <string name="email">Email</string>
+    <string name="eslogan">Si no lo usas, ¡truequéalo!</string>
+    <string name="fotografia">Alimentación</string>
+    <string name="gcm_defaultSenderId" translatable="false">782559139793</string>
+    <string name="google">Continuar con Google</string>
+    <string name="google_api_key" translatable="false">AIzaSyDOQdZZBDav31kquyREzrOMR__JG8cjAPQ</string>
+    <string name="google_app_id" translatable="false">1:782559139793:android:974eb2f5b2d58301d772f0</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDOQdZZBDav31kquyREzrOMR__JG8cjAPQ</string>
+    <string name="google_storage_bucket" translatable="false">trueque-world.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="inicia">Inicia sesión</string>
+    <string name="juguetes">Juegos</string>
+    <string name="libros">Moda</string>
+    <string name="marca">MARCA</string>
+    <string name="missu">Te hemos echado de menos </string>
+    <string name="more">Ver todo</string>
+    <string name="munecas">Deporte</string>
+    <string name="name">Nombre</string>
+    <string name="next">Siguiente</string>
+    <string name="pass">Contraseña</string>
+    <string name="precio">PRECIO</string>
+    <string name="programacion">Entretenimiento</string>
+    <string name="project_id" translatable="false">trueque-world</string>
+    <string name="recom">Recomendado para ti</string>
+    <string name="registra">Regístrate</string>
+    <string name="regnow">Registrarse</string>
+    <string name="saved">Guardado</string>
+    <string name="search">Estoy buscando...</string>
+    <string name="sesiografia">Coleccion</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="surname">Apellidos</string>
+    <string name="tecnologia">Tecnología</string>
+    <string name="tellmemoreaboutyoulove">Queremos saber más de ti</string>
+    <string name="tp">Trueque\nPuntos</string>
+    <string name="twlogin">Iniciar sesión</string>
+    <string name="twregister">Crear una cuenta</string>
+    <string name="videojuegos">Vehiculos</string>
+    <string name="virtual">Anime</string>
+    <string name="weblogingoogleid">94914021089-bibo61fkr1qdhtjvdvhtag0fcbhhklpr.apps.googleusercontent.com</string>
+    <string name="whatuwaiting">¿Qué estás esperando? ¡A truequear!</string>
+    <style name="AppNameStyle">
+        <item name="android:textSize">60sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/gavoranegrita</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/amarillo</item>
+        
+    </style>
+    <style name="Base.Theme.TruequeWorld" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+    <style name="NormalType">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="SearchBar" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">#00000000</item>
+        <item name="hintTextColor">@color/amarillo</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+    <style name="StartButtons" parent="Widget.Material3.Button">
+        <item name="backgroundTint">#BFFFFFFF</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+        <item name="shapeAppearance">@style/recShape</item>
+    </style>
+    <style name="Theme.TruequeWorld" parent="Base.Theme.TruequeWorld"/>
+    <style name="ThinType">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/amarillo</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TinyAppNameStyle">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/gavoranegrita</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TinyNormalType">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="activeIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/amarillo</item>
+    </style>
+    <style name="navBar" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/white</item>
+        <item name="itemIconTint">@color/black</item>
+        <item name="itemRippleColor">@color/amarillo</item>
+        <item name="startIconTint">@color/white</item>
+        <item name="android:state_selected">true</item>
+        <item name="itemActiveIndicatorStyle">@style/activeIndicator</item>
+    </style>
+    <style name="recShape" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">10dp</item>
+    </style>
+    <style name="recShape2" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">0dp</item>
+    </style>
+</resources>

@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -16,27 +17,39 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
+<<<<<<< Updated upstream
 import com.example.truequeworld.Fragments.Main_Screen_Fragment;
 import com.example.truequeworld.Interface.FavoriteServiceApi;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.google.android.gms.dynamic.SupportFragmentWrapper;
+=======
+import com.example.truequeworld.Fragments.Add_Product_Fragment;
+import com.example.truequeworld.Fragments.Main_Screen_Fragment;
+import com.example.truequeworld.Fragments.Messages_Screen_Fragment;
+import com.example.truequeworld.Fragments.Saved_Screen_Fragment;
+import com.example.truequeworld.Fragments.User_Screen_Fragment;
+import com.example.truequeworld.Interface.FavoriteServiceApi;
+import com.example.truequeworld.Interface.ProductServiceApi;
+import com.example.truequeworld.Interface.UserServiceApi;
+>>>>>>> Stashed changes
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.List;
-        import retrofit2.Call;
-        import retrofit2.Callback;
-        import retrofit2.Response;
-        import retrofit2.Retrofit;
-        import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainScreen extends AppCompatActivity {
     private ProductServiceApi productServiceApi;
@@ -51,20 +64,35 @@ public class MainScreen extends AppCompatActivity {
     User user;
     Product product;
     private ImageView imageview;
+    Fragment mainFragment;
+    private boolean permissionDenied = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Conectar();
         setContentView(R.layout.a6_activity_main_screen);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+<<<<<<< Updated upstream
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_container, new Main_Screen_Fragment())
                     .addToBackStack(null)
                     .commit();
         }
+=======
+        //mainFragment = getSupportFragmentManager().findFragmentById(R.id.main_screen);
+
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Conectar();
+
+        /*if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_screen, new Main_Screen_Fragment())
+                    .addToBackStack(null)
+                    .commit();
+        }*/
+>>>>>>> Stashed changes
 
         imageview = findViewById(R.id.imageView);
         TextInputEditText buscarEditText = findViewById(R.id.searchEditText);
@@ -82,6 +110,71 @@ public class MainScreen extends AppCompatActivity {
                 return false;
             }
         });
+
+        navigationView = findViewById(R.id.bottomNavigationViewMain);
+
+        navigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment fragment = null;
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.navbar_main_button) {
+                fragment = new Main_Screen_Fragment();
+            } else if (itemId == R.id.navbar_saved_button) {
+                fragment = new Saved_Screen_Fragment();
+            } else if (itemId == R.id.navbar_addproduct_button) {
+                fragment = new Add_Product_Fragment();
+            } else if (itemId == R.id.navbar_messages_button) {
+                fragment = new Messages_Screen_Fragment();
+            } else if (itemId == R.id.navbar_user_button) {
+                fragment = new User_Screen_Fragment();
+            }
+
+            if (fragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(0, 0)
+                        .replace(R.id.main_screen, fragment)
+                        .addToBackStack(null)
+                        .commit();
+                return true;
+            }
+
+            return false;
+        });
+
+        /*navigationView = findViewById(R.id.bottomNavigationViewMain);
+
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                if (item.getItemId() == R.id.navbar_main_button) {
+                    fragment = new Main_Screen_Fragment();
+                } else if (item.getItemId() == R.id.navbar_saved_button) {
+                    fragment = new Saved_Screen_Fragment();
+                } else if (item.getItemId() == R.id.navbar_addproduct_button) {
+                    fragment = new Add_Product_Fragment();
+                } else if (item.getItemId() == R.id.navbar_messages_button) {
+                    fragment = new Messages_Screen_Fragment();
+                } else if (item.getItemId() == R.id.navbar_user_button) {
+                    fragment = new User_Screen_Fragment();
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_screen, fragment).addToBackStack(null).commit();
+                return true;
+            }
+        });*/
+    }
+
+    @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        if (permissionDenied) {
+            showMissingPermissionError();
+            permissionDenied = false;
+        }
+    }
+
+    private void showMissingPermissionError() {
+        // Muestra un mensaje de error al usuario
     }
 
     public void getUserID(){
@@ -111,7 +204,7 @@ public class MainScreen extends AppCompatActivity {
 
     public void Conectar(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.129.8:8086")
+                .baseUrl("http://192.168.0.30:8086")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         productServiceApi = retrofit.create(ProductServiceApi.class);
@@ -129,11 +222,19 @@ public class MainScreen extends AppCompatActivity {
                     productList = response.body();
                     for(int i = 0; i < productList.size();i++) {
                         if(user.getPreferencias() != null){
+<<<<<<< Updated upstream
                         if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
                             //Introducir cardView productPreference
                             productPreference.add(productList.get(i));
                         }
                     }else{
+=======
+                            if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
+                                //Introducir cardView productPreference
+                                productPreference.add(productList.get(i));
+                            }
+                        }else{
+>>>>>>> Stashed changes
                             //Introducir cardView productList
                             Bitmap bitmap = base64ToBitmap(productList.get(i).getImgProducto());
                             imageview.setImageBitmap(bitmap);
@@ -179,9 +280,9 @@ public class MainScreen extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     favoritoList = response.body();
                     for(int i = 0; i < favoritoList.size();i++) {
-                       if(user.getId().equals(favoritoList.get(i).getUsuarioId())){
-                           getProductosId(favoritoList.get(i).getProductoId());
-                       }
+                        if(user.getId().equals(favoritoList.get(i).getUsuarioId())){
+                            getProductosId(favoritoList.get(i).getProductoId());
+                        }
                     }
                 } else {
                     Toast.makeText(MainScreen.this, "Error", Toast.LENGTH_SHORT).show();
@@ -209,7 +310,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void ToUpdate(View view){
-        Intent intent = new Intent(MainScreen.this, UpdateUser.class);
+        Intent intent = new Intent(MainScreen.this, RegisterScreen.class);
         startActivity(intent, ActivityOptions.makeCustomAnimation(MainScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
     }
 }
