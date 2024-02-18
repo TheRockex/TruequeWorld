@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navbar_main_button"
+        android:icon="@drawable/navbar_main_button_icon"
+        android:title="HOME"
+        />
+
+    <item
+        android:id="@+id/navbar_saved_button"
+        android:icon="@drawable/navbar_saved_button_icon"
+        android:title="SAVED"
+        />
+
+    <item
+        android:id="@+id/navbar_addproduct_button"
+        android:icon="@drawable/navbar_add_button_icon"
+        android:title="ADD PRODUCT"
+        />
+
+    <item
+        android:id="@+id/navbar_messages_button"
+        android:icon="@drawable/navbar_messages_button_icon"
+        android:title="MESSAGES"
+        />
+
+    <item
+        android:id="@+id/navbar_user_button"
+        android:icon="@drawable/navbar_user_button_icon"
+        android:title="USER"
+        />
+</menu>

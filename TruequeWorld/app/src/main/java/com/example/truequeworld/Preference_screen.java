@@ -71,7 +71,7 @@ public class Preference_screen extends AppCompatActivity {
 
     public void Conectar(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.129.8:8086")
+                .baseUrl("http://192.168.0.51:8086")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

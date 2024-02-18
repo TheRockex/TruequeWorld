@@ -47,6 +47,25 @@
         <item name="shapeAppearance">@style/recShape</item>
     </style>
 
+    <style name="SearchBar" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">#00000000</item>
+        <item name="hintTextColor">@color/amarillo</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="navBar" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="backgroundTint">@color/white</item>
+        <item name="itemIconTint">@color/black</item>
+        <item name="itemRippleColor">@color/amarillo</item>
+        <item name="startIconTint">@color/white</item>
+        <item name="android:state_selected">true</item>
+        <item name="itemActiveIndicatorStyle">@style/activeIndicator</item>
+    </style>
+
+    <style name="activeIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/amarillo</item>
+    </style>
+
     <style name="recShape" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerSize">10dp</item>
     </style>
