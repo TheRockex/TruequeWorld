@@ -72,6 +72,7 @@ public class MainScreen extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new Main_Screen_Fragment());
 
+
         binding.bottomNavigationViewMain.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
@@ -433,4 +434,5 @@ public class MainScreen extends AppCompatActivity {
         Intent intent = new Intent(MainScreen.this, RegisterScreen.class);
         startActivity(intent, ActivityOptions.makeCustomAnimation(MainScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
     }*/
+
 }

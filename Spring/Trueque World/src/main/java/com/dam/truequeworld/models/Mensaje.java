@@ -31,5 +31,5 @@ public class Mensaje {
     private String texto;
 
     @Column(name = "fecha")
-    private LocalDateTime fecha;
+    private String fecha;
 }

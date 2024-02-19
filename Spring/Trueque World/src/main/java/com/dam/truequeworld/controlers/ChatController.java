@@ -13,7 +13,7 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
 
-    @GetMapping("/favorite")
+    @GetMapping("/chats")
     public List<Chat> getChats(){
         return chatService.getAllChats();
     }

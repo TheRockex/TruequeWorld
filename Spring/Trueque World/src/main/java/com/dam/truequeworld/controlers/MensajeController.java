@@ -14,30 +14,30 @@ import java.util.Map;
 @RestController
 @RequestMapping("/mensaje")
 public class MensajeController {
-    public Map<String, SseEmitter> emitters = new HashMap<>();
+   // public Map<String, SseEmitter> emitters = new HashMap<>();
     @Autowired
     private MensajeService mensajeService;
 
-    @GetMapping("/favorite")
-    public List<Mensaje> getChats(){
+    @GetMapping("/mensajes")
+    public List<Mensaje> getMensajes(){
         return mensajeService.getAllMensajes();
     }
 
     @GetMapping("/id/{id}")
-    public Mensaje getChatById(@PathVariable Integer id){
+    public Mensaje getMensajeById(@PathVariable Integer id){
         return mensajeService.getMensajeById(id);
     }
 
     @PostMapping("/save")
-    public Mensaje insertChat(@RequestBody Mensaje mensaje){
+    public Mensaje insertMensaje(@RequestBody Mensaje mensaje){
         return mensajeService.saveMensaje(mensaje);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Boolean deleteChatById(@PathVariable Integer id){
+    public Boolean deleteMensajeById(@PathVariable Integer id){
         return mensajeService.deleteMensajeById(id);
     }
-
+/*
     @CrossOrigin
     @RequestMapping("/conectarse")
     public SseEmitter suscribe(@RequestParam String userId){
@@ -50,9 +50,9 @@ public class MensajeController {
         sseEmitter.onError((e) -> emitters.remove(sseEmitter));
 
         return sseEmitter;
-    }
+    }*/
     // method for dispatching events to a client
-    @PostMapping("/enviarMensaje")
+   /* @PostMapping("/enviarMensaje")
     public void dispatchEventToClients(@RequestParam String freshNews, String userId){
         SseEmitter sseEmitter = emitters.get(userId);
         if(sseEmitter != null){
@@ -62,7 +62,7 @@ public class MensajeController {
                 emitters.remove(sseEmitter);
             }
         }
-    }
+    }*/
 
     private void sendInitEvent(SseEmitter sseEmitter){
         try {

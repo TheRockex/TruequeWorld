@@ -29,4 +29,5 @@ public class RetrofitConexion {
     public static FavoriteServiceApi getFavoriteServiceApi(){
         return getInstance().create(FavoriteServiceApi.class);
     }
+
 }
