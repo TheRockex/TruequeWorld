@@ -1,7 +1,6 @@
 package com.dam.truequeworld.controlers;
 
 import com.dam.truequeworld.models.Product;
-import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
