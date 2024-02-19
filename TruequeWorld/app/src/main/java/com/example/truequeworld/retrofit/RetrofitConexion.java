@@ -1,6 +1,8 @@
 package com.example.truequeworld.retrofit;
 
+import com.example.truequeworld.Interface.ChatService;
 import com.example.truequeworld.Interface.FavoriteServiceApi;
+import com.example.truequeworld.Interface.MensajeService;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 
@@ -13,7 +15,7 @@ public class RetrofitConexion {
     private static Retrofit getInstance(){
         if(instance==null){
              instance = new Retrofit.Builder()
-                    .baseUrl("http://192.168.128.235:8086")
+                    .baseUrl("http://192.168.1.137:8086")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
@@ -28,6 +30,12 @@ public class RetrofitConexion {
     }
     public static FavoriteServiceApi getFavoriteServiceApi(){
         return getInstance().create(FavoriteServiceApi.class);
+    }
+    public static MensajeService getMensajeServiceApi(){
+        return getInstance().create(MensajeService.class);
+    }
+    public static ChatService getChatServiceApi(){
+        return getInstance().create(ChatService.class);
     }
 
 }

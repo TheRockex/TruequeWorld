@@ -14,7 +14,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/mensaje")
 public class MensajeController {
-   // public Map<String, SseEmitter> emitters = new HashMap<>();
+    public Map<String, SseEmitter> emitters = new HashMap<>();
     @Autowired
     private MensajeService mensajeService;
 
@@ -37,10 +37,28 @@ public class MensajeController {
     public Boolean deleteMensajeById(@PathVariable Integer id){
         return mensajeService.deleteMensajeById(id);
     }
-/*
+    @PostMapping("/enviar")
+    public Boolean dispatchEventToClients(){
+        System.out.println("entroooo");
+        SseEmitter sseEmitter = emitters.get("2");
+        if(sseEmitter != null){
+            try {
+                sseEmitter.send(SseEmitter.event().name("latestNews").data("hola"));
+                System.out.println("entro");
+            } catch (IOException e) {
+                emitters.remove(sseEmitter);
+                System.out.println("ERROR");
+            }
+        }else {
+            System.out.println("conexion es nula");
+        }
+        return true;
+    }
+
     @CrossOrigin
     @RequestMapping("/conectarse")
-    public SseEmitter suscribe(@RequestParam String userId){
+    public Boolean suscribe(@RequestParam String userId){
+        System.out.println("USUARIO CONECTADO");
         SseEmitter sseEmitter = new SseEmitter(Long.MAX_VALUE);
         sendInitEvent(sseEmitter);
         emitters.put(userId, sseEmitter);
@@ -48,21 +66,10 @@ public class MensajeController {
         sseEmitter.onCompletion(() -> emitters.remove(sseEmitter));
         sseEmitter.onTimeout(() -> emitters.remove(sseEmitter));
         sseEmitter.onError((e) -> emitters.remove(sseEmitter));
-
-        return sseEmitter;
-    }*/
+        return true;
+    }
     // method for dispatching events to a client
-   /* @PostMapping("/enviarMensaje")
-    public void dispatchEventToClients(@RequestParam String freshNews, String userId){
-        SseEmitter sseEmitter = emitters.get(userId);
-        if(sseEmitter != null){
-            try {
-                sseEmitter.send(SseEmitter.event().name("latestNews").data(freshNews));
-            } catch (IOException e) {
-                emitters.remove(sseEmitter);
-            }
-        }
-    }*/
+
 
     private void sendInitEvent(SseEmitter sseEmitter){
         try {

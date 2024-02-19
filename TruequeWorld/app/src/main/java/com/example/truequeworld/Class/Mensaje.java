@@ -1,5 +1,6 @@
 package com.example.truequeworld.Class;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Mensaje {
@@ -7,9 +8,9 @@ public class Mensaje {
     private Integer idChat;
     private Integer idUsuario;
     private String texto;
-    private LocalDateTime fecha;
+    private Timestamp fecha;
 
-    public Mensaje(Integer id, Integer idChat, Integer idUsuario, String texto, LocalDateTime fecha) {
+    public Mensaje(Integer id, Integer idChat, Integer idUsuario, String texto, Timestamp fecha) {
         this.id = id;
         this.idChat = idChat;
         this.idUsuario = idUsuario;
@@ -49,11 +50,11 @@ public class Mensaje {
         this.texto = texto;
     }
 
-    public LocalDateTime getFecha() {
+    public Timestamp getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
 }

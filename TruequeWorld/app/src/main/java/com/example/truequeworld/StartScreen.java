@@ -379,7 +379,7 @@ public class StartScreen extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                final Intent mainIntent = new Intent(StartScreen.this, MainScreen.class);
+                                final Intent mainIntent = new Intent(StartScreen.this, CHAT.class);
                                 startActivity(mainIntent, ActivityOptions.makeCustomAnimation(StartScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
                             }
                         }, 2000);

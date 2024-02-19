@@ -92,7 +92,7 @@ public class SplashScreen extends AppCompatActivity {
                         SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
                         int userId = sharedPreferences.getInt("userId", 0);
                         if(userId != 0){
-                            Intent intent = new Intent(SplashScreen.this, MainScreen.class);
+                            Intent intent = new Intent(SplashScreen.this, CHAT.class);
                             startActivity(intent, ActivityOptions.makeCustomAnimation(SplashScreen.this, R.anim.fade_in, R.anim.fade_out).toBundle());
                         }else{
                             Intent intent = new Intent(SplashScreen.this, StartScreen.class);
