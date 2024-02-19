@@ -45,13 +45,14 @@
         app:rippleColor="@color/gris" />
 
     <View
+        android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/fondotrueque_encabezado"
-        app:layout_constraintTop_toBottomOf="@id/h72"
         app:layout_constraintBottom_toTopOf="@id/h73"
+        app:layout_constraintEnd_toStartOf="@id/v70"
         app:layout_constraintStart_toEndOf="@id/v73"
-        app:layout_constraintEnd_toStartOf="@id/v70" />
+        app:layout_constraintTop_toBottomOf="@id/h72" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/title_add_tp"
@@ -93,14 +94,14 @@
         app:dividerColor="@color/amarillo" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/h74"
-        app:layout_constraintBottom_toTopOf="@id/h75"
-        app:layout_constraintStart_toEndOf="@id/v80"
-        app:layout_constraintEnd_toStartOf="@id/v77"
         android:nestedScrollingEnabled="true"
-        >
+        app:layout_constraintBottom_toTopOf="@id/h75"
+        app:layout_constraintEnd_toStartOf="@id/v77"
+        app:layout_constraintStart_toEndOf="@id/v80"
+        app:layout_constraintTop_toBottomOf="@id/h74">
 
         <!-- <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/description_add_tp"
@@ -133,12 +134,12 @@
             android:id="@+id/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/amarillo"
-            android:textAlignment="textStart"
+            android:background="#00000000"
             android:fontFamily="@font/inter"
             android:hint="@string/description_add_tp"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:background="#00000000"
+            android:textColorHint="@color/amarillo"
             android:textSize="13sp" />
 
     </ScrollView>
@@ -164,66 +165,102 @@
         android:background="@drawable/bg_cv_saved_button"
         android:onClick="selectImageFromGallery" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <com.google.android.material.button.MaterialButton
         app:layout_constraintTop_toBottomOf="@id/h63"
         app:layout_constraintBottom_toTopOf="@id/h64"
         app:layout_constraintStart_toEndOf="@id/v73"
         app:layout_constraintEnd_toStartOf="@id/v70"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/fondotrueque_encabezado"
-            android:id="@+id/price_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/precio"
-            android:inputType="number"
-            android:textColorHint="@color/black" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+        android:background="@drawable/fondotrueque_encabezado"
+        android:id="@+id/price_field"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:text="@string/precio"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        app:backgroundTint="@color/beige"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+
+
+
+
+
+
+
+
+
+
+    <com.google.android.material.button.MaterialButton
         app:layout_constraintTop_toBottomOf="@id/h78"
         app:layout_constraintBottom_toTopOf="@id/h79"
         app:layout_constraintStart_toEndOf="@id/v73"
         app:layout_constraintEnd_toStartOf="@id/v70"
-        >
+        android:background="@drawable/fondotrueque_encabezado"
+        android:id="@+id/category_field"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint=""
+        android:inputType="text"
+        app:backgroundTint="@color/beige"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:text="CATEGORY"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/fondotrueque_encabezado"
-            android:id="@+id/category_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="CATEGORIA"
-            android:inputType="text"
-            android:textColorHint="@color/black" />
 
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+
+    <com.google.android.material.button.MaterialButton
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/h66"
         app:layout_constraintBottom_toTopOf="@id/h67"
         app:layout_constraintStart_toEndOf="@id/v73"
         app:layout_constraintEnd_toStartOf="@id/v70"
-        >
+        android:background="@drawable/fondotrueque_encabezado"
+        android:id="@+id/estado_field"
+        android:hint=""
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:backgroundTint="@color/beige"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="ESTADO"
+        />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:background="@drawable/fondotrueque_encabezado"
-            android:id="@+id/estado_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="ESTADO"
-            android:inputType="text"
-            android:textColorHint="@color/black" />
+    <TextView
+        android:id="@+id/textview_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/price_field"
+        app:layout_constraintEnd_toEndOf="@+id/price_field"
+        app:layout_constraintStart_toStartOf="@+id/v71"
+        app:layout_constraintTop_toTopOf="@+id/h65" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/textView_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/h79"
+        app:layout_constraintEnd_toEndOf="@+id/price_field"
+        app:layout_constraintStart_toStartOf="@+id/v71"
+        app:layout_constraintTop_toTopOf="@+id/h78" />
+
+    <TextView
+        android:id="@+id/textview_estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/h67"
+        app:layout_constraintEnd_toEndOf="@+id/price_field"
+        app:layout_constraintStart_toStartOf="@+id/v71"
+        app:layout_constraintTop_toTopOf="@+id/h66" />
+
+
 
 
     <!--Constraints verticales-->

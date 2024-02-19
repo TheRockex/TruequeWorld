@@ -4,6 +4,7 @@ import static android.app.Activity.RESULT_OK;
 
 import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
@@ -35,6 +37,8 @@ import com.example.truequeworld.Preference_screen;
 import com.example.truequeworld.R;
 import com.example.truequeworld.SplashScreen;
 import com.example.truequeworld.retrofit.RetrofitConexion;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -59,6 +63,9 @@ public class Add_Product_Fragment extends Fragment {
     private ImageView imageView;
     private Bitmap bitmap;
 
+    private AlertDialog alertDialog;
+
+
     public static Add_Product_Fragment newInstance(String param1, String param2) {
         Add_Product_Fragment fragment = new Add_Product_Fragment();
         Bundle args = new Bundle();
@@ -80,7 +87,6 @@ public class Add_Product_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Conectar();
         view = inflater.inflate(R.layout.f3_fragment_add_product__screen, container, false);
-
         Button btnAddproduct = view.findViewById(R.id.button_add);
         btnAddproduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,15 +94,130 @@ public class Add_Product_Fragment extends Fragment {
                 Addproduct();
             }
         });
-
         imageView = view.findViewById(R.id.add_tp_photo); // Aquí asigna la variable miembro imageView
-
         // Configurar el clic programáticamente
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectImageFromGallery();
             }
+        });
+        MaterialButton buttonPrice = view.findViewById(R.id.price_field);
+        MaterialButton buttonCategory = view.findViewById(R.id.category_field);
+        MaterialButton buttonEstado = view.findViewById(R.id.estado_field);
+
+// Asignar un OnClickListener al botón
+        buttonPrice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View precio) {
+                // Crear el constructor del MaterialAlertDialogBuilder
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+                // Inflar el diseño personalizado para el contenido del diálogo
+                LayoutInflater inflater = requireActivity().getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.f3_alert_dialog_price, null);
+                builder.setView(dialogView);
+                // Encuentra los botones dentro del diseño personalizado
+                MaterialButton set_Price_Button = dialogView.findViewById(R.id.set_price_button);
+                MaterialButton cancel_button = dialogView.findViewById(R.id.cancel_button_price);
+                TextInputEditText price_textField = dialogView.findViewById(R.id.price_edittext);
+                TextView textviewprice = view.findViewById(R.id.textview_price);
+
+
+
+                // Configura otros atributos del AlertDialog
+                set_Price_Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View precio) {
+                        // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
+                        String price_string = price_textField.getText().toString();
+                        textviewprice.setText(price_string);
+
+
+                        alertDialog.dismiss();
+                    }
+                });
+                cancel_button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View precio) {
+                        // Hacer algo cuando se hace clic en el botón "CANCELAR"
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog = builder.create();
+                // Mostrar el AlertDialog
+                alertDialog.show();
+            }
+
+        });
+        buttonCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View category) {
+                // Crear el constructor del MaterialAlertDialogBuilder
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+                // Inflar el diseño personalizado para el contenido del diálogo
+                LayoutInflater inflater = requireActivity().getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.f3_alert_dialog_category, null);
+                builder.setView(dialogView);
+                // Encuentra los botones dentro del diseño personalizado
+                MaterialButton set_category_button = dialogView.findViewById(R.id.set_category_button);
+                MaterialButton cancel_button_category = dialogView.findViewById(R.id.cancel_button_category);
+
+
+                // Configura otros atributos del AlertDialog
+                set_category_button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View category) {
+                        // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
+                        alertDialog.dismiss();
+                    }
+                });
+                cancel_button_category.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View category) {
+                        // Hacer algo cuando se hace clic en el botón "CANCELAR"
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog = builder.create();
+                // Mostrar el AlertDialog
+                alertDialog.show();
+            }
+
+        });
+        buttonEstado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View estado) {
+                // Crear el constructor del MaterialAlertDialogBuilder
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+                // Inflar el diseño personalizado para el contenido del diálogo
+                LayoutInflater inflater = requireActivity().getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.f3_alert_dialog_estado, null);
+                builder.setView(dialogView);
+                // Encuentra los botones dentro del diseño personalizado
+                MaterialButton set_estado_button = dialogView.findViewById(R.id.set_estado_button);
+                MaterialButton cancel_button_estado = dialogView.findViewById(R.id.cancel_button_estado);
+                TextInputEditText estado_textField = estado.findViewById(R.id.estado_edittext);
+
+                // Configura otros atributos del AlertDialog
+                set_estado_button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View estado) {
+                        // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
+                        alertDialog.dismiss();
+                    }
+                });
+                cancel_button_estado.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View estado) {
+                        // Hacer algo cuando se hace clic en el botón "CANCELAR"
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog = builder.create();
+                // Mostrar el AlertDialog
+                alertDialog.show();
+            }
+
         });
 
         return view;

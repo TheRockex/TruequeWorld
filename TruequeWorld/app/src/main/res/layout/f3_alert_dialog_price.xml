@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/beige"
+    android:orientation="vertical">
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:src="@drawable/alert_logo"
+      android:padding="20dp"
+      android:layout_gravity="center_horizontal"
+      android:background="@color/beige"
+      />
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/price_textfield"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="25dp"
+      android:layout_marginRight="25dp"
+      android:paddingBottom="20dp">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/price_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="IMPORTE PRODUCTO"
+        android:inputType="text"
+        android:textColorHint="@color/black" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:background="@color/amarillo"
+      android:orientation="vertical">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/set_price_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FIJAR PRECIO"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/amarillo"
+        app:cornerRadius="0dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancel_button_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CANCELAR"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/amarillo"
+        app:cornerRadius="0dp"
+        />
+
+  </LinearLayout>
+
+</LinearLayout>
