@@ -100,59 +100,7 @@ public class Main_Screen_Fragment extends Fragment {
                 return false;
             }
         });
-
-        //navigationView = view.findViewById(R.id.bottomNavigationViewMain);
-
-            /*navigationView.setOnNavigationItemSelectedListener(item -> {
-                Fragment fragment = null;
-                int itemId = item.getItemId();
-
-                if (itemId == R.id.navbar_saved_button) {
-                    fragment = new Saved_Screen_Fragment();
-                } else if (itemId == R.id.navbar_addproduct_button) {
-                    fragment = new Add_Product_Fragment();
-                } else if (itemId == R.id.navbar_messages_button) {
-                    fragment = new Messages_Screen_Fragment();
-                } else if (itemId == R.id.navbar_user_button) {
-                    fragment = new User_Screen_Fragment();
-                }
-
-                if (fragment != null) {
-                    requireActivity().getSupportFragmentManager().beginTransaction()
-                            .setCustomAnimations(0, 0)
-                            .replace(R.id.main_screen, fragment)
-                            .addToBackStack(null)
-                            .commit();
-                    return true;
-                }
-
-                return false;
-            });*/
-
-            /*navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment fragment = null;
-                    if (item.getItemId() == R.id.navbar_saved_button) {
-                        fragment = new Saved_Screen_Fragment();
-                    } else if (item.getItemId() == R.id.navbar_addproduct_button) {
-                        fragment = new Add_Product_Fragment();
-                    } else if (item.getItemId() == R.id.navbar_messages_button) {
-                        fragment = new Messages_Screen_Fragment();
-                    } else if (item.getItemId() == R.id.navbar_user_button) {
-                        fragment = new User_Screen_Fragment();
-                    }
-                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_screen, fragment).addToBackStack(null).commit();
-                    return true;
-                }
-            });*/
-
         return view;
-        /*} catch (Exception e) {
-            e.printStackTrace();
-            Log.e("FragmentError", "Error in onCreateView: " + e.getMessage());
-            return null;
-        }*/
     }
 
     public void getUserID(){
@@ -212,7 +160,6 @@ public class Main_Screen_Fragment extends Fragment {
                     for(int i = 0; i < productList.size();i++) {
                         if(user.getPreferencias() != null){
                             if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
-                                //Introducir cardView productPreference
                                 productPreference.add(productList.get(i));
                             }
                         }else{
@@ -287,8 +234,4 @@ public class Main_Screen_Fragment extends Fragment {
         }
     }
 
-    public void ToUpdate (View v){
-        Intent intent = new Intent(requireActivity(), User_Screen_Fragment.class);
-        startActivity(intent, ActivityOptions.makeCustomAnimation(requireContext(), R.anim.fade_in, R.anim.fade_out).toBundle());
-    }
 }

@@ -1,22 +1,63 @@
 package com.example.truequeworld.Fragments;
 
+import static android.app.Activity.RESULT_OK;
+
+import android.app.ActivityOptions;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.truequeworld.Addproductscreen;
+import com.example.truequeworld.Class.Product;
+import com.example.truequeworld.Class.User;
+import com.example.truequeworld.Interface.ProductServiceApi;
+import com.example.truequeworld.Interface.UserServiceApi;
+import com.example.truequeworld.Preference_screen;
 import com.example.truequeworld.R;
+import com.example.truequeworld.SplashScreen;
+import com.example.truequeworld.retrofit.RetrofitConexion;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Add_Product_Fragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-
     public Add_Product_Fragment(){}
+    private ProductServiceApi productServiceApi;
+    private UserServiceApi userServiceApi;
+    User user;
+    View view;
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private ImageView imageView;
+    private Bitmap bitmap;
 
     public static Add_Product_Fragment newInstance(String param1, String param2) {
         Add_Product_Fragment fragment = new Add_Product_Fragment();
@@ -37,7 +78,139 @@ public class Add_Product_Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f3_fragment_add_product__screen, container, false);
+        Conectar();
+        view = inflater.inflate(R.layout.f3_fragment_add_product__screen, container, false);
+
+        Button btnAddproduct = view.findViewById(R.id.button_add);
+        btnAddproduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Addproduct();
+            }
+        });
+
+        imageView = view.findViewById(R.id.add_tp_photo); // Aquí asigna la variable miembro imageView
+
+        // Configurar el clic programáticamente
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectImageFromGallery();
+            }
+        });
+
         return view;
+    }
+
+
+    public void Conectar(){
+        userServiceApi = RetrofitConexion.getUserServiceApi();
+        productServiceApi = RetrofitConexion.getProductServiceApi();
+        getUserID();
+    }
+
+    public void getUserID(){
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<User> call = userServiceApi.getUserById(userId);;
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User userId = response.body();
+                    if (userId != null) {
+                        user = userId;
+                    }
+                } else {
+
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+            }
+        });
+    }
+
+    public void selectImageFromGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri imageUri = data.getData();
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), imageUri);
+                imageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public String bitmapToBase64(Bitmap bitmap) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        return Base64.encodeToString(imageBytes, Base64.DEFAULT);
+    }
+
+    public void Addproduct(){
+        TextInputLayout  nombreInputLayout = view.findViewById(R.id.title_add_tp);
+        TextInputLayout  descripcionInputLayout = view.findViewById(R.id.title_add_tp);
+        TextInputEditText precioenTPEditText = view.findViewById(R.id.price_field);
+        TextInputEditText categoriaEditText = view.findViewById(R.id.category_field);
+        TextInputEditText estadoEditText = view.findViewById(R.id.estado_field);
+
+        EditText nombreEditText = nombreInputLayout.getEditText();
+        EditText descripcionEditText = descripcionInputLayout.getEditText();
+
+        String nombreString = nombreEditText.getText().toString();
+        String descripcionString = descripcionEditText.getText().toString();
+        Integer precioenTPString = Integer.parseInt(precioenTPEditText.getText().toString());
+        String categoriaString = categoriaEditText.getText().toString();
+        String estadoString = estadoEditText.getText().toString();
+
+        if(bitmap != null || nombreString == null || descripcionString == null || precioenTPString == null
+                || categoriaString == null || estadoString == null || nombreString.isEmpty() || descripcionString.isEmpty() || categoriaString.isEmpty() || estadoString.isEmpty()){
+
+            String IMGString = bitmapToBase64(bitmap);
+            Product newProduct = new Product(0,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),categoriaString,IMGString);
+            Call<Product> call = productServiceApi.insertProduct(newProduct);
+            call.enqueue(new Callback<Product>() {
+                @Override
+                public void onResponse(Call<Product> call, Response<Product> response) {
+                    if (response.isSuccessful()) {
+                        Product insertedProduct = response.body();
+                        Log.e("Add_Product_Fragment", "Se inserto");
+                        if (insertedProduct != null) {
+                            Toast.makeText(requireContext(), "Producto Añadido", Toast.LENGTH_SHORT).show();
+                            nombreEditText.setText("");
+                            descripcionEditText.setText("");
+                            precioenTPEditText.setText("");
+                            categoriaEditText.setText("");
+                            estadoEditText.setText("");
+                        } else {
+                            Log.e("Add_Product_Fragment", "No se inserto");
+                        }
+                    } else {
+                        Log.e("Add_Product_Fragment", "Error");
+                    }
+                }
+                @Override
+                public void onFailure(Call<Product> call, Throwable t) {
+                    // Manejar el fallo de la llamada
+                }
+            });
+        }else {
+
+        }
     }
 }
