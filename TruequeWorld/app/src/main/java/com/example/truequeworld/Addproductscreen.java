@@ -50,7 +50,7 @@ public class Addproductscreen extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addproductscreen);
+        setContentView(R.layout.f3_fragment_add_product__screen);
         Conectar();
         user =(User) getIntent().getSerializableExtra("usuario");
         imageView = findViewById(R.id.addphoto);

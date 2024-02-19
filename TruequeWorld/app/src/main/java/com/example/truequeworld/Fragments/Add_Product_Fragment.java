@@ -37,7 +37,7 @@ public class Add_Product_Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f3_fragment_add__product, container, false);
+        View view = inflater.inflate(R.layout.f3_fragment_add_product__screen, container, false);
         return view;
     }
 }
