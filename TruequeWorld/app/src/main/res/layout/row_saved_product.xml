@@ -33,7 +33,7 @@
                 android:scaleType="centerCrop"
                 android:layout_gravity="center_vertical"
                 android:background="@color/gris"
-                app:srcCompat="@drawable/image" />
+                app:srcCompat="@drawable/image_yellow" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -94,7 +94,7 @@ public class Addproductscreen extends AppCompatActivity {
 
     public void selectImageFromGallery(View view) {
         Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType("image_yellow/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }

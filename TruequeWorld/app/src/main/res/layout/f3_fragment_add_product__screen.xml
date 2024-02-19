@@ -65,6 +65,8 @@
         app:layout_constraintStart_toEndOf="@id/v76"
         app:layout_constraintEnd_toStartOf="@id/v77"
         app:layout_constraintWidth_percent="0.8"
+        app:boxStrokeWidthFocused="0dp"
+        app:boxStrokeColor="#00000000"
         app:boxStrokeWidth="0dp"
         >
 
@@ -74,7 +76,7 @@
             android:paddingStart="0dp"
             android:hint="@string/title_add_tp"
             android:textColorHint="@color/amarillo"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:fontFamily="@font/inter"
@@ -97,10 +99,10 @@
         app:layout_constraintBottom_toTopOf="@id/h75"
         app:layout_constraintStart_toEndOf="@id/v80"
         app:layout_constraintEnd_toStartOf="@id/v77"
-
+        android:nestedScrollingEnabled="true"
         >
 
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/description_add_tp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,16 +117,29 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descripcion"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingStart="0dp"
-                android:hint="@string/description_add_tp"
-                android:textColorHint="@color/amarillo"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/inter"
+                android:hint="@string/description_add_tp"
+                android:inputType="textPersonName"
+                android:paddingStart="0dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/amarillo"
                 android:textSize="12sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout> -->
+
+        <EditText
+            android:id="@+id/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/amarillo"
+            android:textAlignment="textStart"
+            android:fontFamily="@font/inter"
+            android:hint="@string/description_add_tp"
+            android:textColor="@color/black"
+            android:background="#00000000"
+            android:textSize="13sp" />
 
     </ScrollView>
 
@@ -145,6 +160,7 @@
         app:layout_constraintBottom_toTopOf="@id/h81"
         app:layout_constraintStart_toEndOf="@id/v76"
         app:layout_constraintEnd_toStartOf="@id/v72"
+        android:src="@drawable/image_yellow_svg"
         android:background="@drawable/bg_cv_saved_button"
         android:onClick="selectImageFromGallery" />
 
@@ -252,7 +268,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.41" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v73"
@@ -308,7 +324,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.323" />
+        app:layout_constraintGuide_percent="0.455" />
 
 
     <!--Constraints horizontales-->
@@ -451,14 +467,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h81"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.44" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -133,7 +133,7 @@ public class Add_Product_Fragment extends Fragment {
 
     public void selectImageFromGallery() {
         Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType("image_yellow/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
@@ -164,13 +164,12 @@ public class Add_Product_Fragment extends Fragment {
 
     public void Addproduct(){
         TextInputLayout  nombreInputLayout = view.findViewById(R.id.title_add_tp);
-        TextInputLayout  descripcionInputLayout = view.findViewById(R.id.title_add_tp);
+        EditText  descripcionEditText = view.findViewById(R.id.descripcion);
         TextInputEditText precioenTPEditText = view.findViewById(R.id.price_field);
         TextInputEditText categoriaEditText = view.findViewById(R.id.category_field);
         TextInputEditText estadoEditText = view.findViewById(R.id.estado_field);
 
         EditText nombreEditText = nombreInputLayout.getEditText();
-        EditText descripcionEditText = descripcionInputLayout.getEditText();
 
         String nombreString = nombreEditText.getText().toString();
         String descripcionString = descripcionEditText.getText().toString();
