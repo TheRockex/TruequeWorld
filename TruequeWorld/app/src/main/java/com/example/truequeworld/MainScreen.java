@@ -35,6 +35,7 @@ import com.example.truequeworld.Interface.FavoriteServiceApi;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.databinding.A6ActivityMainScreenBinding;
+import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -207,13 +208,9 @@ public class MainScreen extends AppCompatActivity {
 
 
     public void Conectar(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.51:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        productServiceApi = retrofit.create(ProductServiceApi.class);
-        favoriteServiceApi = retrofit.create(FavoriteServiceApi.class);
-        userServiceApi = retrofit.create(UserServiceApi.class);
+        productServiceApi = RetrofitConexion.getProductServiceApi();
+        favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
+        userServiceApi = RetrofitConexion.getUserServiceApi();
         //getUserID();
     }
 

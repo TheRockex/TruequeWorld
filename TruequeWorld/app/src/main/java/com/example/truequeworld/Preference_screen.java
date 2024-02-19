@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.UserServiceApi;
+import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.button.MaterialButton;
 
 import retrofit2.Call;
@@ -70,13 +71,8 @@ public class Preference_screen extends AppCompatActivity {
     }
 
     public void Conectar(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.51:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         // Crear instancia de la interfaz
-        userServiceApi = retrofit.create(UserServiceApi.class);
+        userServiceApi = RetrofitConexion.getUserServiceApi();
         Login();
     }
 

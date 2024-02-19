@@ -39,6 +39,7 @@ import android.widget.Toast;
 
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.UserServiceApi;
+import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.BeginSignInResult;
 import com.google.android.gms.auth.api.identity.Identity;
@@ -49,12 +50,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 
-import java.io.ByteArrayOutputStream;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class StartScreen extends AppCompatActivity {
     MaterialButton LoginDesplegable;
@@ -304,14 +302,8 @@ public class StartScreen extends AppCompatActivity {
                         });
             }
         });
-        // Configurar Retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.51:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         // Crear instancia de la interfaz
-        userServiceApi = retrofit.create(UserServiceApi.class);
+        userServiceApi = RetrofitConexion.getUserServiceApi();
         /**fin**/
     }
     /**Luca**/

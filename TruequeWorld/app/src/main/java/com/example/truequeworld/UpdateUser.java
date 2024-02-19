@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.UserServiceApi;
+import com.example.truequeworld.retrofit.RetrofitConexion;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,8 +27,6 @@ import java.io.IOException;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UpdateUser extends AppCompatActivity {
 
@@ -55,13 +54,8 @@ public class UpdateUser extends AppCompatActivity {
     }
 
     public void Conectar(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.51:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         // Crear instancia de la interfaz
-        userServiceApi = retrofit.create(UserServiceApi.class);
+        userServiceApi = RetrofitConexion.getUserServiceApi();
         getUserID();
     }
 

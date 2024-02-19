@@ -27,6 +27,7 @@ import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
+import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -53,8 +54,8 @@ public class Addproductscreen extends AppCompatActivity {
         setContentView(R.layout.f3_fragment_add_product__screen);
         Conectar();
         user =(User) getIntent().getSerializableExtra("usuario");
-        imageView = findViewById(R.id.addphoto);
-        MaterialButton button = findViewById(R.id.button_publicar);
+        imageView = findViewById(R.id.add_tp_photo);
+        MaterialButton button = findViewById(R.id.button_add);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,14 +65,9 @@ public class Addproductscreen extends AppCompatActivity {
     }
 
     public void Conectar(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.51:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
         getUserID();
         // Crear instancia de la interfaz
-        productServiceApi = retrofit.create(ProductServiceApi.class);
-        productServiceApi = retrofit.create(ProductServiceApi.class);
+        productServiceApi = RetrofitConexion.getProductServiceApi();
 
     }
     public void getUserID(){
@@ -118,9 +114,9 @@ public class Addproductscreen extends AppCompatActivity {
     }
 
     public void Addproduct(){
-            TextView nombreTextView = findViewById(R.id.newtitle);
+            TextView nombreTextView = findViewById(R.id.title_add_tp);
 
-            TextView descripcionTextView = findViewById(R.id.newtitle);
+            TextView descripcionTextView = findViewById(R.id.title_add_tp);
             TextView precioenTPTextView = findViewById(R.id.price_field);
             TextView categoriaTextView = findViewById(R.id.category_field);
             TextView estadoTextView = findViewById(R.id.estado_field);
