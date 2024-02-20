@@ -42,6 +42,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.w3c.dom.Text;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -133,6 +135,8 @@ public class Add_Product_Fragment extends Fragment {
                         textviewprice.setText(price_string);
 
 
+
+
                         alertDialog.dismiss();
                     }
                 });
@@ -161,12 +165,18 @@ public class Add_Product_Fragment extends Fragment {
                 // Encuentra los botones dentro del diseño personalizado
                 MaterialButton set_category_button = dialogView.findViewById(R.id.set_category_button);
                 MaterialButton cancel_button_category = dialogView.findViewById(R.id.cancel_button_category);
+                TextInputEditText category_textfield = dialogView.findViewById(R.id.category_edittext);
+                TextView textviewcategory = view.findViewById(R.id.textView_category);
 
 
                 // Configura otros atributos del AlertDialog
                 set_category_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View category) {
+                        String category_string = category_textfield.getText().toString();
+
+                        textviewcategory.setText(category_string);
+
                         // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
                         alertDialog.dismiss();
                     }
@@ -197,12 +207,15 @@ public class Add_Product_Fragment extends Fragment {
                 MaterialButton set_estado_button = dialogView.findViewById(R.id.set_estado_button);
                 MaterialButton cancel_button_estado = dialogView.findViewById(R.id.cancel_button_estado);
                 TextInputEditText estado_textField = estado.findViewById(R.id.estado_edittext);
+                TextView textviewestado = view.findViewById(R.id.textview_estado);
 
                 // Configura otros atributos del AlertDialog
                 set_estado_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View estado) {
                         // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
+                        String estado_string = estado_textField.getText().toString();
+                        textviewestado.setText(estado_string);
                         alertDialog.dismiss();
                     }
                 });
@@ -286,23 +299,23 @@ public class Add_Product_Fragment extends Fragment {
     public void Addproduct(){
         TextInputLayout  nombreInputLayout = view.findViewById(R.id.title_add_tp);
         EditText  descripcionEditText = view.findViewById(R.id.descripcion);
-        TextInputEditText precioenTPEditText = view.findViewById(R.id.price_field);
-        TextInputEditText categoriaEditText = view.findViewById(R.id.category_field);
-        TextInputEditText estadoEditText = view.findViewById(R.id.estado_field);
+        TextView textviewprice = view.findViewById(R.id.textview_price);
+        TextView textviewcategory = view.findViewById(R.id.category_field);
+        TextView textviewestado = view.findViewById(R.id.estado_field);
 
         EditText nombreEditText = nombreInputLayout.getEditText();
 
         String nombreString = nombreEditText.getText().toString();
         String descripcionString = descripcionEditText.getText().toString();
-        Integer precioenTPString = Integer.parseInt(precioenTPEditText.getText().toString());
-        String categoriaString = categoriaEditText.getText().toString();
-        String estadoString = estadoEditText.getText().toString();
+        Integer textviewpriceString = Integer.parseInt(textviewprice.getText().toString());
+        String textviewcategoryString = textviewcategory.getText().toString();
+        String textviewestadoString = textviewestado.getText().toString();
 
-        if(bitmap != null || nombreString == null || descripcionString == null || precioenTPString == null
-                || categoriaString == null || estadoString == null || nombreString.isEmpty() || descripcionString.isEmpty() || categoriaString.isEmpty() || estadoString.isEmpty()){
+        if(bitmap != null || nombreString == null || descripcionString == null || textviewpriceString == null
+                || textviewcategoryString == null || textviewestadoString == null || nombreString.isEmpty() || descripcionString.isEmpty() || textviewcategoryString.isEmpty() || textviewestadoString.isEmpty()){
 
             String IMGString = bitmapToBase64(bitmap);
-            Product newProduct = new Product(0,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),categoriaString,IMGString);
+            Product newProduct = new Product(0,nombreString,descripcionString,textviewpriceString,textviewestadoString,user.getId(),textviewcategoryString,IMGString);
             Call<Product> call = productServiceApi.insertProduct(newProduct);
             call.enqueue(new Callback<Product>() {
                 @Override
@@ -314,9 +327,9 @@ public class Add_Product_Fragment extends Fragment {
                             Toast.makeText(requireContext(), "Producto Añadido", Toast.LENGTH_SHORT).show();
                             nombreEditText.setText("");
                             descripcionEditText.setText("");
-                            precioenTPEditText.setText("");
-                            categoriaEditText.setText("");
-                            estadoEditText.setText("");
+                            textviewprice.setText("");
+                            textviewcategory.setText("");
+                            textviewestado.setText("");
                         } else {
                             Log.e("Add_Product_Fragment", "No se inserto");
                         }
