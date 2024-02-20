@@ -39,7 +39,7 @@ public class CHAT extends AppCompatActivity {
                 Toast.makeText(CHAT.this, "esto no funciona", Toast.LENGTH_SHORT).show();
             }
         });
-        Call<Boolean> call1 = RetrofitConexion.getMensajeServiceApi().getConexion("3");
+        Call<Boolean> call1 = RetrofitConexion.getMensajeServiceApi().getConexion("2");
         call1.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
@@ -53,7 +53,7 @@ public class CHAT extends AppCompatActivity {
         });
 
         try {
-            socket = IO.socket("http://192.168.1.137:8086");
+            socket = IO.socket("http://192.168.128.235:8086");
             socket.connect();
             socket.on("latestNews", new Emitter.Listener() {
                 @Override
@@ -69,7 +69,7 @@ public class CHAT extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Call<Boolean> call = RetrofitConexion.getMensajeServiceApi().enviarMensaje();
+                Call<Boolean> call = RetrofitConexion.getMensajeServiceApi().enviarMensaje("hola","2");
                 call.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {

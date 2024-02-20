@@ -37,13 +37,13 @@ public class MensajeController {
     public Boolean deleteMensajeById(@PathVariable Integer id){
         return mensajeService.deleteMensajeById(id);
     }
-    @PostMapping("/enviar")
-    public Boolean dispatchEventToClients(){
+    @PostMapping("/enviar/{mensaje}/{userId}")
+    public Boolean dispatchEventToClients(@PathVariable String mensaje,@PathVariable String userId){
         System.out.println("entroooo");
-        SseEmitter sseEmitter = emitters.get("2");
+        SseEmitter sseEmitter = emitters.get(userId);
         if(sseEmitter != null){
             try {
-                sseEmitter.send(SseEmitter.event().name("latestNews").data("hola"));
+                sseEmitter.send(SseEmitter.event().name("latestNews").data(mensaje));
                 System.out.println("entro");
             } catch (IOException e) {
                 emitters.remove(sseEmitter);
@@ -55,10 +55,9 @@ public class MensajeController {
         return true;
     }
 
-    @CrossOrigin
-    @RequestMapping("/conectarse")
-    public Boolean suscribe(@RequestParam String userId){
-        System.out.println("USUARIO CONECTADO");
+    @PostMapping("/conectarse/{userId}")
+    public Boolean suscribe(@PathVariable String userId){
+        System.out.println("USUARIO CONECTADO: "+ userId);
         SseEmitter sseEmitter = new SseEmitter(Long.MAX_VALUE);
         sendInitEvent(sseEmitter);
         emitters.put(userId, sseEmitter);
