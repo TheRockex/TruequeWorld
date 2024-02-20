@@ -2,9 +2,7 @@ package com.example.truequeworld.Fragments;
 
 import static android.app.Activity.RESULT_OK;
 
-import android.app.ActivityOptions;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -13,10 +11,8 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
-import android.os.Debug;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -29,21 +25,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.truequeworld.Addproductscreen;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
-import com.example.truequeworld.Preference_screen;
 import com.example.truequeworld.R;
-import com.example.truequeworld.SplashScreen;
 import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
-import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -118,7 +109,7 @@ public class Add_Product_Fragment extends Fragment {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
                 // Inflar el diseño personalizado para el contenido del diálogo
                 LayoutInflater inflater = requireActivity().getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.f3_alert_dialog_price, null);
+                View dialogView = inflater.inflate(R.layout.f3_x_alert_dialog_price, null);
                 builder.setView(dialogView);
                 // Encuentra los botones dentro del diseño personalizado
                 MaterialButton set_Price_Button = dialogView.findViewById(R.id.set_price_button);
@@ -162,7 +153,7 @@ public class Add_Product_Fragment extends Fragment {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
                 // Inflar el diseño personalizado para el contenido del diálogo
                 LayoutInflater inflater = requireActivity().getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.f3_alert_dialog_category, null);
+                View dialogView = inflater.inflate(R.layout.f3_x_alert_dialog_category, null);
                 builder.setView(dialogView);
                 // Encuentra los botones dentro del diseño personalizado
                 MaterialButton set_category_button = dialogView.findViewById(R.id.set_category_button);
@@ -203,7 +194,7 @@ public class Add_Product_Fragment extends Fragment {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
                 // Inflar el diseño personalizado para el contenido del diálogo
                 LayoutInflater inflater = requireActivity().getLayoutInflater();
-                View dialogView = inflater.inflate(R.layout.f3_alert_dialog_estado, null);
+                View dialogView = inflater.inflate(R.layout.f3_x_alert_dialog_estado, null);
                 builder.setView(dialogView);
                 // Encuentra los botones dentro del diseño personalizado
                 MaterialButton set_estado_button = dialogView.findViewById(R.id.set_estado_button);

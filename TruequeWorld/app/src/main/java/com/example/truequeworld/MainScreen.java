@@ -1,20 +1,11 @@
 package com.example.truequeworld;
 
-import android.app.ActivityOptions;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,8 +18,8 @@ import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Fragments.Add_Product_Fragment;
+import com.example.truequeworld.Fragments.Exchanges_Screen_Fragment;
 import com.example.truequeworld.Fragments.Main_Screen_Fragment;
-import com.example.truequeworld.Fragments.Messages_Screen_Fragment;
 import com.example.truequeworld.Fragments.Saved_Screen_Fragment;
 import com.example.truequeworld.Fragments.User_Screen_Fragment;
 import com.example.truequeworld.Interface.FavoriteServiceApi;
@@ -37,15 +28,12 @@ import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.databinding.A6ActivityMainScreenBinding;
 import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainScreen extends AppCompatActivity {
     private ProductServiceApi productServiceApi;
@@ -83,7 +71,7 @@ public class MainScreen extends AppCompatActivity {
                 } else if (itemId == R.id.navbar_addproduct_button) {
                     replaceFragment(new Add_Product_Fragment());
                 } else if (itemId == R.id.navbar_messages_button) {
-                    replaceFragment(new Messages_Screen_Fragment());
+                    replaceFragment(new Exchanges_Screen_Fragment());
                 } else if (itemId == R.id.navbar_user_button) {
                     replaceFragment(new User_Screen_Fragment());
                 }
@@ -135,7 +123,7 @@ public class MainScreen extends AppCompatActivity {
             } else if (itemId == R.id.navbar_addproduct_button) {
                 fragment = new Add_Product_Fragment();
             } else if (itemId == R.id.navbar_messages_button) {
-                fragment = new Messages_Screen_Fragment();
+                fragment = new Exchanges_Screen_Fragment();
             } else if (itemId == R.id.navbar_user_button) {
                 fragment = new User_Screen_Fragment();
             }
@@ -165,7 +153,7 @@ public class MainScreen extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.navbar_addproduct_button) {
                     fragment = new Add_Product_Fragment();
                 } else if (item.getItemId() == R.id.navbar_messages_button) {
-                    fragment = new Messages_Screen_Fragment();
+                    fragment = new Exchanges_Screen_Fragment();
                 } else if (item.getItemId() == R.id.navbar_user_button) {
                     fragment = new User_Screen_Fragment();
                 }
