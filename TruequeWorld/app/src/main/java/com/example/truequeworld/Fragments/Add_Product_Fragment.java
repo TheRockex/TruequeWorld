@@ -206,7 +206,7 @@ public class Add_Product_Fragment extends Fragment {
                 // Encuentra los botones dentro del diseño personalizado
                 MaterialButton set_estado_button = dialogView.findViewById(R.id.set_estado_button);
                 MaterialButton cancel_button_estado = dialogView.findViewById(R.id.cancel_button_estado);
-                TextInputEditText estado_textField = estado.findViewById(R.id.estado_edittext);
+                TextInputEditText estado_textField = dialogView.findViewById(R.id.estado_edittext);
                 TextView textviewestado = view.findViewById(R.id.textview_estado);
 
                 // Configura otros atributos del AlertDialog
