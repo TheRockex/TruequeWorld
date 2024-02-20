@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
 
+import android.os.Debug;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -60,6 +61,7 @@ public class Add_Product_Fragment extends Fragment {
     private ProductServiceApi productServiceApi;
     private UserServiceApi userServiceApi;
     User user;
+    int userId;
     View view;
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView imageView;
@@ -106,7 +108,7 @@ public class Add_Product_Fragment extends Fragment {
         });
         MaterialButton buttonPrice = view.findViewById(R.id.price_field);
         MaterialButton buttonCategory = view.findViewById(R.id.category_field);
-        MaterialButton buttonEstado = view.findViewById(R.id.estado_field);
+        MaterialButton buttonEstado = view.findViewById(R.id.status_field);
 
 // Asignar un OnClickListener al botón
         buttonPrice.setOnClickListener(new View.OnClickListener() {
@@ -207,7 +209,7 @@ public class Add_Product_Fragment extends Fragment {
                 MaterialButton set_estado_button = dialogView.findViewById(R.id.set_estado_button);
                 MaterialButton cancel_button_estado = dialogView.findViewById(R.id.cancel_button_estado);
                 TextInputEditText estado_textField = dialogView.findViewById(R.id.estado_edittext);
-                TextView textviewestado = view.findViewById(R.id.textview_estado);
+                TextView textviewestado = view.findViewById(R.id.textView_status);
 
                 // Configura otros atributos del AlertDialog
                 set_estado_button.setOnClickListener(new View.OnClickListener() {
@@ -245,7 +247,7 @@ public class Add_Product_Fragment extends Fragment {
 
     public void getUserID(){
         SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
-        int userId = sharedPreferences.getInt("userId", 0);
+        userId = sharedPreferences.getInt("userId", 0);
         Call<User> call = userServiceApi.getUserById(userId);;
         call.enqueue(new Callback<User>() {
             @Override
@@ -263,6 +265,8 @@ public class Add_Product_Fragment extends Fragment {
             public void onFailure(Call<User> call, Throwable t) {
             }
         });
+
+        Log.d("DEBUG", "Id de usuario: " + userId);
     }
 
     public void selectImageFromGallery() {
@@ -297,44 +301,56 @@ public class Add_Product_Fragment extends Fragment {
     }
 
     public void Addproduct(){
-        TextInputLayout  nombreInputLayout = view.findViewById(R.id.title_add_tp);
-        EditText  descripcionEditText = view.findViewById(R.id.descripcion);
-        TextView textviewprice = view.findViewById(R.id.textview_price);
-        TextView textviewcategory = view.findViewById(R.id.category_field);
-        TextView textviewestado = view.findViewById(R.id.estado_field);
-
+        TextInputLayout nombreInputLayout = view.findViewById(R.id.title_add_tp);
         EditText nombreEditText = nombreInputLayout.getEditText();
+        EditText descripcionEditText = view.findViewById(R.id.descripcion);
+        TextView textviewprice = view.findViewById(R.id.textview_price);
+        TextView textviewcategory = view.findViewById(R.id.textView_category);
+        TextView textviewestado = view.findViewById(R.id.textView_status);
 
         String nombreString = nombreEditText.getText().toString();
         String descripcionString = descripcionEditText.getText().toString();
-        Integer textviewpriceString = Integer.parseInt(textviewprice.getText().toString());
         String textviewcategoryString = textviewcategory.getText().toString();
         String textviewestadoString = textviewestado.getText().toString();
 
-        if(bitmap != null || nombreString == null || descripcionString == null || textviewpriceString == null
-                || textviewcategoryString == null || textviewestadoString == null || nombreString.isEmpty() || descripcionString.isEmpty() || textviewcategoryString.isEmpty() || textviewestadoString.isEmpty()){
+        // parte del precio
+        String textviewPriceString = textviewprice.getText().toString();
+        String textviewPriceOnlyNumbers = textviewPriceString.replaceAll("[^0-9]", "");
+
+        // Convert the numeric part to an integer
+        int textviewPriceInt = Integer.parseInt(textviewPriceOnlyNumbers);
+
+        Log.d("DEBUG", "Estos son tus datos: idActual " + userId + ", nombreString " + nombreString
+                + ", descripcionString " + descripcionString + ", truequepuntos " + textviewPriceInt + ", categoria "
+                + textviewcategoryString + ", estado " + textviewestadoString);
+        //Integer textviewpriceString = Integer.parseInt(textviewprice.getText().toString());
+
+
+        if(bitmap != null || nombreString == null || descripcionString == null || textviewPriceOnlyNumbers == null
+                || textviewcategoryString == null || textviewestadoString == null || nombreString.isEmpty() || descripcionString.isEmpty()
+                || textviewcategoryString.isEmpty() || textviewestadoString.isEmpty() || textviewPriceOnlyNumbers.isEmpty()){
 
             String IMGString = bitmapToBase64(bitmap);
-            Product newProduct = new Product(0,nombreString,descripcionString,textviewpriceString,textviewestadoString,user.getId(),textviewcategoryString,IMGString);
+            Product newProduct = new Product(null,nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId,IMGString, textviewcategoryString);
             Call<Product> call = productServiceApi.insertProduct(newProduct);
             call.enqueue(new Callback<Product>() {
                 @Override
                 public void onResponse(Call<Product> call, Response<Product> response) {
                     if (response.isSuccessful()) {
                         Product insertedProduct = response.body();
-                        Log.e("Add_Product_Fragment", "Se inserto");
+                        Log.e("Add_Product_Fragment", "Se insertó");
                         if (insertedProduct != null) {
                             Toast.makeText(requireContext(), "Producto Añadido", Toast.LENGTH_SHORT).show();
                             nombreEditText.setText("");
                             descripcionEditText.setText("");
-                            textviewprice.setText("");
-                            textviewcategory.setText("");
-                            textviewestado.setText("");
+                            textviewprice.setText("0 TP");
+                            textviewcategory.setText("-");
+                            textviewestado.setText("-");
                         } else {
                             Log.e("Add_Product_Fragment", "No se inserto");
                         }
                     } else {
-                        Log.e("Add_Product_Fragment", "Error");
+                        Log.e("Add_Product_Fragment", "Error tontin");
                     }
                 }
                 @Override
@@ -343,7 +359,7 @@ public class Add_Product_Fragment extends Fragment {
                 }
             });
         }else {
-
+            Log.d("DEBUG", "Imbécil");
         }
     }
 }

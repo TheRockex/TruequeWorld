@@ -1,7 +1,8 @@
 package com.example.truequeworld.Class;
 
-public class Product {
+import java.io.Serializable;
 
+public class Product implements Serializable {
     private Integer id;
 
     private String nombre;
@@ -17,15 +18,15 @@ public class Product {
     private String imgProducto;
     private String categoria;
 
-    public Product(Integer id, String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String categoria, String imgProducto) {
+    public Product(Integer id, String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String imgProducto, String categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.valorenTP = valorenTP;
         this.estado = estado;
         this.usuarioId = usuarioId;
-        this.categoria = categoria;
         this.imgProducto = imgProducto;
+        this.categoria = categoria;
     }
     public String getImgProducto() {return imgProducto;}
 

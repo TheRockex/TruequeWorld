@@ -37,10 +37,11 @@
     <string name="juguetes">Juegos</string>
     <string name="tecnologia">Tecnología</string>
     <string name="add_now_tp">AÑADIR</string>
-    <string name="precio">PRECIO</string>
     <string name="marca">MARCA</string>
     <string name="tp_name">Nombre del\ntruequeproducto</string>
-    <string name="tp_value">Valor en TP</string>
+    <string name="tp_value">VALOR EN TP</string>
+    <string name="tp_category">CATEGORÍA</string>
+    <string name="tp_status">ESTADO</string>
     <string name="tp_location">Ubicación de la persona</string>
     <string name="type_a_message">Type a message</string>
     <string name="x_tp">X truequeproductos</string>
@@ -49,5 +50,7 @@
     <string name="description_add_tp">Descripción detallada del producto: marca, estilo...</string>
     <string name="pic_add_tp">+ Fotos de tu truequeproducto</string>
     <string name="loc_add_tp">Ubicación</string>
+    <string name="default_tp">0 TP</string>
+    <string name="default_category">-</string>
 
 </resources>

@@ -119,7 +119,7 @@ public class Addproductscreen extends AppCompatActivity {
             TextView descripcionTextView = findViewById(R.id.title_add_tp);
             TextView precioenTPTextView = findViewById(R.id.price_field);
             TextView categoriaTextView = findViewById(R.id.category_field);
-            TextView estadoTextView = findViewById(R.id.estado_field);
+            TextView estadoTextView = findViewById(R.id.status_field);
 
             String nombreString = nombreTextView.getText().toString();
             String descripcionString = descripcionTextView.getText().toString();

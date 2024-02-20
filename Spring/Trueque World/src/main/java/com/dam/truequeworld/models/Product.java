@@ -26,8 +26,8 @@ public class Product {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "valorenTP")
-    private BigDecimal valorenTP;
+    @Column(name = "valor_tp")
+    private Integer valorenTP;
 
     @Column(name = "estado")
     private String estado;

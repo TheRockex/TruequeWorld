@@ -50,7 +50,7 @@ INSERT INTO `favoritos` (`id`, `Productoid`, `Usuarioid`) VALUES
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(20) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
+  `descripcion` text NOT NULL,
   `valorenTP` int(11) DEFAULT NULL,
   `estado` varchar(10) NOT NULL,
   `usuarioid` int(11) DEFAULT NULL,
