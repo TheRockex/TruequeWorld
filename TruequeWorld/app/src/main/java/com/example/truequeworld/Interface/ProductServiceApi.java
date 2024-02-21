@@ -22,7 +22,7 @@ public interface ProductServiceApi {
     Call<Product> getproductById(@Path("id") Integer id);
 
     @POST("/product/save")
-    Call<Product> insertProduct(@Body Product product);
+    Call<Product> insertProduct(@Body Product product, byte[] img);
 
     @PUT("/product/save")
     Call<Product> updateProduct(@Body Product product);

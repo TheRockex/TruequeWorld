@@ -27,16 +27,6 @@ public class ProductService {
     }
 
     public Product saveProduct(Product product){
-
-        byte[] img = Base64.getMimeDecoder().decode(product.getImgProducto());
-        File file = new File("imgs/"+product.getNombre()+".jpg");
-        try {
-            file.createNewFile();
-            OutputStream os = new FileOutputStream(file,false);
-            os.write(img);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         return productRepository.save(product);
     }
 

@@ -6,6 +6,11 @@ import com.dam.truequeworld.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Base64;
 import java.util.List;
 
 @RestController
@@ -25,7 +30,22 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public Product insertProduct(@RequestBody Product product){
+    public Product insertProduct(@RequestBody Product product, byte[] img){
+        String path = "imgs/"+product.getNombre();
+        File file = new File(path+".png");
+        try {
+            int i = 1;
+            while(!file.createNewFile()){
+                    file = new File(path+i+".png");
+                    i++;
+            }
+
+            OutputStream os = new FileOutputStream(file,false);
+            os.write(img);
+            product.setImgProducto(file.getPath());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return productService.saveProduct(product);
     }
 
