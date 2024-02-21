@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public Product insertProduct(@RequestBody Product product, byte[] img){
+    public Product insertProduct(@RequestBody Product product){
         String path = "imgs/"+product.getNombre();
         File file = new File(path+".png");
         try {
@@ -41,12 +41,11 @@ public class ProductController {
             }
 
             OutputStream os = new FileOutputStream(file,false);
-            os.write(img);
-            product.setImgProducto(file.getPath());
+            os.write(product.getImg());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return productService.saveProduct(product);
+        return productService.saveProduct(new Product(null, product.getNombre(),product.getDescripcion(),product.getValorenTP(),product.getEstado(),product.getUsuarioId(), file.getPath(), product.getCategoria()));
     }
 
     @DeleteMapping("/delete/{id}")

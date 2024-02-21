@@ -17,6 +17,7 @@ public class Product implements Serializable {
 
     private String imgProducto;
     private String categoria;
+    private byte[] img;
 
     public Product(Integer id, String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String imgProducto, String categoria) {
         this.id = id;
@@ -27,6 +28,15 @@ public class Product implements Serializable {
         this.usuarioId = usuarioId;
         this.imgProducto = imgProducto;
         this.categoria = categoria;
+    }
+    public Product(String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String categoria, byte[] img){
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.valorenTP = valorenTP;
+        this.estado = estado;
+        this.usuarioId = usuarioId;
+        this.categoria = categoria;
+        this.img = img;
     }
     public String getImgProducto() {return imgProducto;}
 

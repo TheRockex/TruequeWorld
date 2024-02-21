@@ -325,8 +325,8 @@ public class Add_Product_Fragment extends Fragment {
             // Puedes ajustar el formato y la calidad según tus necesidades
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 
-            Product newProduct = new Product(null,nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId,null, textviewcategoryString);
-            Call<Product> call = productServiceApi.insertProduct(newProduct,stream.toByteArray());
+            Product newProduct = new Product(nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId, textviewcategoryString,stream.toByteArray());
+            Call<Product> call = productServiceApi.insertProduct(newProduct);
             call.enqueue(new Callback<Product>() {
                 @Override
                 public void onResponse(Call<Product> call, Response<Product> response) {

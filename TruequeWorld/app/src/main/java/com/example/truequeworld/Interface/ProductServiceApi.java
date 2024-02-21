@@ -21,12 +21,11 @@ public interface ProductServiceApi {
     @GET("/product/id/{id}")
     Call<Product> getproductById(@Path("id") Integer id);
 
-    @POST("/product/save")
-    Call<Product> insertProduct(@Body Product product, byte[] img);
+    @POST("/product/save/")
+    Call<Product> insertProduct(@Body Product product);
 
     @PUT("/product/save")
     Call<Product> updateProduct(@Body Product product);
-
 
 }
 
