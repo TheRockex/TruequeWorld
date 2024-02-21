@@ -62,6 +62,13 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="ThinTypeBlack">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
     <style name="XTP">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/amarillo</item>
