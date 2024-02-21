@@ -130,10 +130,13 @@ public class Addproductscreen extends AppCompatActivity {
             if(bitmap != null || nombreString == null || descripcionString == null || precioenTPString == null
                 || categoriaString == null || estadoString == null || nombreString.isEmpty() || descripcionString.isEmpty() || categoriaString.isEmpty() || estadoString.isEmpty()){
 
-            String IMGString = bitmapToBase64(bitmap);
-            Product newProduct = new Product(0,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),categoriaString,IMGString);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
-            Call<Product> call = productServiceApi.insertProduct(newProduct);
+                // Puedes ajustar el formato y la calidad según tus necesidades
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            Product newProduct = new Product(0,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),null,categoriaString);
+
+            Call<Product> call = productServiceApi.insertProduct(newProduct, stream.toByteArray());
             call.enqueue(new Callback<Product>() {
                 @Override
                 public void onResponse(Call<Product> call, Response<Product> response) {

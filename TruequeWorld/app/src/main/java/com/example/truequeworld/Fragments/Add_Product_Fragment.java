@@ -320,10 +320,13 @@ public class Add_Product_Fragment extends Fragment {
         if(bitmap != null || nombreString == null || descripcionString == null || textviewPriceOnlyNumbers == null
                 || textviewcategoryString == null || textviewestadoString == null || nombreString.isEmpty() || descripcionString.isEmpty()
                 || textviewcategoryString.isEmpty() || textviewestadoString.isEmpty() || textviewPriceOnlyNumbers.isEmpty()){
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
-            String IMGString = bitmapToBase64(bitmap);
-            Product newProduct = new Product(null,nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId,IMGString, textviewcategoryString);
-            Call<Product> call = productServiceApi.insertProduct(newProduct);
+            // Puedes ajustar el formato y la calidad según tus necesidades
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+            Product newProduct = new Product(null,nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId,null, textviewcategoryString);
+            Call<Product> call = productServiceApi.insertProduct(newProduct,stream.toByteArray());
             call.enqueue(new Callback<Product>() {
                 @Override
                 public void onResponse(Call<Product> call, Response<Product> response) {
