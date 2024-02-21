@@ -1,4 +1,4 @@
-package com.example.truequeworld.Class;
+/*package com.example.truequeworld.Class;
 
 public class ProductImg extends Product{
     private byte[] imgBytes;
@@ -15,3 +15,4 @@ public class ProductImg extends Product{
         this.imgBytes = imgBytes;
     }
 }
+*/

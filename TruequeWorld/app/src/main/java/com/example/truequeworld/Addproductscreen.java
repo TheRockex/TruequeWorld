@@ -1,4 +1,6 @@
-package com.example.truequeworld;
+
+
+/*package com.example.truequeworld;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -171,4 +173,4 @@ public class Addproductscreen extends AppCompatActivity {
         byte[] imageBytes = baos.toByteArray();
         return Base64.encodeToString(imageBytes, Base64.DEFAULT);
     }
-}
+}*/

@@ -1,4 +1,4 @@
-package com.dam.truequeworld.models;
+/*package com.dam.truequeworld.models;
 
 public class ProductImg extends Product{
     private byte[] imgBytes;
@@ -15,4 +15,4 @@ public class ProductImg extends Product{
     public void setImgBytes(byte[] imgBytes){
         this.imgBytes = imgBytes;
     }
-}
+}*/
