@@ -1,6 +1,7 @@
 package com.dam.truequeworld.controlers;
 
 import com.dam.truequeworld.models.Product;
+import com.dam.truequeworld.models.ProductImg;
 import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,22 +31,24 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public Product insertProduct(@RequestBody Product product){
+    public Product insertProduct(@RequestBody ProductImg product){
+        System.out.println("entroooo");
         String path = "imgs/"+product.getNombre();
-        File file = new File(path+".png");
+        File file = new File(path+".jpg");
         try {
             int i = 1;
             while(!file.createNewFile()){
-                    file = new File(path+i+".png");
+                    file = new File(path+i+".jpg");
                     i++;
             }
 
             OutputStream os = new FileOutputStream(file,false);
-            os.write(product.getImg());
+            os.write(product.getImgBytes());
+            product.setImgProducto(file.getPath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return productService.saveProduct(new Product(null, product.getNombre(),product.getDescripcion(),product.getValorenTP(),product.getEstado(),product.getUsuarioId(), file.getPath(), product.getCategoria()));
+        return productService.saveProduct(new Product(product));
     }
 
     @DeleteMapping("/delete/{id}")

@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.truequeworld.Class.ProductImg;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
@@ -323,9 +324,9 @@ public class Add_Product_Fragment extends Fragment {
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
             // Puedes ajustar el formato y la calidad según tus necesidades
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
 
-            Product newProduct = new Product(nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId, textviewcategoryString,stream.toByteArray());
+            ProductImg newProduct = new ProductImg(null,nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId,null, textviewcategoryString,stream.toByteArray());
             Call<Product> call = productServiceApi.insertProduct(newProduct);
             call.enqueue(new Callback<Product>() {
                 @Override

@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.truequeworld.Class.Product;
+import com.example.truequeworld.Class.ProductImg;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
@@ -134,7 +135,7 @@ public class Addproductscreen extends AppCompatActivity {
 
                 // Puedes ajustar el formato y la calidad según tus necesidades
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            Product newProduct = new Product(nombreString,descripcionString,precioenTPString,estadoString,user.getId(),categoriaString,stream.toByteArray());
+            ProductImg newProduct = new ProductImg(null,nombreString,descripcionString,precioenTPString,estadoString,user.getId(),null,categoriaString,stream.toByteArray());
 
             Call<Product> call = productServiceApi.insertProduct(newProduct);
             call.enqueue(new Callback<Product>() {

@@ -37,31 +37,19 @@ public class Product {
 
     @Column(name = "img")
     private String imgProducto;
+
     @Column(name = "categoria")
     private String categoria;
-    private byte[] imgBytes;
-    public Product(String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String categoria, byte[] img){
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.valorenTP = valorenTP;
-        this.estado = estado;
-        this.usuarioId = usuarioId;
-        this.categoria = categoria;
-        this.imgBytes = img;
-    }
-    public Product(Integer id,String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String imgProducto,String categoria){
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.valorenTP = valorenTP;
-        this.estado = estado;
-        this.usuarioId = usuarioId;
-        this.categoria = categoria;
-        this.imgProducto = imgProducto;
-    }
 
-    public byte[] getImg() {
-        return imgBytes;
+    public Product(ProductImg productImg){
+        id = productImg.getId();
+        nombre = productImg.getNombre();
+        descripcion = productImg.getDescripcion();
+        valorenTP = productImg.getValorenTP();
+        estado = productImg.getEstado();
+        usuarioId = productImg.getUsuarioId();
+        imgProducto = productImg.getImgProducto();
+        categoria = productImg.getCategoria();
     }
 }
 

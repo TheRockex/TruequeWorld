@@ -2,6 +2,7 @@ package com.example.truequeworld.Interface;
 
 
 import com.example.truequeworld.Class.Product;
+import com.example.truequeworld.Class.ProductImg;
 import com.example.truequeworld.Class.User;
 
 import java.util.List;
@@ -21,8 +22,8 @@ public interface ProductServiceApi {
     @GET("/product/id/{id}")
     Call<Product> getproductById(@Path("id") Integer id);
 
-    @POST("/product/save/")
-    Call<Product> insertProduct(@Body Product product);
+    @POST("/product/save")
+    Call<Product> insertProduct(@Body ProductImg product);
 
     @PUT("/product/save")
     Call<Product> updateProduct(@Body Product product);
