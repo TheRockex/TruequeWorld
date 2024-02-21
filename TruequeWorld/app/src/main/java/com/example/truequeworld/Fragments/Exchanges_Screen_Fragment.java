@@ -10,16 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.truequeworld.R;
 
-public class Messages_Screen_Fragment extends Fragment {
+public class Exchanges_Screen_Fragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
 
-    public Messages_Screen_Fragment(){}
+    public Exchanges_Screen_Fragment(){}
 
-    public static Messages_Screen_Fragment newInstance(String param1, String param2) {
-        Messages_Screen_Fragment fragment = new Messages_Screen_Fragment();
+    public static Exchanges_Screen_Fragment newInstance(String param1, String param2) {
+        Exchanges_Screen_Fragment fragment = new Exchanges_Screen_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -38,7 +38,7 @@ public class Messages_Screen_Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f4_fragment_messages__screen, container, false);
+        View view = inflater.inflate(R.layout.noseusa1___f4_fragment_messages__screen, container, false);
         return view;
     }
 }

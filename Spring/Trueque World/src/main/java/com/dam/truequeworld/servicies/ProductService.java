@@ -5,6 +5,12 @@ import com.dam.truequeworld.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Base64;
+
 import java.util.List;
 
 @Service
@@ -21,6 +27,16 @@ public class ProductService {
     }
 
     public Product saveProduct(Product product){
+
+        byte[] img = Base64.getMimeDecoder().decode(product.getImgProducto());
+        File file = new File("imgs/"+product.getNombre()+".jpg");
+        try {
+            file.createNewFile();
+            OutputStream os = new FileOutputStream(file,false);
+            os.write(img);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return productRepository.save(product);
     }
 
