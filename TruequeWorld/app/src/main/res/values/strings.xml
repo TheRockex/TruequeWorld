@@ -45,6 +45,7 @@
     <string name="tp_location">Ubicación de la persona</string>
     <string name="type_a_message">Type a message</string>
     <string name="x_tp">X truequeproductos</string>
+    <string name="x_tp_sent">X trueques propuestos</string>
     <string name="new_tp">TruequeProducto</string>
     <string name="title_add_tp">Título</string>
     <string name="description_add_tp">Descripción detallada del producto: marca, estilo...</string>
@@ -52,5 +53,6 @@
     <string name="loc_add_tp">Ubicación</string>
     <string name="default_tp">0 TP</string>
     <string name="default_category">-</string>
+    <string name="exchange_requests">Solicitudes de trueque</string>
 
 </resources>
