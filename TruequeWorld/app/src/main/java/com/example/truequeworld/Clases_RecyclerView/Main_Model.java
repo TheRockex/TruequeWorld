@@ -28,6 +28,7 @@ public class Main_Model {
         return mainName;
     }
 
+    //Tiene que ser siempre truequear
     public String getMainEx() {
         return mainEx;
     }

@@ -38,6 +38,7 @@ import com.example.truequeworld.Interface.FavoriteServiceApi;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
+import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -121,29 +122,6 @@ public class Main_Screen_Fragment extends Fragment {
         return view;
     }
 
-    public void getUserID(){
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
-        int userId = sharedPreferences.getInt("userId", 0);
-        Call<User> call = userServiceApi.getUserById(userId);;
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful()) {
-                    User userId = response.body();
-                    if (userId != null) {
-                        user = userId;
-                        Productos();
-                        Favoritos();
-                    }
-                } else {
-                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-            }
-        });
-    }
 
     /*public void onResume() {
         super.onResume();
@@ -158,40 +136,34 @@ public class Main_Screen_Fragment extends Fragment {
     }*/
 
     public void Conectar(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.129.8:8086")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        productServiceApi = retrofit.create(ProductServiceApi.class);
-        favoriteServiceApi = retrofit.create(FavoriteServiceApi.class);
-        userServiceApi = retrofit.create(UserServiceApi.class);
-        getUserID();
+        productServiceApi = RetrofitConexion.getProductServiceApi();
+        userServiceApi = RetrofitConexion.getUserServiceApi();
+        favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
+        Productos();
     }
 
     public void Productos() {
-        Call<List<Product>> call = productServiceApi.getProducts();
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<List<Product>> call = productServiceApi.getProducts(userId);
         call.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
-                    productList = response.body();
-                    for(int i = 0; i < productList.size();i++) {
-                        if(user.getPreferencias() != null){
-                            if(user.getPreferencias().contains(productList.get(i).getCategoria()) && !user.getId().equals(productList.get(i).getIdUsuario())){
-                                productPreference.add(productList.get(i));
-                            }
-                        }else{
-                            //Introducir cardView productList
-                            Bitmap bitmap = base64ToBitmap(productList.get(i).getImgProducto());
-                            imageview.setImageBitmap(bitmap);
-                        }
+                    Log.d("Product","Funciona");
+                    List<Product> productos = response.body();
+                    for (Product product : productos) {
+                        // Aquí puedes hacer lo que necesites con cada producto
+
                     }
                 } else {
-                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
+                    Log.d("Product","Error");
                 }
             }
+
             @Override
             public void onFailure(Call<List<Product>> call, Throwable t) {
+                Log.d("Product","Error2");
             }
         });
     }
@@ -211,28 +183,6 @@ public class Main_Screen_Fragment extends Fragment {
             }
             @Override
             public void onFailure(Call<Product> call, Throwable t) {
-            }
-        });
-    }
-
-    public void Favoritos() {
-        Call<List<Favorito>> call = favoriteServiceApi.getFavoritos();
-        call.enqueue(new Callback<List<Favorito>>() {
-            @Override
-            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
-                if (response.isSuccessful()) {
-                    favoritoList = response.body();
-                    for(int i = 0; i < favoritoList.size();i++) {
-                        if(user.getId().equals(favoritoList.get(i).getUsuarioId())){
-                            getProductosId(favoritoList.get(i).getProductoId());
-                        }
-                    }
-                } else {
-                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<List<Favorito>> call, Throwable t) {
             }
         });
     }

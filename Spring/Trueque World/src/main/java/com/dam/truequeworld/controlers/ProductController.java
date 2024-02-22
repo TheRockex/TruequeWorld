@@ -4,13 +4,17 @@ import com.dam.truequeworld.models.Product;
 //import com.dam.truequeworld.models.ProductImg;
 import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.servicies.ProductService;
+import com.dam.truequeworld.servicies.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -28,11 +32,34 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private UserService userService;
 
-    @GetMapping("/products")
-    public List<Product> getProducts(){
-        return productService.getAllProducts();
+    @GetMapping("/products/user/{id}")
+    public List<Product> getProducts(@PathVariable Integer id) {
+        User user = userService.getUserById(id);
+
+        List<Product> productos = productService.getAllProducts();
+        List<Product> productosFiltrados = new ArrayList<>();
+
+        if (user != null) {
+            if (user.getPreferencias() != null && !user.getPreferencias().isEmpty()) {
+                for (Product producto : productos) {
+                    if (user.getPreferencias().contains(producto.getCategoria()) && !user.getId().equals(producto.getUsuarioId())) {
+                        productosFiltrados.add(producto);
+                    }
+                }
+            } else {
+                productosFiltrados.addAll(productos);
+            }
+        } else {
+            // Manejar el caso en que el usuario no exista
+        }
+
+        return productosFiltrados;
     }
+
+
 
     @GetMapping("/id/{id}")
     public Product getProductById(@PathVariable Integer id){

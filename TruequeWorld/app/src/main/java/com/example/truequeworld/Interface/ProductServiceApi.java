@@ -15,8 +15,8 @@ import retrofit2.http.Path;
 
 public interface ProductServiceApi {
 
-    @GET("/product/products")
-    Call<List<Product>> getProducts();
+    @GET("/product/products/user/{id}")
+    Call<List<Product>> getProducts(@Path("id") Integer id);
 
     @GET("/product/id/{id}")
     Call<Product> getproductById(@Path("id") Integer id);
