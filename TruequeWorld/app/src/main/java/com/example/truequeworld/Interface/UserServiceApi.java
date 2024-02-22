@@ -26,4 +26,7 @@ public interface UserServiceApi {
 
     @DELETE("/user/delete/{id}")
     Call<Boolean> deleteUserById(@Path("id") Integer id);
+
+    @POST("/user/buscar-o-insertar")
+    Call<User> buscarOInsertarUsuario(@Body User newUser);
 }

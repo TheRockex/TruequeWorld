@@ -26,7 +26,7 @@ public class Product {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "valorentp")
+    @Column(name = "valorenTP")
     private Integer valorenTP;
 
     @Column(name = "estado")

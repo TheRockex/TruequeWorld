@@ -3,6 +3,8 @@ package com.dam.truequeworld.controlers;
 import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.servicies.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -42,5 +44,17 @@ public class UserControler {
     @DeleteMapping("/delete/{id}")
     public Boolean deleteUserById(@PathVariable Integer id){
         return userService.deleteUserById(id);
+    }
+
+    @PostMapping("/buscar-o-insertar")
+    public ResponseEntity<User> buscarOInsertarUsuario(@RequestBody User newUser) {
+        String gmail = newUser.getEmail();
+        User existingUser = userService.getUsuarioByGmail(gmail);
+        if (existingUser != null) {
+            return ResponseEntity.ok(existingUser); // Usuario encontrado (código de estado 200 OK)
+        } else {
+            userService.saveUser(newUser);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newUser); // Usuario insertado (código de estado 201 Created)
+        }
     }
 }

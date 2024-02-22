@@ -7,6 +7,7 @@ import com.dam.truequeworld.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,6 +15,8 @@ import java.util.List;
 public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
+    @Autowired
+    private ProductService  productService;
 
     @GetMapping("/favorite")
     public List<Favorite> getFavorite(){
@@ -33,5 +36,25 @@ public class FavoriteController {
     @DeleteMapping("/delete/{id}")
     public Boolean deleteFavoriteById(@PathVariable Integer id){
         return favoriteService.deleteFavoriteById(id);
+    }
+
+    @GetMapping("/user/{userId}")
+    public List<Product> getFavoriteProductsByUserId(@PathVariable Integer userId) {
+        List<Integer> productIds = new ArrayList<>();
+        for (Favorite f : favoriteService.getFavoritesByUserId(userId)) {
+            if(f.getProductoid() != null){
+                productIds.add(f.getProductoid());
+            }
+        }
+
+        List<Product> favoriteProducts = new ArrayList<>();
+        for (Integer productId : productIds) {
+            Product product = productService.getProductById(productId);
+            if (product != null) {
+                favoriteProducts.add(product);
+            }
+        }
+
+        return favoriteProducts;
     }
 }

@@ -30,4 +30,8 @@ public class FavoriteService {
         favoriteRepository.deleteById(id);
         return favoriteRepository.findById(id).isEmpty();
     }
+
+    public List<Favorite> getFavoritesByUserId(Integer userId) {
+        return favoriteRepository.findByUserId(userId);
+    }
 }

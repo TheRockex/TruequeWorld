@@ -114,24 +114,21 @@ public class Saved_Screen_Fragment extends Fragment {
         });
     }
     public void Favoritos() {
-        Call<List<Favorito>> call = favoriteServiceApi.getFavoritos();
-        call.enqueue(new Callback<List<Favorito>>() {
+        Call<List<Product>> call = favoriteServiceApi.getFavoriteProductsByUserId(user.getId());
+        call.enqueue(new Callback<List<Product>>() {
             @Override
-            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
+            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
-                    Log.d("MiTag", "Este es un mensaje de depuración.");
-                    favoritoList = response.body();
-                    for(int i = 0; i < favoritoList.size();i++) {
-                        if(user.getId().equals(favoritoList.get(i).getUsuarioId())){
-                            getProductosId(favoritoList.get(i).getProductoId());
-                        }
-                    }
+                    List<Product> productList = response.body();
+                    Toast.makeText(requireContext(), "Alex es gei", Toast.LENGTH_SHORT).show();
+                    // Haz algo con la lista de productos...
                 } else {
-                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Error me cago en tus muertos", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
-            public void onFailure(Call<List<Favorito>> call, Throwable t) {
+            public void onFailure(Call<List<Product>> call, Throwable t) {
+
             }
         });
     }

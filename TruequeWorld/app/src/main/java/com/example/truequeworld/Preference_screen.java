@@ -73,35 +73,27 @@ public class Preference_screen extends AppCompatActivity {
     public void Conectar(){
         // Crear instancia de la interfaz
         userServiceApi = RetrofitConexion.getUserServiceApi();
-        Login();
+        getUserID();
     }
 
-    public void Login(){
-        Call<User> call = userServiceApi.getUser(emailString, contraString);
+    public void getUserID(){
+        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<User> call = userServiceApi.getUserById(userId);;
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
-                    user = response.body();
-                    if (user  != null) {
-                        SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putInt("userId", user.getId());
-                        editor.apply();
-
-                    } else {
-                        // El userId es nulo, maneja el caso según tus necesidades
-                        Toast.makeText(Preference_screen.this, "ID de Usuario nulo", Toast.LENGTH_SHORT).show();
+                    User userId = response.body();
+                    if (userId != null) {
+                        user = userId;
                     }
                 } else {
-                    // Manejar el error de respuesta
-                    Toast.makeText(Preference_screen.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
+
                 }
             }
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                // Manejar el fallo de la llamada
-                Toast.makeText(Preference_screen.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
             }
         });
     }

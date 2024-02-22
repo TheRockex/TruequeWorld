@@ -28,4 +28,8 @@ public class UserService {
          userRepository.deleteById(id);
          return userRepository.findById(id).isEmpty();
     }
+
+    public User getUsuarioByGmail(String gmail) {
+        return userRepository.findByGmail(gmail);
+    }
 }

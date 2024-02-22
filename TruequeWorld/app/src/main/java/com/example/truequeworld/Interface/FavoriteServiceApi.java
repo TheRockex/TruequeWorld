@@ -23,5 +23,8 @@ public interface FavoriteServiceApi {
 
     @DELETE("/favorite/delete/{id}")
     Call<Boolean> deleteFavoriteById(@Path("id") Integer id);
+
+    @GET("/favorite/user/{userId}")
+    Call<List<Product>> getFavoriteProductsByUserId(@Path("userId") Integer userId);
 }
 

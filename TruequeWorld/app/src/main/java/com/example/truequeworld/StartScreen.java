@@ -525,7 +525,40 @@ public class StartScreen extends AppCompatActivity {
         User newUser = new User(null,nombreString,nombreString,apellidosString,emailString,contraString,0,null,null);
 
         // Ejemplo de llamada a insertUser
-        Call<User> call = userServiceApi.insertUser(newUser);
+
+        Call<User> call = userServiceApi.buscarOInsertarUsuario(newUser);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (response.isSuccessful()) {
+                    User user = response.body();
+                    if (user != null) {
+                        if (response.raw().code() == 200) {
+                            Toast.makeText(getApplicationContext(), "Usuario ya existe", Toast.LENGTH_SHORT).show();
+                        } else if (response.raw().code() == 201) {
+                            // Usuario insertado
+                            SharedPreferences sharedPreferences = getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putInt("userId", user.getId());
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), Preference_screen.class);
+                            startActivity(intent);
+                        }
+                    } else {
+                        Log.e("RESPONSE", "Error: Usuario nulo");
+                    }
+                } else {
+                    // Error al hacer la solicitud
+                    Log.e("RESPONSE", "Error: " + response.code());
+                }
+            }
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+
+        /*Call<User> call = userServiceApi.insertUser(newUser);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -551,7 +584,7 @@ public class StartScreen extends AppCompatActivity {
                 // Manejar el fallo de la llamada
                 Toast.makeText(StartScreen.this, "Error", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
     public void UserExists(Dialog dialog){
