@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Base64;
 import android.util.Log;
@@ -22,9 +25,12 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.truequeworld.Adapters.Main_Adapter;
+import com.example.truequeworld.Clases_RecyclerView.Main_Model;
 import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
@@ -56,16 +62,28 @@ public class Main_Screen_Fragment extends Fragment {
     List<Product> productList = new ArrayList<>();
     List<Product> productIDList = new ArrayList<>();
     List<Favorito> favoritoList = new ArrayList<>();
+
     User user;
     Product product;
     private ImageView imageview;
     private boolean permissionDenied = false;
+
+    ArrayList<Main_Model> mainModels = new ArrayList<>();
+    RecyclerView rvMain;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Conectar();
         View view = inflater.inflate(R.layout.f1_fragment_main__screen, container, false);
         requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //recycler intento de funcionamiento
+        rvMain = view.findViewById(R.id.rvProductsMain);
+        setRvMain();
+        LinearLayoutManager managerLayout = new LinearLayoutManager(requireContext());
+        rvMain.setLayoutManager(managerLayout);
+        Main_Adapter adapter = new Main_Adapter(requireContext(), mainModels);
+        rvMain.setAdapter(adapter);
 
         /*try {
 
@@ -232,6 +250,35 @@ public class Main_Screen_Fragment extends Fragment {
                 Toast.makeText(requireContext(), productList.get(i).getNombre(), Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void setRvMain() {
+        //Esto es lo que rellena a las cardview, te dejo el ejemplo de lo que hice para mario, por si acaso
+        /*
+             private void setRvCurrency() {
+        String[] curNames = getResources().getStringArray(R.array.cNames);
+        String[] curValues = getResources().getStringArray(R.array.cChange);
+
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.cLogos);
+        Drawable[] curLogos = new Drawable[typedArray.length()];
+
+        for (int x = 0; x < typedArray.length(); x++) {
+            int typed = typedArray.getResourceId(x, 0);
+            if (typed != 0) {
+                curLogos[x] = ContextCompat.getDrawable(this, typed);
+            }
+        }
+
+        typedArray.recycle();
+
+        for (int y = 0; y < curNames.length; y++) {
+            currencyModels.add(new CurrencyModel(
+                    curNames[y],
+                    curValues[y],
+                    curLogos[y]));
+        }
+    }
+        */
     }
 
 }

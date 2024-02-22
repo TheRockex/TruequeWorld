@@ -54,5 +54,7 @@
     <string name="default_tp">0 TP</string>
     <string name="default_category">-</string>
     <string name="exchange_requests">Solicitudes de trueque</string>
+    <string name="name_main_cv">Nombre producto</string>
+    <string name="exchange_now">Truequear</string>
 
 </resources>
