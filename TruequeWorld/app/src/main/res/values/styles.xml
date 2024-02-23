@@ -39,6 +39,14 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="ReturnExchanges">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
     <style name="CardViewTitleType">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/black</item>
