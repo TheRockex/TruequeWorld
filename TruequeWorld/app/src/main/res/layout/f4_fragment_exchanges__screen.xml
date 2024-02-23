@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
+    
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -140,6 +140,11 @@
         app:layout_constraintEnd_toStartOf="@id/v511"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="1" />
+
+    <FrameLayout
+        android:id="@+id/sent_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
     <!--Constraints verticales-->

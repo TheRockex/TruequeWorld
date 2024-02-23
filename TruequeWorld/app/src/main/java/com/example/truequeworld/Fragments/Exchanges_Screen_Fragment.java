@@ -3,13 +3,16 @@ package com.example.truequeworld.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.truequeworld.Adapters.Exchange_Adapter;
 import com.example.truequeworld.Clases_RecyclerView.Exchange_Model;
@@ -48,6 +51,17 @@ public class Exchanges_Screen_Fragment extends Fragment {
         }
     }
 
+    public void changeToReceived(View view) {
+        Exchanges_Screen_Requests_Fragment recFrag = new Exchanges_Screen_Requests_Fragment();
+
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.sent_container, recFrag);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f4_fragment_exchanges__screen, container, false);
@@ -59,14 +73,12 @@ public class Exchanges_Screen_Fragment extends Fragment {
         Exchange_Adapter adapter = new Exchange_Adapter(requireContext(), exchangeModels);
         rvExchange.setAdapter(adapter);
 
-        requests_received = view.findViewById(R.id.requests_received);
+        View requests_received = view.findViewById(R.id.requests_received);
         requests_received.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getChildFragmentManager().beginTransaction()
-                        .replace(getId(), new Exchanges_Screen_Requests_Fragment())
-                        .addToBackStack(null)
-                        .commit();
+                Log.d("SI", "jijijija");
+                changeToReceived(view);
             }
         });
 
