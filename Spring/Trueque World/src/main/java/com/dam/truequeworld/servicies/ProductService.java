@@ -5,10 +5,7 @@ import com.dam.truequeworld.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Base64;
 
 import java.util.List;
@@ -34,4 +31,6 @@ public class ProductService {
         productRepository.deleteById(id);
         return productRepository.findById(id).isEmpty();
     }
+
+
 }
