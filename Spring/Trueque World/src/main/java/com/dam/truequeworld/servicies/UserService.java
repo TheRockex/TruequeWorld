@@ -1,10 +1,16 @@
 package com.dam.truequeworld.servicies;
 
+import com.dam.truequeworld.models.Product;
 import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -13,7 +19,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public List<User> getAllUsers(){
-        return userRepository.findAll();
+         return   userRepository.findAll();
     }
 
     public User getUserById(Integer id){
@@ -32,4 +38,5 @@ public class UserService {
     public User getUsuarioByGmail(String gmail) {
         return userRepository.findByGmail(gmail);
     }
+
 }

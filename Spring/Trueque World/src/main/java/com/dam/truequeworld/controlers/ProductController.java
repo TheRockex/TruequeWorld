@@ -10,10 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -46,10 +43,13 @@ public class ProductController {
             if (user.getPreferencias() != null && !user.getPreferencias().isEmpty()) {
                 for (Product producto : productos) {
                     if (user.getPreferencias().contains(producto.getCategoria()) && !user.getId().equals(producto.getUsuarioId())) {
-                        productosFiltrados.add(producto);
+                        productosFiltrados.add(setImg(producto));
                     }
                 }
             } else {
+                for (int i = 0; i < productos.size(); i++) {
+                    setImg(productos.get(i));
+                }
                 productosFiltrados.addAll(productos);
             }
         } else {
@@ -59,65 +59,30 @@ public class ProductController {
         return productosFiltrados;
     }
 
-
-
     @GetMapping("/id/{id}")
     public Product getProductById(@PathVariable Integer id){
-        return productService.getProductById(id);
+        return setImg(productService.getProductById(id));
     }
 
     @PostMapping("/save")
     public Product insertProduct(@RequestBody Product product){
-        return productService.saveProduct(product);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public Boolean deleteProductById(@PathVariable Integer id){
-        return productService.deleteProductById(id);
-    }
-
-    @PutMapping("/save")
-    public Product updateProduct(@RequestBody Product product){
-        return productService.saveProduct(product);
-    }
-}
-
-
-/*@RestController
-@RequestMapping("/product")
-public class ProductController {
-    @Autowired
-    private ProductService productService;
-
-    @GetMapping("/products")
-    public List<Product> getProducts(){
-        return productService.getAllProducts();
-    }
-
-    @GetMapping("/id/{id}")
-    public Product getProductById(@PathVariable Integer id){
-        return productService.getProductById(id);
-    }
-
-    @PostMapping("/save")
-    public Product insertProduct(@RequestBody ProductImg product){
-        System.out.println("entroooo");
         String path = "imgs/"+product.getNombre();
+        byte[] img = Base64.getMimeDecoder().decode(product.getImgProducto());
         File file = new File(path+".jpg");
         try {
             int i = 1;
             while(!file.createNewFile()){
-                    file = new File(path+i+".jpg");
-                    i++;
+                file = new File(path+i+".jpg");
+                i++;
             }
-
             OutputStream os = new FileOutputStream(file,false);
-            os.write(product.getImgBytes());
+            os.write(img);
+            os.close();
             product.setImgProducto(file.getPath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return productService.saveProduct(new Product(product));
+        return productService.saveProduct(product);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -129,4 +94,22 @@ public class ProductController {
     public Product updateProduct(@RequestBody Product product){
         return productService.saveProduct(product);
     }
-}*/
+
+    //RECUERDEN LLAMAR A ESTE METODO ANTES DE MANDERLE UN PRODUCTO AL CLIENTE
+    private Product setImg(Product product){
+        File file = new File(product.getImgProducto());
+        try {
+            byte[] bytesFile = new byte[(int) file.length()];
+            FileInputStream fis = new FileInputStream(file);
+            fis.read(bytesFile);
+            fis.close();
+            product.setImgProducto(Base64.getMimeEncoder().encodeToString(bytesFile));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return product;
+    }
+}
+
+
+
