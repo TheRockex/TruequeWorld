@@ -12,6 +12,8 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -63,6 +65,17 @@ public class User_Screen_Fragment extends Fragment {
         }
     }
 
+    public void changeToUpdate(View view) {
+        User_Screen_Update_Fragment upFrag = new User_Screen_Update_Fragment();
+
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.user_container, upFrag);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.f5_fragment_user__screen, container, false);
@@ -71,6 +84,16 @@ public class User_Screen_Fragment extends Fragment {
         UserIDtextView = rootView.findViewById(R.id.userID);
         UserTPtextView = rootView.findViewById(R.id.userWalletpoints);
         Conectar();
+
+        View updateUserButton = rootView.findViewById(R.id.updateUserButton);
+
+        updateUserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeToUpdate(view);
+            }
+        });
+
         Button btnCerrarSesion = rootView.findViewById(R.id.button_logout);
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override

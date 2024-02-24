@@ -119,6 +119,7 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center_vertical|start</item>
     </style>
 
     <style name="AccountType">
@@ -127,6 +128,7 @@
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center_vertical|start</item>
     </style>
 
     <style name="TPType">
@@ -134,6 +136,7 @@
         <item name="android:textColor">@color/amarillo</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center_vertical|start</item>
     </style>
 
 
@@ -195,7 +198,8 @@
         <item name="backgroundTint">#00000000</item>
         <item name="boxStrokeColor">#00000000</item>
         <item name="boxStrokeWidth">0dp</item>
-        <item name="cornerRadius">0dp</item>
+        <item name="rippleColor">@color/gris</item>
+        <item name="shapeAppearance">@style/NoBGButtonsTop</item>
     </style>
 
     <style name="SearchBar" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -223,6 +227,13 @@
 
     <style name="recShape2" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="NoBGButtonsTop" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
