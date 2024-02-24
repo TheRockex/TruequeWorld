@@ -1,10 +1,14 @@
 <resources>
+
+    <!--Pantalla inicio/Splash-->
     <string name="app_name">TruequeWorld</string>
-    <string name="app_name2">Trueque\nWorld</string>
     <string name="eslogan">Si no lo usas, ¡truequéalo!</string>
     <string name="google">Continuar con Google</string>
     <string name="twlogin">Iniciar sesión</string>
     <string name="twregister">Crear una cuenta</string>
+    <string name="weblogingoogleid">94914021089-bibo61fkr1qdhtjvdvhtag0fcbhhklpr.apps.googleusercontent.com</string>
+
+    <!--Registro/login-->
     <string name="regnow">Registrarse</string>
     <string name="inicia">Inicia sesión</string>
     <string name="registra">Regístrate</string>
@@ -15,14 +19,10 @@
     <string name="email">Email</string>
     <string name="pass">Contraseña</string>
     <string name="confpass">Confirmar contraseña</string>
-    <string name="tp">Trueque\nPuntos</string>
-    <string name="search">Estoy buscando...</string>
-    <string name="recom">Recomendado para ti</string>
-    <string name="more">Ver todo</string>
-    <string name="saved">Guardado</string>
+
+    <!--Preferencias-->
     <string name="tellmemoreaboutyoulove">Queremos saber más de ti</string>
     <string name="next">Siguiente</string>
-    <string name="weblogingoogleid">94914021089-bibo61fkr1qdhtjvdvhtag0fcbhhklpr.apps.googleusercontent.com</string>
     <string name="siguiente">SIGUIENTE</string>
     <string name="programacion">Entretenimiento</string>
     <string name="_3d">Otros</string>
@@ -36,31 +36,59 @@
     <string name="camara">Infantil</string>
     <string name="juguetes">Juegos</string>
     <string name="tecnologia">Tecnología</string>
+
+    <!--Encabezado-->
+    <string name="app_name2">Trueque\nWorld</string>
+
+    <!--MainScreen-->
+    <string name="search">Estoy buscando...</string>
+    <string name="recom">Recomendado para ti</string>
+    <string name="more">Ver todo</string>
+    <string name="name_main_cv">Nombre producto</string>
+    <string name="exchange_now">Truequear</string>
+
+    <!--AddProduct-->
     <string name="add_now_tp">AÑADIR</string>
     <string name="marca">MARCA</string>
     <string name="tp_name">Nombre del\ntruequeproducto</string>
     <string name="tp_value">VALOR EN TP</string>
     <string name="tp_category">CATEGORÍA</string>
     <string name="tp_status">ESTADO</string>
-    <string name="tp_location">Ubicación de la persona</string>
-    <string name="type_a_message">Type a message</string>
-    <string name="x_tp">X truequeproductos</string>
-    <string name="x_tp_sent">X trueques propuestos</string>
-    <string name="new_tp">TruequeProducto</string>
     <string name="title_add_tp">Título</string>
     <string name="description_add_tp">Descripción detallada del producto: marca, estilo...</string>
     <string name="pic_add_tp">+ Fotos de tu truequeproducto</string>
     <string name="loc_add_tp">Ubicación</string>
     <string name="default_tp">0 TP</string>
     <string name="default_category">-</string>
+    <string name="new_tp">TruequeProducto</string>
+
+    <!--Exchanges received/sent-->
+    <string name="tp_location">Ubicación de la persona</string>
+    <string name="x_tp">X truequeproductos</string>
+    <string name="x_tp_sent">X trueques propuestos</string>
     <string name="exchange_requests">Solicitudes de trueque</string>
-    <string name="name_main_cv">Nombre producto</string>
-    <string name="exchange_now">Truequear</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="return_exchanges">Volver a trueques</string>
-    <string name="username">Username</string>
     <string name="wants_ex">¡Quiere truequear!</string>
     <string name="accept_ex">Aceptar</string>
     <string name="reject_ex">Rechazar</string>
+
+    <!--Comunes-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+
+    <!--User profile-->
+    <string name="actual_tp">TP: </string>
+    <string name="settings">Ajustes</string>
+    <string name="saved_ones">Guardados</string>
+    <string name="my_exchanges">Mis intercambios</string>
+    <string name="account">CUENTA</string>
+    <string name="tp_pro">TruequeWorld PRO</string>
+    <string name="safety">Privacidad</string>
+    <string name="close_session">Cerrar sesión</string>
+
+    <!--No sé/No usados-->
+    <string name="tp">Trueque\nPuntos</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="saved">Guardado</string>
 
 </resources>
