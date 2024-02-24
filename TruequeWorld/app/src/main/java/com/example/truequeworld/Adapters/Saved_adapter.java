@@ -32,21 +32,18 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
     Context context;
     ArrayList<Saved_Model> savedModels;
     private LayoutInflater inflater;
+    private CardView lastSelect;
+    private int posLastSelect;
     private FavoriteServiceApi favoriteServiceApi;
     private UserServiceApi userServiceApi;
-
     public Integer userId;
     private List<Favorito> savedFavorites = new ArrayList<>();
-
     User user;
-
-
 
     public Saved_adapter(Context context , ArrayList<Saved_Model> savedModels, int userId){
         this.context = context;
         this.savedModels = savedModels;
         this.userId = userId;
-
     }
 
     @NonNull
@@ -59,6 +56,66 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
     }
 
     @Override
+    public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder,@SuppressLint("RecyclerView") int position) {
+        //Saved_Model currentProduct = savedModels.get(position);
+        holder.tp_name.setText("NOMBRE: " + savedModels.get(position).getFavProduct_name());
+        holder.tp_precio.setText("PRECIO: " + savedModels.get(position).getFavProduct_precio().toString() + "TP");
+        getUserID(savedModels.get(position).getFavProduct_propietarioID(), holder.tp_nombrePropietario);
+        holder.tp_product.setImageBitmap(savedModels.get(position).getFavProduct_img());
+        holder.tp_NoFav_Button.setImageDrawable(savedModels.get(position).getMainSave());
+        int newColor = android.graphics.Color.rgb(255, 202, 65);
+        int tNewColor = android.graphics.Color.rgb(255, 255, 255);
+
+        if (savedModels.get(position).isSelected()) {
+            holder.tp_NoFav_Button.setBackgroundColor(newColor);
+        } else {
+            holder.tp_NoFav_Button.setBackgroundColor(tNewColor);
+        }
+
+        //Integer productId = currentProduct.getId();
+        //FavoritesUser(productId, holder.tp_NoFav_Button);
+
+        holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CardView cvSaved = v.findViewById(R.id.cvSaved);
+
+                if (savedModels.get(position).isSelected()) {
+                    savedModels.get(position).setSelected(false);
+                    notifyItemChanged(position);
+                } else {
+                    if (posLastSelect != -1) {
+                        savedModels.get(posLastSelect).setSelected(false);
+                        notifyItemChanged(posLastSelect);
+                    }
+
+                    savedModels.get(position).setSelected(true);
+                    notifyItemChanged(position);
+                }
+
+                int adapterPosition = holder.getAdapterPosition();
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    Saved_Model clickedItem = savedModels.get(adapterPosition);
+                    Integer productId = clickedItem.getId();
+                    Favorito favorito = new Favorito(null,userId, productId);
+                    if(savedFavorites.size() != 0){
+                        for(int i = 0; i < savedFavorites.size();i++){
+                            if (savedFavorites.get(i).getProductoId().equals(productId)) {
+                                deleteFavoriteById(savedFavorites.get(0).getId() ,holder.tp_NoFav_Button);
+                                savedFavorites.remove(savedFavorites.get(i));
+                            } else {
+                                AddFavorito(favorito, holder.tp_NoFav_Button);
+                            }
+                        }
+                    }else{
+                        AddFavorito(favorito, holder.tp_NoFav_Button);
+                    }
+                }
+            }
+        });
+    }
+
+    /*@Override
     public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder,@SuppressLint("RecyclerView") int position) {
         Saved_Model currentProduct = savedModels.get(position);
         holder.tp_name.setText("NOMBRE: " + savedModels.get(position).getFavProduct_name());
@@ -94,7 +151,7 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                 }
             }
         });
-    }
+    }*/
 
 
     @Override

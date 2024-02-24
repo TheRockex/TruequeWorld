@@ -13,6 +13,7 @@ public class Saved_Model {
     public Drawable mainSave;
 
     private Integer productId;
+    public boolean isSelected;
 
     public Saved_Model(String favProduct_name, Integer favProduct_precio, Integer favProduct_propietarioID, Bitmap favProduct_img, Drawable mainSave, Integer productId) {
         this.favProduct_name = favProduct_name;
@@ -21,6 +22,14 @@ public class Saved_Model {
         this.favProduct_img = favProduct_img;
         this.mainSave = mainSave;
         this.productId = productId;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 
     public String getFavProduct_name() {
