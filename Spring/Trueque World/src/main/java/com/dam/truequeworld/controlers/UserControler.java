@@ -79,15 +79,15 @@ public class UserControler {
 
     //RECUERDEN LLAMAR A ESTE METODO ANTES DE ENVIAR UN USUARIO AL CLIENTE
     private User setImg(User user){
-        File file = new File(user.getImgPerfil());
         try {
+            File file = new File(user.getImgPerfil());
             byte[] bytesFile = new byte[(int) file.length()];
             FileInputStream fis = new FileInputStream(file);
             fis.read(bytesFile);
             fis.close();
             user.setImgPerfil(Base64.getMimeEncoder().encodeToString(bytesFile));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            //pues nada
         }
         return user;
     }
