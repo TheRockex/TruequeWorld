@@ -16,11 +16,16 @@ public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
     @Autowired
-    private ProductService  productService;
+    private ProductController  productController;
 
     @GetMapping("/favorite")
     public List<Favorite> getFavorite(){
         return favoriteService.getAllFavorites();
+    }
+
+    @GetMapping("/favorites/user/{id}")
+    public List<Favorite> getFavoritesUser(@PathVariable Integer id){
+        return favoriteService.getFavoritesByUserId(id);
     }
 
     @GetMapping("/id/{id}")
@@ -49,7 +54,7 @@ public class FavoriteController {
 
         List<Product> favoriteProducts = new ArrayList<>();
         for (Integer productId : productIds) {
-            Product product = productService.getProductById(productId);
+            Product product = productController.getProductById(productId);
             if (product != null) {
                 favoriteProducts.add(product);
             }

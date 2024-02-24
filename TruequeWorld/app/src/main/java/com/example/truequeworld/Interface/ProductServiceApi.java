@@ -27,5 +27,7 @@ public interface ProductServiceApi {
     @PUT("/product/save")
     Call<Product> updateProduct(@Body Product product);
 
+    @GET("/product/buscar/{searchTerm}")
+    Call<List<Product>> buscarProductosPorNombreOCategoria(@Path("searchTerm") String searchTerm);
 
 }

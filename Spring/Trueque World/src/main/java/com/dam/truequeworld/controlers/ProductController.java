@@ -59,6 +59,11 @@ public class ProductController {
         return productosFiltrados;
     }
 
+    @GetMapping("/buscar/{searchTerm}")
+    public List<Product> buscarProductosPorNombreOCategoria(@PathVariable String searchTerm) {
+        return productService.buscarPorNombreOCategoria(searchTerm);
+    }
+
     @GetMapping("/id/{id}")
     public Product getProductById(@PathVariable Integer id){
         return setImg(productService.getProductById(id));

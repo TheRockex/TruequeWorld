@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvSaved"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -28,9 +29,8 @@
                 android:id="@+id/saved_product"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="10dp"
                 android:layout_weight="0.55"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 android:layout_gravity="center_vertical"
                 android:background="@color/gris"
                 app:srcCompat="@drawable/image_yellow" />

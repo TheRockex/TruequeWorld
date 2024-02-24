@@ -1,43 +1,40 @@
 package com.example.truequeworld.Clases_RecyclerView;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
 public class Main_Model {
     public String mainName;
     public String mainEx;
-    public String mainImg;
+    public Bitmap mainImg;
     public Drawable mainSave;
-    public boolean isSelected;
+    private Integer productId;
 
-    public Main_Model(String mainName, String mainEx, String mainImg, Drawable mainSave) {
+    public Main_Model(String mainName, String mainEx, Bitmap mainImg, Drawable mainSave, Integer productId) {
         this.mainName = mainName;
         this.mainEx = mainEx;
         this.mainImg = mainImg;
         this.mainSave = mainSave;
-    }
-
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    public void setSelected(boolean selected) {
-        isSelected = selected;
+        this.productId = productId;
     }
 
     public String getMainName() {
         return mainName;
     }
 
-    //Tiene que ser siempre truequear
     public String getMainEx() {
         return mainEx;
     }
 
-    public String getMainImg() {
+    public Bitmap getMainImg() {
         return mainImg;
     }
 
     public Drawable getMainSave() {
         return mainSave;
+    }
+
+    public Integer getId() {
+        return productId;
     }
 }

@@ -1,77 +1,50 @@
 package com.example.truequeworld.Clases_RecyclerView;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Saved_Model {
-    private Integer id;
     private String favProduct_name;
+    private Integer favProduct_precio;
+    private Integer favProduct_propietarioID;
     private Bitmap favProduct_img;
-    private String fav_Product_descripcion;
+    public Drawable mainSave;
 
-    public Saved_Model(Integer id, String favProduct_name, Bitmap favProduct_img, String fav_Product_descripcion) {
-        this.id = id;
+    private Integer productId;
+
+    public Saved_Model(String favProduct_name, Integer favProduct_precio, Integer favProduct_propietarioID, Bitmap favProduct_img, Drawable mainSave, Integer productId) {
         this.favProduct_name = favProduct_name;
+        this.favProduct_precio = favProduct_precio;
+        this.favProduct_propietarioID = favProduct_propietarioID;
         this.favProduct_img = favProduct_img;
-        this.fav_Product_descripcion = fav_Product_descripcion;
-    }
-
-    public Integer getId() {
-        return id;
+        this.mainSave = mainSave;
+        this.productId = productId;
     }
 
     public String getFavProduct_name() {
         return favProduct_name;
     }
 
+    public Integer getFavProduct_precio() {
+        return favProduct_precio;
+    }
+
+    public Integer getFavProduct_propietarioID() {
+        return favProduct_propietarioID;
+    }
+
     public Bitmap getFavProduct_img() {
         return favProduct_img;
     }
 
-    public String getFav_Product_descripcion() {
-        return fav_Product_descripcion;
+    public Drawable getMainSave() {
+        return mainSave;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Integer getId() {
+        return productId;
     }
 
-    public void setFavProduct_name(String favProduct_name) {
-        this.favProduct_name = favProduct_name;
-    }
-
-    public void setFavProduct_img(Bitmap favProduct_img) {
-        this.favProduct_img = favProduct_img;
-    }
-
-    public void setFav_Product_descripcion(String fav_Product_descripcion) {
-        this.fav_Product_descripcion = fav_Product_descripcion;
-    }
 }
-//
-/*
-SI QUIERES QUE SE MUESTRE SUPONGO QUE SERA ALGO PARECIDO A ESTO
-public class TuFragment extends Fragment {
-
-    private RecyclerView recyclerView;
-    private TuAdapter adapter;
-    private List<TuObjeto> tuLista;
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tu, container, false);
-
-        recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        // Inicializa tu lista de objetos y el adaptador
-        tuLista = obtenerTuLista(); // Método para obtener tus datos
-        adapter = new TuAdapter(tuLista, getContext());
-
-        // Configura el adaptador en el RecyclerView
-        recyclerView.setAdapter(adapter);
-
-        return view;
-    }
-}
- */

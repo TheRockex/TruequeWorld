@@ -32,5 +32,11 @@ public class ProductService {
         return productRepository.findById(id).isEmpty();
     }
 
-
+    public List<Product> buscarPorNombreOCategoria(String searchTerm) {
+        if (searchTerm.equals("all")) {
+            return productRepository.findAll();
+        } else {
+            return productRepository.findByNombreContainingOrCategoriaContaining(searchTerm, searchTerm);
+        }
+    }
 }

@@ -2,16 +2,28 @@ package com.example.truequeworld.Fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.truequeworld.Adapters.Main_Adapter;
+import com.example.truequeworld.Adapters.Saved_adapter;
+import com.example.truequeworld.Clases_RecyclerView.Main_Model;
+import com.example.truequeworld.Clases_RecyclerView.Saved_Model;
 import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
@@ -37,10 +49,9 @@ public class Saved_Screen_Fragment extends Fragment {
     private FavoriteServiceApi favoriteServiceApi;
     private ProductServiceApi productServiceApi;
     private UserServiceApi userServiceApi;
-    User user;
-    Product product;
-    List<Product> productIDList = new ArrayList<>();
-    List<Favorito> favoritoList = new ArrayList<>();
+    List<Product> productList = new ArrayList<>();
+    ArrayList<Saved_Model> savedModels = new ArrayList<>();
+    RecyclerView rvMain;
 
     public static Saved_Screen_Fragment newInstance(String param1, String param2) {
         Saved_Screen_Fragment fragment = new Saved_Screen_Fragment();
@@ -64,66 +75,33 @@ public class Saved_Screen_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Conectar();
         View view = inflater.inflate(R.layout.f2_fragment_saved__screen, container, false);
+        requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        rvMain = view.findViewById(R.id.rvProductsFavorite);
+
         return view;
     }
     public void Conectar(){
         productServiceApi = RetrofitConexion.getProductServiceApi();
         userServiceApi = RetrofitConexion.getUserServiceApi();
         favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
-        getUserID();
+        Favoritos();
     }
-    public void getUserID(){
+
+    public void Favoritos() {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
         int userId = sharedPreferences.getInt("userId", 0);
-
-        Call<User> call = userServiceApi.getUserById(userId);;
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful()) {
-                    User userId = response.body();
-                    if (userId != null) {
-                        user = userId;
-                        Favoritos();
-                    }
-                } else {
-                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-            }
-        });
-    }
-    public void getProductosId(Integer id) {
-        Call<Product> call = productServiceApi.getproductById(id);
-        call.enqueue(new Callback<Product>() {
-            @Override
-            public void onResponse(Call<Product> call, Response<Product> response) {
-                if (response.isSuccessful()) {
-                    product = response.body();
-                    productIDList.add(product);
-                    Toast.makeText(requireContext(), "Es: " + product.getNombre(), Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<Product> call, Throwable t) {
-            }
-        });
-    }
-    public void Favoritos() {
-        Call<List<Product>> call = favoriteServiceApi.getFavoriteProductsByUserId(user.getId());
+        Call<List<Product>> call = favoriteServiceApi.getFavoriteProductsByUserId(userId);
         call.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
-                    List<Product> productList = response.body();
-                    Toast.makeText(requireContext(), "Alex es gei", Toast.LENGTH_SHORT).show();
-                    // Haz algo con la lista de productos...
+                    productList = response.body();
+                    setRvMain();
+                    Saved_adapter adapter = new Saved_adapter(requireContext(), savedModels,userId);
+                    rvMain.setAdapter(adapter);
+                    rvMain.setLayoutManager(new LinearLayoutManager(requireContext()));
                 } else {
-                    Toast.makeText(requireContext(), "Error me cago en tus muertos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Error no se cargan los productos", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -133,27 +111,24 @@ public class Saved_Screen_Fragment extends Fragment {
         });
     }
 
-    /*
-    public void deleteFavoriteById() {
-        Call<Boolean> call = favoriteServiceApi.deleteFavoriteById(0);
-        call.enqueue(new Callback<Boolean>() {
-            @Override
-            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                if (response.isSuccessful() && response.body() != null && response.body()) {
-                    // El favorito se eliminó exitosamente
-                    Favoritos();
-                } else {
-                    Toast.makeText(MainScreen.this, "Error al eliminar el favorito", Toast.LENGTH_SHORT).show();
-                }
-            }
+    private void setRvMain() {
+        Drawable mainSaveIcon = ContextCompat.getDrawable(requireContext(), R.drawable.navbar_saved_button_icon);
 
-            @Override
-            public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(MainScreen.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        for (int i = 0; i < productList.size(); i++) {
+            savedModels.add(new Saved_Model(
+                    productList.get(i).getNombre(),
+                    productList.get(i).getValorenTP(),
+                    productList.get(i).getIdUsuario(),
+                    base64ToBitmap(productList.get(i).getImgProducto()),
+                    mainSaveIcon,
+                    productList.get(i).getId()
+            ));
+        }
     }
 
-     */
+    public Bitmap base64ToBitmap(String base64Image) {
+        byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+    }
 
 }

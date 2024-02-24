@@ -18,6 +18,9 @@ public interface FavoriteServiceApi {
     @GET("/favorite/favorite")
     Call<List<Favorito>> getFavoritos();
 
+    @GET("/favorite/favorites/user/{id}")
+    Call<List<Favorito>> getFavoritosUserid(@Path("id") Integer id);
+
     @POST("/favorite/save")
     Call<Favorito> insertFavoritos(@Body Favorito favorito);
 

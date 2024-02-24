@@ -22,16 +22,22 @@ public class User {
 
     @Column(name = "DNI")
     private String dni;
+
     @Column(name = "nombre")
     private String name;
+
     @Column(name = "apellidos")
     private String apellidos;
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "contrasena")
     private String contrasenia;
+
     @Column(name = "img")
     private String imgPerfil;
+
     @Column(name = "truquepoints")
     private Integer truquepoints;
 

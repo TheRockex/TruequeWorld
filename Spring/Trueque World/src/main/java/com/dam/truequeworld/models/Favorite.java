@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 @Data
 @Builder
 public class Favorite {
+    
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
