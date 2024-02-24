@@ -262,7 +262,7 @@ public class Add_Product_Fragment extends Fragment {
 
     public void selectImageFromGallery() {
         Intent intent = new Intent();
-        intent.setType("image_yellow/*");
+        intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
