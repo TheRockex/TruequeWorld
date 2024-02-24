@@ -9,6 +9,336 @@
 
     <!--Parte de arriba del user-->
 
+    <View
+        android:id="@+id/viewProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h99"
+        app:layout_constraintBottom_toTopOf="@id/h100"
+        app:layout_constraintStart_toEndOf="@id/v101"
+        app:layout_constraintEnd_toStartOf="@id/v102"
+        android:background="@drawable/fondotrueque_encabezado" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h99"
+        app:layout_constraintBottom_toTopOf="@id/h100"
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf="@id/v104"
+        app:layout_constraintHeight_percent="0.085"
+        android:background="@drawable/circle_bg_user" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h99"
+        app:layout_constraintBottom_toTopOf="@id/h100"
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf="@id/v104"
+        app:layout_constraintHeight_percent="0.085"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h101"
+        app:layout_constraintBottom_toTopOf="@id/h102"
+        app:layout_constraintStart_toEndOf="@id/v105"
+        app:layout_constraintEnd_toStartOf="@id/v106"
+        android:text="@string/username"
+        style="@style/UserTitleType" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h102"
+        app:layout_constraintBottom_toTopOf="@id/h103"
+        app:layout_constraintStart_toEndOf="@id/v105"
+        app:layout_constraintEnd_toStartOf="@id/v106"
+        android:text="@string/actual_tp"
+        style="@style/TPType" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h99"
+        app:layout_constraintBottom_toTopOf="@id/h100"
+        app:layout_constraintStart_toEndOf="@id/v107"
+        app:layout_constraintEnd_toStartOf="@id/v106"
+        app:layout_constraintHeight_percent="0.03"
+        android:src="@drawable/flecha" />
+
+
+    <!--Ajustes de en medio del user-->
+
+    <View
+        android:id="@+id/viewOptions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h104"
+        app:layout_constraintBottom_toTopOf="@id/h105"
+        app:layout_constraintStart_toEndOf="@id/v101"
+        app:layout_constraintEnd_toStartOf="@id/v102"
+        android:background="@drawable/fondotrueque_encabezado" />
+
+
+    <!--Ajustes-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf="@id/h108"
+        android:src="@drawable/conf" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        android:text="@string/settings"
+        style="@style/UserType" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_settings_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        style="@style/NoBGButtons" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v1000"
+        app:layout_constraintEnd_toStartOf="@id/v1001"
+        app:dividerColor="@color/black" />
+
+
+    <!--Productos-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf=""
+        android:src="" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        android:text="@string/settings"
+        style="@style/UserType" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_products_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        style="@style/NoBGButtons" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v1000"
+        app:layout_constraintEnd_toStartOf="@id/v1001"
+        app:dividerColor="@color/black" />
+
+    <!--Intercambios-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf=""
+        android:src="" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        android:text="@string/settings"
+        style="@style/UserType" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_exchanges_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        style="@style/NoBGButtons" />
+
+
+
+
+    <!--Ajustes de abajo del user-->
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h118"
+        app:layout_constraintBottom_toTopOf="@id/h119"
+        app:layout_constraintStart_toEndOf="@id/v1000"
+        app:layout_constraintEnd_toStartOf="@id/v102"
+        android:text="@string/account"
+        style="@style/AccountType"/>
+
+    <View
+        android:id="@+id/otherOptions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h120"
+        app:layout_constraintBottom_toTopOf="@id/h121"
+        app:layout_constraintStart_toEndOf="@id/v101"
+        app:layout_constraintEnd_toStartOf="@id/v102"
+        android:background="@drawable/fondotrueque_encabezado" />
+
+
+    <!--TW Pro-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf=""
+        android:src="" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        android:text="@string/settings"
+        style="@style/UserType" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_twpro_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        style="@style/NoBGButtons" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v1000"
+        app:layout_constraintEnd_toStartOf="@id/v1001"
+        app:dividerColor="@color/black" />
+
+
+    <!--Privacidad-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf=""
+        android:src="" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        android:text="@string/settings"
+        style="@style/UserType" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_safety_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        style="@style/NoBGButtons" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v1000"
+        app:layout_constraintEnd_toStartOf="@id/v1001"
+        app:dividerColor="@color/black" />
+
+
+    <!--Cerrar sesión-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf="@id/v103"
+        app:layout_constraintEnd_toStartOf=""
+        android:src="" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        android:text="@string/settings"
+        style="@style/UserType" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_close_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf=""
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toEndOf=""
+        app:layout_constraintEnd_toStartOf=""
+        style="@style/NoBGButtons" />
+
+    <!--<FrameLayout
+        android:id="@+id/user_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
 
 
 
