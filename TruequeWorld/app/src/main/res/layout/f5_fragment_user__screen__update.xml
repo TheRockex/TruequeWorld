@@ -17,6 +17,16 @@
         app:layout_constraintEnd_toEndOf="@id/v701"
         android:src="@drawable/fondotrueque_encabezado" />
 
+    <ImageView
+        android:id="@+id/close_edit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/close_ring"
+        app:layout_constraintTop_toBottomOf="@id/h702"
+        app:layout_constraintBottom_toTopOf="@id/h703"
+        app:layout_constraintStart_toEndOf="@id/v702"
+        app:layout_constraintEnd_toStartOf="@id/v703" />
+
 
     <!--Constraints verticales-->
 
@@ -34,6 +44,20 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v702"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v703"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.19" />
+
 
     <!--Constraints horizontales-->
 
@@ -50,5 +74,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.88" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h702"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.063" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h703"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.103" />
+
+    <!--el de cerrar un 4% de alto, 7% de largo
+
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

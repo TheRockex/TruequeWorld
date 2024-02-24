@@ -215,6 +215,14 @@
         app:layout_constraintEnd_toEndOf="@+id/v7"
         app:layout_constraintStart_toStartOf="@+id/v4"/>
 
+    <FrameLayout
+        android:id="@+id/user_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!--Guidelines verticales-->
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v1"
         android:layout_width="wrap_content"
@@ -276,12 +284,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+
+    <!--Guidelines horizontales-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h1"
