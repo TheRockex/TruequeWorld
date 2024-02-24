@@ -83,7 +83,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchTextInputLayout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/h51"
         app:layout_constraintBottom_toTopOf="@id/h48"
         app:layout_constraintStart_toEndOf="@id/v56"
@@ -94,12 +94,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchEditText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/search"
             android:textColorHint="@color/amarillo"
             android:textColor="@color/black"
             android:fontFamily="@font/inter"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:imeOptions="actionSearch" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -352,21 +352,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.165" />
+        app:layout_constraintGuide_percent="0.185" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.19" />
+        app:layout_constraintGuide_percent="0.21" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h51"
@@ -380,13 +380,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.27" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h53"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.96" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

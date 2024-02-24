@@ -46,6 +46,11 @@ import retrofit2.Response;
 
 
 public class Main_Screen_Fragment extends Fragment {
+
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+    private String mParam1;
+    private String mParam2;
     ArrayList<Main_Model> mainModels = new ArrayList<>();
     private ProductServiceApi productServiceApi;
     private UserServiceApi userServiceApi;
@@ -60,12 +65,32 @@ public class Main_Screen_Fragment extends Fragment {
 
     Main_Adapter adapter;
 
+    public Main_Screen_Fragment(){}
+
+    public static Main_Screen_Fragment newInstance(String param1, String param2) {
+        Main_Screen_Fragment fragment = new Main_Screen_Fragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Conectar();
         View view = inflater.inflate(R.layout.f1_fragment_main__screen, container, false);
 
-        Conectar();
-        requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         rvMain = view.findViewById(R.id.rvProductsMain);
 

@@ -75,7 +75,7 @@ public class Saved_Screen_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Conectar();
         View view = inflater.inflate(R.layout.f2_fragment_saved__screen, container, false);
-        requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         rvMain = view.findViewById(R.id.rvProductsFavorite);
 
         return view;
