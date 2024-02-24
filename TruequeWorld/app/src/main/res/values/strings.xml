@@ -19,6 +19,7 @@
     <string name="email">Email</string>
     <string name="pass">Contraseña</string>
     <string name="confpass">Confirmar contraseña</string>
+    <string name="phone">Teléfono (opcional)</string>
 
     <!--Preferencias-->
     <string name="tellmemoreaboutyoulove">Queremos saber más de ti</string>
