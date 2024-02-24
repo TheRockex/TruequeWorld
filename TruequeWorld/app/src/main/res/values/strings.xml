@@ -87,6 +87,7 @@
     <string name="safety">Privacidad</string>
     <string name="close_session">Cerrar sesión</string>
     <string name="user_id">ID: </string>
+    <string name="save">GUARDAR</string>
 
     <!--No sé/No usados-->
     <string name="tp">Trueque\nPuntos</string>

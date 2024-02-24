@@ -19,6 +19,17 @@
         app:layout_constraintEnd_toEndOf="@id/v116"
         android:background="@drawable/fondotrueque_encabezado" />
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h132"
+        app:layout_constraintBottom_toTopOf="@id/h133"
+        app:layout_constraintStart_toEndOf="@id/v117"
+        app:layout_constraintEnd_toStartOf="@id/v118"
+        app:layout_constraintWidth_percent="0.05"
+        app:layout_constraintHeight_percent="0.029"
+        android:background="@drawable/circle_bg_notis" />
+
     <ImageView
         android:id="@+id/close_edit"
         android:layout_width="0dp"
@@ -272,6 +283,35 @@
         app:layout_constraintHeight_percent="0.003"
         app:dividerColor="@color/black" />
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h158"
+        app:layout_constraintBottom_toTopOf="@id/h159"
+        app:layout_constraintStart_toEndOf="@id/v125"
+        app:layout_constraintEnd_toStartOf="@id/v126"
+        android:background="@drawable/fondo_boton_editar" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h158"
+        app:layout_constraintBottom_toTopOf="@id/h159"
+        app:layout_constraintStart_toEndOf="@id/v125"
+        app:layout_constraintEnd_toStartOf="@id/v126"
+        android:text="@string/save"
+        style="@style/AccountTypeEdit"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h158"
+        app:layout_constraintBottom_toTopOf="@id/h159"
+        app:layout_constraintStart_toEndOf="@id/v125"
+        app:layout_constraintEnd_toStartOf="@id/v126"
+        style="@style/NoBGButtons" />
+
 
     <!--Constraints verticales-->
 
@@ -344,6 +384,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.83" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v125"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v126"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
 
 
     <!--Constraints horizontales-->
@@ -543,6 +597,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.81" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h158"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h159"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
 
 
     <!--el de cerrar un 4% de alto, 7% de largo
