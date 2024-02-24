@@ -67,52 +67,59 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
         int tNewColor = android.graphics.Color.rgb(255, 255, 255);
 
         if (savedModels.get(position).isSelected()) {
+            //Amarillo
             holder.tp_NoFav_Button.setBackgroundColor(newColor);
+            holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CardView cvSaved = v.findViewById(R.id.cvSaved);
+
+                    if (savedModels.get(position).isSelected()) {
+                        savedModels.get(position).setSelected(false);
+                        notifyItemChanged(position);
+                    } else {
+                        if (posLastSelect != -1) {
+                            savedModels.get(posLastSelect).setSelected(false);
+                            notifyItemChanged(posLastSelect);
+                        }
+
+                        savedModels.get(position).setSelected(true);
+                        notifyItemChanged(position);
+                    }
+
+                    int adapterPosition = holder.getAdapterPosition();
+                    if (adapterPosition != RecyclerView.NO_POSITION) {
+                        Saved_Model clickedItem = savedModels.get(adapterPosition);
+                        Integer productId = clickedItem.getId();
+                        Favorito favorito = new Favorito(null,userId, productId);
+                        if(savedFavorites.size() != 0){
+                            for(int i = 0; i < savedFavorites.size();i++){
+                                if (savedFavorites.get(i).getProductoId().equals(productId)) {
+                                    deleteFavoriteById(savedFavorites.get(0).getId() ,holder.tp_NoFav_Button);
+                                    savedFavorites.remove(savedFavorites.get(i));
+                                } else {
+                                    AddFavorito(favorito, holder.tp_NoFav_Button);
+                                }
+                            }
+                        }else{
+                            AddFavorito(favorito, holder.tp_NoFav_Button);
+                        }
+                    }
+                }
+            });
+
         } else {
+            //Normal
             holder.tp_NoFav_Button.setBackgroundColor(tNewColor);
+
+
         }
+
 
         //Integer productId = currentProduct.getId();
         //FavoritesUser(productId, holder.tp_NoFav_Button);
 
-        holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CardView cvSaved = v.findViewById(R.id.cvSaved);
 
-                if (savedModels.get(position).isSelected()) {
-                    savedModels.get(position).setSelected(false);
-                    notifyItemChanged(position);
-                } else {
-                    if (posLastSelect != -1) {
-                        savedModels.get(posLastSelect).setSelected(false);
-                        notifyItemChanged(posLastSelect);
-                    }
-
-                    savedModels.get(position).setSelected(true);
-                    notifyItemChanged(position);
-                }
-
-                int adapterPosition = holder.getAdapterPosition();
-                if (adapterPosition != RecyclerView.NO_POSITION) {
-                    Saved_Model clickedItem = savedModels.get(adapterPosition);
-                    Integer productId = clickedItem.getId();
-                    Favorito favorito = new Favorito(null,userId, productId);
-                    if(savedFavorites.size() != 0){
-                        for(int i = 0; i < savedFavorites.size();i++){
-                            if (savedFavorites.get(i).getProductoId().equals(productId)) {
-                                deleteFavoriteById(savedFavorites.get(0).getId() ,holder.tp_NoFav_Button);
-                                savedFavorites.remove(savedFavorites.get(i));
-                            } else {
-                                AddFavorito(favorito, holder.tp_NoFav_Button);
-                            }
-                        }
-                    }else{
-                        AddFavorito(favorito, holder.tp_NoFav_Button);
-                    }
-                }
-            }
-        });
     }
 
     /*@Override
