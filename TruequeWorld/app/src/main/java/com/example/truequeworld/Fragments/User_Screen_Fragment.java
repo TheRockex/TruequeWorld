@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
@@ -42,6 +43,8 @@ public class User_Screen_Fragment extends Fragment {
     private TextView UserNametextView;
     private TextView UserIDtextView;
     private TextView UserTPtextView;
+
+    private TextView MisProductostextView;
     User user;
     private UserServiceApi userServiceApi;
 
@@ -76,6 +79,17 @@ public class User_Screen_Fragment extends Fragment {
         fragmentTransaction.commit();
     }
 
+    public void changeToMiproduto(View view) {
+        Profile_Products_Fragment upFragProduct = new Profile_Products_Fragment();
+
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.user_container, upFragProduct);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.f5_fragment_user__screen, container, false);
@@ -83,6 +97,7 @@ public class User_Screen_Fragment extends Fragment {
         UserNametextView = rootView.findViewById(R.id.userName);
         UserIDtextView = rootView.findViewById(R.id.userID);
         UserTPtextView = rootView.findViewById(R.id.userWalletpoints);
+        MisProductostextView = rootView.findViewById(R.id.misproductos);
         Conectar();
 
         View updateUserButton = rootView.findViewById(R.id.updateUserButton);
@@ -91,6 +106,14 @@ public class User_Screen_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 changeToUpdate(view);
+            }
+        });
+
+        View MisproductosButton = rootView.findViewById(R.id.profile_products_button);
+        MisproductosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeToMiproduto(v);
             }
         });
 

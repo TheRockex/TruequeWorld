@@ -1,8 +1,7 @@
 package com.dam.truequeworld.controlers;
 
-import com.dam.truequeworld.models.Product;
+import com.dam.truequeworld.models.*;
 //import com.dam.truequeworld.models.ProductImg;
-import com.dam.truequeworld.models.User;
 import com.dam.truequeworld.servicies.ProductService;
 import com.dam.truequeworld.servicies.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,15 +46,14 @@ public class ProductController {
                     }
                 }
             } else {
-                for (int i = 0; i < productos.size(); i++) {
-                    setImg(productos.get(i));
-                }
                 productosFiltrados.addAll(productos);
             }
         } else {
             // Manejar el caso en que el usuario no exista
         }
-
+        for (int i = 0; i < productosFiltrados.size(); i++) {
+            setImg(productosFiltrados.get(i));
+        }
         return productosFiltrados;
     }
 
@@ -101,7 +99,7 @@ public class ProductController {
     }
 
     //RECUERDEN LLAMAR A ESTE METODO ANTES DE MANDERLE UN PRODUCTO AL CLIENTE
-    private Product setImg(Product product){
+    public Product setImg(Product product){
         File file = new File(product.getImgProducto());
         try {
             byte[] bytesFile = new byte[(int) file.length()];
@@ -113,6 +111,15 @@ public class ProductController {
             throw new RuntimeException(e);
         }
         return product;
+    }
+
+    @GetMapping("/products/propietario/{id}")
+    public List<Product> getProductsUser(@PathVariable Integer id){
+        List<Product> productos = productService.getProductsByUserId(id);
+        for (int i = 0; i < productos.size(); i++) {
+            setImg(productos.get(i));
+        }
+         return productos;
     }
 }
 

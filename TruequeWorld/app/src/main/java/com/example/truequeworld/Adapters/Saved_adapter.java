@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.truequeworld.Clases_RecyclerView.Main_Model;
 import com.example.truequeworld.Clases_RecyclerView.Saved_Model;
 import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.User;
@@ -57,108 +58,54 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder,@SuppressLint("RecyclerView") int position) {
-        //Saved_Model currentProduct = savedModels.get(position);
-        holder.tp_name.setText("NOMBRE: " + savedModels.get(position).getFavProduct_name());
-        holder.tp_precio.setText("PRECIO: " + savedModels.get(position).getFavProduct_precio().toString() + "TP");
-        getUserID(savedModels.get(position).getFavProduct_propietarioID(), holder.tp_nombrePropietario);
-        holder.tp_product.setImageBitmap(savedModels.get(position).getFavProduct_img());
-        holder.tp_NoFav_Button.setImageDrawable(savedModels.get(position).getMainSave());
-        int newColor = android.graphics.Color.rgb(255, 202, 65);
-        int tNewColor = android.graphics.Color.rgb(255, 255, 255);
-
-        if (savedModels.get(position).isSelected()) {
-            //Amarillo
-            holder.tp_NoFav_Button.setBackgroundColor(newColor);
-            holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    CardView cvSaved = v.findViewById(R.id.cvSaved);
-
-                    if (savedModels.get(position).isSelected()) {
-                        savedModels.get(position).setSelected(false);
-                        notifyItemChanged(position);
-                    } else {
-                        if (posLastSelect != -1) {
-                            savedModels.get(posLastSelect).setSelected(false);
-                            notifyItemChanged(posLastSelect);
-                        }
-
-                        savedModels.get(position).setSelected(true);
-                        notifyItemChanged(position);
-                    }
-
-                    int adapterPosition = holder.getAdapterPosition();
-                    if (adapterPosition != RecyclerView.NO_POSITION) {
-                        Saved_Model clickedItem = savedModels.get(adapterPosition);
-                        Integer productId = clickedItem.getId();
-                        Favorito favorito = new Favorito(null,userId, productId);
-                        if(savedFavorites.size() != 0){
-                            for(int i = 0; i < savedFavorites.size();i++){
-                                if (savedFavorites.get(i).getProductoId().equals(productId)) {
-                                    deleteFavoriteById(savedFavorites.get(0).getId() ,holder.tp_NoFav_Button);
-                                    savedFavorites.remove(savedFavorites.get(i));
-                                } else {
-                                    AddFavorito(favorito, holder.tp_NoFav_Button);
-                                }
-                            }
-                        }else{
-                            AddFavorito(favorito, holder.tp_NoFav_Button);
-                        }
-                    }
-                }
-            });
-
-        } else {
-            //Normal
-            holder.tp_NoFav_Button.setBackgroundColor(tNewColor);
-
-
-        }
-
-
-        //Integer productId = currentProduct.getId();
-        //FavoritesUser(productId, holder.tp_NoFav_Button);
-
-
-    }
-
-    /*@Override
-    public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder,@SuppressLint("RecyclerView") int position) {
+        Log.d("PANA","Cardview");
         Saved_Model currentProduct = savedModels.get(position);
         holder.tp_name.setText("NOMBRE: " + savedModels.get(position).getFavProduct_name());
         holder.tp_precio.setText("PRECIO: " + savedModels.get(position).getFavProduct_precio().toString() + "TP");
-        getUserID(savedModels.get(position).getFavProduct_propietarioID(), holder.tp_nombrePropietario);
+        holder.tp_nombrePropietario.setText("PROPIETARIO: " + user.getName());
+
+        //getUserID(savedModels.get(position).getFavProduct_propietarioID(), holder.tp_nombrePropietario);
         holder.tp_product.setImageBitmap(savedModels.get(position).getFavProduct_img());
         holder.tp_NoFav_Button.setImageDrawable(savedModels.get(position).getMainSave());
 
-
         Integer productId = currentProduct.getId();
-        FavoritesUser(productId, holder.tp_NoFav_Button);
+        Log.d("PANA","Size" + savedFavorites.size());
+        if (savedFavorites.get(position).getProductoId().equals(productId)) {
+            holder.tp_NoFav_Button.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
+        }
 
         holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean found = false;
                 int adapterPosition = holder.getAdapterPosition();
                 if (adapterPosition != RecyclerView.NO_POSITION) {
                     Saved_Model clickedItem = savedModels.get(adapterPosition);
                     Integer productId = clickedItem.getId();
                     Favorito favorito = new Favorito(null,userId, productId);
+                    Log.d("PANA","Tamaña" + savedFavorites.size());
                     if(savedFavorites.size() != 0){
                         for(int i = 0; i < savedFavorites.size();i++){
                             if (savedFavorites.get(i).getProductoId().equals(productId)) {
-                                deleteFavoriteById(savedFavorites.get(0).getId() ,holder.tp_NoFav_Button);
+                                deleteFavoriteById(savedFavorites.get(i).getId() ,holder.tp_NoFav_Button);
                                 savedFavorites.remove(savedFavorites.get(i));
-                            } else {
+                                found = true;
+                                break;
+                            }
+                            if (!found) {
                                 AddFavorito(favorito, holder.tp_NoFav_Button);
+                                found = false;
                             }
                         }
                     }else{
+                        Log.d("PANA","Se mete al else2" + savedFavorites.size());
                         AddFavorito(favorito, holder.tp_NoFav_Button);
                     }
+
                 }
             }
         });
-    }*/
+    }
 
 
     @Override
@@ -187,12 +134,15 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
 
 
     public void Conectar() {
+        Log.d("PANA","Conectar");
         favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
         userServiceApi = RetrofitConexion.getUserServiceApi();
+        getUserID();
+        FavoritesUser();
     }
 
 
-    public void getUserID(Integer userId, TextView tp_nombrePropietario){
+    public void getUserID(/*Integer userId, TextView tp_nombrePropietario*/){
         Call<User> call = userServiceApi.getUserById(userId);;
         call.enqueue(new Callback<User>() {
             @Override
@@ -201,7 +151,6 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                     User userId = response.body();
                     if (userId != null) {
                         user = userId;
-                        tp_nombrePropietario.setText("PROPIETARIO: " + user.getName());
                     }
                 } else {
                 }
@@ -210,20 +159,15 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
             public void onFailure(Call<User> call, Throwable t) {
             }
         });
+        Log.d("PANA","GetUser");
     }
-    public void FavoritesUser(Integer productId, ImageView saveButton){
+    public void FavoritesUser(){
         Call<List<Favorito>> call = favoriteServiceApi.getFavoritosUserid(userId);
         call.enqueue(new Callback<List<Favorito>>() {
             @Override
             public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
                 if (response.isSuccessful()) {
                     savedFavorites = response.body();
-                    for (Favorito favorito : savedFavorites) {
-                        Log.d("CVF", "ProductoID DE FAVORITOS" + favorito.getProductoId());
-                        if (favorito.getProductoId().equals(productId)) {
-                            saveButton.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
-                        }
-                    }
                     Log.d("CVF", "Se sacaron los favoritos");
                 } else {
                     Log.d("CVF", "No se sacaron los favoritos");
@@ -236,7 +180,9 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                 Log.d("CVF", "Error al sacar favoritos");
             }
         });
+        Log.d("PANA","FavoriteUser");
     }
+
 
     public void AddFavorito(Favorito favorito, ImageView saveButton){
         Call<Favorito> call = favoriteServiceApi.insertFavoritos(favorito);

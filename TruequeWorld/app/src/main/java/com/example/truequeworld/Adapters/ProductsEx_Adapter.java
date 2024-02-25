@@ -29,38 +29,24 @@ public class ProductsEx_Adapter extends RecyclerView.Adapter<ProductsEx_Adapter.
     Context context;
     ArrayList<ProductsEx_Model> productsExModels;
     private LayoutInflater inflater;
-    private ProductServiceApi productServiceApi;
 
-    public Integer userId;
-    Product product;
-
-    public ProductsEx_Adapter(Context context, ArrayList<ProductsEx_Model> productsExModels, int userId) {
+    public ProductsEx_Adapter(Context context, ArrayList<ProductsEx_Model> productsExModels) {
         this.context = context;
         this.productsExModels = productsExModels;
-        this.userId = userId;
     }
 
     @NonNull
     @Override
     public ProductsEx_Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Conectar();
         inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_my_products, parent, false);
         return new ProductsEx_Adapter.MyViewHolder(view);
     }
 
     public void onBindViewHolder(@NonNull ProductsEx_Adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        ProductsEx_Model selectedProduct = productsExModels.get(position);
+        Log.d("OPP","PAN " + productsExModels.size());
         holder.productName.setText(productsExModels.get(position).getProductName());
         holder.productImg.setImageBitmap(productsExModels.get(position).getProductImg());
-        Integer productId = selectedProduct.getId();
-
-        holder.productImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //para que al pulsar este producto, se añada a la cardview ya del intercambio
-            }
-        });
     }
 
     @Override
@@ -79,29 +65,5 @@ public class ProductsEx_Adapter extends RecyclerView.Adapter<ProductsEx_Adapter.
             this.productName = itemView.findViewById(R.id.product_toexchange_name);
             this.productImg = itemView.findViewById(R.id.product_toexchange_img);
         }
-    }
-
-    public void Conectar() {
-        productServiceApi = RetrofitConexion.getProductServiceApi();
-    }
-
-    public void getProductosId(Integer id) {
-        Call<Product> call = productServiceApi.getproductById(id);
-        call.enqueue(new Callback<Product>() {
-            @Override
-            public void onResponse(Call<Product> call, Response<Product> response) {
-                if (response.isSuccessful()) {
-                    product = response.body();
-                    Log.d("CV", "En efecto, el producto va" + product.getDescripcion());
-                } else {
-                    Log.d("CV", "No va pringao");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Product> call, Throwable t) {
-                Log.d("CV", "Jiji fallo");
-            }
-        });
     }
 }

@@ -47,6 +47,10 @@
     <string name="more">Ver todo</string>
     <string name="name_main_cv">Nombre producto</string>
     <string name="exchange_now">Truequear</string>
+    <string name="info_alert">¡Encontraste lo que buscabas! :) </string>
+    <string name="info_alert2">Ahora se te dirigirá a tu perfil para elegir el producto que ofrecerás</string>
+    <string name="truequear">¡A truequear!</string>
+    <string name="changed_opinion">Mejor no...</string>
 
     <!--AddProduct-->
     <string name="add_now_tp">AÑADIR</string>

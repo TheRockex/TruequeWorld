@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -116,6 +118,17 @@ public class Main_Screen_Fragment extends Fragment {
         Productos();
     }
 
+    public void toProducts() {
+        Profile_Products_Fragment prodFrag = new Profile_Products_Fragment();
+
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.exchange_container, prodFrag);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
     public void Productos() {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
         int userId = sharedPreferences.getInt("userId", 0);
@@ -131,6 +144,13 @@ public class Main_Screen_Fragment extends Fragment {
                     }
                     setRvMain();
                     adapter = new Main_Adapter(requireContext(), mainModels,userId);
+                    adapter.setOnAcceptClickListener(new Main_Adapter.OnAcceptClickListener() {
+                        @Override
+                        public void onAcceptClicked() {
+                            toProducts();
+                        }
+                    });
+
                     rvMain.setAdapter(adapter);
                     GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
                     rvMain.setLayoutManager(managerlayout);
@@ -185,6 +205,8 @@ public class Main_Screen_Fragment extends Fragment {
             ));
         }
     }
+
+
 
     public Bitmap base64ToBitmap(String base64Image) {
         byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);

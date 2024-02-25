@@ -5,59 +5,99 @@
     android:background="@color/beige"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo__1_"
-        android:padding="20dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/beige"
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/price_textfield"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:paddingBottom="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/price_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="IMPORTE PRODUCTO"
-            android:inputType="text"
-            android:textColorHint="@color/black" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/amarillo"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/set_price_button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="FIJAR PRECIO"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/amarillo"
-            app:cornerRadius="0dp"
-            />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.1">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/cancel_button_price"
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/logo__1_" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CANCELAR"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/amarillo"
-            app:cornerRadius="0dp"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="7dp"
+            android:paddingBottom="15dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info_alert"
+                style="@style/AlertDialogExchange" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info_alert2"
+                style="@style/AlertDialogExchangeText" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/big"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            app:dividerColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/amarillo"
+            android:layout_weight="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/acceptEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/truequear"
+                android:layout_weight="1"
+                style="@style/AlertDialogExchangeButtons" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                app:dividerColor="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rejectEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/changed_opinion"
+                android:layout_weight="1"
+                style="@style/AlertDialogExchangeButtons" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

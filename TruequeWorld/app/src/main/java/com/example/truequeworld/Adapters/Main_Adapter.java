@@ -27,6 +27,8 @@ import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.MainScreen;
 import com.example.truequeworld.R;
 import com.example.truequeworld.retrofit.RetrofitConexion;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +49,15 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
 
     Product product;
 
+    public interface OnAcceptClickListener {
+        void onAcceptClicked();
+    }
+
+    private OnAcceptClickListener onAcceptClickListener;
+
+    public void setOnAcceptClickListener(OnAcceptClickListener listener) {
+        this.onAcceptClickListener = listener;
+    }
 
 
     public Main_Adapter(Context context, ArrayList<Main_Model> mainModels,int userId) {
@@ -76,29 +87,32 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
         holder.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean found = false;
                 int adapterPosition = holder.getAdapterPosition();
                 if (adapterPosition != RecyclerView.NO_POSITION) {
                     Main_Model clickedItem = mainModels.get(adapterPosition);
                     Integer productId = clickedItem.getId();
                     Favorito favorito = new Favorito(null,userId, productId);
+                    Log.d("PANA","Tamaña" + savedFavorites.size());
                     if(savedFavorites.size() != 0){
                         for(int i = 0; i < savedFavorites.size();i++){
                             if (savedFavorites.get(i).getProductoId().equals(productId)) {
-                                deleteFavoriteById(savedFavorites.get(0).getId() ,holder.saveButton);
+                                deleteFavoriteById(savedFavorites.get(i).getId() ,holder.saveButton);
                                 savedFavorites.remove(savedFavorites.get(i));
-                            } else {
-                                AddFavorito(favorito, holder.saveButton);
+                                found = true;
+                                break;
                             }
                         }
+                        if (!found) {
+                            AddFavorito(favorito, holder.saveButton);
+                            found = false;
+                        }
                     }else{
+                        Log.d("PANA","Se mete al else2" + savedFavorites.size());
                         AddFavorito(favorito, holder.saveButton);
                     }
 
                 }
-
-                //Agregar aquí 2 cosas: que si se pulsa la imagen de guardado, que es la que está como save button, que agregue
-                //ese producto a favs, por ende que se uestre en el apartado de guardados, si pulsa la imagen, que vaya a info
-                // del producto, layout por crear, de momento es prescindible, pero lo del guardado no, ese es necesario
             }
 
         });
@@ -117,10 +131,28 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
 
         });
 
+
         holder.productEx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Para ti Johan con amor xD aqui pa truequear
+                Log.d("Panacota","Muy gey");
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(holder.itemView.getContext());
+                LayoutInflater inflater1 = LayoutInflater.from(holder.itemView.getContext());
+                View dialogView = inflater1.inflate(R.layout.f1_x_alert_dialog_exchange, null);
+                builder.setView(dialogView);
+
+                MaterialButton accept = dialogView.findViewById(R.id.acceptEx);
+                MaterialButton reject = dialogView.findViewById(R.id.rejectEx);
+
+                accept.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Lógica al hacer clic en "Aceptar"
+                        if (onAcceptClickListener != null) {
+                            onAcceptClickListener.onAcceptClicked();
+                        }
+                    }
+                });
             }
 
         });
@@ -183,7 +215,6 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                 if (response.isSuccessful()) {
                     savedFavorites = response.body();
                     for (Favorito favorito : savedFavorites) {
-                        Log.d("CV", "ProductoID DE FAVORITOS" + favorito.getProductoId());
                         if (favorito.getProductoId().equals(productId)) {
                             saveButton.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
                         }
