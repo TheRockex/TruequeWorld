@@ -1,5 +1,6 @@
 package com.dam.truequeworld.servicies;
 
+import com.dam.truequeworld.models.Favorite;
 import com.dam.truequeworld.models.Product;
 import com.dam.truequeworld.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +43,7 @@ public class ProductService {
 
     public List<Product> getProductsByEstado(Integer estado){
         return productRepository.getProductsByEstado(estado);
+    public List<Product> getProductsByUserId(Integer userId) {
+        return productRepository.findByUserId(userId);
     }
 }

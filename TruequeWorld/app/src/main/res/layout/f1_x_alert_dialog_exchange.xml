@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/beige"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.1">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:padding="10dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/logo__1_" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="7dp"
+            android:paddingBottom="15dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info_alert"
+                style="@style/AlertDialogExchange" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info_alert2"
+                style="@style/AlertDialogExchangeText" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/big"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            app:dividerColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/amarillo"
+            android:layout_weight="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/acceptEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/truequear"
+                android:layout_weight="1"
+                style="@style/AlertDialogExchangeButtons" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                app:dividerColor="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rejectEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/changed_opinion"
+                android:layout_weight="1"
+                style="@style/AlertDialogExchangeButtons" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

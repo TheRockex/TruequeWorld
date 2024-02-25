@@ -13,4 +13,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByNombreContainingOrCategoriaContaining(String nombre, String categoria);
     @Query("SELECT p FROM Product p WHERE p.estado = :estado")
     List<Product> getProductsByEstado(Integer estado);
+
+    @Query("SELECT p FROM Product p WHERE p.usuarioId = :userId")
+    List<Product> findByUserId(Integer userId);
 }

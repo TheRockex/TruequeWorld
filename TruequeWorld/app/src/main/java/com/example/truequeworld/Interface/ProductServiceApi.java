@@ -30,4 +30,7 @@ public interface ProductServiceApi {
     @GET("/product/buscar/{searchTerm}")
     Call<List<Product>> buscarProductosPorNombreOCategoria(@Path("searchTerm") String searchTerm);
 
+    @GET("/product/products/propietario/{id}")
+    Call<List<Product>> getFavoritesUser(@Path("id") Integer id);
+
 }
