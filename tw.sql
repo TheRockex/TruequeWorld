@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-02-2024 a las 01:15:02
+-- Tiempo de generación: 25-02-2024 a las 22:45:41
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -91,7 +91,7 @@ CREATE TABLE `productos` (
   `nombre` varchar(20) NOT NULL,
   `descripcion` text NOT NULL,
   `valor_tp` int(11) DEFAULT NULL,
-  `estado` varchar(10) NOT NULL,
+  `estado` int(11) DEFAULT NULL,
   `usuarioid` int(11) DEFAULT NULL,
   `img` varchar(29) DEFAULT NULL,
   `categoria` varchar(100) DEFAULT NULL
@@ -102,27 +102,65 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `valor_tp`, `estado`, `usuarioid`, `img`, `categoria`) VALUES
-(2, 'p', 'p', 6, 'p', 2, 'imgs\\ankyan.jpg', 'p'),
-(12, 'liyuu', 'liyuu', 0, 'liyuu', 2, 'imgs\\liyuu.jpg', 'liyuu'),
-(13, 'ankyan', 'yohane', 0, 'yoshiko', 2, 'imgs\\ankyan.jpg', 'anime'),
-(14, 'gigachad', 'musedeidad', 0, 'godines', 2, 'imgs\\gigachad.jpg', 'anime'),
-(15, 'shukita', 'shukita toda preciosa', 0, 'shukita', 2, 'imgs\\shukita.jpg', 'mi novia'),
-(16, 'agurisssssssssssssss', 'mi flaquita', 0, 'casada ', 2, 'imgs\\agurisssssssssssssss.jpg', 'sip');
+(2, 'p', 'p', 6, 1, 2, 'imgs\\ankyan.jpg', 'p'),
+(12, 'liyuu', 'liyuu', 0, 1, 2, 'imgs\\liyuu.jpg', 'liyuu'),
+(13, 'ankyan', 'yohane', 0, 1, 2, 'imgs\\ankyan.jpg', 'anime'),
+(14, 'gigachad', 'musedeidad', 0, 1, 2, 'imgs\\gigachad.jpg', 'anime'),
+(15, 'shukita', 'shukita toda preciosa', 0, 1, 2, 'imgs\\shukita.jpg', 'mi novia'),
+(16, 'agurisssssssssssssss', 'mi flaquita', 0, 1, 2, 'imgs\\agurisssssssssssssss.jpg', 'sip');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `truques_productos`
+-- Estructura de tabla para la tabla `producto_estados`
 --
 
-CREATE TABLE `truques_productos` (
-  `idtp` int(11) NOT NULL,
-  `idProductoVender` int(11) NOT NULL,
-  `idProductoComprar` int(11) NOT NULL,
-  `idUsuarioInteresado` int(11) NOT NULL,
-  `textoComprador` text DEFAULT NULL,
-  `textoVendedor` text DEFAULT NULL
+CREATE TABLE `producto_estados` (
+  `id` int(11) NOT NULL,
+  `estado` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto_estados`
+--
+
+INSERT INTO `producto_estados` (`id`, `estado`) VALUES
+(1, 'disponible'),
+(2, 'reservado'),
+(3, 'intercambiado');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `truque`
+--
+
+CREATE TABLE `truque` (
+  `id` int(11) NOT NULL,
+  `producto_interesado` int(11) DEFAULT NULL,
+  `producto_solicitado` int(11) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `truque_estados`
+--
+
+CREATE TABLE `truque_estados` (
+  `id` int(11) NOT NULL,
+  `estado` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `truque_estados`
+--
+
+INSERT INTO `truque_estados` (`id`, `estado`) VALUES
+(1, 'aceptado'),
+(2, 'por confirmar'),
+(3, 'rechazado');
 
 -- --------------------------------------------------------
 
@@ -193,13 +231,22 @@ ALTER TABLE `productos`
   ADD KEY `idUsuario` (`usuarioid`);
 
 --
--- Indices de la tabla `truques_productos`
+-- Indices de la tabla `producto_estados`
 --
-ALTER TABLE `truques_productos`
-  ADD PRIMARY KEY (`idtp`),
-  ADD KEY `idProductoVender` (`idProductoVender`),
-  ADD KEY `idUsuarioInteresado` (`idUsuarioInteresado`),
-  ADD KEY `idProductoComprar` (`idProductoComprar`);
+ALTER TABLE `producto_estados`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `truque`
+--
+ALTER TABLE `truque`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `truque_estados`
+--
+ALTER TABLE `truque_estados`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -232,10 +279,22 @@ ALTER TABLE `productos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de la tabla `truques_productos`
+-- AUTO_INCREMENT de la tabla `producto_estados`
 --
-ALTER TABLE `truques_productos`
-  MODIFY `idtp` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `producto_estados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `truque`
+--
+ALTER TABLE `truque`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `truque_estados`
+--
+ALTER TABLE `truque_estados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -273,14 +332,6 @@ ALTER TABLE `mensajes`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`usuarioid`) REFERENCES `usuarios` (`id`);
-
---
--- Filtros para la tabla `truques_productos`
---
-ALTER TABLE `truques_productos`
-  ADD CONSTRAINT `truques_productos_ibfk_1` FOREIGN KEY (`idProductoVender`) REFERENCES `productos` (`id`),
-  ADD CONSTRAINT `truques_productos_ibfk_2` FOREIGN KEY (`idUsuarioInteresado`) REFERENCES `usuarios` (`id`),
-  ADD CONSTRAINT `truques_productos_ibfk_3` FOREIGN KEY (`idProductoComprar`) REFERENCES `productos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
