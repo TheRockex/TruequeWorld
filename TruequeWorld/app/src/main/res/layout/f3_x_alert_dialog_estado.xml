@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/alert_logo"
+        android:src="@drawable/logo__1_"
         android:padding="20dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/beige"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="ESTADO DEL PRODUCTO"
             android:inputType="text"
-            android:textColorHint="@color/black" />
+            style="@style/AlertAddText" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -38,6 +38,11 @@
         android:layout_weight="1"
         android:background="@color/amarillo"
         android:orientation="vertical">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:dividerColor="@color/black" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/set_estado_button"
@@ -49,6 +54,11 @@
             app:cornerRadius="0dp"
             />
 
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:dividerColor="@color/black" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cancel_button_estado"
             android:layout_width="match_parent"
@@ -56,8 +66,12 @@
             android:text="CANCELAR"
             android:textColor="@color/black"
             android:backgroundTint="@color/amarillo"
-            app:cornerRadius="0dp"
-            />
+            app:cornerRadius="0dp" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:dividerColor="@color/black" />
 
     </LinearLayout>
 

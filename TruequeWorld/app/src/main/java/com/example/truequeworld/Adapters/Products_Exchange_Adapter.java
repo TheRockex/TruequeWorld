@@ -13,45 +13,38 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.truequeworld.Clases_RecyclerView.ProductsEx_Model;
-import com.example.truequeworld.Class.Product;
-import com.example.truequeworld.Interface.ProductServiceApi;
+import com.example.truequeworld.Clases_RecyclerView.Products_Exchanges_Model;
 import com.example.truequeworld.R;
-import com.example.truequeworld.retrofit.RetrofitConexion;
 
 import java.util.ArrayList;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class ProductsEx_Adapter extends RecyclerView.Adapter<ProductsEx_Adapter.MyViewHolder> {
+public class Products_Exchange_Adapter extends RecyclerView.Adapter<Products_Exchange_Adapter.MyViewHolder> {
     Context context;
-    ArrayList<ProductsEx_Model> productsExModels;
+    ArrayList<Products_Exchanges_Model> productsExchangesModels;
     private LayoutInflater inflater;
 
-    public ProductsEx_Adapter(Context context, ArrayList<ProductsEx_Model> productsExModels) {
+    public Products_Exchange_Adapter(Context context, ArrayList<Products_Exchanges_Model> productsExchangesModels) {
         this.context = context;
-        this.productsExModels = productsExModels;
+        this.productsExchangesModels = productsExchangesModels;
     }
 
     @NonNull
     @Override
-    public ProductsEx_Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Products_Exchange_Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_my_products, parent, false);
-        return new ProductsEx_Adapter.MyViewHolder(view);
+        return new Products_Exchange_Adapter.MyViewHolder(view);
     }
 
-    public void onBindViewHolder(@NonNull ProductsEx_Adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Log.d("OPP","PAN " + productsExModels.size());
-        holder.productName.setText(productsExModels.get(position).getProductName());
-        holder.productImg.setImageBitmap(productsExModels.get(position).getProductImg());
+    public void onBindViewHolder(@NonNull Products_Exchange_Adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Log.d("OPP", "PAN" + productsExchangesModels.size());
+        holder.productName.setText(productsExchangesModels.get(position).getProductName());
+        holder.productImg.setImageBitmap(productsExchangesModels.get(position).getProductImg());
     }
 
     @Override
     public int getItemCount() {
-        return productsExModels.size();
+        return productsExchangesModels.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

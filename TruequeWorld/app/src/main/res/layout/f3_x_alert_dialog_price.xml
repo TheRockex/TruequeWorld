@@ -8,11 +8,10 @@
   <ImageView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:src="@drawable/alert_logo"
+      android:src="@drawable/logo__1_"
       android:padding="20dp"
       android:layout_gravity="center_horizontal"
-      android:background="@color/beige"
-      />
+      android:background="@color/beige" />
 
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/price_textfield"
@@ -28,7 +27,7 @@
         android:layout_height="wrap_content"
         android:hint="IMPORTE PRODUCTO"
         android:inputType="text"
-        android:textColorHint="@color/black" />
+        style="@style/AlertAddText"/>
 
   </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,6 +38,11 @@
       android:background="@color/amarillo"
       android:orientation="vertical">
 
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:dividerColor="@color/black" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/set_price_button"
         android:layout_width="match_parent"
@@ -46,8 +50,12 @@
         android:text="FIJAR PRECIO"
         android:textColor="@color/black"
         android:backgroundTint="@color/amarillo"
-        app:cornerRadius="0dp"
-        />
+        app:cornerRadius="0dp" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:dividerColor="@color/black" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancel_button_price"
@@ -56,8 +64,12 @@
         android:text="CANCELAR"
         android:textColor="@color/black"
         android:backgroundTint="@color/amarillo"
-        app:cornerRadius="0dp"
-        />
+        app:cornerRadius="0dp" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:dividerColor="@color/black" />
 
   </LinearLayout>
 

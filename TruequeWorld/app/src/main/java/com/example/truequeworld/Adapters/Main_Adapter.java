@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
@@ -44,6 +45,8 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
     public Integer userId;
     private List<Favorito> savedFavorites = new ArrayList<>();
     Product product;
+
+    private AlertDialog alertDialog;
 
     public interface OnAcceptClickListener {
         void onAcceptClicked();
@@ -161,13 +164,16 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                 reject.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        alertDialog.dismiss();
                         // Lógica al hacer clic en "Aceptar"
-                        if (onAcceptClickListener != null) {
+                        /*if (onAcceptClickListener != null) {
                             onAcceptClickListener.onAcceptClicked();
-                        }
+                        }*/
                     }
                 });
-                builder.show();
+                alertDialog = builder.create();
+                // Mostrar el AlertDialog
+                alertDialog.show();
             }
         });
 

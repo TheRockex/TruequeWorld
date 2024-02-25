@@ -36,7 +36,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Profile_Products_Fragment extends Fragment {
+public class Profile_Products_Exchange_Fragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
@@ -52,9 +52,9 @@ public class Profile_Products_Fragment extends Fragment {
     Products_Profile_Adapter adapter;
     RecyclerView rvMain;
 
-    public Profile_Products_Fragment() {}
+    public Profile_Products_Exchange_Fragment() {}
 
-    public static Profile_Products_Fragment newInstance(String param1, String param2) {
+    public static  Profile_Products_Fragment newInstance(String param1, String param2) {
         Profile_Products_Fragment fragment = new Profile_Products_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -105,34 +105,25 @@ public class Profile_Products_Fragment extends Fragment {
         });
     }
 
-    public void cancelProd(View view)  {
-        User_Screen_Fragment userFrag = new User_Screen_Fragment();
+    public void cancelEx(View view)  {
+        Main_Screen_Fragment mainFrag = new Main_Screen_Fragment();
 
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.f6_fragment_profile_products__screen, userFrag);
+        fragmentTransaction.replace(R.id.f6_fragment_profile_products__screen, mainFrag);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.f6_fragment_profile_products__screen, container, false);
+        View view = inflater.inflate(R.layout.f6_fragment_profile_products_toexchange__screen, container, false);
         imageView = view.findViewById(R.id.user_profile);
         nombre = view.findViewById(R.id.username_exchange_products);
         rvProductsEx = view.findViewById(R.id.rvMyProducts);
         rvMain = view.findViewById(R.id.rvMyProducts);
         Conectar();
-
-        View cancelButton = view.findViewById(R.id.cancel_products);
-
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cancelProd(view);
-            }
-        });
 
         return view;
     }

@@ -354,13 +354,13 @@
         app:layout_constraintEnd_toStartOf="@id/v102"
         style="@style/NoBGButtons" />
 
-
-    <!--Guidelines verticales-->
-
     <FrameLayout
         android:id="@+id/user_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
+    <!--Guidelines verticales-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v101"
