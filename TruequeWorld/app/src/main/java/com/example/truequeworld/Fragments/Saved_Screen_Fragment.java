@@ -51,6 +51,7 @@ public class Saved_Screen_Fragment extends Fragment {
     private UserServiceApi userServiceApi;
     List<Product> productList = new ArrayList<>();
     ArrayList<Saved_Model> savedModels = new ArrayList<>();
+    private List<Favorito> savedFavorites;
     RecyclerView rvMain;
 
     public static Saved_Screen_Fragment newInstance(String param1, String param2) {
@@ -96,10 +97,7 @@ public class Saved_Screen_Fragment extends Fragment {
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
                     productList = response.body();
-                    setRvMain();
-                    Saved_adapter adapter = new Saved_adapter(requireContext(), savedModels,userId);
-                    rvMain.setAdapter(adapter);
-                    rvMain.setLayoutManager(new LinearLayoutManager(requireContext()));
+                    FavoritesUser();
                 } else {
                     Toast.makeText(requireContext(), "Error no se cargan los productos", Toast.LENGTH_SHORT).show();
                 }
@@ -129,6 +127,33 @@ public class Saved_Screen_Fragment extends Fragment {
     public Bitmap base64ToBitmap(String base64Image) {
         byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+    }
+
+    public void FavoritesUser(){
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<List<Favorito>> call = favoriteServiceApi.getFavoritosUserid(userId);
+        call.enqueue(new Callback<List<Favorito>>() {
+            @Override
+            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
+                if (response.isSuccessful()) {
+                    savedFavorites = response.body();
+                    setRvMain();
+                    Saved_adapter adapter = new Saved_adapter(requireContext(), savedModels,userId,savedFavorites);
+                    rvMain.setAdapter(adapter);
+                    rvMain.setLayoutManager(new LinearLayoutManager(requireContext()));
+                    Log.d("CVF", "Se sacaron los favoritos");
+                } else {
+                    Log.d("CVF", "No se sacaron los favoritos");
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Favorito>> call, Throwable t) {
+                // Hubo un error en la solicitud, maneja el error aquí
+                Log.d("CVF", "Error al sacar favoritos");
+            }
+        });
+        Log.d("PANA","FavoriteUser");
     }
 
 }

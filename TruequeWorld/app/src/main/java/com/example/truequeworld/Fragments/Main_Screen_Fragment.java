@@ -29,7 +29,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.truequeworld.Adapters.Main_Adapter;
+import com.example.truequeworld.Adapters.Saved_adapter;
 import com.example.truequeworld.Clases_RecyclerView.Main_Model;
+import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Interface.FavoriteServiceApi;
 import com.example.truequeworld.Interface.ProductServiceApi;
@@ -59,12 +61,12 @@ public class Main_Screen_Fragment extends Fragment {
     private FavoriteServiceApi favoriteServiceApi;
     private BottomNavigationView navigationView;
     List<Product> productList = new ArrayList<>();
-    List<Product> productIDList = new ArrayList<>();
+    private List<Favorito> savedFavorites;
     Product product;
     private ImageView imageview;
     private boolean permissionDenied = false;
     RecyclerView rvMain;
-
+    FragmentManager fragmentManager;
     Main_Adapter adapter;
 
     public Main_Screen_Fragment(){}
@@ -116,17 +118,7 @@ public class Main_Screen_Fragment extends Fragment {
         userServiceApi = RetrofitConexion.getUserServiceApi();
         favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
         Productos();
-    }
-
-    public void toProducts() {
-        Profile_Products_Fragment prodFrag = new Profile_Products_Fragment();
-
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        fragmentTransaction.replace(R.id.exchange_container, prodFrag);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        //toProducts();
     }
 
     public void Productos() {
@@ -138,22 +130,8 @@ public class Main_Screen_Fragment extends Fragment {
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 if (response.isSuccessful()) {
                     productList = response.body();
-                    for (Product product : productList) {
-                        // Aquí puedes hacer lo que necesites con cada producto
+                    FavoritesUser();
 
-                    }
-                    setRvMain();
-                    adapter = new Main_Adapter(requireContext(), mainModels,userId);
-                    adapter.setOnAcceptClickListener(new Main_Adapter.OnAcceptClickListener() {
-                        @Override
-                        public void onAcceptClicked() {
-                            toProducts();
-                        }
-                    });
-
-                    rvMain.setAdapter(adapter);
-                    GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
-                    rvMain.setLayoutManager(managerlayout);
                 } else {
                     Log.d("Product", "Error");
                 }
@@ -164,6 +142,34 @@ public class Main_Screen_Fragment extends Fragment {
                 Log.d("Product", "Error2");
             }
         });
+    }
+
+    public void FavoritesUser(){
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("userId", 0);
+        Call<List<Favorito>> call = favoriteServiceApi.getFavoritosUserid(userId);
+        call.enqueue(new Callback<List<Favorito>>() {
+            @Override
+            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
+                if (response.isSuccessful()) {
+                    savedFavorites = response.body();
+                    setRvMain();
+                    adapter = new Main_Adapter(requireContext(), mainModels,userId,savedFavorites);
+                    rvMain.setAdapter(adapter);
+                    GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
+                    rvMain.setLayoutManager(managerlayout);
+                    Log.d("CVF", "Se sacaron los favoritos");
+                } else {
+                    Log.d("CVF", "No se sacaron los favoritos");
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Favorito>> call, Throwable t) {
+                // Hubo un error en la solicitud, maneja el error aquí
+                Log.d("CVF", "Error al sacar favoritos");
+            }
+        });
+        Log.d("PANA","FavoriteUser");
     }
 
     public void buscar(TextInputEditText buscarEditText) {
@@ -206,7 +212,16 @@ public class Main_Screen_Fragment extends Fragment {
         }
     }
 
+    public void toProducts() {
+        Profile_Products_Fragment prodFrag = new Profile_Products_Fragment();
 
+        fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.exchange_container, prodFrag);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
     public Bitmap base64ToBitmap(String base64Image) {
         byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);

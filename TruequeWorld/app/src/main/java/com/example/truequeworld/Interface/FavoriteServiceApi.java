@@ -29,5 +29,6 @@ public interface FavoriteServiceApi {
 
     @GET("/favorite/user/{userId}")
     Call<List<Product>> getFavoriteProductsByUserId(@Path("userId") Integer userId);
+
 }
 

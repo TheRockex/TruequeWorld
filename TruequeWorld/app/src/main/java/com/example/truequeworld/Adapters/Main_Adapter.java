@@ -2,29 +2,26 @@ package com.example.truequeworld.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.truequeworld.Clases_RecyclerView.Main_Model;
 import com.example.truequeworld.Class.Favorito;
 import com.example.truequeworld.Class.Product;
+import com.example.truequeworld.Fragments.Profile_Products_Fragment;
 import com.example.truequeworld.Interface.FavoriteServiceApi;
 import com.example.truequeworld.Interface.ProductServiceApi;
-import com.example.truequeworld.Interface.UserServiceApi;
-import com.example.truequeworld.MainScreen;
 import com.example.truequeworld.R;
 import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.button.MaterialButton;
@@ -46,7 +43,6 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
 
     public Integer userId;
     private List<Favorito> savedFavorites = new ArrayList<>();
-
     Product product;
 
     public interface OnAcceptClickListener {
@@ -60,10 +56,12 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
     }
 
 
-    public Main_Adapter(Context context, ArrayList<Main_Model> mainModels,int userId) {
+    public Main_Adapter(Context context, ArrayList<Main_Model> mainModels, int userId, List<Favorito> savedFavorites) {
         this.context = context;
         this.mainModels = mainModels;
         this.userId = userId;
+        this.savedFavorites = savedFavorites;
+        Conectar();
     }
 
     @NonNull
@@ -82,8 +80,14 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
         holder.productImg.setImageBitmap(mainModels.get(position).getMainImg());
         holder.saveButton.setImageDrawable(mainModels.get(position).getMainSave());
         Integer productId = currentProduct.getId();
-        FavoritesUser(productId, holder.saveButton);
 
+        for (Favorito favorito : savedFavorites) {
+            if (favorito.getProductoId().equals(productId)) {
+                holder.saveButton.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
+                Log.d("Patata", "Se mete al if" + savedFavorites.size());
+                break;
+            }
+        }
         holder.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,7 +139,7 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
         holder.productEx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Panacota","Muy gey");
+                //Para ti Johan con amor xD aqui pa truequear
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(holder.itemView.getContext());
                 LayoutInflater inflater1 = LayoutInflater.from(holder.itemView.getContext());
                 View dialogView = inflater1.inflate(R.layout.f1_x_alert_dialog_exchange, null);
@@ -153,8 +157,18 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                         }
                     }
                 });
-            }
 
+                reject.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Lógica al hacer clic en "Aceptar"
+                        if (onAcceptClickListener != null) {
+                            onAcceptClickListener.onAcceptClicked();
+                        }
+                    }
+                });
+                builder.show();
+            }
         });
 
 
@@ -207,31 +221,6 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
             }
         });
     }
-    public void FavoritesUser(Integer productId, ImageView saveButton){
-        Call<List<Favorito>> call = favoriteServiceApi.getFavoritosUserid(userId);
-        call.enqueue(new Callback<List<Favorito>>() {
-            @Override
-            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
-                if (response.isSuccessful()) {
-                    savedFavorites = response.body();
-                    for (Favorito favorito : savedFavorites) {
-                        if (favorito.getProductoId().equals(productId)) {
-                            saveButton.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
-                        }
-                    }
-                    Log.d("CV", "Se sacaron los favoritos");
-                } else {
-                    Log.d("CV", "No se sacaron los favoritos");
-                    // La solicitud no fue exitosa, maneja el error aquí
-                }
-            }
-            @Override
-            public void onFailure(Call<List<Favorito>> call, Throwable t) {
-                // Hubo un error en la solicitud, maneja el error aquí
-                Log.d("CV", "Error al sacar favoritos");
-            }
-        });
-    }
 
     public void AddFavorito(Favorito favorito, ImageView saveButton){
         Call<Favorito> call = favoriteServiceApi.insertFavoritos(favorito);
@@ -279,6 +268,5 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
             }
         });
     }
-
 
 }

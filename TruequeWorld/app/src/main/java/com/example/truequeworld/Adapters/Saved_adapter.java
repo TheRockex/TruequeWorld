@@ -41,10 +41,12 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
     private List<Favorito> savedFavorites = new ArrayList<>();
     User user;
 
-    public Saved_adapter(Context context , ArrayList<Saved_Model> savedModels, int userId){
+    public Saved_adapter(Context context, ArrayList<Saved_Model> savedModels, int userId, List<Favorito> savedFavorites) {
         this.context = context;
         this.savedModels = savedModels;
         this.userId = userId;
+        this.savedFavorites = savedFavorites;
+        Conectar();
     }
 
     @NonNull
@@ -57,22 +59,19 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder,@SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d("PANA","Cardview");
         Saved_Model currentProduct = savedModels.get(position);
         holder.tp_name.setText("NOMBRE: " + savedModels.get(position).getFavProduct_name());
         holder.tp_precio.setText("PRECIO: " + savedModels.get(position).getFavProduct_precio().toString() + "TP");
-        holder.tp_nombrePropietario.setText("PROPIETARIO: " + user.getName());
-
-        //getUserID(savedModels.get(position).getFavProduct_propietarioID(), holder.tp_nombrePropietario);
+        if (user != null) {
+            holder.tp_nombrePropietario.setText("PROPIETARIO: " + user.getName());
+        }
         holder.tp_product.setImageBitmap(savedModels.get(position).getFavProduct_img());
         holder.tp_NoFav_Button.setImageDrawable(savedModels.get(position).getMainSave());
-
-        Integer productId = currentProduct.getId();
         Log.d("PANA","Size" + savedFavorites.size());
-        if (savedFavorites.get(position).getProductoId().equals(productId)) {
-            holder.tp_NoFav_Button.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
-        }
+        holder.tp_NoFav_Button.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
+
 
         holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,11 +137,10 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
         favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
         userServiceApi = RetrofitConexion.getUserServiceApi();
         getUserID();
-        FavoritesUser();
     }
 
 
-    public void getUserID(/*Integer userId, TextView tp_nombrePropietario*/){
+    public void getUserID(){
         Call<User> call = userServiceApi.getUserById(userId);;
         call.enqueue(new Callback<User>() {
             @Override
@@ -161,28 +159,6 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
         });
         Log.d("PANA","GetUser");
     }
-    public void FavoritesUser(){
-        Call<List<Favorito>> call = favoriteServiceApi.getFavoritosUserid(userId);
-        call.enqueue(new Callback<List<Favorito>>() {
-            @Override
-            public void onResponse(Call<List<Favorito>> call, Response<List<Favorito>> response) {
-                if (response.isSuccessful()) {
-                    savedFavorites = response.body();
-                    Log.d("CVF", "Se sacaron los favoritos");
-                } else {
-                    Log.d("CVF", "No se sacaron los favoritos");
-                    // La solicitud no fue exitosa, maneja el error aquí
-                }
-            }
-            @Override
-            public void onFailure(Call<List<Favorito>> call, Throwable t) {
-                // Hubo un error en la solicitud, maneja el error aquí
-                Log.d("CVF", "Error al sacar favoritos");
-            }
-        });
-        Log.d("PANA","FavoriteUser");
-    }
-
 
     public void AddFavorito(Favorito favorito, ImageView saveButton){
         Call<Favorito> call = favoriteServiceApi.insertFavoritos(favorito);
