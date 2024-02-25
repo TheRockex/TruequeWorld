@@ -114,6 +114,15 @@ public class ProductController {
         }
         return product;
     }
+
+    @GetMapping("/estado/{estado}")
+    public List<Product> getProductsByEstado(@PathVariable("estado") Integer estado){
+        List<Product> list = productService.getProductsByEstado(estado);
+        for (int i = 0; i < list.size(); i++) {
+            setImg(list.get(i));
+        }
+        return list;
+    }
 }
 
 

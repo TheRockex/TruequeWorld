@@ -16,7 +16,7 @@ public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
     @Autowired
-    private ProductService  productService;
+    private ProductController  productService;
 
     @GetMapping("/favorite")
     public List<Favorite> getFavorite(){

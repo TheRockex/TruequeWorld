@@ -39,4 +39,8 @@ public class ProductService {
             return productRepository.findByNombreContainingOrCategoriaContaining(searchTerm, searchTerm);
         }
     }
+
+    public List<Product> getProductsByEstado(Integer estado){
+        return productRepository.getProductsByEstado(estado);
+    }
 }
