@@ -87,12 +87,10 @@ public class Main_Screen_Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Conectar();
         View view = inflater.inflate(R.layout.f1_fragment_main__screen, container, false);
-
         //requireActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         rvMain = view.findViewById(R.id.rvProductsMain);
+        Conectar();
 
         ImageView imageView = view.findViewById(R.id.button_search);
         TextInputEditText buscar = view.findViewById(R.id.searchEditText);

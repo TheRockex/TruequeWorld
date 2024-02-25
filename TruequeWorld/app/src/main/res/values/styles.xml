@@ -183,6 +183,13 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="CV_Title_Products">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="StartButtons" parent="Widget.Material3.Button">
         <item name="backgroundTint">#BFFFFFFF</item>
         <item name="android:textColor">@color/black</item>
