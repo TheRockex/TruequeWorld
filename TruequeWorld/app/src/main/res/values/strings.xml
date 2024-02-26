@@ -17,8 +17,8 @@
     <string name="name">Nombre</string>
     <string name="surname">Apellidos</string>
     <string name="email">Email</string>
-    <string name="pass">Contraseña</string>
-    <string name="confpass">Confirmar contraseña</string>
+    <string name="pass">Antigua Contraseña</string>
+    <string name="confpass">Nueva contraseña</string>
     <string name="phone">Teléfono (opcional)</string>
 
     <!--Preferencias-->

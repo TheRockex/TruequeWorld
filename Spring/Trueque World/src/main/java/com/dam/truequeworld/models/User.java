@@ -43,4 +43,7 @@ public class User {
 
     @Column(name = "preferencias")
     private String preferencias;
+
+    @Column(name = "movil")
+    private Integer movil;
 }

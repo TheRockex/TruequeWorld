@@ -57,6 +57,7 @@ public class User_Screen_Update_Fragment extends Fragment {
     private Bitmap bitmap;
     private RoundedImageView imageView;
     private TextInputEditText nombreInputEditText;
+    private TextView nombredefault;
     private TextInputEditText apellidosInputEditText;
     private TextInputEditText contraInputEditText;
     private TextInputEditText confirmcontraInputEditText;
@@ -128,6 +129,7 @@ public class User_Screen_Update_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.f5_fragment_user__screen__update, container, false);
         imageView = (RoundedImageView) view.findViewById(R.id.imageEdit);
         nombreInputEditText = view.findViewById(R.id.updatename);
+        nombredefault = view.findViewById(R.id.nombredefault);
         apellidosInputEditText = view.findViewById(R.id.updateApellidos);
         contraInputEditText = view.findViewById(R.id.updatecontra);
         confirmcontraInputEditText = view.findViewById(R.id.confirmupdatecontra);
@@ -162,6 +164,7 @@ public class User_Screen_Update_Fragment extends Fragment {
 
     public void GetUser(){
         nombreInputEditText.setText(user.getName());
+        nombredefault.setText(user.getName());
         apellidosInputEditText.setText(user.getApellidos());
         if(user.getImgPerfil() != null){
             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
@@ -176,15 +179,17 @@ public class User_Screen_Update_Fragment extends Fragment {
         String apellidos = apellidosInputEditText.getText().toString();
         String contra = contraInputEditText.getText().toString();
         String confirmcontra = confirmcontraInputEditText.getText().toString();
-        String telefono = telefonoInputEditText.getText().toString();
-        String IMGString = bitmapToBase64(bitmap);
+        Integer telefono = Integer.parseInt(telefonoInputEditText.getText().toString());
 
-        if(contra.equals(confirmcontra)){
-            if(!contra.equals(user.getContrasenia())){
+            if(contra.equals(user.getContrasenia())){
                 user.setName(nombre);
                 user.setApellidos(apellidos);
-                user.setContrasenia(contra);
-                user.setImgPerfil(IMGString);
+                user.setContrasenia(confirmcontra);
+                if(bitmap != null){
+                    String IMGString = bitmapToBase64(bitmap);
+                    user.setImgPerfil(IMGString);
+                }
+                user.setMovil(telefono);
             Call<User> call = userServiceApi.updateUser(user);
             call.enqueue(new Callback<User>() {
                 @Override
@@ -192,7 +197,8 @@ public class User_Screen_Update_Fragment extends Fragment {
                     if (response.isSuccessful()) {
                         User insertedUser = response.body();
                         if (insertedUser != null) {
-                            Log.d("UU","Usuario Actualizado");
+                            Toast.makeText(requireContext(), "Usuario actualizado", Toast.LENGTH_SHORT).show();
+
                         } else {
                             Log.d("UU","Usuario Vacio");
                         }
@@ -208,10 +214,6 @@ public class User_Screen_Update_Fragment extends Fragment {
             });
         }else{
                 Toast.makeText(requireContext(), "La contraseña es la misma a la actual", Toast.LENGTH_SHORT).show();
-        }
-    }else{
-            Toast.makeText(requireContext(), "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-
         }
     }
 

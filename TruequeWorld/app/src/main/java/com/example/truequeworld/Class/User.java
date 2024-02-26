@@ -21,7 +21,9 @@ public class User implements Serializable {
 
     private String preferencias;
 
-    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer truquepoints, String imgPerfil, String preferencias) {
+    private int movil;
+
+    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer truquepoints, String imgPerfil, String preferencias, Integer movil) {
         this.id = id;
         this.dni = dni;
         this.name = name;
@@ -31,6 +33,7 @@ public class User implements Serializable {
         this.truquepoints = truquepoints;
         this.imgPerfil = imgPerfil;
         this.preferencias = preferencias;
+        this.movil = movil;
     }
 
     public String getImgPerfil() {
@@ -103,5 +106,13 @@ public class User implements Serializable {
 
     public void setPreferencias(String preferencias) {
         this.preferencias = preferencias;
+    }
+
+    public int getMovil() {
+        return movil;
+    }
+
+    public void setMovil(int movil) {
+        this.movil = movil;
     }
 }

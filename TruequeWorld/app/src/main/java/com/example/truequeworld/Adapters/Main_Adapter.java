@@ -79,7 +79,6 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
         Conectar();
         inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_main_screen, parent, false);
-        dialogListener.onClick(view);
         return new Main_Adapter.MyViewHolder(view);
     }
 

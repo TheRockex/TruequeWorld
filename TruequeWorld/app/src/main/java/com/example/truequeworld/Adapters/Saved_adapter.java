@@ -87,11 +87,9 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                     Saved_Model clickedItem = savedModels.get(adapterPosition);
                     Integer productId = clickedItem.getId();
                     Favorito favorito = new Favorito(null,userId, productId);
-                    Log.d("PANA","Tamaña" + savedFavorites.size());
                     if(savedFavorites.size() != 0){
                         for(int i = 0; i < savedFavorites.size();i++){
                             if (savedFavorites.get(i).getProductoId().equals(productId)) {
-                                Log.d("PANA","Se mete al delete" + found);
                                 deleteFavoriteById(savedFavorites.get(i).getId() ,holder.tp_NoFav_Button);
                                 savedFavorites.remove(savedFavorites.get(i));
                                 found = true;
@@ -99,11 +97,9 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                             }
                         }
                         if (!found) {
-                            Log.d("PANA","Se mete al else1" + found);
                             AddFavorito(favorito, holder.tp_NoFav_Button);
                         }
                     }else{
-                        Log.d("PANA","Se mete al else2"  + found);
                         AddFavorito(favorito, holder.tp_NoFav_Button);
                     }
 

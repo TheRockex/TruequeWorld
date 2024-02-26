@@ -524,7 +524,7 @@ public class StartScreen extends AppCompatActivity {
         String contraString = contraTextView.getText().toString();
 
         // Crear un nuevo usuario para la inserción
-        User newUser = new User(null,nombreString,nombreString,apellidosString,emailString,contraString,0,null,null);
+        User newUser = new User(null,nombreString,nombreString,apellidosString,emailString,contraString,0,null,null,null);
 
         // Ejemplo de llamada a insertUser
 
