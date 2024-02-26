@@ -68,6 +68,11 @@
         app:layout_constraintEnd_toStartOf="@id/v134"
         app:spanCount="2" />
 
+    <FrameLayout
+        android:id="@+id/truqueConteiner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 
     <!--Constraints verticales-->
 

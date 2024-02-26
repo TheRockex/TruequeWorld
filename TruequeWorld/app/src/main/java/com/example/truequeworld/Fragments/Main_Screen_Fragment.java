@@ -218,12 +218,11 @@ public class Main_Screen_Fragment extends Fragment {
     }
 
     public void toProducts() {
-        Profile_Products_Exchange_Fragment prodFrag = new Profile_Products_Exchange_Fragment();
 
         fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.exchange_container, prodFrag);
+        fragmentTransaction.replace(R.id.exchange_container, Profile_Products_Exchange_Fragment.newInstance(""+adapter.posProducto,""));
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

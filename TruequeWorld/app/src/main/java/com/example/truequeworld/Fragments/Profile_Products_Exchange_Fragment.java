@@ -23,8 +23,10 @@ import com.example.truequeworld.Adapters.Products_Exchange_Adapter;
 import com.example.truequeworld.Adapters.Products_Profile_Adapter;
 import com.example.truequeworld.Clases_RecyclerView.Products_Profile_Model;
 import com.example.truequeworld.Class.Product;
+import com.example.truequeworld.Class.Trueque;
 import com.example.truequeworld.Class.User;
 import com.example.truequeworld.Interface.ProductServiceApi;
+import com.example.truequeworld.Interface.TruequeServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
 import com.example.truequeworld.retrofit.RetrofitConexion;
@@ -46,6 +48,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
     User user;
     private UserServiceApi userServiceApi;
     private ProductServiceApi productServiceApi;
+    private TruequeServiceApi truequeServiceApi;
     private RoundedImageView imageView;
     private TextView nombre;
     RecyclerView rvProductsEx;
@@ -77,6 +80,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
     public void Conectar(){
         productServiceApi = RetrofitConexion.getProductServiceApi();
         userServiceApi = RetrofitConexion.getUserServiceApi();
+        truequeServiceApi = RetrofitConexion.getTruequeServiceApi();
         getUserID();
     }
 
@@ -114,7 +118,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.f6_fragment_profile_products_toexchange__screen, mainFrag);
+        fragmentTransaction.replace(R.id.truqueConteiner, mainFrag);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
@@ -161,6 +165,28 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
                     }
                     setRvMain();
                     adapter = new Products_Exchange_Adapter(requireContext(), productsExModels);
+                    adapter.setListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Call<Trueque> call = truequeServiceApi.insertTrueque(new Trueque(null, adapter.posProduct, Integer.parseInt(mParam1),1));
+                            call.enqueue(new Callback<Trueque>() {
+                                @Override
+                                public void onResponse(Call<Trueque> call, Response<Trueque> response) {
+                                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                                    fragmentTransaction.replace(R.id.f6_fragment_profile_products_toexchange__screen, Exchanges_Screen_Fragment.newInstance("",""));
+                                    fragmentTransaction.addToBackStack(null);
+                                    fragmentTransaction.commit();
+                                }
+
+                                @Override
+                                public void onFailure(Call<Trueque> call, Throwable t) {
+
+                                }
+                            });
+                        }
+                    });
                     rvMain.setAdapter(adapter);
                     GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
                     rvMain.setLayoutManager(managerlayout);

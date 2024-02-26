@@ -45,6 +45,7 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
     public Integer userId;
     private List<Favorito> savedFavorites = new ArrayList<>();
     Product product;
+    public int posProducto = -1;
 
     private AlertDialog alertDialog;
 
@@ -146,6 +147,7 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
         holder.productEx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                posProducto = position;
                 //Para ti Johan con amor xD aqui pa truequear
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(holder.itemView.getContext());
                 LayoutInflater inflater1 = LayoutInflater.from(holder.itemView.getContext());
@@ -158,11 +160,11 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                 accept.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        dialogListener.onClick(view);
+                        dialogListener.onClick(view);/*
                         // Lógica al hacer clic en "Aceptar"
                         if (onAcceptClickListener != null) {
                             onAcceptClickListener.onAcceptClicked();
-                        }
+                        }*/
 
                         alertDialog.dismiss();
                     }
