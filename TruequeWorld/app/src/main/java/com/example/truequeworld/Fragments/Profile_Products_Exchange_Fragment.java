@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -59,8 +60,8 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
 
     public Profile_Products_Exchange_Fragment() {}
 
-    public static  Profile_Products_Fragment newInstance(String param1, String param2) {
-        Profile_Products_Fragment fragment = new Profile_Products_Fragment();
+    public static  Profile_Products_Exchange_Fragment newInstance(String param1, String param2) {
+        Profile_Products_Exchange_Fragment fragment = new Profile_Products_Exchange_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -118,7 +119,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.truqueConteiner, mainFrag);
+        fragmentTransaction.replace(R.id.f6_fragment_profile_products_toexchange__screen, mainFrag);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
@@ -168,7 +169,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
                     adapter.setListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Call<Trueque> call = truequeServiceApi.insertTrueque(new Trueque(null, adapter.posProduct, Integer.parseInt(mParam1),1));
+                            Call<Trueque> call = truequeServiceApi.insertTrueque(new Trueque(null, productList.get(adapter.posProduct).getId(), Integer.parseInt(mParam1),1));
                             call.enqueue(new Callback<Trueque>() {
                                 @Override
                                 public void onResponse(Call<Trueque> call, Response<Trueque> response) {
@@ -182,7 +183,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
 
                                 @Override
                                 public void onFailure(Call<Trueque> call, Throwable t) {
-
+                                    Toast.makeText(getContext(), "NO FUNCIONA TU MIERDA", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }

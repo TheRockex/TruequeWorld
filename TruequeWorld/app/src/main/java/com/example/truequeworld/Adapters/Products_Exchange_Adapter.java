@@ -49,13 +49,14 @@ public class Products_Exchange_Adapter extends RecyclerView.Adapter<Products_Exc
         Log.d("OPP", "PAN" + productsExchangesModels.size());
         holder.productName.setText(productsExchangesModels.get(position).getProductName());
         holder.productImg.setImageBitmap(productsExchangesModels.get(position).getProductImg());
-        holder.itemView.setOnClickListener(listener);
         holder.cvProductsEx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 posProduct = position;
+                listener.onClick(view);
             }
         });
+
     }
 
     @Override

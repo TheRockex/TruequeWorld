@@ -222,7 +222,7 @@ public class Main_Screen_Fragment extends Fragment {
         fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.exchange_container, Profile_Products_Exchange_Fragment.newInstance(""+adapter.posProducto,""));
+        fragmentTransaction.replace(R.id.exchange_container, Profile_Products_Exchange_Fragment.newInstance(""+productList.get(adapter.posProducto).getId(),""));
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
