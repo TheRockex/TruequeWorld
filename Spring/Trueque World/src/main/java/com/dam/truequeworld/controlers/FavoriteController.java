@@ -57,10 +57,13 @@ public class FavoriteController {
 
         List<Product> favoriteProducts = new ArrayList<>();
         for (Integer productId : productIds) {
-            Product product = productController.getProductById(productId);
+            Product product = productService.getProductById(productId);
             if (product != null) {
                 favoriteProducts.add(product);
             }
+        }
+        for (int i = 0; i < favoriteProducts.size(); i++) {
+            productController.setImg(favoriteProducts.get(i));
         }
         return favoriteProducts;
     }

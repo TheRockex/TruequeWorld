@@ -68,6 +68,7 @@ public class Main_Screen_Fragment extends Fragment {
     RecyclerView rvMain;
     FragmentManager fragmentManager;
     Main_Adapter adapter;
+    private Integer userId;
 
     public Main_Screen_Fragment(){}
 
@@ -114,6 +115,8 @@ public class Main_Screen_Fragment extends Fragment {
     }
 
     public void Conectar() {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        userId = sharedPreferences.getInt("userId", 0);
         productServiceApi = RetrofitConexion.getProductServiceApi();
         userServiceApi = RetrofitConexion.getUserServiceApi();
         favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
@@ -177,7 +180,7 @@ public class Main_Screen_Fragment extends Fragment {
         if(buscarString.isEmpty() || buscarString.equals(null)){
             buscarString = "all";
         }
-        Call<List<Product>> call = productServiceApi.buscarProductosPorNombreOCategoria(buscarString);
+        Call<List<Product>> call = productServiceApi.buscarProductosPorNombreOCategoria(buscarString, userId);
         call.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
