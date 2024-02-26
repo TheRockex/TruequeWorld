@@ -44,6 +44,7 @@
         app:layout_constraintBottom_toTopOf="@id/h163"
         app:layout_constraintStart_toEndOf="@id/v129"
         app:layout_constraintEnd_toStartOf="@id/v130"
+        android:scaleType="centerCrop"
         android:background="@drawable/user_profile2"/>
 
     <TextView
