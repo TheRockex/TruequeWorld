@@ -298,6 +298,13 @@
         <item name="android:textColorHint">@color/grisito</item>
     </style>
 
+    <style name="PrivacyConditions">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
     <style name="activeIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/amarillo</item>
     </style>

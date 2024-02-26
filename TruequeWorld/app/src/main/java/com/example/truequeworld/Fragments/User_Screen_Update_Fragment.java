@@ -36,6 +36,7 @@ import com.example.truequeworld.retrofit.RetrofitConexion;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -54,7 +55,7 @@ public class User_Screen_Update_Fragment extends Fragment {
     private UserServiceApi userServiceApi;
     private static final int PICK_IMAGE_REQUEST = 1;
     private Bitmap bitmap;
-    private ImageView imageView;
+    private RoundedImageView imageView;
     private TextInputEditText nombreInputEditText;
     private TextInputEditText apellidosInputEditText;
     private TextInputEditText contraInputEditText;
@@ -125,7 +126,7 @@ public class User_Screen_Update_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f5_fragment_user__screen__update, container, false);
-        imageView = view.findViewById(R.id.imageEdit);
+        imageView = (RoundedImageView) view.findViewById(R.id.imageEdit);
         nombreInputEditText = view.findViewById(R.id.updatename);
         apellidosInputEditText = view.findViewById(R.id.updateApellidos);
         contraInputEditText = view.findViewById(R.id.updatecontra);
@@ -164,7 +165,8 @@ public class User_Screen_Update_Fragment extends Fragment {
         apellidosInputEditText.setText(user.getApellidos());
         if(user.getImgPerfil() != null){
             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
-            imageView.setImageBitmap(bitmap);
+            ((RoundedImageView) imageView).setImageBitmap(bitmap);
+            ((RoundedImageView) imageView).setCornerRadius(500);
         }
     }
 

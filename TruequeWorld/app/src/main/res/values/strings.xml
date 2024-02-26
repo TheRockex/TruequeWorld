@@ -98,4 +98,33 @@
     <string name="type_a_message">Type a message</string>
     <string name="saved">Guardado</string>
 
+
+    <!--Privacidad-->
+    <string name="close">CERRAR</string>
+    <string name="conditions">
+        POLÍTICA DE PRIVACIDAD DE TRUEQUEWORLD\n\n\n
+        Bienvenido a TruequeWorld, la aplicación que conecta a usuarios apasionados por el trueque y la economía colaborativa. En TruequeWorld, valoramos y respetamos la privacidad de nuestros usuarios. Esta política de privacidad describe cómo recopilamos, utilizamos y compartimos la información personal que obtenemos a través de nuestra aplicación.\n\n\n
+        Información que recopilamos\n\n
+        Información Personal\n
+        Al registrarte en TruequeWorld, te pedimos cierta información personal, como tu nombre, dirección de correo electrónico y otros datos necesarios para ofrecerte nuestros servicios. Esta información se utiliza para personalizar tu experiencia en la aplicación y facilitar la conexión con otros usuarios.\n\n
+        Información de transacciones\n
+        Cuando realizas trueques a través de TruequeWorld, recopilamos información relacionada con esas transacciones, como los productos intercambiados y las fechas de las transacciones. Esta información se utiliza para mejorar nuestros servicios y garantizar la seguridad de la plataforma.\n\n
+        Datos de ubicación\n
+        Para ofrecerte una experiencia más relevante y personalizada, TruequeWorld puede recopilar datos de ubicación cuando utilizas la aplicación. Estos datos se utilizan para mostrar trueques cercanos y mejorar la funcionalidad de la aplicación.\n\n\n
+        Cómo utilizamos tu información\n
+        La información recopilada se utiliza para ofrecerte y mejorar nuestros servicios, personalizar tu experiencia en la aplicación, facilitar trueques y garantizar la seguridad de la plataforma. Además, podemos utilizar la información para enviar actualizaciones sobre la aplicación y ofrecerte contenido relevante.\n\n
+        Compartir información\n
+        TruequeWorld puede compartir tu información personal con otros usuarios involucrados en trueques para facilitar la comunicación y el intercambio de productos. También podemos compartir información de manera agregada y anónima con fines estadísticos y de análisis.\n\n
+        Cookies y tecnologías similares\n
+        TruequeWorld utiliza cookies y tecnologías similares para mejorar la funcionalidad de la aplicación y recopilar información sobre el uso de la plataforma. Puedes gestionar la configuración de cookies a través de la configuración de tu dispositivo.\n\n
+        Seguridad de la información\n
+        Nos comprometemos a proteger la seguridad de tu información personal. Implementamos medidas de seguridad físicas, electrónicas y administrativas para garantizar la confidencialidad y la integridad de los datos.\n\n
+        Cambios en la política de privacidad\n
+        TruequeWorld se reserva el derecho de realizar cambios en esta política de privacidad en cualquier momento. Se te notificará sobre cambios significativos y se te dará la oportunidad de revisar y aceptar las modificaciones.\n\n
+        Contacto\n
+        Si tienes preguntas o inquietudes sobre nuestra política de privacidad, por favor, contáctanos a través de GitHub.\n\n\n
+        Gracias por confiar en TruequeWorld. ¡Truequea con confianza!
+    </string>
+
+
 </resources>

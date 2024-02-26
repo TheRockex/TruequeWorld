@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -29,6 +30,8 @@ import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
 import com.example.truequeworld.SplashScreen;
 import com.example.truequeworld.retrofit.RetrofitConexion;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import retrofit2.Call;
@@ -48,6 +51,7 @@ public class User_Screen_Fragment extends Fragment {
     private TextView MisProductostextView;
     User user;
     private UserServiceApi userServiceApi;
+    private AlertDialog alertDialog;
 
     public User_Screen_Fragment(){}
 
@@ -118,6 +122,31 @@ public class User_Screen_Fragment extends Fragment {
             }
         });
 
+        View securityPolicy = rootView.findViewById(R.id.profile_safety_button);
+        securityPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
+                LayoutInflater inflater = requireActivity().getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.f5_x_alert_dialog_security, null);
+                builder.setView(dialogView);
+
+                MaterialButton close = dialogView.findViewById(R.id.close_security);
+
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                    }
+                });
+
+                alertDialog = builder.create();
+                // Mostrar el AlertDialog
+                alertDialog.show();
+            }
+        });
+
+
         Button btnCerrarSesion = rootView.findViewById(R.id.button_logout);
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,7 +190,7 @@ public class User_Screen_Fragment extends Fragment {
         if(user.getImgPerfil() != null){
             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
             ((RoundedImageView) imageView).setImageBitmap(bitmap);
-            ((RoundedImageView) imageView).setCornerRadius(100);
+            ((RoundedImageView) imageView).setCornerRadius(500);
         }
         UserNametextView.setText(user.getName());
         UserIDtextView.setText("ID: " + user.getId());

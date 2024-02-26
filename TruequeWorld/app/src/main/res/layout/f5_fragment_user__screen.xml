@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toStartOf="@id/v104"
         app:layout_constraintHeight_percent="0.105"
         android:scaleType="centerCrop"
-        android:src="@drawable/user" />
+        android:background="@drawable/user" />
 
     <!--<ImageView
         android:id="@+id/imageButton"

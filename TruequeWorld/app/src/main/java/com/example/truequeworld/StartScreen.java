@@ -49,6 +49,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -61,7 +62,7 @@ public class StartScreen extends AppCompatActivity {
     private SignInClient oneTapClient;
     private BeginSignInRequest signUpRequest;
     private UserServiceApi userServiceApi;
-    private ImageView imageView;
+    private RoundedImageView imageView;
     User user;
     private static final int REQ_ONE_TAP = 16;
     private boolean showOneTapUI = true;
@@ -352,7 +353,7 @@ public class StartScreen extends AppCompatActivity {
     }
     /*JOHAAWDAWDN*/
     public void Login(Dialog dialog){
-        imageView = dialog.findViewById(R.id.login_image_profile);
+        imageView = (RoundedImageView) dialog.findViewById(R.id.login_image_profile);
         TextView emailTextView = dialog.findViewById(R.id.login_email);
         TextView contraTextView = dialog.findViewById(R.id.login_password);
 
@@ -373,7 +374,8 @@ public class StartScreen extends AppCompatActivity {
                         editor.apply();
                         if(user.getImgPerfil() != null){
                             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
-                            imageView.setImageBitmap(bitmap);
+                            ((RoundedImageView) imageView).setImageBitmap(bitmap);
+                            ((RoundedImageView) imageView).setCornerRadius(100);
                         }
                         Toast.makeText(StartScreen.this, "Bienvenido de vuelta " + user.getName(), Toast.LENGTH_SHORT).show();
                         new Handler().postDelayed(new Runnable() {
