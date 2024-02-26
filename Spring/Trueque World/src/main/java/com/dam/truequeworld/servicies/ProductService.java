@@ -41,8 +41,9 @@ public class ProductService {
         }
     }
 
-    public List<Product> getProductsByEstado(Integer estado){
+    public List<Product> getProductsByEstado(Integer estado) {
         return productRepository.getProductsByEstado(estado);
+    }
     public List<Product> getProductsByUserId(Integer userId) {
         return productRepository.findByUserId(userId);
     }

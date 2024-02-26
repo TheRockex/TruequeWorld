@@ -30,7 +30,7 @@ public class Product {
     private Integer valorenTP;
 
     @Column(name = "estado")
-    private String estado;
+    private Integer estado;
 
     @Column(name = "usuarioid")
     private Integer usuarioId;
