@@ -179,7 +179,7 @@ public class User_Screen_Update_Fragment extends Fragment {
         String apellidos = apellidosInputEditText.getText().toString();
         String contra = contraInputEditText.getText().toString();
         String confirmcontra = confirmcontraInputEditText.getText().toString();
-        Integer telefono = Integer.parseInt(telefonoInputEditText.getText().toString());
+        String telefono = telefonoInputEditText.getText().toString();
 
             if(contra.equals(user.getContrasenia())){
                 user.setName(nombre);

@@ -21,9 +21,9 @@ public class User implements Serializable {
 
     private String preferencias;
 
-    private int movil;
+    private String movil;
 
-    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer truquepoints, String imgPerfil, String preferencias, Integer movil) {
+    public User(Integer id, String dni, String name, String apellidos, String email, String contrasenia, Integer truquepoints, String imgPerfil, String preferencias, String movil) {
         this.id = id;
         this.dni = dni;
         this.name = name;
@@ -108,11 +108,10 @@ public class User implements Serializable {
         this.preferencias = preferencias;
     }
 
-    public int getMovil() {
+    public String getMovil() {
         return movil;
     }
-
-    public void setMovil(int movil) {
+    public void setMovil(String movil) {
         this.movil = movil;
     }
 }

@@ -45,5 +45,5 @@ public class User {
     private String preferencias;
 
     @Column(name = "movil")
-    private Integer movil;
+    private String movil;
 }
