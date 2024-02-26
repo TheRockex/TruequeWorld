@@ -154,6 +154,12 @@ public class Main_Screen_Fragment extends Fragment {
                     savedFavorites = response.body();
                     setRvMain();
                     adapter = new Main_Adapter(requireContext(), mainModels,userId,savedFavorites);
+                    adapter.setDialogListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            toProducts();
+                        }
+                    });
                     rvMain.setAdapter(adapter);
                     GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
                     rvMain.setLayoutManager(managerlayout);
@@ -212,7 +218,7 @@ public class Main_Screen_Fragment extends Fragment {
     }
 
     public void toProducts() {
-        Profile_Products_Fragment prodFrag = new Profile_Products_Fragment();
+        Profile_Products_Exchange_Fragment prodFrag = new Profile_Products_Exchange_Fragment();
 
         fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

@@ -11,12 +11,19 @@ import java.util.List;
 public class TruqueService {
     @Autowired
     private TruequeRepository truequeRepository;
+    @Autowired
+    private ProductService productService;
 
     public List<Trueque> getTruquesByEstado(Integer estado){
         return truequeRepository.getTruequeByEstado(estado);
     }
 
     public Trueque saveTrueque(Trueque trueque){
-        return truequeRepository.save(trueque);
+        Trueque t =  truequeRepository.save(trueque);
+        if(t!=null){
+            productService.updateEstado(2,t.getProductoInteresado());
+            productService.updateEstado(2,t.getProductoSolicitado());
+        }
+        return t;
     }
 }

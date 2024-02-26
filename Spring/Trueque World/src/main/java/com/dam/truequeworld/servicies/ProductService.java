@@ -4,6 +4,7 @@ import com.dam.truequeworld.models.Favorite;
 import com.dam.truequeworld.models.Product;
 import com.dam.truequeworld.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -50,5 +51,9 @@ public class ProductService {
 
     public List<Product> getProductsUserByEstado(Integer estado, Integer userId){
         return productRepository.getProductsUserByEstado(estado, userId);
+    }
+
+    public Integer updateEstado(Integer estado, Integer productId){
+        return productRepository.updateEstado(estado,productId);
     }
 }
