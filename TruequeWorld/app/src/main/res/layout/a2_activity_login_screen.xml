@@ -72,11 +72,13 @@
         android:layout_height="wrap_content"
         android:paddingTop="50dp"
         android:paddingBottom="30dp">
+
         <ImageView
             android:id="@+id/login_image_profile"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:src="@drawable/user_profile" />
+
     </LinearLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

@@ -181,11 +181,6 @@
         app:menu="@menu/navigation_bar_menu"
         style="@style/navBar" />-->
 
-    <FrameLayout
-        android:id="@+id/exchange_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
 
     <!--Contenido de productos-->
 
@@ -199,6 +194,11 @@
         app:layout_constraintEnd_toStartOf="@id/v55"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2" />
+
+    <FrameLayout
+        android:id="@+id/exchange_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
     <!--Constraints verticales-->

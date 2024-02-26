@@ -29,6 +29,7 @@ import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
 import com.example.truequeworld.SplashScreen;
 import com.example.truequeworld.retrofit.RetrofitConexion;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +40,7 @@ public class User_Screen_Fragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    private ImageView imageView;
+    private RoundedImageView imageView;
     private TextView UserNametextView;
     private TextView UserIDtextView;
     private TextView UserTPtextView;
@@ -93,7 +94,7 @@ public class User_Screen_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.f5_fragment_user__screen, container, false);
-        imageView = rootView.findViewById(R.id.imageButton);
+        imageView = (RoundedImageView) rootView.findViewById(R.id.imageButton);
         UserNametextView = rootView.findViewById(R.id.userName);
         UserIDtextView = rootView.findViewById(R.id.userID);
         UserTPtextView = rootView.findViewById(R.id.userWalletpoints);
@@ -159,7 +160,8 @@ public class User_Screen_Fragment extends Fragment {
     public void UserINFO(){
         if(user.getImgPerfil() != null){
             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
-            imageView.setImageBitmap(bitmap);
+            ((RoundedImageView) imageView).setImageBitmap(bitmap);
+            ((RoundedImageView) imageView).setCornerRadius(100);
         }
         UserNametextView.setText(user.getName());
         UserIDtextView.setText("ID: " + user.getId());

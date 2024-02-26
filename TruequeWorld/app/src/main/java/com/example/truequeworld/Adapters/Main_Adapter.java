@@ -52,7 +52,13 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
         void onAcceptClicked();
     }
 
+    private View.OnClickListener dialogListener;
+
     private OnAcceptClickListener onAcceptClickListener;
+
+    public void setDialogListener(View.OnClickListener dialogListener) {
+        this.dialogListener = dialogListener;
+    }
 
     public void setOnAcceptClickListener(OnAcceptClickListener listener) {
         this.onAcceptClickListener = listener;
@@ -154,11 +160,16 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                 accept.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        dialogListener.onClick(view);
                         // Lógica al hacer clic en "Aceptar"
                         if (onAcceptClickListener != null) {
                             onAcceptClickListener.onAcceptClicked();
                         }
+
+                        alertDialog.dismiss();
                     }
+
+
                 });
 
                 reject.setOnClickListener(new View.OnClickListener() {
