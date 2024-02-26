@@ -14,16 +14,17 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.truequeworld.Clases_RecyclerView.Products_Exchanges_Model;
+import com.example.truequeworld.Clases_RecyclerView.Products_Profile_Model;
 import com.example.truequeworld.R;
 
 import java.util.ArrayList;
 
 public class Products_Exchange_Adapter extends RecyclerView.Adapter<Products_Exchange_Adapter.MyViewHolder> {
     Context context;
-    ArrayList<Products_Exchanges_Model> productsExchangesModels;
+    ArrayList<Products_Profile_Model> productsExchangesModels;
     private LayoutInflater inflater;
 
-    public Products_Exchange_Adapter(Context context, ArrayList<Products_Exchanges_Model> productsExchangesModels) {
+    public Products_Exchange_Adapter(Context context, ArrayList<Products_Profile_Model> productsExchangesModels) {
         this.context = context;
         this.productsExchangesModels = productsExchangesModels;
     }

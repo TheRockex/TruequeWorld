@@ -33,4 +33,6 @@ public interface ProductServiceApi {
     @GET("/product/products/propietario/{id}")
     Call<List<Product>> getFavoritesUser(@Path("id") Integer id);
 
+    @GET("/product/estado/{estado}/{userId}")
+    Call<List<Product>> getProductsUserByEstado(@Path("estado") Integer estado, @Path("userId") Integer userId);
 }

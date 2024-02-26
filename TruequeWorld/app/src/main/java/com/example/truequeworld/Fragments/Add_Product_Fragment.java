@@ -322,7 +322,7 @@ public class Add_Product_Fragment extends Fragment {
                 || textviewcategoryString.isEmpty() || textviewestadoString.isEmpty() || textviewPriceOnlyNumbers.isEmpty()){
 
             String IMGString = bitmapToBase64(bitmap);
-            Product newProduct = new Product(null,nombreString,descripcionString,textviewPriceInt,textviewestadoString,userId,IMGString, textviewcategoryString);
+            Product newProduct = new Product(null,nombreString,descripcionString,textviewPriceInt,1,userId,IMGString, textviewcategoryString);
             Call<Product> call = productServiceApi.insertProduct(newProduct);
             call.enqueue(new Callback<Product>() {
                 @Override

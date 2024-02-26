@@ -11,14 +11,14 @@ public class Product implements Serializable {
 
     private Integer valorenTP;
 
-    private String estado;
+    private Integer estado;
 
     private Integer usuarioId;
 
     private String imgProducto;
     private String categoria;
 
-    public Product(Integer id, String nombre, String descripcion, Integer valorenTP, String estado, Integer usuarioId, String imgProducto, String categoria) {
+    public Product(Integer id, String nombre, String descripcion, Integer valorenTP, Integer estado, Integer usuarioId, String imgProducto, String categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -72,11 +72,11 @@ public class Product implements Serializable {
         this.valorenTP = valorenTP;
     }
 
-    public String getEstado() {
+    public Integer getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Integer estado) {
         this.estado = estado;
     }
 

@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.truequeworld.Adapters.Products_Exchange_Adapter;
 import com.example.truequeworld.Adapters.Products_Profile_Adapter;
 import com.example.truequeworld.Clases_RecyclerView.Products_Profile_Model;
 import com.example.truequeworld.Class.Product;
@@ -50,7 +51,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
     RecyclerView rvProductsEx;
     List<Product> productList = new ArrayList<>();
     ArrayList<Products_Profile_Model> productsExModels = new ArrayList<>();
-    Products_Profile_Adapter adapter;
+    Products_Exchange_Adapter adapter;
     RecyclerView rvMain;
 
     public Profile_Products_Exchange_Fragment() {}
@@ -148,7 +149,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
 
     public void Productos() {
         Log.d("OPP", "Hola");
-        Call<List<Product>> call = productServiceApi.getFavoritesUser(user.getId());
+        Call<List<Product>> call = productServiceApi.getProductsUserByEstado(1,user.getId());
         call.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
@@ -159,7 +160,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
 
                     }
                     setRvMain();
-                    adapter = new Products_Profile_Adapter(requireContext(), productsExModels);
+                    adapter = new Products_Exchange_Adapter(requireContext(), productsExModels);
                     rvMain.setAdapter(adapter);
                     GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
                     rvMain.setLayoutManager(managerlayout);

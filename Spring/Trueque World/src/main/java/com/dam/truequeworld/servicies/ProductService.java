@@ -48,5 +48,7 @@ public class ProductService {
         return productRepository.findByUserId(userId);
     }
 
-
+    public List<Product> getProductsUserByEstado(Integer estado, Integer userId){
+        return productRepository.getProductsUserByEstado(estado, userId);
+    }
 }
