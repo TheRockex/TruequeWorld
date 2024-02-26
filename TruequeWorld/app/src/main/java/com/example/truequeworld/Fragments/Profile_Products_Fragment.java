@@ -27,6 +27,7 @@ import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.UserServiceApi;
 import com.example.truequeworld.R;
 import com.example.truequeworld.retrofit.RetrofitConexion;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class Profile_Products_Fragment extends Fragment {
     User user;
     private UserServiceApi userServiceApi;
     private ProductServiceApi productServiceApi;
-    private ImageView imageView;
+    private RoundedImageView imageView;
     private TextView nombre;
     RecyclerView rvProductsEx;
     List<Product> productList = new ArrayList<>();
@@ -91,7 +92,8 @@ public class Profile_Products_Fragment extends Fragment {
                         user = userId;
                         if(user.getImgPerfil() != null){
                             Bitmap bitmap = base64ToBitmap(user.getImgPerfil());
-                            imageView.setImageBitmap(bitmap);
+                            ((RoundedImageView) imageView).setImageBitmap(bitmap);
+                            ((RoundedImageView) imageView).setCornerRadius(500);
                         }
                         nombre.setText(user.getName());
                         Productos();
@@ -119,7 +121,7 @@ public class Profile_Products_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f6_fragment_profile_products__screen, container, false);
-        imageView = view.findViewById(R.id.user_profile);
+        imageView = (RoundedImageView) view.findViewById(R.id.user_profile);
         nombre = view.findViewById(R.id.username_exchange_products);
         rvProductsEx = view.findViewById(R.id.rvMyProducts);
         rvMain = view.findViewById(R.id.rvMyProducts);

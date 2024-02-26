@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toStartOf="@id/v137"
         android:src="@drawable/logo__2_" />
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/user_profile"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -44,7 +44,8 @@
         app:layout_constraintBottom_toTopOf="@id/h174"
         app:layout_constraintStart_toEndOf="@id/v138"
         app:layout_constraintEnd_toStartOf="@id/v139"
-        android:src="@drawable/user_profile2" />
+        android:scaleType="centerCrop"
+        android:background="@drawable/user_profile2" />
 
     <TextView
         android:id="@+id/username_exchange_products"

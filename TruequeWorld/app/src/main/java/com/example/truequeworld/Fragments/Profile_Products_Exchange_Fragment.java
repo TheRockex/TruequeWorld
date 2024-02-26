@@ -113,7 +113,7 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.f6_fragment_profile_products__screen, mainFrag);
+        fragmentTransaction.replace(R.id.f6_fragment_profile_products_toexchange__screen, mainFrag);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
@@ -126,6 +126,15 @@ public class Profile_Products_Exchange_Fragment extends Fragment {
         rvProductsEx = view.findViewById(R.id.rvMyProducts);
         rvMain = view.findViewById(R.id.rvMyProducts);
         Conectar();
+
+        View cancelButton = view.findViewById(R.id.cancel_exchange_products);
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cancelEx(view);
+            }
+        });
 
         return view;
     }
