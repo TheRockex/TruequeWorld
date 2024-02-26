@@ -47,4 +47,6 @@ public class ProductService {
     public List<Product> getProductsByUserId(Integer userId) {
         return productRepository.findByUserId(userId);
     }
+
+
 }
