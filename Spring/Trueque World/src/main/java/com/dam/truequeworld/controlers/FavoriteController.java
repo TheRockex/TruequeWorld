@@ -16,10 +16,8 @@ public class FavoriteController {
     @Autowired
     private FavoriteService favoriteService;
     @Autowired
-    private ProductController  productService;
-
-    @Autowired
     private ProductController  productController;
+
 
     @GetMapping("/favorite")
     public List<Favorite> getFavorite(){
@@ -57,13 +55,8 @@ public class FavoriteController {
 
         List<Product> favoriteProducts = new ArrayList<>();
         for (Integer productId : productIds) {
-            Product product = productService.getProductById(productId);
-            if (product != null) {
-                favoriteProducts.add(product);
-            }
-        }
-        for (int i = 0; i < favoriteProducts.size(); i++) {
-            productController.setImg(favoriteProducts.get(i));
+            Product product = productController.getProductById(productId);
+            favoriteProducts.add(product);
         }
         return favoriteProducts;
     }

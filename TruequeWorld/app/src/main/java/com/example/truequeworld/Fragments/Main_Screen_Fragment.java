@@ -125,8 +125,6 @@ public class Main_Screen_Fragment extends Fragment {
     }
 
     public void Productos() {
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
-        int userId = sharedPreferences.getInt("userId", 0);
         Call<List<Product>> call = productServiceApi.getProducts(userId);
         call.enqueue(new Callback<List<Product>>() {
             @Override
@@ -148,12 +146,6 @@ public class Main_Screen_Fragment extends Fragment {
     }
 
     public void FavoritesUser(){
-        if (!isAdded() || getActivity() == null) {
-            return;
-        }
-
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
-        int userId = sharedPreferences.getInt("userId", 0);
         Call<List<Favorito>> call = favoriteServiceApi.getFavoritosUserid(userId);
         call.enqueue(new Callback<List<Favorito>>() {
             @Override
@@ -162,12 +154,6 @@ public class Main_Screen_Fragment extends Fragment {
                     savedFavorites = response.body();
                     setRvMain();
                     adapter = new Main_Adapter(requireContext(), mainModels,userId,savedFavorites);
-                    adapter.setDialogListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            toProducts();
-                        }
-                    });
                     rvMain.setAdapter(adapter);
                     GridLayoutManager managerlayout = new GridLayoutManager(requireContext(),2);
                     rvMain.setLayoutManager(managerlayout);
@@ -226,12 +212,12 @@ public class Main_Screen_Fragment extends Fragment {
     }
 
     public void toProducts() {
-        Profile_Products_Exchange_Fragment prodExFrag = new Profile_Products_Exchange_Fragment();
+        Profile_Products_Fragment prodFrag = new Profile_Products_Fragment();
 
         fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(R.id.exchange_container, prodExFrag);
+        fragmentTransaction.replace(R.id.exchange_container, prodFrag);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

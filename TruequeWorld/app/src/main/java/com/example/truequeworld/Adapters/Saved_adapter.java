@@ -60,7 +60,6 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull Saved_adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Log.d("PANA","Cardview");
         Saved_Model currentProduct = savedModels.get(position);
         holder.tp_name.setText("NOMBRE: " + savedModels.get(position).getFavProduct_name());
         holder.tp_precio.setText("PRECIO: " + savedModels.get(position).getFavProduct_precio().toString() + "TP");
@@ -69,9 +68,15 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
         }
         holder.tp_product.setImageBitmap(savedModels.get(position).getFavProduct_img());
         holder.tp_NoFav_Button.setImageDrawable(savedModels.get(position).getMainSave());
-        Log.d("PANA","Size" + savedFavorites.size());
         holder.tp_NoFav_Button.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
+        Integer productId = currentProduct.getId();
 
+        for (Favorito favorito : savedFavorites) {
+            if (favorito.getProductoId().equals(productId)) {
+                holder.tp_NoFav_Button.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
+                break;
+            }
+        }
 
         holder.tp_NoFav_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,18 +91,19 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                     if(savedFavorites.size() != 0){
                         for(int i = 0; i < savedFavorites.size();i++){
                             if (savedFavorites.get(i).getProductoId().equals(productId)) {
+                                Log.d("PANA","Se mete al delete" + found);
                                 deleteFavoriteById(savedFavorites.get(i).getId() ,holder.tp_NoFav_Button);
                                 savedFavorites.remove(savedFavorites.get(i));
                                 found = true;
                                 break;
                             }
-                            if (!found) {
-                                AddFavorito(favorito, holder.tp_NoFav_Button);
-                                found = false;
-                            }
+                        }
+                        if (!found) {
+                            Log.d("PANA","Se mete al else1" + found);
+                            AddFavorito(favorito, holder.tp_NoFav_Button);
                         }
                     }else{
-                        Log.d("PANA","Se mete al else2" + savedFavorites.size());
+                        Log.d("PANA","Se mete al else2"  + found);
                         AddFavorito(favorito, holder.tp_NoFav_Button);
                     }
 
@@ -133,7 +139,6 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
 
 
     public void Conectar() {
-        Log.d("PANA","Conectar");
         favoriteServiceApi = RetrofitConexion.getFavoriteServiceApi();
         userServiceApi = RetrofitConexion.getUserServiceApi();
         getUserID();
@@ -172,13 +177,11 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
                     saveButton.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
                 } else {
                     Log.d("CVF", "No se inserto el favorito");
-                    // La solicitud no fue exitosa, maneja el error aquí
                 }
             }
 
             @Override
             public void onFailure(Call<Favorito> call, Throwable t) {
-                // Hubo un error en la solicitud, maneja el error aquí
                 Log.d("CVF", "Error al añadir");
             }
         });
@@ -191,17 +194,14 @@ public class Saved_adapter extends RecyclerView.Adapter<Saved_adapter.MyViewHold
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
                     Log.d("CVF", "Se eliminó el favorito");
-                    // Si se eliminó correctamente, establece el color de fondo predeterminado
                     saveButton.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));
                 } else {
                     Log.d("CVF", "No se pudo eliminar el favorito");
-                    // Maneja el error si la solicitud no fue exitosa
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                // Maneja el error si hubo un fallo en la solicitud
                 Log.e("CVF", "Error al eliminar el favorito: " + t.getMessage());
             }
         });

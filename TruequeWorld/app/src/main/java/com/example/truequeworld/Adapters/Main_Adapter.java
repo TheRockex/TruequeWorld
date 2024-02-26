@@ -106,7 +106,6 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                     Main_Model clickedItem = mainModels.get(adapterPosition);
                     Integer productId = clickedItem.getId();
                     Favorito favorito = new Favorito(null,userId, productId);
-                    Log.d("PANA","Tamaña" + savedFavorites.size());
                     if(savedFavorites.size() != 0){
                         for(int i = 0; i < savedFavorites.size();i++){
                             if (savedFavorites.get(i).getProductoId().equals(productId)) {
@@ -121,7 +120,6 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
                             found = false;
                         }
                     }else{
-                        Log.d("PANA","Se mete al else2" + savedFavorites.size());
                         AddFavorito(favorito, holder.saveButton);
                     }
 
@@ -245,20 +243,15 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
             @Override
             public void onResponse(Call<Favorito> call, Response<Favorito> response) {
                 if (response.isSuccessful()) {
-                    Log.d("CV", "Se inserto el favorito");
                     Favorito favoritoInsertado = response.body();
                     savedFavorites.add(favoritoInsertado);
                     saveButton.setBackgroundColor(ContextCompat.getColor(context, R.color.amarillo));
                 } else {
-                    Log.d("CV", "No se inserto el favorito");
-                    // La solicitud no fue exitosa, maneja el error aquí
                 }
             }
 
             @Override
             public void onFailure(Call<Favorito> call, Throwable t) {
-                // Hubo un error en la solicitud, maneja el error aquí
-                Log.d("CV", "Error al añadir");
             }
         });
     }
@@ -269,18 +262,14 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.MyViewHolder
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (response.isSuccessful()) {
-                    Log.d("CV", "Se eliminó el favorito");
-                    // Si se eliminó correctamente, establece el color de fondo predeterminado
                     saveButton.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));
                 } else {
                     Log.d("CV", "No se pudo eliminar el favorito");
-                    // Maneja el error si la solicitud no fue exitosa
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                // Maneja el error si hubo un fallo en la solicitud
                 Log.e("CV", "Error al eliminar el favorito: " + t.getMessage());
             }
         });
