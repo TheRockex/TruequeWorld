@@ -46,20 +46,31 @@ public class ProductController {
                     }
                 }
             } else {
-                productosFiltrados.addAll(productos);
+                // productosFiltrados.addAll(productos);
+                for (Product producto : productos) {
+                    if (!user.getId().equals(producto.getUsuarioId())) {
+                        productosFiltrados.add(setImg(producto));
+                    }
+                }
+
             }
         } else {
             // Manejar el caso en que el usuario no exista
         }
-        for (int i = 0; i < productosFiltrados.size(); i++) {
-            setImg(productosFiltrados.get(i));
-        }
         return productosFiltrados;
     }
 
-    @GetMapping("/buscar/{searchTerm}")
-    public List<Product> buscarProductosPorNombreOCategoria(@PathVariable String searchTerm) {
-        return productService.buscarPorNombreOCategoria(searchTerm);
+    @GetMapping("/buscar/{searchTerm}/{id}")
+    public List<Product> buscarProductosPorNombreOCategoria(@PathVariable String searchTerm,@PathVariable Integer id) {
+        User user = userService.getUserById(id);
+        List<Product> productos = productService.buscarPorNombreOCategoria(searchTerm);
+        List<Product> productosFiltrados = new ArrayList<>();
+        for (Product producto : productos) {
+            if (!user.getId().equals(producto.getUsuarioId())) {
+                productosFiltrados.add(setImg(producto));
+            }
+        }
+        return productosFiltrados;
     }
 
     @GetMapping("/id/{id}")
