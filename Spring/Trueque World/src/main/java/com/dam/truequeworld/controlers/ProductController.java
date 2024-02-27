@@ -150,9 +150,13 @@ public class ProductController {
         return list;
     }
 
-    @GetMapping("/img/{id}")
-    public String getImgById(@PathVariable Integer id){
-        return setImg(productService.getProductById(id)).getImgProducto();
+    @GetMapping("/img/{id}/{id2}")
+    public List<Product> getImgById(@PathVariable Integer id, @PathVariable Integer id2){
+        List<Product> product = new ArrayList<>();
+        product.add(setImg(productService.getProductById(id)));
+        product.add(setImg(productService.getProductById(id2)));
+
+        return product;
     }
 }
 

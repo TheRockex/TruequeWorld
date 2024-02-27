@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,11 +42,12 @@ public class Exchange_Adapter extends RecyclerView.Adapter<Exchange_Adapter.MyVi
     public void onBindViewHolder(@NonNull Exchange_Adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.myProduct.setImageBitmap(base64ToBitmap(exchangeModels.get(position).getMyImg()));
         holder.otherProduct.setImageBitmap(base64ToBitmap(exchangeModels.get(position).getOtherImg()));
+        Log.d("Tag", "Esta en el adapter");
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return exchangeModels.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

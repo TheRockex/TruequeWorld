@@ -1,5 +1,7 @@
 package com.example.truequeworld.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 import com.example.truequeworld.Adapters.Exchange_Adapter;
 import com.example.truequeworld.Clases_RecyclerView.Exchange_Model;
 import com.example.truequeworld.Clases_RecyclerView.Main_Model;
+import com.example.truequeworld.Class.Product;
 import com.example.truequeworld.Class.Trueque;
 import com.example.truequeworld.Interface.ProductServiceApi;
 import com.example.truequeworld.Interface.TruequeServiceApi;
@@ -46,6 +49,11 @@ public class Exchanges_Screen_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private String img1;
+    private TruequeServiceApi truequeServiceApi;
+    private ProductServiceApi productServiceApi;
+    Integer userId;
+    Product product;
+    List<Product> productos = new ArrayList<>();
 
     public Exchanges_Screen_Fragment(){}
 
@@ -58,25 +66,35 @@ public class Exchanges_Screen_Fragment extends Fragment {
         return fragment;
     }
 
+
     private void setRvExchange(){
         Drawable uplogo = ContextCompat.getDrawable(requireContext(), R.drawable.elegido_arriba_2);
         Drawable downlogo = ContextCompat.getDrawable(requireContext(), R.drawable.elegido_abajo_2);
-        TruequeServiceApi truequeServiceApi = RetrofitConexion.getTruequeServiceApi();
+        Log.d("Tag", "Se mete aqui");
+        exchangeModels.add(new Exchange_Model(
+                productos.get(0).getImgProducto(),
+                productos.get(1).getImgProducto(),
+                uplogo,
+                downlogo
+        ));
+    }
 
-        Call<List<Trueque>> call = truequeServiceApi.getTruequesByUserEstado(3,1);
+    public void Conectar() {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("UsuarioID", Context.MODE_PRIVATE);
+        userId = sharedPreferences.getInt("userId", 0);
+        productServiceApi = RetrofitConexion.getProductServiceApi();
+        truequeServiceApi = RetrofitConexion.getTruequeServiceApi();
+        Productos();
+    }
+
+    public void Productos(){
+        Call<List<Trueque>> call = truequeServiceApi.getTruequesByUserEstado(userId,1);
         call.enqueue(new Callback<List<Trueque>>() {
             @Override
             public void onResponse(Call<List<Trueque>> call, Response<List<Trueque>> response) {
-
                 for(Trueque t : response.body()){
-
-                    Log.d("Alex", "onResponse:1 ");
-                    exchangeModels.add(new Exchange_Model(
-                            getImg(t.getProductoSolicitado()),
-                            getImg(t.getProductoInteresado()),
-                            uplogo,
-                            downlogo
-                    ));
+                    Log.d("Tag", "ID" + t.getProductoSolicitado());
+                    getImg(t.getProductoSolicitado(), t.getProductoInteresado());
                 }
             }
 
@@ -87,24 +105,25 @@ public class Exchanges_Screen_Fragment extends Fragment {
         });
     }
 
-    public String getImg(Integer id){
-
-        Log.d("Alex", "onResponse:2 "+ id);
-        ProductServiceApi productServiceApi = RetrofitConexion.getProductServiceApi();
-        Call<String> call = productServiceApi.getImgById(id);
-        call.enqueue(new Callback<String>() {
+    public void getImg(Integer id, Integer id2){
+        Call<List<Product>> call = productServiceApi.getImgById(id, id2);
+        call.enqueue(new Callback<List<Product>>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.d("Alex", "onResponse: 3");
-                img1 = response.body();
+            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+                productos = response.body();
+                setRvExchange();
+                productos.clear();
+                LinearLayoutManager managerLayout = new LinearLayoutManager(requireContext());
+                rvExchange.setLayoutManager(managerLayout);
+                Exchange_Adapter adapter = new Exchange_Adapter(requireContext(), exchangeModels);
+                rvExchange.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                //Algo
+            public void onFailure(Call<List<Product>> call, Throwable t) {
+                Log.d("Alex", "onResponse: 4");
             }
         });
-        return img1;
     }
 
     @Override
@@ -130,14 +149,8 @@ public class Exchanges_Screen_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f4_fragment_exchanges__screen, container, false);
-
+        Conectar();
         rvExchange = view.findViewById(R.id.rvRequestsSent);
-        setRvExchange();
-        LinearLayoutManager managerLayout = new LinearLayoutManager(requireContext());
-        rvExchange.setLayoutManager(managerLayout);
-        Exchange_Adapter adapter = new Exchange_Adapter(requireContext(), exchangeModels);
-        rvExchange.setAdapter(adapter);
-
         View requests_received = view.findViewById(R.id.requests_received);
         requests_received.setOnClickListener(new View.OnClickListener() {
             @Override
