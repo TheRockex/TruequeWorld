@@ -35,4 +35,6 @@ public interface ProductServiceApi {
 
     @GET("/product/estado/{estado}/{userId}")
     Call<List<Product>> getProductsUserByEstado(@Path("estado") Integer estado, @Path("userId") Integer userId);
+    @GET("/product/img/{id}")
+    Call<String> getImgById(@Path("id") Integer id);
 }

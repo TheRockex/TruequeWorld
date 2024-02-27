@@ -149,6 +149,11 @@ public class ProductController {
         }
         return list;
     }
+
+    @GetMapping("/img/{id}")
+    public String getImgById(@PathVariable Integer id){
+        return setImg(productService.getProductById(id)).getImgProducto();
+    }
 }
 
 

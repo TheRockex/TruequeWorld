@@ -83,6 +83,19 @@ public class Main_Screen_Fragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ProductServiceApi productServiceApi = RetrofitConexion.getProductServiceApi();
+        Call<String> call = productServiceApi.getImgById(16);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                Log.d("Alex", "onResponse: 3");
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                //Algo
+            }
+        });
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);

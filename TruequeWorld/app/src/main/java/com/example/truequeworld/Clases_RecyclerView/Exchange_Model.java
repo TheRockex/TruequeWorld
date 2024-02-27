@@ -7,7 +7,6 @@ public class Exchange_Model {
     public String otherImg;
     public Drawable up_logo;
     public Drawable down_logo;
-    public boolean isSelected;
 
     public Exchange_Model(String myImg, String otherImg, Drawable up_logo, Drawable down_logo) {
         this.myImg = myImg;
@@ -15,15 +14,6 @@ public class Exchange_Model {
         this.up_logo = up_logo;
         this.down_logo = down_logo;
     }
-
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    public void setSelected(boolean selected) {
-        isSelected = selected;
-    }
-
     public String getMyImg() {
         return myImg;
     }

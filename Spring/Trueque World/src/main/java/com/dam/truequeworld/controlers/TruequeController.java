@@ -22,4 +22,9 @@ public class TruequeController {
     public Trueque saveTrueque(@RequestBody Trueque trueque){
         return truequeService.saveTrueque(trueque);
     }
+
+    @GetMapping("/solicitud/{userId}/{estado}")
+    public List<Trueque> getTruqueByUserEstado(@PathVariable Integer userId, @PathVariable Integer estado){
+        return truequeService.getTruqueByUserEstado(userId,estado);
+    }
 }

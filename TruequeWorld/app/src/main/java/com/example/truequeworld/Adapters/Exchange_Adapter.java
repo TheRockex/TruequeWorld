@@ -2,7 +2,10 @@ package com.example.truequeworld.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,16 +39,8 @@ public class Exchange_Adapter extends RecyclerView.Adapter<Exchange_Adapter.MyVi
     }
 
     public void onBindViewHolder(@NonNull Exchange_Adapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        //holder.myImg.setImageDrawable(mainModels.get(position).getMainImg());
-        //holder.otherImg.setImageDrawable(mainModels.get(position).getMainImg());
-
-        holder.cvExchange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //En verdad este onclick no sería necesario, pero por si aca necesitas meter algo xd
-            }
-
-        });
+        holder.myProduct.setImageBitmap(base64ToBitmap(exchangeModels.get(position).getMyImg()));
+        holder.otherProduct.setImageBitmap(base64ToBitmap(exchangeModels.get(position).getOtherImg()));
     }
 
     @Override
@@ -68,5 +63,10 @@ public class Exchange_Adapter extends RecyclerView.Adapter<Exchange_Adapter.MyVi
             this.upLogo = itemView.findViewById(R.id.upLogo);
             this.downLogo = itemView.findViewById(R.id.downLogo);
         }
+    }
+
+    public Bitmap base64ToBitmap(String base64Image) {
+        byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
     }
 }

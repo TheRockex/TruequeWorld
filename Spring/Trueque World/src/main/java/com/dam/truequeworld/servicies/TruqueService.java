@@ -26,4 +26,7 @@ public class TruqueService {
         }
         return t;
     }
+    public List<Trueque> getTruqueByUserEstado(Integer usuarioId, Integer estado){
+        return truequeRepository.getTruqueByUserEstado(usuarioId,estado);
+    }
 }

@@ -10,4 +10,8 @@ import java.util.List;
 public interface TruequeRepository extends JpaRepository<Trueque, Integer> {
     @Query("SELECT t FROM Trueque t WHERE t.estado = :estado")
     List<Trueque> getTruequeByEstado(Integer estado);
+
+    @Query("SELECT t FROM Trueque t JOIN Product p on p.id = t.productoInteresado " +
+            "JOIN User u on u.id = p.usuarioId WHERE p.usuarioId = :userId and t.estado = :estado")
+    List<Trueque> getTruqueByUserEstado(Integer userId, Integer estado);
 }
