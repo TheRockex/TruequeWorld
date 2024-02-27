@@ -89,8 +89,8 @@ public class Add_Product_Fragment extends Fragment {
                 Addproduct();
             }
         });
-        imageView = view.findViewById(R.id.add_tp_photo); // Aquí asigna la variable miembro imageView
-        // Configurar el clic programáticamente
+        imageView = view.findViewById(R.id.add_tp_photo);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,25 +101,23 @@ public class Add_Product_Fragment extends Fragment {
         MaterialButton buttonCategory = view.findViewById(R.id.category_field);
         MaterialButton buttonEstado = view.findViewById(R.id.status_field);
 
-// Asignar un OnClickListener al botón
+
         buttonPrice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View precio) {
-                // Crear el constructor del MaterialAlertDialogBuilder
+
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
-                // Inflar el diseño personalizado para el contenido del diálogo
+
                 LayoutInflater inflater = requireActivity().getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.f3_x_alert_dialog_price, null);
                 builder.setView(dialogView);
-                // Encuentra los botones dentro del diseño personalizado
+
                 MaterialButton set_Price_Button = dialogView.findViewById(R.id.set_price_button);
                 MaterialButton cancel_button = dialogView.findViewById(R.id.cancel_button_price);
                 TextInputEditText price_textField = dialogView.findViewById(R.id.price_edittext);
                 TextView textviewprice = view.findViewById(R.id.textview_price);
 
 
-
-                // Configura otros atributos del AlertDialog
                 set_Price_Button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View precio) {
@@ -136,12 +134,12 @@ public class Add_Product_Fragment extends Fragment {
                 cancel_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View precio) {
-                        // Hacer algo cuando se hace clic en el botón "CANCELAR"
+
                         alertDialog.dismiss();
                     }
                 });
                 alertDialog = builder.create();
-                // Mostrar el AlertDialog
+
                 alertDialog.show();
             }
 
@@ -149,20 +147,19 @@ public class Add_Product_Fragment extends Fragment {
         buttonCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View category) {
-                // Crear el constructor del MaterialAlertDialogBuilder
+
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
-                // Inflar el diseño personalizado para el contenido del diálogo
+
                 LayoutInflater inflater = requireActivity().getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.f3_x_alert_dialog_category, null);
                 builder.setView(dialogView);
-                // Encuentra los botones dentro del diseño personalizado
+
                 MaterialButton set_category_button = dialogView.findViewById(R.id.set_category_button);
                 MaterialButton cancel_button_category = dialogView.findViewById(R.id.cancel_button_category);
                 TextInputEditText category_textfield = dialogView.findViewById(R.id.category_edittext);
                 TextView textviewcategory = view.findViewById(R.id.textView_category);
 
 
-                // Configura otros atributos del AlertDialog
                 set_category_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View category) {
@@ -170,19 +167,18 @@ public class Add_Product_Fragment extends Fragment {
 
                         textviewcategory.setText(category_string);
 
-                        // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
                         alertDialog.dismiss();
                     }
                 });
                 cancel_button_category.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View category) {
-                        // Hacer algo cuando se hace clic en el botón "CANCELAR"
+
                         alertDialog.dismiss();
                     }
                 });
                 alertDialog = builder.create();
-                // Mostrar el AlertDialog
+
                 alertDialog.show();
             }
 
@@ -190,23 +186,23 @@ public class Add_Product_Fragment extends Fragment {
         buttonEstado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View estado) {
-                // Crear el constructor del MaterialAlertDialogBuilder
+
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
-                // Inflar el diseño personalizado para el contenido del diálogo
+
                 LayoutInflater inflater = requireActivity().getLayoutInflater();
                 View dialogView = inflater.inflate(R.layout.f3_x_alert_dialog_estado, null);
                 builder.setView(dialogView);
-                // Encuentra los botones dentro del diseño personalizado
+
                 MaterialButton set_estado_button = dialogView.findViewById(R.id.set_estado_button);
                 MaterialButton cancel_button_estado = dialogView.findViewById(R.id.cancel_button_estado);
                 TextInputEditText estado_textField = dialogView.findViewById(R.id.estado_edittext);
                 TextView textviewestado = view.findViewById(R.id.textView_status);
 
-                // Configura otros atributos del AlertDialog
+
                 set_estado_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View estado) {
-                        // Hacer algo cuando se hace clic en el botón "FIJAR PRECIO"
+
                         String estado_string = estado_textField.getText().toString();
                         textviewestado.setText(estado_string);
                         alertDialog.dismiss();
@@ -215,12 +211,12 @@ public class Add_Product_Fragment extends Fragment {
                 cancel_button_estado.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View estado) {
-                        // Hacer algo cuando se hace clic en el botón "CANCELAR"
+
                         alertDialog.dismiss();
                     }
                 });
                 alertDialog = builder.create();
-                // Mostrar el AlertDialog
+
                 alertDialog.show();
             }
 
@@ -308,7 +304,6 @@ public class Add_Product_Fragment extends Fragment {
         String textviewPriceString = textviewprice.getText().toString();
         String textviewPriceOnlyNumbers = textviewPriceString.replaceAll("[^0-9]", "");
 
-        // Convert the numeric part to an integer
         int textviewPriceInt = Integer.parseInt(textviewPriceOnlyNumbers);
 
         Log.d("DEBUG", "Estos son tus datos: idActual " + userId + ", nombreString " + nombreString
@@ -346,7 +341,7 @@ public class Add_Product_Fragment extends Fragment {
                 }
                 @Override
                 public void onFailure(Call<Product> call, Throwable t) {
-                    // Manejar el fallo de la llamada
+
                 }
             });
         }else {

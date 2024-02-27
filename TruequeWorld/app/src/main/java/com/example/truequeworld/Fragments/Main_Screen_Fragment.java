@@ -109,7 +109,7 @@ public class Main_Screen_Fragment extends Fragment {
         //imageview = view.findViewById(R.id.imageView);
         TextInputEditText buscarEditText = view.findViewById(R.id.searchEditText);
 
-        // Configurar el listener para detectar cuando se presiona "Enter" en el teclado
+
 
         return view;
     }
