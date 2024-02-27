@@ -54,7 +54,6 @@ public class Exchanges_Screen_Fragment extends Fragment {
     Integer userId;
     Product product;
     List<Product> productos = new ArrayList<>();
-
     public Exchanges_Screen_Fragment(){}
 
     public static Exchanges_Screen_Fragment newInstance(String param1, String param2) {
